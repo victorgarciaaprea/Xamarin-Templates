@@ -1,0 +1,45 @@
+﻿{
+    "author": "Microsoft",
+    "classifications": [ "Forms", "iOS", "Android" ],
+    "name": "Blank Forms App",
+    "groupIdentity": "Xamarin.Forms.BlankApp",
+    "identity": "Xamarin.Forms.BlankApp.CSharp",
+    "shortName": "forms-blank",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "BlankApp", 
+    "preferNameDirectory" : "true",
+    "symbols" : {
+        "AppIdentifier" : {
+            "type" : "parameter",
+            "description": "Overrides the Info.plist's CFBundleIdentifier",
+            "replaces": "com.xamarin.BlankApp",
+            "datatype": "string",
+            "defaultValue": "com.companyname"
+        },
+        "MinimumOSVersion" : {
+            "type": "parameter",
+            "description": "Overrides the Info.plist's MinimumOSVersion",
+            "replaces": "$MinimumOSVersion",
+            "datatype": "string",
+            "defaultValue": "8.0"
+        },
+        "UseUniversal": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+        "UseIPhone": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+        "UseIPad": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        }
+    }
+ }
