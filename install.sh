@@ -3,6 +3,7 @@
 
 install=true
 reset=true
+package=true
 
 while [[ $# > 0 ]]; do
     lowerI="$(echo $1 | awk '{print tolower($0)}')"
@@ -16,6 +17,7 @@ while [[ $# > 0 ]]; do
             echo "Options:"
             echo "  -r|--reset      Removes all user-defined templates."
             echo "  -i|--install    Install all user-defined templates."
+            echo "  -p|--package    Package the user-defined templates in a nupkg."
             echo "  -h|--help       Display all commands."
             exit 0
             ;;
@@ -59,14 +61,24 @@ fi
 ## --install
 
 if [ "$install" = true ]; then
-echo "===Installing Forms Templates==="
-echo ""
+    echo "===Installing Templates==="
+    echo ""
 
-echo "Installing Blank Forms App"
-echo ""
-dotnet new --install "$root/multiplatform/forms/blank"
-echo ""
-echo "Installed Blank Forms App."
-echo ""
+    echo "Installing Blank Forms App"
+    echo ""
+    dotnet new --install "$root/multiplatform/forms/blank"
+    echo ""
+    echo "Installed Blank Forms App."
+    echo ""
 
 fi
+
+if [ "$package" = true ]; then
+    echo "===Packaging Templates==="
+    echo ""
+
+    nuget pack xamarin-templates.nuspec
+
+    echo "Succesfully packaged templates."
+    echo ""
+fi 
