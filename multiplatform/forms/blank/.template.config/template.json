@@ -40,6 +40,39 @@
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false"
+        },
+
+        // Project Symbols
+        "CreateiOSProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateAndroidProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateUWPProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
         }
-    }
- }
+    },
+    "sources": [{
+        "modifiers": [
+            {
+                "condition": "(!CreateiOSProject)",
+                "exclude": [ "iOS/**/*" ]
+            },
+            {
+                "condition": "(!CreateAndroidProject)",
+                "exclude": [ "Droid/**/*" ]
+            },
+            {
+                "condition": "(!CreateUWPProject)",
+                "exclude": [ "UWP/**/*" ]
+            }
+        ]
+    }]
+}

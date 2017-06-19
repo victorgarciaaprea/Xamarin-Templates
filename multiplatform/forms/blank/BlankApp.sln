@@ -1,12 +1,15 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BlankApp", "BlankApp\BlankApp.shproj", "{17013668-F025-46F7-AD60-72795F485D78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "iOS\BlankApp.iOS.csproj", "{0A33BFEC-6E1A-4AB0-A947-99A419585D25}"
+//#if (CreateiOSProject)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hi.iOS", "iOS\Hi.iOS.csproj", "{0A33BFEC-6E1A-4AB0-A947-99A419585D25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "Droid\BlankApp.Android.csproj", "{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}"
+//#endif
+//#if (CreateAndroidProject)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hi.Android", "Droid\Hi.Android.csproj", "{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}"
 EndProject
+//#endif
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
