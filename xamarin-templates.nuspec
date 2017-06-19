@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>Xamarin.Templates</id>
+        <version>0.0.1</version>
+        <authors>Xamarin Inc.</authors>
+        <description>Templates for building iOS, Android, and Universal Windows Platform (UWP) apps with Xamarin.</description>
+        <projectUrl>https://www.xamarin.com/</projectUrl>
+        <licenseUrl>https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</licenseUrl>
+        <copyright>Copyright 2013-2017</copyright>
+    </metadata>
+    <files>
+        <file src="multiplatform\forms\**\*" target="" />
+    </files>
+</package>
