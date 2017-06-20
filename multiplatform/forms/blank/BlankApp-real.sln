@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "iOS\BlankAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "Android\BlankApp.Android.csproj", "{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "UWP\BlankApp.UWP.csproj", "{512666F3-34A0-46F7-A869-AD681CC33A9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -40,5 +42,17 @@ Global
 		{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Debug|iPhoneSimulator.ActiveCfg = Debug|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Debug|iPhoneSimulator.Build.0 = Debug|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Release|iPhone.ActiveCfg = Release|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Release|iPhone.Build.0 = Release|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Release|iPhoneSimulator.ActiveCfg = Release|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Release|iPhoneSimulator.Build.0 = Release|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Debug|iPhone.ActiveCfg = Debug|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Debug|iPhone.Build.0 = Debug|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Debug|Any CPU.ActiveCfg = Debug|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Debug|Any CPU.Build.0 = Debug|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Release|Any CPU.ActiveCfg = Release|ARM
+		{512666F3-34A0-46F7-A869-AD681CC33A9F}.Release|Any CPU.Build.0 = Release|ARM
 	EndGlobalSection
 EndGlobal

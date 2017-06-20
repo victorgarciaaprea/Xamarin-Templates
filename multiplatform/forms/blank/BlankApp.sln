@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "Android\BlankApp.Android.csproj", "{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}"
 EndProject
 //#endif
+//#if (CreateUWPProject)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "UWP\BlankApp.UWP.csproj", "{512666F3-34A0-46F7-A869-AD681CC33A9F}"
+EndProject
+//#endif
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
