@@ -10,6 +10,6 @@
         <copyright>Copyright 2013-2017</copyright>
     </metadata>
     <files>
-        <file src="multiplatform\forms\**\*" target="" />
+        <file src="multiplatform\forms\**\*" target="" exclude="multiplatform\forms\**\*-real.sln" />
     </files>
 </package>
