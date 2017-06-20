@@ -1,9 +1,40 @@
 # /bin/bash
 # install.sh
 
-install=true
-reset=true
-package=true
+install=false
+reset=false
+package=false
+
+reset_package() {
+	echo "===Reset Installed Template==="
+    echo ""
+
+	dotnet new --debug:reinit > /dev/null
+	
+	echo "Removed user-defined templates."
+	echo ""
+}
+
+make_package() {
+    echo "===Packaging Templates==="
+    echo ""
+
+    nuget pack xamarin-templates.nuspec > /dev/null
+
+    echo "Succesfully packaged templates."
+    echo ""
+}
+
+install_package() {
+    echo "===Installing Templates==="
+    echo ""
+
+    echo ""
+    dotnet new --install Xamarin.Templates.*.nupkg
+    echo ""
+    echo "Successfully installed templates."
+    echo ""
+}
 
 while [[ $# > 0 ]]; do
     lowerI="$(echo $1 | awk '{print tolower($0)}')"
@@ -29,6 +60,12 @@ while [[ $# > 0 ]]; do
     shift
 done
 
+if [ "$install" = false ] &&  [ "$reset" = false ] && [ "$package" = false ]; then
+    install=true
+    reset=true
+    package=true
+fi
+
 echo ""
 echo "===Prerequisites==="
 
@@ -39,46 +76,25 @@ if [ ! -d /usr/local/share/dotnet/sdk ]; then
     exit 0
 fi
 
+echo ""
 echo "Found dotnet cli at /usr/local/share/dotnet."
 echo ""
 
 root=$PWD
 
-echo ""
-
 # --reset
 
 if [ "$reset" = true ]; then
-
-	echo "===Reset Installed Template==="
-
-	dotnet new --debug:reinit
-	
-	echo "Removed user-defined templates."
-	echo ""
+    reset_package
 fi
 
-## --install
+# --package
+if [ "$package" = true ]; then
+    make_package
+fi 
+
+# --install
 
 if [ "$install" = true ]; then
-    echo "===Installing Templates==="
-    echo ""
-
-    echo "Installing Blank Forms App"
-    echo ""
-    dotnet new --install "$root/multiplatform/forms/blank"
-    echo ""
-    echo "Installed Blank Forms App."
-    echo ""
-
+    install_package
 fi
-
-if [ "$package" = true ]; then
-    echo "===Packaging Templates==="
-    echo ""
-
-    nuget pack xamarin-templates.nuspec
-
-    echo "Succesfully packaged templates."
-    echo ""
-fi 
