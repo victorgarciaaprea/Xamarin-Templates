@@ -11,6 +11,7 @@
     },
     "sourceName": "BlankApp", 
     "preferNameDirectory" : "true",
+    "guids": [ "0A33BFEC-6E1A-4AB0-A947-99A419585D25", "059A7B4B-29F5-47C3-8A44-6A620AEEA28D", "512666F3-34A0-46F7-A869-AD681CC33A9F", "17013668-F025-46F7-AD60-72795F485D78", "20FC063B-1E6D-42F6-AD92-6312F0B3C5F4" ],
     "symbols" : {
         "AppIdentifier" : {
             "type" : "parameter",
