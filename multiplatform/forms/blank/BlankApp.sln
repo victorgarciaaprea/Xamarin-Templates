@@ -1,25 +1,25 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 
-//#if (CreateSharedProject)
+#//#if (CreateSharedProject)
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BlankApp", "BlankApp\BlankApp.shproj", "{17013668-F025-46F7-AD60-72795F485D78}"
 EndProject
-//#else
+#//#else
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp", "BlankApp\BlankApp.csproj", "{20FC063B-1E6D-42F6-AD92-6312F0B3C5F4}"
 EndProject
-//#endif
-//#if (CreateiOSProject)
+#//#endif
+#//#if (CreateiOSProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "iOS\BlankApp.iOS.csproj", "{0A33BFEC-6E1A-4AB0-A947-99A419585D25}"
 EndProject
-//#endif
-//#if (CreateAndroidProject)
+#//#endif
+#//#if (CreateAndroidProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "Android\BlankApp.Android.csproj", "{059A7B4B-29F5-47C3-8A44-6A620AEEA28D}"
 EndProject
-//#endif
-//#if (CreateUWPProject)
+#//#endif
+#//#if (CreateUWPProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "UWP\BlankApp.UWP.csproj", "{512666F3-34A0-46F7-A869-AD681CC33A9F}"
 EndProject
-//#endif
+#//#endif
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
