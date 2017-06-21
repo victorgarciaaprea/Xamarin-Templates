@@ -150,7 +150,15 @@
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
-  <Import Project="..\BlankApp\BlankApp.projitems" Label="Shared" Condition="Exists('..\BlankApp\BlankApp.projitems')" />
+
+  <ItemGroup Condition=" '$(CreateSharedProject)' == 'False' ">
+    <ProjectReference Include="..\BlankApp\BlankApp.csproj">
+      <Project>{20FC063B-1E6D-42F6-AD92-6312F0B3C5F4}</Project>
+      <Name>BlankApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
+
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

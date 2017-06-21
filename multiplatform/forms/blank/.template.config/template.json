@@ -43,6 +43,11 @@
         },
 
         // Project Symbols
+        "CreateSharedProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
         "CreateiOSProject": {
             "type": "parameter",
             "dataType": "bool",
@@ -61,6 +66,14 @@
     },
     "sources": [{
         "modifiers": [
+            {
+                "condition": "CreateSharedProject",
+                "exclude": [ "BlankApp/BlankApp.csproj", "BlankApp/packages.config", "BlankApp/Properties/*" ]
+            },
+            {
+                "condition": "(!CreateSharedProject)",
+                "exclude": [ "BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems" ]
+            },
             {
                 "condition": "(!CreateiOSProject)",
                 "exclude": [ "iOS/**/*" ]
