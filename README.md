@@ -1,1 +1,1 @@
-# xamarin-templates
+# Templates
