@@ -69,16 +69,33 @@ fi
 echo ""
 echo "===Prerequisites==="
 
-if [ ! -d /usr/local/share/dotnet/sdk ]; then
-	echo "Hold up..."
-    echo "  dotnet isn't installed, you must install dotnet core to use dotnet new command."
-    echo "  Go do that and try again."
-    exit 0
-fi
+if [ "$OSTYPE" = "OSX" ]; then
 
-echo ""
-echo "Found dotnet cli at /usr/local/share/dotnet."
-echo ""
+    if [ ! -d /usr/local/share/dotnet/sdk ]; then
+	    echo "Hold up..."
+        echo "  dotnet isn't installed, you must install dotnet core to use dotnet new command."
+        echo "  Go do that and try again."
+        exit 0
+    fi
+
+    echo ""
+    echo "Found dotnet cli at /usr/local/share/dotnet."
+    echo ""
+
+elif [ "$OSTYPE" = "WINDOWS" ]; then
+
+    if [ ! -d "C:\Program Files\dotnet\sdk" ]; then
+	    echo "Hold up..."
+        echo "  dotnet isn't installed, you must install dotnet core to use dotnet new command."
+        echo "  Go do that and try again."
+        exit 0
+    fi
+
+    echo ""
+    echo "Found dotnet cli at C:\Program Files\dotnet\sdk."
+    echo ""
+
+fi
 
 root=$PWD
 
