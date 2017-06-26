@@ -8,8 +8,8 @@
         <projectUrl>https://www.xamarin.com/</projectUrl>
         <licenseUrl>https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</licenseUrl>
         <copyright>Copyright 2013-2017</copyright>
+        <packageTypes>
+            <packageType name="Template" />
+        </packageTypes>
     </metadata>
-    <files>
-        <file src="multiplatform\forms\**\*" target="" exclude="multiplatform\forms\**\*-real.sln;multiplatform\forms\**\*.userprefs" />
-    </files>
 </package>
