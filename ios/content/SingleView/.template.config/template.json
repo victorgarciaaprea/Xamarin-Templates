@@ -1,0 +1,48 @@
+﻿{
+  "author": "Microsoft",
+  "classifications": [ "ios", "app", "general" ],
+  "name": "Single View App",
+  "defaultName": "SingleViewApp1",
+  "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
+  "groupIdentity": "Xamarin.iOS.SingleViewApp",
+  "identity": "Xamarin.iOS.SingleViewApp.CSharp",
+  "shortName": "ios-singleviewapp",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "SingleViewApp",
+  "preferNameDirectory": true,
+  "symbols": {
+    "AppIdentifier": {
+      "type": "parameter",
+      "description": "Overrides the Info.plist's CFBundleIdentifier",
+      "replaces": "com.xamarin.singleview",
+      "datatype": "string",
+      "defaultValue": "com.companyname"
+    },
+    "MinimumOSVersion": {
+      "type": "parameter",
+      "description": "Overrides the Info.plist's MinimumOSVersion",
+      "replaces": "$MinimumOSVersion",
+      "datatype": "string",
+      "defaultValue": "8.0"
+    },
+    "UseUniversal": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
+    },
+    "UseIPhone": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
+    },
+    "UseIPad": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
+    },
+  },
+  "primaryOutputs": [ { "path": "SingleViewApp.csproj" } ],
+}

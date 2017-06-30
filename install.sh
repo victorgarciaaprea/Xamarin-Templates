@@ -19,7 +19,8 @@ make_package() {
     echo "===Packaging Templates==="
     echo ""
 
-    nuget pack xamarin-templates.nuspec > /dev/null
+    nuget pack multiplatform/xamarin-templates-multiplatform.nuspec > /dev/null
+    nuget pack ios/xamarin-templates-ios.nuspec > /dev/null
 
     echo "Succesfully packaged templates."
     echo ""
@@ -30,7 +31,10 @@ install_package() {
     echo ""
 
     echo ""
-    dotnet new --install Xamarin.Templates.*.nupkg
+
+    dotnet new --install Xamarin.Templates.Multiplatform.*.nupkg
+    dotnet new --install Xamarin.Templates.iOS.*.nupkg
+
     echo ""
     echo "Successfully installed templates."
     echo ""
