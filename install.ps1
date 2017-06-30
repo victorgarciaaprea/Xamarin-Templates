@@ -21,7 +21,8 @@ function make_package()
     Write-Host "===Packaging Templates==="
     Write-Host ""
 
-    Invoke-Expression "nuget pack xamarin-templates.nuspec"
+    Invoke-Expression "nuget pack multiplatform/xamarin-templates-multiplatform.nuspec"
+    Invoke-Expression "nuget pack ios/xamarin-templates-ios.nuspec"
 
     Write-Host "Successfully packaged templates."
     Write-Host ""
