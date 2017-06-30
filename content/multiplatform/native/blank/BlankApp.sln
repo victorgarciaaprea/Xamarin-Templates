@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Droid", "Droid\Bla
 EndProject
 #//#endif
 #//#if (CreateUWPProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Droid", "UWP\BlankApp.UWP.csproj", "{0991AD91-851A-4C1B-9401-8573FF8D5FF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "UWP\BlankApp.UWP.csproj", "{0991AD91-851A-4C1B-9401-8573FF8D5FF7}"
 EndProject
 #//#endif
 
