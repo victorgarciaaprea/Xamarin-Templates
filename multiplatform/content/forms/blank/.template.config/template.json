@@ -1,7 +1,7 @@
 ﻿{
     "author": "Microsoft",
     "classifications": [ "Forms", "iOS", "Android" ],
-    "name": "Blank Forms App",
+    "name": "Blank Xamarin.Forms App",
     "groupIdentity": "Xamarin.Forms.BlankApp",
     "identity": "Xamarin.Forms.BlankApp.CSharp",
     "shortName": "forms-blank",
@@ -11,7 +11,13 @@
     },
     "sourceName": "BlankApp", 
     "preferNameDirectory" : "true",
-    "guids": [ "0A33BFEC-6E1A-4AB0-A947-99A419585D25", "059A7B4B-29F5-47C3-8A44-6A620AEEA28D", "512666F3-34A0-46F7-A869-AD681CC33A9F", "17013668-F025-46F7-AD60-72795F485D78", "20FC063B-1E6D-42F6-AD92-6312F0B3C5F4" ],
+    "guids": [ 
+        "99E19497-29A6-4B77-B773-BEC55F9B55DC", // .NET Standard Library
+        "17013668-F025-46F7-AD60-72795F485D78", // Shared Project
+        "20FDA6ED-B68E-4610-807B-F358668F181E", // Android
+        "91D74A40-E440-42AD-B51F-C2D641C49384", // iOS
+        "3EA9E612-E717-4E55-9034-C415CD62AF9A" // UWP
+    ],
     "symbols" : {
         "AppIdentifier" : {
             "type" : "parameter",
@@ -88,5 +94,5 @@
                 "exclude": [ "UWP/**/*" ]
             }
         ]
-    }]
+    }],
 }
