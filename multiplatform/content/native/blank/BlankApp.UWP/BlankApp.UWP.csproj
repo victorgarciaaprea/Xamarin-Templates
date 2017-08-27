@@ -131,13 +131,18 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(CreateSharedProject)' == 'False' ">
+  <!--#if (!CreateSharedProject)
+  <ItemGroup>
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
       <Project>{99E19497-29A6-4B77-B773-BEC55F9B55DC}</Project>
       <Name>BlankApp</Name>
     </ProjectReference>
   </ItemGroup>
+  #endif-->
+
+  <!--#if (CreateSharedProject)
   <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
+  #endif-->
 
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
