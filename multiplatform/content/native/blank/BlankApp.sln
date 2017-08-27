@@ -4,18 +4,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 #//#if (CreateSharedProject)
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BlankApp", "BlankApp\BlankApp.shproj", "{C7B4DAAA-FAB0-4526-A544-2CB0A84645B0}"
 EndProject
-#//#else
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp", "BlankApp\BlankApp.csproj", "{4EA5884F-4B61-4A45-9B5D-73ED1184163C}"
+#//#endif
+
+#//#if (!CreateSharedProject)
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlankApp", "BlankApp\BlankApp.csproj", "{99E19497-29A6-4B77-B773-BEC55F9B55DC}"
 EndProject
 #//#endif
+
 #//#if (CreateiOSProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "iOS\BlankApp.iOS.csproj", "{DE3BCAE4-7EAD-4015-AD18-5D1ADE379906}"
 EndProject
 #//#endif
+
 #//#if (CreateAndroidProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Droid", "Droid\BlankApp.Droid.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
 EndProject
 #//#endif
+
 #//#if (CreateUWPProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "UWP\BlankApp.UWP.csproj", "{0991AD91-851A-4C1B-9401-8573FF8D5FF7}"
 EndProject

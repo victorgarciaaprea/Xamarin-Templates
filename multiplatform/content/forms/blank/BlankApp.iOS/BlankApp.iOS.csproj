@@ -134,13 +134,13 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(CreateSharedProject)' == 'False' ">
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
-      <Project>{275bae61-2b96-4e30-a09e-c12ae6f3966c}</Project>
+      <Project>{99E19497-29A6-4B77-B773-BEC55F9B55DC}</Project>
       <Name>BlankApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>

@@ -110,7 +110,7 @@
 
   <ItemGroup Condition=" '$(CreateSharedProject)' == 'False' ">
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
-      <Project>{4EA5884F-4B61-4A45-9B5D-73ED1184163C}</Project>
+      <Project>{99E19497-29A6-4B77-B773-BEC55F9B55DC}</Project>
       <Name>BlankApp</Name>
     </ProjectReference>
   </ItemGroup>
