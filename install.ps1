@@ -22,7 +22,6 @@ function make_package()
     Write-Host ""
 
     Invoke-Expression "nuget pack multiplatform/xamarin-templates-multiplatform.nuspec"
-    Invoke-Expression "nuget pack ios/xamarin-templates-ios.nuspec"
 
     Write-Host "Successfully packaged templates."
     Write-Host ""
@@ -35,7 +34,8 @@ function install_package()
     Write-Host ""
 
     Write-Host ""
-    Invoke-Expression "dotnet new --install $install_path"
+    Invoke-Expression "dotnet new --install `"$install_path`""
+    Invoke-Expression "dotnet new --install `"$install_path`""
     Write-Host ""
     Write-Host "Successfully installed templates."
     Write-Host ""
