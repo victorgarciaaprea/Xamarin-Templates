@@ -83,15 +83,15 @@
             },
             {
                 "condition": "(!CreateiOSProject)",
-                "exclude": [ "iOS/**/*" ]
+                "exclude": [ "BlankApp.iOS/**/*" ]
             },
             {
                 "condition": "(!CreateAndroidProject)",
-                "exclude": [ "Droid/**/*" ]
+                "exclude": [ "BlankApp.Android/**/*" ]
             },
             {
                 "condition": "(!CreateUWPProject)",
-                "exclude": [ "UWP/**/*" ]
+                "exclude": [ "BlankApp.UWP/**/*" ]
             }
         ]
     }]

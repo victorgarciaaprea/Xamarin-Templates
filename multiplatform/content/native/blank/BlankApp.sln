@@ -12,17 +12,17 @@ EndProject
 #//#endif
 
 #//#if (CreateiOSProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "iOS\BlankApp.iOS.csproj", "{DE3BCAE4-7EAD-4015-AD18-5D1ADE379906}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "BlankApp.iOS\BlankApp.iOS.csproj", "{DE3BCAE4-7EAD-4015-AD18-5D1ADE379906}"
 EndProject
 #//#endif
 
 #//#if (CreateAndroidProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Droid", "Droid\BlankApp.Droid.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Droid", "BlankApp.Android\BlankApp.Android.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
 EndProject
 #//#endif
 
 #//#if (CreateUWPProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "UWP\BlankApp.UWP.csproj", "{0991AD91-851A-4C1B-9401-8573FF8D5FF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "BlankApp.UWP\BlankApp.UWP.csproj", "{0991AD91-851A-4C1B-9401-8573FF8D5FF7}"
 EndProject
 #//#endif
 
