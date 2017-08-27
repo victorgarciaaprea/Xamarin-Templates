@@ -5,27 +5,27 @@ VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 
 #//#if (CreateSharedProject)
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BlankApp", "BlankApp\BlankApp.shproj", "{17013668-F025-46F7-AD60-72795F485D78}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BlankApp", "BlankApp\BlankApp\BlankApp.shproj", "{17013668-F025-46F7-AD60-72795F485D78}"
 EndProject
 #//#endif
 
 #//#if (!CreateSharedProject)
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlankApp", "BlankApp\BlankApp.csproj", "{99E19497-29A6-4B77-B773-BEC55F9B55DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlankApp", "BlankApp\BlankApp\BlankApp.csproj", "{99E19497-29A6-4B77-B773-BEC55F9B55DC}"
 EndProject
 #//#endif
 
 #//#if (CreateiOSProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "BlankApp.iOS\BlankApp.iOS.csproj", "{91D74A40-E440-42AD-B51F-C2D641C49384}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "BlankApp\BlankApp.iOS\BlankApp.iOS.csproj", "{91D74A40-E440-42AD-B51F-C2D641C49384}"
 EndProject
 #//#endif
 
 #//#if (CreateAndroidProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "BlankApp.Android\BlankApp.Android.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "BlankApp\BlankApp.Android\BlankApp.Android.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
 EndProject
 ##endif
 
 #//#if (CreateUWPProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "BlankApp.UWP\BlankApp.UWP.csproj", "{3EA9E612-E717-4E55-9034-C415CD62AF9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "BlankApp\BlankApp.UWP\BlankApp.UWP.csproj", "{3EA9E612-E717-4E55-9034-C415CD62AF9A}"
 EndProject
 #//#endif
 
