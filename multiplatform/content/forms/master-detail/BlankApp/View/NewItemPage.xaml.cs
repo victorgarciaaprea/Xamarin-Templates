@@ -8,9 +8,9 @@ using BlankApp.Model;
 
 namespace BlankApp.View
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-        [XamlCompilation(XamlCompilationOptions.Compile)]
         public Item Item { get; set; }
 
         public NewItemPage()
