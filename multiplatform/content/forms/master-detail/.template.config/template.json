@@ -1,10 +1,10 @@
 ﻿{
     "author": "Microsoft",
     "classifications": [ "Forms", "iOS", "Android" ],
-    "name": "Blank Xamarin.Forms App",
-    "groupIdentity": "Xamarin.Forms.BlankApp",
-    "identity": "Xamarin.Forms.BlankApp.CSharp",
-    "shortName": "forms-blank",
+    "name": "Master Detail Xamarin.Forms App",
+    "groupIdentity": "Xamarin.Forms.MasterDetailApp",
+    "identity": "Xamarin.Forms.MasterDetailApp.CSharp",
+    "shortName": "forms-masterdetail",
     "tags": {
         "language": "C#",
         "type": "project"

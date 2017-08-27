@@ -20,7 +20,7 @@ EndProject
 #//#endif
 
 #//#if (CreateAndroidProject)
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "BlankApp.Android\BlankApp.Android.csproj", "{20FDA6ED-B68E-4610-807B-F358668F181E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "BlankApp.Android\BlankApp.Android.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
 EndProject
 ##endif
 
