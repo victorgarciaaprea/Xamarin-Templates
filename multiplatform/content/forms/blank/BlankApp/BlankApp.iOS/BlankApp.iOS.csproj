@@ -120,11 +120,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.266-pre1" />
   </ItemGroup>
-
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <!--#if (!CreateSharedProject)
   <ItemGroup>
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
@@ -133,7 +132,6 @@
     </ProjectReference>
   </ItemGroup>
   #endif-->
-
   <!--#if (CreateSharedProject)
   <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
   #endif-->

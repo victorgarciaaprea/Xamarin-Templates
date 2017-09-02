@@ -17,14 +17,18 @@ using Windows.UI.Xaml.Navigation;
 
 namespace BlankApp.UWP
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
+		int count = 1;
+
+		public MainPage()
         {
             this.InitializeComponent();
+
+			myButton.Click += (s, e) =>
+			{
+				myButton.Content = $"{count++} clicks!";
+			};
         }
     }
 }

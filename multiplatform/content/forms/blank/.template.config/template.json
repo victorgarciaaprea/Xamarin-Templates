@@ -1,7 +1,7 @@
 ﻿{
     "author": "Microsoft",
     "classifications": [ "Forms", "iOS", "Android" ],
-    "name": "Blank Xamarin.Forms App",
+    "name": "Xamarin.Forms App (Blank)",
     "groupIdentity": "Xamarin.Forms.BlankApp",
     "identity": "Xamarin.Forms.BlankApp.CSharp",
     "shortName": "forms-blank",
@@ -75,23 +75,23 @@
         "modifiers": [
             {
                 "condition": "CreateSharedProject",
-                "exclude": [ "BlankApp/BlankApp.csproj", "BlankApp/packages.config", "BlankApp/Properties/*" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.csproj" ]
             },
             {
                 "condition": "(!CreateSharedProject)",
-                "exclude": [ "BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp/BlankApp.projitems" ]
             },
             {
                 "condition": "(!CreateiOSProject)",
-                "exclude": [ "BlankApp.iOS/**/*" ]
+                "exclude": [ "BlankApp/BlankApp.iOS/**/*" ]
             },
             {
                 "condition": "(!CreateAndroidProject)",
-                "exclude": [ "BlankApp.Android/**/*" ]
+                "exclude": [ "BlankApp/BlankApp.Android/**/*" ]
             },
             {
                 "condition": "(!CreateUWPProject)",
-                "exclude": [ "BlankApp.UWP/**/*" ]
+                "exclude": [ "BlankApp/BlankApp.UWP/**/*" ]
             }
         ]
     }],

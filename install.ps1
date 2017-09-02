@@ -35,7 +35,6 @@ function install_package()
 
     Write-Host ""
     Invoke-Expression "dotnet new --install `"$install_path`""
-    Invoke-Expression "dotnet new --install `"$install_path`""
     Write-Host ""
     Write-Host "Successfully installed templates."
     Write-Host ""

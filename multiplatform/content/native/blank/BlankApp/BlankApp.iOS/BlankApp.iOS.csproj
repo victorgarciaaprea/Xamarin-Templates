@@ -85,8 +85,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -107,7 +111,6 @@
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <!--#if (!CreateSharedProject)
   <ItemGroup>
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
@@ -116,10 +119,8 @@
     </ProjectReference>
   </ItemGroup>
   #endif-->
-
   <!--#if (CreateSharedProject)
   <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
   #endif-->
-
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
