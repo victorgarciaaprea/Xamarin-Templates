@@ -28,6 +28,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "BlankApp\Bl
 EndProject
 #//#endif
 
+#//#if (CreateBackendProject)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.MobileAppService", "BlankApp\BlankApp.MobileAppService\BlankApp.MobileAppService.csproj", "{44599257-DD12-4673-882F-15AD2611A0AA}"
+EndProject
+#//#endif
+
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		BlankApp\BlankApp\BlankApp.projitems*{1e2f9841-fc77-4a82-82af-f1b2799eb718}*SharedItemsImports = 4

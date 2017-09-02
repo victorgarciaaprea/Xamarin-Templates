@@ -23,6 +23,9 @@ namespace BlankApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            #if (CreateBackendProject)
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            #endif
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

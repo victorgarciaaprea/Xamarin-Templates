@@ -69,6 +69,11 @@
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true"
+        },
+        "CreateBackendProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
         }
     },
     "sources": [{
@@ -78,8 +83,12 @@
                 "exclude": [ "BlankApp/BlankApp/BlankApp.csproj" ]
             },
             {
+                "condition": "CreateBackendProject",
+                "exclude": [ "BlankApp/BlankApp/BlankApp.projitems" ]
+            },
+            {
                 "condition": "(!CreateSharedProject)",
-                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp/BlankApp.projitems", "BlankApp/BlankApp/BlankApp-Backend.projitems" ]
             },
             {
                 "condition": "(!CreateiOSProject)",
@@ -92,6 +101,10 @@
             {
                 "condition": "(!CreateUWPProject)",
                 "exclude": [ "BlankApp/BlankApp.UWP/**/*" ]
+            },
+            {
+                "condition": "(!CreateBackendProject)",
+                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*", "BlankApp/BlankApp/BlankApp-Backend.projitems"]
             }
         ]
     }],

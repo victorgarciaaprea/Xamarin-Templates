@@ -2,7 +2,7 @@
     "author": "Microsoft",
     "classifications": [ "Forms", "iOS", "Android" ],
     "name": "Xamarin Native App (Master Detail)",
-    "groupIdentity": "Xamarin.Native.MasterDetailApp",
+    "groupIdentity": "Xamarin.Forms.MasterDetailApp",
     "identity": "Xamarin.Native.MasterDetailApp.CSharp",
     "shortName": "native-masterdetail",
     "tags": {
@@ -69,6 +69,11 @@
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true"
+        },
+        "CreateBackendProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
         }
     },
     "sources": [{
@@ -79,7 +84,7 @@
             },
             {
                 "condition": "(!CreateSharedProject)",
-                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp/BlankApp.projitems" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems" ]
             },
             {
                 "condition": "(!CreateiOSProject)",
@@ -92,6 +97,10 @@
             {
                 "condition": "(!CreateUWPProject)",
                 "exclude": [ "BlankApp/BlankApp.UWP/**/*" ]
+            },
+            {
+                "condition": "(!CreateBackendProject)",
+                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*" ]
             }
         ]
     }],

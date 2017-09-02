@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 using BlankApp.Model;
 
+
+#if (!CreateBackendProject)
 [assembly: Xamarin.Forms.Dependency(typeof(BlankApp.Services.MockDataStore))]
+#endif
 namespace BlankApp.Services
 {
     public class MockDataStore : IDataStore<Item>

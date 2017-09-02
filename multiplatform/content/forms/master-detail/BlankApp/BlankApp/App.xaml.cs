@@ -11,9 +11,21 @@ namespace BlankApp
 {
 	public partial class App : Application
 	{
+		#if (CreateBackendProject)
+		public static bool UseMockDataStore = true;
+		public static string AzureMobileAppUrl = "https://[CONFIGURE-THIS-URL].azurewebsites.net";
+		#endif		
+
 		public App ()
 		{
 			InitializeComponent();
+
+			#if (CreateBackendProject)
+			if (UseMockDataStore)
+				DependencyService.Register<MockDataStore>();
+			else
+				DependencyService.Register<AzureDataStore>();
+			#endif
 
             if (Device.RuntimePlatform == Device.iOS)
                 MainPage = new MainPage();

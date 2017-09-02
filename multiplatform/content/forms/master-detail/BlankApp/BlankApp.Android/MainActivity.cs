@@ -20,6 +20,9 @@ namespace BlankApp.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            #if (CreateBackendProject)
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            #endif
             LoadApplication(new App());
         }
     }
