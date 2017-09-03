@@ -16,6 +16,10 @@ namespace BlankApp.Droid
 			newIntent.AddFlags(ActivityFlags.ClearTop);
 			newIntent.AddFlags(ActivityFlags.SingleTop);
 
+			#if (CreateBackendProject)
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            #endif
+
 			StartActivity(newIntent);
 			Finish();
 		}

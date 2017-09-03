@@ -20,6 +20,10 @@ namespace BlankApp.iOS
 		{
 			App.Initialize();
 
+			#if (CreateBackendProject)
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            #endif
+
             return true;
 		}
 

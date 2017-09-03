@@ -1,7 +1,10 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Plugin.Share": "5.0.0"
+    "Plugin.Share": "5.0.0",
+    //#if (CreateBackendProject)
+    "Microsoft.Azure.Mobile.Client.SQLiteStore": "4.0.1"
+    //#endif
   },
   "frameworks": {
     "uap10.0": {}

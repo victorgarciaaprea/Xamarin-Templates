@@ -87,6 +87,10 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="Plugin.Share" Version="7.0.1" />
+    <!--#if (CreateBackendProject)
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.1" />
+    #endif-->
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
