@@ -16,7 +16,8 @@
         "17013668-F025-46F7-AD60-72795F485D78", // Shared Project
         "8D9F8CF0-E178-402D-8D40-A88B7B5F3D42", // Android
         "91D74A40-E440-42AD-B51F-C2D641C49384", // iOS
-        "3EA9E612-E717-4E55-9034-C415CD62AF9A" // UWP
+        "3EA9E612-E717-4E55-9034-C415CD62AF9A", // UWP
+        "44599257-DD12-4673-882F-15AD2611A0AA" // Azure Mobile Apps ASP.NET Project
     ],
     "symbols" : {
         "AppIdentifier" : {
@@ -76,15 +77,19 @@
             "defaultValue": "false"
         }
     },
-    "sources": [{
-        "modifiers": [
+    "sources": [
+        {
+            "modifiers": [
             {
                 "condition": "CreateSharedProject",
                 "exclude": [ "BlankApp/BlankApp/BlankApp.csproj" ]
             },
             {
                 "condition": "CreateBackendProject",
-                "exclude": [ "BlankApp/BlankApp/BlankApp.projitems" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.projitems" ],
+                "rename": {
+                    "BlankApp-Backend.projitems": "BlankApp.projitems"
+                }
             },
             {
                 "condition": "(!CreateSharedProject)",

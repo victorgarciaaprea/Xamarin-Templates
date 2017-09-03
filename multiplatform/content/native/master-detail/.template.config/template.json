@@ -1,8 +1,8 @@
 ﻿{
     "author": "Microsoft",
-    "classifications": [ "Forms", "iOS", "Android" ],
+    "classifications": [ "Native", "iOS", "Android" ],
     "name": "Xamarin Native App (Master Detail)",
-    "groupIdentity": "Xamarin.Forms.MasterDetailApp",
+    "groupIdentity": "Xamarin.Native.MasterDetailApp",
     "identity": "Xamarin.Native.MasterDetailApp.CSharp",
     "shortName": "native-masterdetail",
     "tags": {
