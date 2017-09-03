@@ -92,7 +92,7 @@
             },
             {
                 "condition": "(!CreateSharedProject)",
-                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems", "BlankApp/BlankApp/BlankApp-Backend.projitems" ]
             },
             {
                 "condition": "(!CreateiOSProject)",
@@ -108,7 +108,7 @@
             },
             {
                 "condition": "(!CreateBackendProject)",
-                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*" ]
+                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*", "BlankApp/BlankApp/BlankApp-Backend.projitems" ]
             }
         ]
     }],
