@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<!-- Until we can move to SDK style and XVSSDK -->
+	<Import Project="Xamarin.VSSDK.Xaml.targets" />
+
+	<PropertyGroup>
+		<DeployExtension Condition=" '$(DeployExtension)' == '' And '$(Configuration)' == 'Debug' ">true</DeployExtension>
+		<XmlNamespace>&lt;Namespace Prefix='vs' Uri='http://schemas.microsoft.com/developer/vstemplate/2005'/&gt;</XmlNamespace>
+		<!-- Using powershell to download avoids having to download/commit curl.exe -->
+		<PowerShell Condition=" '$(PowerShell)' == '' ">%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShell>
+		<PsGetLatestVersion>"$(PowerShell)" -NoProfile -Command "&amp; { (New-Object System.Net.WebClient).DownloadString('https://api.nuget.org/v3/flatcontainer/$package$/index.json') | ConvertFrom-Json | Select -ExpandProperty versions | Where { $_ -Match '$filter$' } | Select -Last 1 }"</PsGetLatestVersion>
+		<PsGetPackage>"$(PowerShell)" -NoProfile -Command "&amp; { (New-Object System.Net.WebClient).DownloadFile('https://api.nuget.org/packages/$package$.$version$.nupkg', '$(IntermediateOutputPath)Packages\$identity$.$version$.nupkg') }"</PsGetPackage>
+		<PsGetBaseVersion>"$(PowerShell)" -NoProfile -Command "&amp; { Get-Content $file$ | ConvertFrom-Json | Select -ExpandProperty dependencies |  Select -ExpandProperty '$package$' -ErrorAction Ignore }"</PsGetBaseVersion>
+		<PackageVersionsCache>$(IntermediateOutputPath)packages.json</PackageVersionsCache>
+		<UpdateNuGetReferencesDependsOn>
+			FindSmartTemplateCandidates;
+			IncludeSmartTemplateFiles;
+			FindVsTemplates;
+			FindPackageIds;
+			GetPackageVersions;
+			UpdateTemplates;
+			DownloadPackages;
+		</UpdateNuGetReferencesDependsOn>
+		<AssignTargetPathsDependsOn>
+			$(AssignTargetPathsDependsOn);
+			GetPackageVersions;
+			IncludeUsedPackages
+		</AssignTargetPathsDependsOn>
+	</PropertyGroup>
+
+	<Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
+		<PropertyGroup>
+			<VsixVersion Condition="'$(Configuration)' == 'Debug'">1.0.0</VsixVersion>
+			<VsixVersion Condition="'$(VsixVersion)' == ''">$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</VsixVersion>
+		</PropertyGroup>
+	</Target>
+
+	<Target Name="AppendVsixVersionToTargetVsixContainer" BeforeTargets="CreateVsixContainer" DependsOnTargets="GetVsixVersion">
+		<PropertyGroup>
+			<TargetVsixContainer>$([System.IO.Path]::ChangeExtension('$(TargetVsixContainer)', '$(VsixVersion).vsix'))</TargetVsixContainer>
+		</PropertyGroup>
+	</Target>
+
+	<Target Name="UpdateNuGetReferences"
+			DependsOnTargets="$(UpdateNuGetReferencesDependsOn)"
+			BeforeTargets="ZipSmartTemplateContent;GetVsixSourceItems" />
+
+	<Target Name="FindVsTemplates"
+			DependsOnTargets="FindSmartTemplateCandidates;IncludeSmartTemplateFiles">
+		<ItemGroup>
+			<_VsTemplate Include="@(SmartTemplateContentWithTargetPath)"
+						 Condition=" '%(Extension)' == '.vstemplate' " />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="FindPackageIds"
+			Inputs="@(_VsTemplate)"
+			Outputs="%(_VsTemplate.Identity)-BATCH"
+			DependsOnTargets="FindVsTemplates">
+
+		<XmlPeek Namespaces="$(XmlNamespace)" XmlInputPath="@(_VsTemplate)"
+				 Query="/vs:VSTemplate/vs:WizardData/vs:packages[@repository='extension']/vs:package/@id">
+			<Output TaskParameter="Result" ItemName="PackageId" />
+		</XmlPeek>
+
+		<ItemGroup>
+			<PackageId>
+				<Template>$(SmartTemplateIntermediateOutputPath)%(_VsTemplate.TargetPath)</Template>
+			</PackageId>
+		</ItemGroup>
+	</Target>
+
+	<Target Name="ClearPackageVersions"
+			Inputs="packages.json;$(MSBuildAllProjects);$(MSBuildThisFileFullPath);@(_VsTemplate)"
+			Outputs="$(PackageVersionsCache)">
+		<Delete Files="$(PackageVersionsCache)" />
+	</Target>
+
+	<Target Name="CalculatePackageVersions"
+			Condition=" !Exists('$(PackageVersionsCache)') "
+			DependsOnTargets="ClearPackageVersions;FindVsTemplates;FindPackageIds"
+			Inputs="@(PackageId)"
+			Outputs="%(PackageId.Identity)">
+
+		<JsonPeek JsonInputPath="packages.json" JPath="dependencies['%(PackageId.Identity)']">
+			<Output TaskParameter="Result" PropertyName="BaseVersion" />
+		</JsonPeek>
+
+		<XmlPeek Namespaces="$(XmlNamespace)" XmlInputPath="%(PackageId.Template)"
+				 Query="/vs:VSTemplate/vs:WizardData/vs:packages[@repository='extension']/vs:package[@id='%(PackageId.Identity)']/@version"
+				 Condition=" '$(BaseVersion)' == '' ">
+			<Output TaskParameter="Result" PropertyName="BaseVersion" />
+		</XmlPeek>
+
+		<PropertyGroup>
+			<MinVersion Condition=" $(BaseVersion.IndexOf('-')) != '-1' ">$(BaseVersion.Substring(0, $(BaseVersion.IndexOf('-'))))</MinVersion>
+			<MinVersion Condition=" $(BaseVersion.IndexOf('-')) == '-1' ">$(BaseVersion)</MinVersion>
+			<PreRelease Condition=" $(BaseVersion.IndexOf('-')) != '-1' ">$(BaseVersion.Substring($(BaseVersion.IndexOf('-'))))</PreRelease>
+
+			<PackageId>$([System.String]::new(%(PackageId.Identity)).ToLower())</PackageId>
+			<PackageFilter>^$(MinVersion.Replace(".", "\."))</PackageFilter>
+			<PackageFilter Condition=" '$(PreRelease)' != '' ">$(PackageFilter).*?$(PreRelease).*$</PackageFilter>
+			<!-- If there is no prerelease label on the package version, exclude all those that have a dash, so we only pick stable -->
+			<PackageFilter Condition=" '$(PreRelease)' == '' ">$(PackageFilter)[^-]*$</PackageFilter>
+			<GetLatestVersionCommand>$(PsGetLatestVersion.Replace('$package$', '$(PackageId)').Replace('$filter$', '$(PackageFilter)'))</GetLatestVersionCommand>
+			<!-- ^[^-]+$ -->
+		</PropertyGroup>
+
+		<Exec Command="$(GetLatestVersionCommand)" EchoOff="false" ConsoleToMSBuild="true">
+			<Output TaskParameter="ConsoleOutput" PropertyName="LatestVersion" />
+			<Output TaskParameter="ExitCode" PropertyName="MSBuildLastExitCode" />
+		</Exec>
+
+		<Message Text="Command: $(GetLatestVersionCommand)" />
+		<Message Text="Command: $(MSBuildLastExitCode)" />
+
+		<PropertyGroup Condition="'$(MSBuildLastExitCode)' != '0'">
+			<LatestVersion>$(BaseVersion)</LatestVersion>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<PackageId>
+				<Id>$(PackageId)</Id>
+				<BaseVersion>$(BaseVersion)</BaseVersion>
+				<LatestVersion>$(LatestVersion)</LatestVersion>
+			</PackageId>
+		</ItemGroup>
+			<Message Text="PackageId = $(PackageId) - $(BaseVersion) - $(LatestVersion)"/>
+	</Target>
+
+	<Target Name="PopulatePackageVersions"
+			Condition=" Exists('$(PackageVersionsCache)') "
+			DependsOnTargets="ClearPackageVersions;FindPackageIds"
+			Inputs="@(PackageId)"
+			Outputs="%(PackageId.Identity)">
+
+		<JsonPeek JsonInputPath="$(PackageVersionsCache)" JPath="dependencies['%(PackageId.Identity)']">
+			<Output TaskParameter="Result" PropertyName="LatestVersion" />
+		</JsonPeek>
+
+		<Error Condition=" '$(LatestVersion)' == '' " Text="Package with id='%(PackageId.Identity)' was not found in package versions cache at '$(PackageVersionsCache)'." />
+
+		<ItemGroup>
+			<PackageId>
+				<Id>$([System.String]::new(%(PackageId.Identity)).ToLower())</Id>
+				<LatestVersion>$(LatestVersion)</LatestVersion>
+			</PackageId>
+		</ItemGroup>
+	</Target>
+
+	<Target Name="UniquePackageVersions" DependsOnTargets="ClearPackageVersions;CalculatePackageVersions;PopulatePackageVersions">
+		<ItemGroup>
+			<UniquePackageId Include="@(PackageId -> Distinct())" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="WritePackageVersions"
+			DependsOnTargets="CalculatePackageVersions;PopulatePackageVersions"
+			Inputs="packages.json;$(MSBuildAllProjects);$(MSBuildThisFileFullPath);@(_VsTemplate)"
+			Outputs="$(PackageVersionsCache)">
+
+		<PropertyGroup>
+			<PackageVersions>@(UniquePackageId -> '"%(Identity)": "%(LatestVersion)"', ',
+        ')</PackageVersions>
+		</PropertyGroup>
+
+		<WriteLinesToFile File="$(PackageVersionsCache)" Lines="{
+    &quot;dependencies&quot;: {
+        $(PackageVersions)
+    }
+}" Overwrite="true" Encoding="UTF-8" />
+	</Target>
+
+	<Target Name="IncludePackageVersions">
+		<ItemGroup>
+			<FileWrites Include="$(PackageVersionsCache)" />
+		</ItemGroup>
+	</Target>
+	
+	<Target Name="GetPackageVersions" DependsOnTargets="ClearPackageVersions;CalculatePackageVersions;PopulatePackageVersions;UniquePackageVersions;WritePackageVersions;IncludePackageVersions" />
+
+	<Target Name="UpdateTemplates"
+			Inputs="$(PackageVersionsCache);@(_VsTemplate)"
+			Outputs="@(PackageId -> '%(Template)')">
+
+    <Message Text="%(PackageId.Identity) - %(PackageId.LatestVersion) "/>
+		<XmlPoke Namespaces="$(XmlNamespace)"
+				 XmlInputPath="%(PackageId.Template)"
+				 Query="/vs:VSTemplate/vs:WizardData/vs:packages/vs:package[@id='%(PackageId.Identity)']/@version"
+				 Value="%(PackageId.LatestVersion)"
+				 Condition=" '%(PackageId.Identity)' != '' "/>
+	</Target>
+
+	<Target Name="DownloadPackages"
+			Inputs="$(PackageVersionsCache)"
+			Outputs="@(UniquePackageId -> '$(IntermediateOutputPath)Packages\%(Identity).%(LatestVersion).nupkg')"
+			DependsOnTargets="GetPackageVersions">
+
+		<MakeDir Directories="$(IntermediateOutputPath)Packages" Condition=" !Exists('$(IntermediateOutputPath)Packages') " />
+
+		<ItemGroup>
+			<PackagesToDownload Include="@(UniquePackageId)"
+								Condition=" !Exists('$(IntermediateOutputPath)Packages\%(UniquePackageId.Identity).%(UniquePackageId.LatestVersion).nupkg') " />
+		</ItemGroup>
+
+		<Exec Command="$(PsGetPackage.Replace('$package$', '%(PackagesToDownload.Id)').Replace('$identity$', '%(PackagesToDownload.Identity)').Replace('$version$', '%(PackagesToDownload.LatestVersion)'))"
+			  EchoOff="true"
+			  Condition=" '@(PackagesToDownload)' != '' " />
+	</Target>
+
+	<Target Name="IncludeUsedPackages" DependsOnTargets="GetPackageVersions">
+		<ItemGroup>
+			<VSIXSourceItem Include="@(UniquePackageId -> '$(IntermediateOutputPath)Packages\%(Identity).%(LatestVersion).nupkg')">
+				<VSIXSubPath>Packages</VSIXSubPath>
+			</VSIXSourceItem>
+			<!-- Prevents incremental clean from deleting these. -->
+			<FileWrites Include="$(IntermediateOutputPath)Packages\%(UniquePackageId.Identity).%(UniquePackageId.LatestVersion).nupkg" />
+		</ItemGroup>
+	</Target>
+
+	<!-- Patch VSSDK uninstall VSIX broken logic	
+	Before we even import Clarius.VisualStudio targets, which in turn import VSSDK ones, 
+	we declare our own re-implementation of the UninstallExtension task that just marks 
+	an extension for deletion on the next VS restart. This completely removes the random
+	build errors we were getting when a version flagged 0.1 couldn't uninstall a newer 
+	(i.e. 5.0) version that was already installed in the experimental hive.
+	 -->
+	<UsingTask TaskName="UninstallExtension" TaskFactory="CodeTaskFactory" AssemblyFile="$(CodeTaskAssembly)" Condition="'$(CodeTaskAssembly)' != ''">
+		<ParameterGroup>
+			<VsixIdentifier Required="true" />
+			<RootSuffix  Required="true" />
+			<FailIfNotInstalled  Required="true" />
+		</ParameterGroup>
+		<Task>
+			<Reference Include="Microsoft.CSharp" />
+			<Using Namespace="Microsoft.Build.Framework" />
+			<Using Namespace="System.Reflection" />
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+			Log.LogMessage("Marking extension for deletion on the next Visual Studio start: {0}.", VsixIdentifier);
+				
+			try {
+			    var tasks = AppDomain.CurrentDomain.GetAssemblies ().First (asm => asm.GetName ().Name == "Microsoft.VsSDK.Build.Tasks");
+			    var utilities = tasks.GetType ("Microsoft.VsSDK.Build.Tasks.ExtensionManagerUtilities", true);
+
+			    dynamic settingsManager = utilities.InvokeMember ("GetSettingsManagerForDevenv", BindingFlags.InvokeMethod | BindingFlags.Static | BindingFlags.NonPublic, null, null, new[] { RootSuffix }); ;
+			    var extensionManagerService = utilities.InvokeMember ("GetExtensionManagerService", BindingFlags.InvokeMethod | BindingFlags.Static | BindingFlags.NonPublic, null, null, new[] { settingsManager });
+			    var installedExtension = utilities.InvokeMember("GetInstalledExtension", BindingFlags.InvokeMethod | BindingFlags.Static | BindingFlags.NonPublic, null, null, new[] { extensionManagerService, VsixIdentifier });
+			    var header = installedExtension.GetType ().GetProperty ("Header").GetValue (installedExtension);
+			    var installedVersion = header.GetType ().GetProperty ("Version").GetValue (header).ToString ();
+			    var installedPath = installedExtension.GetType ().GetProperty ("InstallPath").GetValue (installedExtension).ToString ();
+
+			    var scopeType = ((object)settingsManager).GetType ().GetMethod ("GetWritableSettingsStore").GetParameters ()[0].ParameterType;
+			    dynamic scope = Enum.Parse (scopeType, "UserSettings");
+
+			    dynamic settingsStore = settingsManager.GetWritableSettingsStore(scope);
+
+			    settingsStore.SetString(@"ExtensionManager\PendingDeletions", VsixIdentifier +  "," + installedVersion, installedPath);
+			
+			    Log.LogMessage("Successfully marked extension for deletion on the next Visual Studio start: {0}, {1}.", VsixIdentifier, installedVersion);
+			} catch (Exception ex) {
+			    // If uninstallation of the extension from the experimental instance didn't work, just warn, it's no big deal :)
+			    Log.LogWarningFromException(ex);
+			}
+]]>
+			</Code>
+		</Task>
+	</UsingTask>
+</Project>
