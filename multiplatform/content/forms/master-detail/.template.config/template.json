@@ -1,0 +1,116 @@
+﻿{
+    "author": "Microsoft",
+    "classifications": [ "Forms", "iOS", "Android" ],
+    "name": "Xamarin.Forms App (Master Detail)",
+    "groupIdentity": "Xamarin.Forms.MasterDetailApp",
+    "identity": "Xamarin.Forms.MasterDetailApp.CSharp",
+    "shortName": "forms-masterdetail",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "BlankApp", 
+    "preferNameDirectory" : "true",
+    "guids": [ 
+        "99E19497-29A6-4B77-B773-BEC55F9B55DC", // .NET Standard Library
+        "17013668-F025-46F7-AD60-72795F485D78", // Shared Project
+        "8D9F8CF0-E178-402D-8D40-A88B7B5F3D42", // Android
+        "91D74A40-E440-42AD-B51F-C2D641C49384", // iOS
+        "3EA9E612-E717-4E55-9034-C415CD62AF9A", // UWP
+        "44599257-DD12-4673-882F-15AD2611A0AA" // Azure Mobile Apps ASP.NET Project
+    ],
+    "symbols" : {
+        "AppIdentifier" : {
+            "type" : "parameter",
+            "description": "Overrides the Info.plist's CFBundleIdentifier",
+            "replaces": "com.xamarin.BlankApp",
+            "datatype": "string",
+            "defaultValue": "com.companyname"
+        },
+        "MinimumOSVersion" : {
+            "type": "parameter",
+            "description": "Overrides the Info.plist's MinimumOSVersion",
+            "replaces": "$MinimumOSVersion",
+            "datatype": "string",
+            "defaultValue": "8.0"
+        },
+        "UseUniversal": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+        "UseIPhone": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+        "UseIPad": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+
+        // Project Symbols
+        "CreateSharedProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateiOSProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateAndroidProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateUWPProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateBackendProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        }
+    },
+    "sources": [
+        {
+            "modifiers": [
+            {
+                "condition": "CreateSharedProject",
+                "exclude": [ "BlankApp/BlankApp/BlankApp.csproj" ]
+            },
+            {
+                "condition": "CreateBackendProject",
+                "exclude": [ "BlankApp/BlankApp/BlankApp.projitems" ],
+                "rename": {
+                    "BlankApp-Backend.projitems": "BlankApp.projitems"
+                }
+            },
+            {
+                "condition": "(!CreateSharedProject)",
+                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp/BlankApp.projitems", "BlankApp/BlankApp/BlankApp-Backend.projitems" ]
+            },
+            {
+                "condition": "(!CreateiOSProject)",
+                "exclude": [ "BlankApp/BlankApp.iOS/**/*" ]
+            },
+            {
+                "condition": "(!CreateAndroidProject)",
+                "exclude": [ "BlankApp/BlankApp.Android/**/*" ]
+            },
+            {
+                "condition": "(!CreateUWPProject)",
+                "exclude": [ "BlankApp/BlankApp.UWP/**/*" ]
+            },
+            {
+                "condition": "(!CreateBackendProject)",
+                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*", "BlankApp/BlankApp/BlankApp-Backend.projitems"]
+            }
+        ]
+    }],
+}

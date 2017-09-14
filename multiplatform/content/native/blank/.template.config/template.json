@@ -1,7 +1,7 @@
 ﻿{
     "author": "Microsoft",
     "classifications": [ "Native", "iOS", "Android" ],
-    "name": "Blank Native App",
+    "name": "Xamarin Native App (Blank)",
     "groupIdentity": "Xamarin.Native.BlankApp",
     "identity": "Xamarin.Native.BlankApp.CSharp",
     "shortName": "native-blank",
@@ -11,7 +11,13 @@
     },
     "sourceName": "BlankApp", 
     "preferNameDirectory" : "true",
-    "guids": [ "0A33BFEC-6E1A-4AB0-A947-99A419585D25", "059A7B4B-29F5-47C3-8A44-6A620AEEA28D", "512666F3-34A0-46F7-A869-AD681CC33A9F", "17013668-F025-46F7-AD60-72795F485D78", "20FC063B-1E6D-42F6-AD92-6312F0B3C5F4", "0991AD91-851A-4C1B-9401-8573FF8D5FF7" ],
+    "guids": [ 
+        "C7B4DAAA-FAB0-4526-A544-2CB0A84645B0", // Shared Project
+        "99E19497-29A6-4B77-B773-BEC55F9B55DC", // .NET Standard Library
+        "DE3BCAE4-7EAD-4015-AD18-5D1ADE379906", // iOS
+        "8D9F8CF0-E178-402D-8D40-A88B7B5F3D42", // Android
+        "0991AD91-851A-4C1B-9401-8573FF8D5FF7" // UWP
+    ],
     "symbols" : {
         "AppIdentifier" : {
             "type" : "parameter",
@@ -69,23 +75,23 @@
         "modifiers": [
             {
                 "condition": "CreateSharedProject",
-                "exclude": [ "BlankApp/BlankApp.csproj", "BlankApp/packages.config", "BlankApp/Properties/*" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.csproj" ]
             },
             {
                 "condition": "(!CreateSharedProject)",
-                "exclude": [ "BlankApp/BlankApp.shproj", "BlankApp/BlankApp.projitems" ]
+                "exclude": [ "BlankApp/BlankApp/BlankApp.shproj", "BlankApp/BlankApp/BlankApp.projitems" ]
             },
             {
                 "condition": "(!CreateiOSProject)",
-                "exclude": [ "iOS/**/*" ]
+                "exclude": [ "BlankApp.iOS/**/*" ]
             },
             {
                 "condition": "(!CreateAndroidProject)",
-                "exclude": [ "Droid/**/*" ]
+                "exclude": [ "BlankApp.Android/**/*" ]
             },
             {
                 "condition": "(!CreateUWPProject)",
-                "exclude": [ "UWP/**/*" ]
+                "exclude": [ "BlankApp.UWP/**/*" ]
             }
         ]
     }]
