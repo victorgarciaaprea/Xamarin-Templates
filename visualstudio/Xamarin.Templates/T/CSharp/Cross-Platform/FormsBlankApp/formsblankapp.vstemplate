@@ -4,7 +4,7 @@
     <Description>A multiproject template for building apps with Xamarin.Forms entirely based on Xaml, sharing code using a portable class library.</Description>
     <TemplateGroupID>Xamarin.Forms.BlankApp</TemplateGroupID>
     <TemplateID>Xamarin.Forms.BlankApp.CSharp</TemplateID>
-    <Hidden>true</Hidden>
+    <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
