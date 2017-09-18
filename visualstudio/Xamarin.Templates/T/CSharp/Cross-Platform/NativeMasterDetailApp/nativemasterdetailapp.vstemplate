@@ -20,7 +20,7 @@
     <CustomParameters>
       <CustomParameter Name="$language$" Value="CSharp" />
       <CustomParameter Name="$uistyle$" Value="none"/>
-      <CustomParameter Name="$groupid$" Value="Xamarin.Native.MasterDetailApp.CSharp" />
+      <CustomParameter Name="$groupid$" Value="Xamarin.Native.MasterDetailApp" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

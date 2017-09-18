@@ -83,6 +83,7 @@
     <None Include="T\CSharp\Cross-Platform\NativeMasterDetailApp\nativemasterdetailapp.vstemplate">
       <SubType>Designer</SubType>
     </None>
+    <None Include="T\CSharp\Cross-Platform\XamarinCrossPlatformApp\xamarincrossplatformapp.vstemplate" />
     <Content Include="Xamarin.Templates.Multiplatform.pkgdef">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

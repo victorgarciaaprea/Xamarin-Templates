@@ -1,0 +1,21 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>Xamarin Cross Platform App</Name>
+    <Description>A multiproject template for building apps with Xamarin for Android, iOS or UWP sharing code using a portable class library or a shared project.</Description>
+    <TemplateGroupID>Xamarin.XPlatApp</TemplateGroupID>
+    <TemplateID>Xamarin.XPlatApp.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>App</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>5000</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Xamarin.Templates</Assembly>
+    <FullClassName>Xamarin.Templates.Wizards.AzureTemplateWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

@@ -13,6 +13,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using System.Windows;
 using System.Windows.Interop;
 using Microsoft.VisualStudio;
+using System.Reflection;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -23,13 +24,14 @@ namespace Xamarin.Templates.Wizards
         DTE2 dte;
         ServiceProvider serviceProvider;
         Dictionary<string, string> replacements;
-        private bool useAzure;
-        private string templateId;
+        XPlatViewModel model;
+        object automationObject;
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             replacements = replacementsDictionary;
             dte = automationObject as DTE2;
+            this.automationObject = automationObject;
             serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
 
             TryLoadNuGetPackage(serviceProvider);
@@ -41,8 +43,7 @@ namespace Xamarin.Templates.Wizards
                 throw new WizardBackoutException();
             }
 
-            templateId = dialog.GetTemplatePath();
-            useAzure = ((XPlatViewModel)dialog.DataContext).IsAzureSelected;
+            model = ((XPlatViewModel)dialog.DataContext);
         }
 
         void TryLoadNuGetPackage(IServiceProvider serviceProvider)
@@ -91,13 +92,39 @@ namespace Xamarin.Templates.Wizards
         {
             var solution = dte.Solution as Solution2;
 
-            if (useAzure)
+            if (model.IsAzureSelected)
             {
                 await ShowAzureDialog();
             }
 
-            string templatePath = solution.GetProjectTemplate(templateId, "CSharp");
-            dte.Solution.AddFromTemplate(templatePath, SolutionPath, SafeProjectName);
+            CreateTemplate(model);
+        }
+
+        private void CreateTemplate(XPlatViewModel model)
+        {
+            var wizard = CreateTemplatingWizard();
+            wizard.RunStarted(automationObject, AddReplacements(model, replacements), WizardRunKind.AsMultiProject, new object[]{ });
+            wizard.RunFinished();
+        }
+
+        private Dictionary<string, string> AddReplacements(XPlatViewModel model, Dictionary<string, string> replacements)
+        {
+            replacements.Add("$uistyle$", "none");
+            replacements.Add("$language$", "CSharp");
+            replacements.Add("$groupid$", model.SelectedTemplatePath);
+            if (model.IsAzureSelected)
+                replacements.Add("$CreateBackendProject$", "false");
+            if (!model.IsSharedSelected)
+                replacements.Add("$CreateSharedProject$", "false");
+
+            return replacements;
+        }
+
+        private IWizard CreateTemplatingWizard()
+        {
+            var assembly = Assembly.Load("Microsoft.VisualStudio.TemplateEngine.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
+            var type = assembly.GetType("Microsoft.VisualStudio.TemplateEngine.Wizard.TemplateEngineWizard", true);
+            return (IWizard)Activator.CreateInstance(type);
         }
 
         private async System.Threading.Tasks.Task ShowAzureDialog()
@@ -146,15 +173,6 @@ namespace Xamarin.Templates.Wizards
             return value;
         }
 
-        string GetTemplatesPath()
-        {
-            return Path.Combine(Path.GetDirectoryName(new Uri(typeof(AzureTemplateWizard).Assembly.CodeBase).LocalPath), "T");
-        }
-
-        string GetProjectTemplateFile(string templateName, TemplateLanguage language = TemplateLanguage.CSharp)
-        {
-            return Path.Combine(GetTemplatesPath(), "P", language.ToString(), "Cross-Platform", templateName + ".zip");
-        }
 
         string SolutionPath
         {
