@@ -76,7 +76,7 @@
         "CreateSharedProject": {
             "type": "parameter",
             "dataType": "bool",
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         "CreateiOSProject": {
             "type": "parameter",

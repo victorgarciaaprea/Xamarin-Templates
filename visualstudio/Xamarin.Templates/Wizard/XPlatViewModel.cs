@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using EnvDTE80;
+using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
 using System;
@@ -93,6 +94,7 @@ namespace Xamarin.Templates.Wizards
             }
         }
 
+        private static readonly string UWPRegistryKey = @"_Config\Projects\{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A}";
 
         bool isSharedSelected = true;
         public bool IsSharedSelected
@@ -107,6 +109,84 @@ namespace Xamarin.Templates.Wizards
                 PropertyChanged(this, new PropertyChangedEventArgs("IsPCLSelected"));
             }
         }
+
+        public bool IsOkEnabled
+        {
+            get
+            {
+                return IsAndroidSelected || isUWPSelected || IsIOSSelected;
+            }
+        }
+
+        private bool isAndroidSelected = true;
+        public bool IsAndroidSelected
+        {
+            get
+            {
+                return isAndroidSelected;
+            }
+            set
+            {
+                isAndroidSelected = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsAndroidSelected)));
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsOkEnabled)));
+            }
+        }
+
+        private bool isIOSSelected = true;
+        public bool IsIOSSelected
+        {
+            get
+            {
+                return isIOSSelected;
+            }
+            set
+            {
+                isIOSSelected = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsIOSSelected)));
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsOkEnabled)));
+            }
+        }
+
+        private bool isUWPSelected;
+        public bool IsUWPSelected
+        {
+            get
+            {
+                return isUWPSelected;
+            }
+            set
+            {
+                isUWPSelected = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsUWPSelected)));
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsOkEnabled)));
+            }
+        }
+
+
+        public bool IsAndroidEnabled { get; set; } = true;
+        public bool IsIOSEnabled { get; set; } = true;
+
+        private bool isUWPEnabled;
+        public bool IsUWPEnabled
+        {
+            get
+            {
+                return isUWPEnabled;
+            }
+            set
+            {
+                isUWPEnabled = value;
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsUWPEnabled)));
+            }
+        }
+
+        public bool GetUWPEnabled(DTE2 dte)
+        {
+            return Registry.CurrentUser.OpenSubKey(dte.RegistryRoot + UWPRegistryKey) != null;
+        }
+
+
 
         private void UpdateFromSharing()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnvDTE80;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Xamarin.Templates.Wizards
 		public AzureDialog ()
 		{
 			InitializeComponent ();
+        }
+
+        internal void SetUWPEnabled(DTE2 dte)
+        {
+            var model = DataContext as XPlatViewModel;
+            model.IsUWPEnabled = model.GetUWPEnabled(dte);
+            model.IsUWPSelected = model.IsUWPEnabled;
         }
 
         internal string GetTemplatePath() 

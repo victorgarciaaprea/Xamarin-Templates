@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Android" xml:space="preserve">
+    <value>Android</value>
+  </data>
   <data name="BlankApp" xml:space="preserve">
     <value>Blank App</value>
   </data>
@@ -137,6 +140,9 @@ Use the native user interface approach to create UIs for each platform, or use X
   <data name="HostInTheCloud" xml:space="preserve">
     <value>Host in the cloud</value>
   </data>
+  <data name="iOS" xml:space="preserve">
+    <value>iOS</value>
+  </data>
   <data name="MasterDetail" xml:space="preserve">
     <value>Master Detail</value>
   </data>
@@ -152,7 +158,10 @@ Use the native user interface approach to create UIs for each platform, or use X
     <value>Native</value>
   </data>
   <data name="PCL" xml:space="preserve">
-    <value>Portable Class Library (PCL)</value>
+    <value>Portable Class Library</value>
+  </data>
+  <data name="Platforms" xml:space="preserve">
+    <value>Platform</value>
   </data>
   <data name="SelectATemplate" xml:space="preserve">
     <value>Select a template:</value>
@@ -168,5 +177,8 @@ Use the native user interface approach to create UIs for each platform, or use X
   </data>
   <data name="UITechnology" xml:space="preserve">
     <value>UI Technology</value>
+  </data>
+  <data name="UWP" xml:space="preserve">
+    <value>Windows (UWP)</value>
   </data>
 </root>

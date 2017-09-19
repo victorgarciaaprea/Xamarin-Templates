@@ -29,6 +29,10 @@
                     {
                         "condition": "(!CreateSharedProject)",
                         "path": "BlankApp\\BlankApp\\BlankApp.csproj"
+                    },
+                    {
+                        "condition":"CreateBackendProject",
+                        "path":"BlankApp\\BlankApp.MobileAppService\\BlankApp.MobileAppService.csproj"
                     }
                     ],
     "sourceName": "BlankApp", 

@@ -61,6 +61,15 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Android.
+        /// </summary>
+        public static string Android {
+            get {
+                return ResourceManager.GetString("Android", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blank App.
         /// </summary>
         public static string BlankApp {
@@ -117,6 +126,15 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to iOS.
+        /// </summary>
+        public static string iOS {
+            get {
+                return ResourceManager.GetString("iOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master Detail.
         /// </summary>
         public static string MasterDetail {
@@ -155,11 +173,20 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portable Class Library (PCL).
+        ///   Looks up a localized string similar to Portable Class Library.
         /// </summary>
         public static string PCL {
             get {
                 return ResourceManager.GetString("PCL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Platform.
+        /// </summary>
+        public static string Platforms {
+            get {
+                return ResourceManager.GetString("Platforms", resourceCulture);
             }
         }
         
@@ -205,6 +232,15 @@ namespace Xamarin.Templates.Properties {
         public static string UITechnology {
             get {
                 return ResourceManager.GetString("UITechnology", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows (UWP).
+        /// </summary>
+        public static string UWP {
+            get {
+                return ResourceManager.GetString("UWP", resourceCulture);
             }
         }
     }

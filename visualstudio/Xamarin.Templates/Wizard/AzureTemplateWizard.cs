@@ -37,6 +37,7 @@ namespace Xamarin.Templates.Wizards
             TryLoadNuGetPackage(serviceProvider);
 
             var dialog = CreateAzureDialog();
+            dialog.SetUWPEnabled(dte);
             dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
             if (!dialog.ShowDialog().GetValueOrDefault())
             {
@@ -113,9 +114,15 @@ namespace Xamarin.Templates.Wizards
             replacements.Add("$language$", "CSharp");
             replacements.Add("$groupid$", model.SelectedTemplatePath);
             if (model.IsAzureSelected)
-                replacements.Add("$CreateBackendProject$", "false");
+                replacements.Add("$passthrough:CreateBackendProject$", "true");
             if (!model.IsSharedSelected)
-                replacements.Add("$CreateSharedProject$", "false");
+                replacements.Add("$passthrough:CreateSharedProject$", "false");
+            if (!model.IsAndroidSelected)
+                replacements.Add("$passthrough:CreateAndroidProject$", "false");
+            if (!model.IsIOSSelected)
+                replacements.Add("$passthrough:CreateiOSProject$", "false");
+            if (!model.IsUWPSelected)
+                replacements.Add("$passthrough:CreateUWPProject$", "false");
 
             return replacements;
         }
