@@ -5,7 +5,6 @@
 
 	<PropertyGroup>
 		<DeployExtension Condition=" '$(DeployExtension)' == '' And '$(Configuration)' == 'Debug' ">true</DeployExtension>
-
 	</PropertyGroup>
 
 	<Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
@@ -28,8 +27,55 @@
 						 Condition=" '%(Extension)' == '.vstemplate' " />
     </ItemGroup>
   </Target>
+
+  <PropertyGroup>
+    <NuGetPath Condition=" '$(NuGetPath)' == '' ">$(MSBuildThisFileDirectory).nuget</NuGetPath>
+    <NuGetUrl Condition=" '$(NuGetUrl)' == '' ">https://dist.nuget.org/win-x86-commandline/latest/nuget.exe</NuGetUrl>
+    <NuGet Condition=" '$(NuGet)' == '' ">$(NuGetPath)\nuget.exe</NuGet>
+    <TEMP Condition=" '$(OS)' != 'Windows_NT' ">$(TMPDIR)</TEMP>
+    <BaseUrl Condition=" '$(BaseUrl)' == '' ">https://raw.githubusercontent.com/kzu/NuGet.Restore/master/</BaseUrl>
+    <CurlUrl Condition=" '$(CurlUrl)' == '' ">$(BaseUrl)curl.exe</CurlUrl>
+    <CurlArgs Condition=" '$(CurlArgs)' == '' ">-k -f -L</CurlArgs>
+    <Curl Condition=" '$(OS)' == 'Windows_NT' ">"$(TEMP)\curl.exe" $(CurlArgs)</Curl>
+    <Curl Condition=" '$(OS)' != 'Windows_NT' ">curl $(CurlArgs)</Curl>
+  </PropertyGroup>
   
-	<!-- Patch VSSDK uninstall VSIX broken logic	
+  <Target Name="DownloadNuGet" DependsOnTargets="DownloadCurl" Condition=" !Exists('$(NuGet)') ">
+    <MakeDir Directories="$(NuGetPath)" Condition=" !Exists('$(NuGetPath)') " />
+    <Exec Command="$(Curl) -o &quot;$(NuGet)&quot; &quot;$(NuGetUrl)&quot;" />
+  </Target>
+  <Target Name="DownloadCurl" Condition=" '$(OS)' == 'Windows_NT' And !Exists('$(TEMP)\curl.exe') ">
+    <PropertyGroup>
+      <PowerShell Condition=" '$(PowerShell)' == '' ">%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShell>
+    </PropertyGroup>
+    <Exec Command="&quot;$(PowerShell)&quot; -NoProfile -Command &quot;&amp; { (New-Object System.Net.WebClient).DownloadFile('$(CurlUrl)', '$(TEMP)\curl.exe') }&quot;" />
+  </Target>
+
+  <Target Name="Package" DependsOnTargets="DownloadNuget;GetVsixVersion" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <NuSpec Include="$(MSBuildThisFileDirectory)..\..\multiplatform\xamarin-templates-multiplatform.nuspec" />
+    </ItemGroup>
+    <PropertyGroup>
+      <Out>$(MSBuildThisFileDirectory)Templates</Out>
+    </PropertyGroup>
+    
+    <MakeDir Directories="$(Out)" Condition="!Exists('$(Out)')" />
+
+    <Exec Command='"$(NuGet)" Pack "%(NuSpec.Filename)%(NuSpec.Extension)" -NoPackageAnalysis -Version $(VsixVersion) -Properties Id=%(NuSpec.Filename);Configuration=$(Configuration);Version=$(VsixVersion) -OutputDirectory $(Out)'
+			  WorkingDirectory='%(NuSpec.RootDir)%(NuSpec.Directory)'/>
+
+    <ItemGroup>
+      <Content Include="Templates\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <IncludeInVSIX>true</IncludeInVSIX>
+      </Content>
+    </ItemGroup>
+
+    <Message Text="Added Content $(Out)\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg" Importance="high" />
+</Target>
+
+
+  <!-- Patch VSSDK uninstall VSIX broken logic	
 	Before we even import Clarius.VisualStudio targets, which in turn import VSSDK ones, 
 	we declare our own re-implementation of the UninstallExtension task that just marks 
 	an extension for deletion on the next VS restart. This completely removes the random
