@@ -2,6 +2,7 @@
   <TemplateData>
     <Name>Xamarin Cross Platform App</Name>
     <Description>A multiproject template for building apps with Xamarin for Android, iOS or UWP sharing code using a portable class library or a shared project.</Description>
+    <Icon>FormsProject.ico</Icon>
     <TemplateGroupID>Xamarin.XPlatApp</TemplateGroupID>
     <TemplateID>Xamarin.XPlatApp.CSharp</TemplateID>
     <Hidden>false</Hidden>

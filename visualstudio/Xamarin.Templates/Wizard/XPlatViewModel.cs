@@ -334,7 +334,7 @@ namespace Xamarin.Templates.Wizards
             list.Add(new XPlatItemViewModel
             {
                 Name = Resources.BlankApp,
-                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"T\P\CSharp\FormsProject.jpg"),
+                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
                 Description = Resources.BlankAppDescription,
                 Forms = new ReferenceTypeItem
                 {
@@ -364,7 +364,7 @@ namespace Xamarin.Templates.Wizards
             if (IsSharedSupported && IsMasterDetailSupportedVersion()) list.Add(new XPlatItemViewModel
             {
                 Name = Resources.MasterDetail,
-                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"T\P\CSharp\FormsProject.jpg"),
+                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
                 Description = Resources.MasterDetailDescription,
                 Forms = new ReferenceTypeItem
                 {
