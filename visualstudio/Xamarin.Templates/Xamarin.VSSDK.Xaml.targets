@@ -1,0 +1,36 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<!-- Force proper reference resolution for the XAML compile pass. -->    
+		<MarkupCompilePass2ForMainAssemblyDependsOn>
+			ResolveReferences;
+			$(MarkupCompilePass2ForMainAssemblyDependsOn)
+		</MarkupCompilePass2ForMainAssemblyDependsOn>
+	</PropertyGroup>
+
+	<ItemDefinitionGroup>
+		<ProjectReference>
+			<!-- When referencing project has XAML files, the double compilation passes down AssemblyName and breaks transitive refs. -->
+			<GlobalPropertiesToRemove>AssemblyName</GlobalPropertiesToRemove>
+		</ProjectReference>
+	</ItemDefinitionGroup>
+
+	<!-- From https://github.com/dotnet/project-system/blob/master/build/Targets/VSL.Imports.targets#L187-L203 -->
+	<!-- Project language. This is needed to get xaml files to compile correctly. For some reason the ProjectLanguage is not
+		set and some of the tasks will fail -->
+	<PropertyGroup Condition="'$(ProjectLanguage)' == ''">
+		<ProjectLanguage Condition="'$(MSBuildProjectExtension)' == '.csproj' OR '$(Language)' == 'C#'">CSharp</ProjectLanguage>
+		<ProjectLanguage Condition="'$(MSBuildProjectExtension)' == '.vbproj' OR '$(Language)' == 'VB'">VB</ProjectLanguage>
+		<ProjectLanguage Condition="'$(MSBuildProjectExtension)' == '.vcxproj' OR '$(Language)' == 'C++'">C++</ProjectLanguage>
+	</PropertyGroup>
+
+	<!-- VSIX projects generate a temp project file which doesnt have any extension and needs to be built as C# projects. 
+		 The .NET SDK just imporrts Microsoft.Common.CurrentVersion.targets. 
+		 So set LanguageTargets to import CSharp.targets if the extension is unknown -->
+	<PropertyGroup Condition="'$(LanguageTargets)' == ''">
+		<LanguageTargets Condition="'$(MSBuildProjectExtension)' == '.csproj' OR '$(Language)' == 'C#'">$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets>
+		<LanguageTargets Condition="'$(MSBuildProjectExtension)' == '.vbproj' OR '$(Language)' == 'VB'">$(MSBuildToolsPath)\Microsoft.VisualBasic.targets</LanguageTargets>
+		<LanguageTargets Condition="'$(LanguageTargets)' == ''">$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets> 
+	</PropertyGroup>
+
+</Project>

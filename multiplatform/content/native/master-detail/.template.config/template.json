@@ -9,6 +9,32 @@
         "language": "C#",
         "type": "project"
     },
+    "primaryOutputs": [ 
+                    {
+                        "condition": "CreateAndroidProject",
+                        "path": "BlankApp\\BlankApp.Android\\BlankApp.Android.csproj"
+                    },
+                    {
+                        "condition": "CreateiOSProject",
+                        "path": "BlankApp\\BlankApp.iOS\\BlankApp.iOS.csproj"
+                    },
+                    {
+                        "condition": "CreateUWPProject",
+                        "path": "BlankApp\\BlankApp.UWP\\BlankApp.UWP.csproj"
+                    },
+                    {
+                        "condition": "CreateSharedProject",
+                        "path": "BlankApp\\BlankApp\\BlankApp.shproj"
+                    },
+                    {
+                        "condition": "(!CreateSharedProject)",
+                        "path": "BlankApp\\BlankApp\\BlankApp.csproj"
+                    },
+                    {
+                        "condition":"CreateBackendProject",
+                        "path":"BlankApp\\BlankApp.MobileAppService\\BlankApp.MobileAppService.csproj"
+                    }
+                    ],
     "sourceName": "BlankApp", 
     "preferNameDirectory" : "true",
     "guids": [ 
