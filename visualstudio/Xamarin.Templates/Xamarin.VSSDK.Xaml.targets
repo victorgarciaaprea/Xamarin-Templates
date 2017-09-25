@@ -33,4 +33,8 @@
 		<LanguageTargets Condition="'$(LanguageTargets)' == ''">$(MSBuildToolsPath)\Microsoft.CSharp.targets</LanguageTargets> 
 	</PropertyGroup>
 
+  <Target Name="GitVersion" Condition="'$(Configuration)' == 'Debug'">
+    
+  </Target>
+
 </Project>

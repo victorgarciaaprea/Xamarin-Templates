@@ -7,7 +7,7 @@
 		<DeployExtension Condition=" '$(DeployExtension)' == '' And '$(Configuration)' == 'Debug' ">true</DeployExtension>
 	</PropertyGroup>
 
-	<Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
+  <Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
 		<PropertyGroup>
 			<VsixVersion Condition="'$(Configuration)' == 'Debug'">1.0.0</VsixVersion>
 			<VsixVersion Condition="'$(VsixVersion)' == ''">$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</VsixVersion>
