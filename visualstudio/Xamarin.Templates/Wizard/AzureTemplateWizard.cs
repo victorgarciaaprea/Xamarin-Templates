@@ -137,6 +137,7 @@ namespace Xamarin.Templates.Wizards
                 replacements.Add("$passthrough:CreateUWPProject$", "false");
 
             replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
+            replacements.Add("$passthrough:AppIdentifier$", $"com.companyname.{replacements["$safeprojectname$"]}");
 
             return replacements;
         }
