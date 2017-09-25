@@ -70,6 +70,12 @@
             "dataType": "bool",
             "defaultValue": "false"
         },
+        "WindowsSdk": {
+            "type": "parameter",
+            "description": "Window SDK Version. Minimum Version is Fall Creator's Update (10.0.16278).",
+            "dataType": "string",
+            "replaces": "10.0.16267.0"
+        },
 
         // Project Symbols
         "CreateSharedProject": {

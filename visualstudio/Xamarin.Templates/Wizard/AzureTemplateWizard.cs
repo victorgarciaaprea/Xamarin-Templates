@@ -27,6 +27,9 @@ namespace Xamarin.Templates.Wizards
         XPlatViewModel model;
         object automationObject;
 
+        internal static Version MinWindowsVersion = new Version(10, 0, 16267, 0);
+        string latestWindowSdk;
+
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             replacements = replacementsDictionary;
@@ -36,14 +39,15 @@ namespace Xamarin.Templates.Wizards
 
             TryLoadNuGetPackage(serviceProvider);
 
+            latestWindowSdk = GetLatestWindowsSDK();
+
             var dialog = CreateAzureDialog();
-            dialog.SetUWPEnabled(dte);
+            dialog.SetUWPEnabled(dte, latestWindowSdk);
             dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
             if (!dialog.ShowDialog().GetValueOrDefault())
             {
                 throw new WizardBackoutException();
             }
-
             model = ((XPlatViewModel)dialog.DataContext);
         }
 
@@ -61,6 +65,14 @@ namespace Xamarin.Templates.Wizards
                     vsShell.LoadPackage(ref packageId, out vsPackage);
             }
             catch { }
+        }
+
+        string GetLatestWindowsSDK()
+        {
+            var sdks = Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformsForSDK("Windows", new Version(10, 0))
+                       .Where(s => s.StartsWith("UAP")).Select(s => new Version(s.Substring(13))).Where(v => v >= MinWindowsVersion); //the value is of the form "UAP, Version=x.x.x.x"
+            
+            return sdks.Count() > 0 ? sdks.First().ToString() : string.Empty;
         }
 
         private AzureDialog CreateAzureDialog()
@@ -123,6 +135,8 @@ namespace Xamarin.Templates.Wizards
                 replacements.Add("$passthrough:CreateiOSProject$", "false");
             if (!model.IsUWPSelected)
                 replacements.Add("$passthrough:CreateUWPProject$", "false");
+
+            replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
 
             return replacements;
         }
