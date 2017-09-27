@@ -173,7 +173,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portable Class Library.
+        ///   Looks up a localized string similar to .Net Standard.
         /// </summary>
         public static string PCL {
             get {

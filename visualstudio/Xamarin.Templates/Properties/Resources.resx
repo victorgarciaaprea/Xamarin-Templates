@@ -158,7 +158,7 @@ Use the native user interface approach to create UIs for each platform, or use X
     <value>Native</value>
   </data>
   <data name="PCL" xml:space="preserve">
-    <value>Portable Class Library</value>
+    <value>.Net Standard</value>
   </data>
   <data name="Platforms" xml:space="preserve">
     <value>Platform</value>
