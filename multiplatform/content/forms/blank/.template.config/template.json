@@ -77,7 +77,12 @@
             "dataType": "string",
             "replaces": "10.0.16267.0"
         },
-
+        "AndroidSdk": {
+            "type": "parameter",
+            "dataType": "string",
+            "replaces": "v7.1"
+        },
+        
         // Project Symbols
         "CreateSharedProject": {
             "type": "parameter",

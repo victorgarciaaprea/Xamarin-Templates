@@ -14,6 +14,9 @@ using System.Windows;
 using System.Windows.Interop;
 using Microsoft.VisualStudio;
 using System.Reflection;
+using Merq;
+using Xamarin.VisualStudio.Contracts.Model.Android;
+using Xamarin.VisualStudio.Contracts.Commands.Android;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -73,6 +76,16 @@ namespace Xamarin.Templates.Wizards
                        .Where(s => s.StartsWith("UAP")).Select(s => new Version(s.Substring(13))).Where(v => v >= MinWindowsVersion); //the value is of the form "UAP, Version=x.x.x.x"
             
             return sdks.Count() > 0 ? sdks.First().ToString() : string.Empty;
+        }
+
+        string GetLatestAndroidSDK()
+        {
+            var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
+
+            var commandBus = componentModel.GetService<ICommandBus>();
+            var sdkInfo = commandBus.Execute<SdkInfo>(new GetSdkInfo());
+            
+            return sdkInfo.LatestInstalledFramework.Version;
         }
 
         private AzureDialog CreateAzureDialog()
@@ -137,6 +150,9 @@ namespace Xamarin.Templates.Wizards
                 replacements.Add("$passthrough:CreateUWPProject$", "false");
 
             replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
+            var androidSdk = GetLatestAndroidSDK();
+            if (!string.IsNullOrEmpty(androidSdk))
+                replacements.Add("$passthrough:AndroidSdk$", androidSdk);
             replacements.Add("$passthrough:AppIdentifier$", $"com.companyname.{replacements["$safeprojectname$"]}");
 
             return replacements;
