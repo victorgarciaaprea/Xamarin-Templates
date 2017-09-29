@@ -159,27 +159,43 @@ namespace Xamarin.Templates.Wizards
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
             replacements.Add("$groupid$", model.SelectedTemplatePath);
+
             if (model.IsAzureSelected)
                 replacements.Add("$passthrough:CreateBackendProject$", "true");
             if (!model.IsSharedSelected)
                 replacements.Add("$passthrough:CreateSharedProject$", "false");
-            if (!model.IsAndroidSelected)
+
+            if (model.IsAndroidSelected)
+            {
+                var androidSdk = GetLatestAndroidSDK();
+                if (!string.IsNullOrEmpty(androidSdk))
+                    replacements.Add("$passthrough:AndroidSdk$", androidSdk);
+            }
+            else
+            {
                 replacements.Add("$passthrough:CreateAndroidProject$", "false");
-            if (!model.IsIOSSelected)
+            }
+
+            if (model.IsIOSSelected)
+            {
+                var iosSdk = GetLatestiOSSDK();
+                if (!string.IsNullOrEmpty(iosSdk))
+                    replacements.Add("$passthrough:MinimumOSVersion$", iosSdk);
+                replacements.Add("$passthrough:AppIdentifier$", $"com.companyname.{replacements["$safeprojectname$"]}");
+            }
+            else
+            {
                 replacements.Add("$passthrough:CreateiOSProject$", "false");
-            if (!model.IsUWPSelected)
+            }
+
+            if (model.IsUWPSelected)
+            {
+                replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
+            }
+            else
+            {
                 replacements.Add("$passthrough:CreateUWPProject$", "false");
-
-            replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
-
-            var androidSdk = GetLatestAndroidSDK();
-            if (!string.IsNullOrEmpty(androidSdk))
-                replacements.Add("$passthrough:AndroidSdk$", androidSdk);
-
-            var iosSdk = GetLatestiOSSDK();
-            if (!string.IsNullOrEmpty(iosSdk))
-                replacements.Add("$passthrough:MinimumOSVersion$", iosSdk);
-            replacements.Add("$passthrough:AppIdentifier$", $"com.companyname.{replacements["$safeprojectname$"]}");
+            }
 
             return replacements;
         }
