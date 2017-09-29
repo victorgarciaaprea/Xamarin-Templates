@@ -15,8 +15,11 @@ using System.Windows.Interop;
 using Microsoft.VisualStudio;
 using System.Reflection;
 using Merq;
-using Xamarin.VisualStudio.Contracts.Model.Android;
-using Xamarin.VisualStudio.Contracts.Commands.Android;
+
+using AndroidModel = Xamarin.VisualStudio.Contracts.Model.Android;
+using AndroidCommands = Xamarin.VisualStudio.Contracts.Commands.Android;
+using IOSModel = Xamarin.VisualStudio.Contracts.Model.IOS;
+using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -43,7 +46,7 @@ namespace Xamarin.Templates.Wizards
             TryLoadNuGetPackage(serviceProvider);
 
             latestWindowSdk = GetLatestWindowsSDK();
-
+            
             var dialog = CreateAzureDialog();
             dialog.SetUWPEnabled(dte, latestWindowSdk);
             dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
@@ -83,9 +86,19 @@ namespace Xamarin.Templates.Wizards
             var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
 
             var commandBus = componentModel.GetService<ICommandBus>();
-            var sdkInfo = commandBus.Execute<SdkInfo>(new GetSdkInfo());
+            var sdkInfo = commandBus.Execute<AndroidModel.SdkInfo>(new AndroidCommands.GetSdkInfo());
             
             return sdkInfo.LatestInstalledFramework.Version;
+        }
+
+        string GetLatestiOSSDK()
+        {
+            var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
+
+            var commandBus = componentModel.GetService<ICommandBus>();
+            var sdkInfo = commandBus.Execute<IOSModel.SdkInfo>(new IOSCommands.GetSdkInfo());
+
+            return sdkInfo.LatestInstalledIOSSdk;
         }
 
         private AzureDialog CreateAzureDialog()
@@ -150,9 +163,14 @@ namespace Xamarin.Templates.Wizards
                 replacements.Add("$passthrough:CreateUWPProject$", "false");
 
             replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
+
             var androidSdk = GetLatestAndroidSDK();
             if (!string.IsNullOrEmpty(androidSdk))
                 replacements.Add("$passthrough:AndroidSdk$", androidSdk);
+
+            var iosSdk = GetLatestiOSSDK();
+            if (!string.IsNullOrEmpty(iosSdk))
+                replacements.Add("$passthrough:MinimumOSVersion$", iosSdk);
             replacements.Add("$passthrough:AppIdentifier$", $"com.companyname.{replacements["$safeprojectname$"]}");
 
             return replacements;
