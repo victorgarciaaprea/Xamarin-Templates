@@ -27,6 +27,11 @@ namespace Xamarin.Templates.Wizards
     {
         enum TemplateLanguage { CSharp, FSharp };
 
+        const string NugetPackage = "5fcc8577-4feb-4d04-ad72-d6c629b083cc";
+        const string AndroidPackage = "296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6";
+        const string IOSPackage = "77875fa9-01e7-4fea-8e77-dfe942355ca1";
+
+
         DTE2 dte;
         ServiceProvider serviceProvider;
         Dictionary<string, string> replacements;
@@ -43,7 +48,9 @@ namespace Xamarin.Templates.Wizards
             this.automationObject = automationObject;
             serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
 
-            TryLoadNuGetPackage(serviceProvider);
+            TryLoadPackage(serviceProvider, NugetPackage); 
+
+            System.Threading.Tasks.Task.Run(() => InitializeTemplateEngine());
 
             latestWindowSdk = GetLatestWindowsSDK();
             
@@ -57,11 +64,29 @@ namespace Xamarin.Templates.Wizards
             model = ((XPlatViewModel)dialog.DataContext);
         }
 
-        void TryLoadNuGetPackage(IServiceProvider serviceProvider)
+        private void InitializeTemplateEngine()
         {
             try
             {
-                var packageId = new Guid("5fcc8577-4feb-4d04-ad72-d6c629b083cc");
+                var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
+
+                var initializer = componentModel.DefaultExportProvider.GetExport<object>("Microsoft.VisualStudio.TemplateEngine.Contracts.IEngineInitializer").Value;
+
+                initializer.GetType().GetMethod("EnsureInitialized").Invoke(initializer, null);
+
+                //we need these two to get sdk information, so initialize them if possible to speed up the template
+                TryLoadPackage(serviceProvider, AndroidPackage);
+                TryLoadPackage(serviceProvider, IOSPackage);
+            }
+            catch //initialization may fail if the initializer doesn't exist... we don't really care in that case
+            { }
+        }
+
+        void TryLoadPackage(IServiceProvider serviceProvider, string packageGuid)
+        {
+            try
+            {
+                var packageId = new Guid(packageGuid);
                 var vsShell = (IVsShell)serviceProvider.GetService(typeof(SVsShell));
                 var vsPackage = default(IVsPackage);
 
