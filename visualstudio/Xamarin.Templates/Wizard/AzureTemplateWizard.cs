@@ -129,14 +129,22 @@ namespace Xamarin.Templates.Wizards
 
         public async void RunFinished()
         {
-            var solution = dte.Solution as Solution2;
+            var result = new CreateTemplateResult(SafeProjectName, model);
 
-            if (model.IsAzureSelected)
+            try
             {
-                await ShowAzureDialog();
-            }
+                if (model.IsAzureSelected)
+                    await ShowAzureDialog();
 
-            CreateTemplate(model);
+                CreateTemplate(model);
+
+                result.CheckIfSolutionWasSuccessfulyCreated(dte.Solution);
+                
+                Telemetry.Events.NewProject.Create.Post(result);
+            } catch (Exception ex) {
+                Telemetry.Events.NewProject.Fault.Post(result, ex);
+                throw;
+            }
         }
 
         private void CreateTemplate(XPlatViewModel model)

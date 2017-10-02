@@ -31,3 +31,21 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+partial class ThisAssembly
+{
+    /// <summary>
+    /// Simple release-like version number, like 4.0.1 for a cycle 5, SR1 build.
+    /// </summary>
+    public const string SimpleVersion = Git.BaseVersion.Major + "." + Git.BaseVersion.Minor + "." + Git.BaseVersion.Patch;
+
+    /// <summary>
+    /// Full version, including commits since base version file, like 4.0.1.598
+    /// </summary>
+    public const string Version = SimpleVersion + "." + Git.Commits;
+
+    /// <summary>
+    /// Full version, plus branch and commit short sha.
+    /// </summary>
+    public const string InformationalVersion = Version + "-" + Git.Branch + "+" + Git.Commit;
+}
