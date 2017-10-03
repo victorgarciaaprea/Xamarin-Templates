@@ -51,7 +51,7 @@
     <Exec Command="&quot;$(PowerShell)&quot; -NoProfile -Command &quot;&amp; { (New-Object System.Net.WebClient).DownloadFile('$(CurlUrl)', '$(TEMP)\curl.exe') }&quot;" />
   </Target>
 
-  <Target Name="Package" DependsOnTargets="DownloadNuget;GetVsixVersion" BeforeTargets="CoreCompile">
+  <Target Name="PackageTemplates" DependsOnTargets="DownloadNuget;GetVsixVersion" BeforeTargets="CreateVsixContainer" >
     <ItemGroup>
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\multiplatform\xamarin-templates-multiplatform.nuspec" />
     </ItemGroup>
@@ -65,10 +65,11 @@
 			  WorkingDirectory='%(NuSpec.RootDir)%(NuSpec.Directory)'/>
 
     <ItemGroup>
-      <Content Include="Templates\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg">
+      <VsixSourceItem Include="Templates\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <IncludeInVSIX>true</IncludeInVSIX>
-      </Content>
+        <VSIXSubPath>Templates</VSIXSubPath>
+      </VsixSourceItem>
     </ItemGroup>
 
     <Message Text="Added Content $(Out)\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg" Importance="high" />
