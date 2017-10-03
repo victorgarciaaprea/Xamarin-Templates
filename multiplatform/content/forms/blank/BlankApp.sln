@@ -1,23 +1,40 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
+
+#//#if (CreateSharedProject)
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "BlankApp", "BlankApp\BlankApp\BlankApp.shproj", "{17013668-F025-46F7-AD60-72795F485D78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp", "BlankApp\BlankApp\BlankApp.csproj", "{99E19497-29A6-4B77-B773-BEC55F9B55DC}"
+#//#endif
+
+#//#if (!CreateSharedProject)
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlankApp", "BlankApp\BlankApp\BlankApp.csproj", "{99E19497-29A6-4B77-B773-BEC55F9B55DC}"
 EndProject
+#//#endif
+
+#//#if (CreateiOSProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.iOS", "BlankApp\BlankApp.iOS\BlankApp.iOS.csproj", "{91D74A40-E440-42AD-B51F-C2D641C49384}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "BlankApp\BlankApp.Android\BlankApp.Android.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "BlankApp\BlankApp.UWP\BlankApp.UWP.csproj", "{3EA9E612-E717-4E55-9034-C415CD62AF9A}"
-EndProject
+#//#endif
+
+#//#if (CreateMacProject)
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.macOS", "BlankApp\BlankApp.macOS\BlankApp.macOS.csproj", "{B445DF73-AC9E-4276-9FBA-7CB5AD5D2518}"
 EndProject
+#//#endif
+
+#//#if (CreateAndroidProject)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.Android", "BlankApp\BlankApp.Android\BlankApp.Android.csproj", "{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}"
+EndProject
+##endif
+
+#//#if (CreateUWPProject)
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankApp.UWP", "BlankApp\BlankApp.UWP\BlankApp.UWP.csproj", "{3EA9E612-E717-4E55-9034-C415CD62AF9A}"
+EndProject
+#//#endif
+
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		BlankApp\BlankApp.projitems*{17013668-f025-46f7-ad60-72795f485d78}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
