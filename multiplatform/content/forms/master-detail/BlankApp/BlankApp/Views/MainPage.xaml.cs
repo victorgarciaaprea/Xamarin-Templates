@@ -3,7 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MDWork.Views
+namespace BlankApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPage : TabbedPage

@@ -1,8 +1,8 @@
 ﻿using System;
 
-using BlankApp.Model;
+using BlankApp.Models;
 
-namespace BlankApp.ViewModel
+namespace BlankApp.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
