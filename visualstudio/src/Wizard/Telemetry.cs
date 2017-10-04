@@ -31,27 +31,29 @@ namespace Xamarin.Templates.Wizards
                 public const string XamarinTemplatesVersion = "XamarinTemplatesVersion"; // Xamarin.Forms template extension version
                 public const string XamarinVersion = "XamarinVersion"; // Xamarin extension for Visual Studio version
                 
-                static void SetNewProjectInfo(TelemetryEvent telemetryEvent, CreateTemplateResult createTemplateResult)
+                static TelemetryEvent CreateEvent(string id, string eventNamespace, CreateTemplateResult createTemplateResult)
                 {
-                    telemetryEvent.Properties.Add(XamarinVersion, GetXVSVersion());
-                    telemetryEvent.Properties.Add(XamarinTemplatesVersion, ThisAssembly.InformationalVersion);
-                    telemetryEvent.Properties.Add(CodeSharingStrategy, createTemplateResult.IsSharedSelected ? "SharedProject" : "NetStandard");
-                    telemetryEvent.Properties.Add(ProjectTemplate, createTemplateResult.SelectedTemplateName);
-                    telemetryEvent.Properties.Add(TargetPlatforms, string.Join("|", createTemplateResult.Platforms));
-                    telemetryEvent.Properties.Add(UIStrategy, createTemplateResult.IsNativeSelected ? "native" : "xamarinforms");
-                    telemetryEvent.Properties.Add(Success, createTemplateResult.Success);
+                    var telemetryEvent = new TelemetryEvent(id);
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, XamarinVersion), GetXVSVersion());
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, XamarinTemplatesVersion), ThisAssembly.InformationalVersion);
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, CodeSharingStrategy), createTemplateResult.IsSharedSelected ? "SharedProject" : "NetStandard");
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, ProjectTemplate), createTemplateResult.SelectedTemplateName);
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, TargetPlatforms), string.Join("|", createTemplateResult.Platforms));
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, UIStrategy), createTemplateResult.IsNativeSelected ? "native" : "xamarinforms");
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, Success), createTemplateResult.Success);
+                    return telemetryEvent;
                 }
                 
                 public static class Create
                 {
+                    public const string EventNamespace = "VS.Xamarin.NewProject.Create";
                     public const string Id = "vs/xamarin/newproject/create";
 
                     public static void Post(CreateTemplateResult createTemplateResult)
                     {
                         if (createTemplateResult.Success)
                         {
-                            var telemetryEvent = new TelemetryEvent(Id);
-                            SetNewProjectInfo(telemetryEvent, createTemplateResult);
+                            var telemetryEvent = CreateEvent(Id, EventNamespace, createTemplateResult);
 
                             TelemetryService.DefaultSession.PostEvent(telemetryEvent);
                         } else
@@ -63,15 +65,14 @@ namespace Xamarin.Templates.Wizards
 
                 public static class Fault
                 {
+                    public const string EventNamespace = "VS.Xamarin.NewProject.Create.Fault";
                     public const string Id = "vs/xamarin/newproject/create/fault";
-                    public const string FailedTargetPlatforms = "FailedTargetPlatforms"; // iOS, Android, and/or Windows. See "Piping Data with Multiple Values Per Property" section below. 
-                    public const string TemplateException = "TemplateException"; // iOS, Android, and/or Windows. See "Piping Data with Multiple Values Per Property" section below. 
+                    public const string FailedTargetPlatforms = "VS.Xamarin.NewProject.Create.Fault.FailedTargetPlatforms"; // iOS, Android, and/or Windows. See "Piping Data with Multiple Values Per Property" section below. 
+                    public const string TemplateException = "VS.Xamarin.NewProject.Create.Fault.TemplateException"; // iOS, Android, and/or Windows. See "Piping Data with Multiple Values Per Property" section below. 
 
                     public static void Post(CreateTemplateResult createTemplateResult)
                     {
-                        var telemetryEvent = new TelemetryEvent(Id);
-                        SetNewProjectInfo(telemetryEvent, createTemplateResult);
-
+                        var telemetryEvent = CreateEvent(Id, EventNamespace, createTemplateResult);
                         telemetryEvent.Properties.Add(FailedTargetPlatforms, string.Join("|", createTemplateResult.FailedPlatforms));
 
                         TelemetryService.DefaultSession.PostEvent(telemetryEvent);
@@ -79,9 +80,7 @@ namespace Xamarin.Templates.Wizards
 
                     public static void Post(CreateTemplateResult createTemplateResult, Exception exception)
                     {
-                        var telemetryEvent = new TelemetryEvent(Id);
-                        SetNewProjectInfo(telemetryEvent, createTemplateResult);
-
+                        var telemetryEvent = CreateEvent(Id, EventNamespace, createTemplateResult);
                         telemetryEvent.Properties.Add(TemplateException, exception.Message);
 
                         TelemetryService.DefaultSession.PostEvent(telemetryEvent);
