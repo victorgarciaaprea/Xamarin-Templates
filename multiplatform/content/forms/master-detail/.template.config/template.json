@@ -109,8 +109,10 @@
             },
             {
                 "condition": "(!CreateBackendProject)",
-                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*", "BlankApp/BlankApp/BlankApp-Backend.projitems"]
+                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*",
+                    "BlankApp/BlankApp/BlankApp-Backend.projitems",
+                    "BlankApp/BlankApp/Services/AzureDataStore.cs"]
             }
         ]
-    }],
+    }]
 }
