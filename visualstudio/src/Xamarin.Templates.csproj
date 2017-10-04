@@ -132,7 +132,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="External\XamarinVS.Contracts\src\VisualStudio.Contracts\Xamarin.VisualStudio.Contracts.csproj">
+    <ProjectReference Include="..\External\XamarinVS.Contracts\src\VisualStudio.Contracts\Xamarin.VisualStudio.Contracts.csproj">
       <Project>{41ecd91c-0cbb-4a75-8acb-2732d632d7dd}</Project>
       <Name>Xamarin.VisualStudio.Contracts</Name>
     </ProjectReference>

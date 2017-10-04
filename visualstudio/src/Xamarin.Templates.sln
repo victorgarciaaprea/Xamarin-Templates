@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin.Templates", "Xamari
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{38969837-9DBA-4C60-A609-95D20A5CC4D9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin.VisualStudio.Contracts", "External\XamarinVS.Contracts\src\VisualStudio.Contracts\Xamarin.VisualStudio.Contracts.csproj", "{41ECD91C-0CBB-4A75-8ACB-2732D632D7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamarin.VisualStudio.Contracts", "..\External\XamarinVS.Contracts\src\VisualStudio.Contracts\Xamarin.VisualStudio.Contracts.csproj", "{41ECD91C-0CBB-4A75-8ACB-2732D632D7DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
