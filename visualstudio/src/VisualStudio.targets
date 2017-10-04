@@ -56,12 +56,12 @@
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\multiplatform\xamarin-templates-multiplatform.nuspec" />
     </ItemGroup>
     <PropertyGroup>
-      <Out>$(MSBuildThisFileDirectory)Templates</Out>
+      <TemplatesFolder>$(MSBuildThisFileDirectory)Templates</TemplatesFolder>
     </PropertyGroup>
     
-    <MakeDir Directories="$(Out)" Condition="!Exists('$(Out)')" />
+    <MakeDir Directories="$(TemplatesFolder)" Condition="!Exists('$(TemplatesFolder)')" />
 
-    <Exec Command='"$(NuGet)" Pack "%(NuSpec.Filename)%(NuSpec.Extension)" -NoPackageAnalysis -Version $(VsixVersion) -Properties Id=%(NuSpec.Filename);Configuration=$(Configuration);Version=$(VsixVersion) -OutputDirectory $(Out)'
+    <Exec Command='"$(NuGet)" Pack "%(NuSpec.Filename)%(NuSpec.Extension)" -NoPackageAnalysis -Version $(VsixVersion) -Properties Id=%(NuSpec.Filename);Configuration=$(Configuration);Version=$(VsixVersion) -OutputDirectory $(TemplatesFolder)'
 			  WorkingDirectory='%(NuSpec.RootDir)%(NuSpec.Directory)'/>
 
     <ItemGroup>
@@ -72,8 +72,14 @@
       </VsixSourceItem>
     </ItemGroup>
 
-    <Message Text="Added Content $(Out)\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg" Importance="high" />
+    <Message Text="Added Content $(TemplatesFolder)\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg" Importance="high" />
 </Target>
+
+	<Target Name="CopyArtifacts" AfterTargets="CreateVsixContainer" Condition="'$(Out)' != ''">
+		<MakeDir Directories="$(Out)" Condition="!Exists('$(Out)')" />
+
+		<Copy SourceFiles="@(_CreatedVsixContainer)" DestinationFolder="$(Out)" />
+	</Target>
 
 
   <!-- Patch VSSDK uninstall VSIX broken logic	
