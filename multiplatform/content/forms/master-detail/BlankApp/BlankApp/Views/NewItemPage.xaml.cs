@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using BlankApp.Model;
+using BlankApp.Models;
 
-namespace BlankApp.View
+namespace BlankApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
@@ -29,7 +29,7 @@ namespace BlankApp.View
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopToRootAsync();
+            await Navigation.PopModalAsync();
         }
     }
 }

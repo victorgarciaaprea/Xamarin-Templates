@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-using BlankApp.View;
+using BlankApp.Views;
 
 namespace BlankApp
 {
@@ -27,10 +27,7 @@ namespace BlankApp
 				DependencyService.Register<AzureDataStore>();
 			#endif
 
-            if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new MainPage();
-            else
-                MainPage = new NavigationPage(new MainPage());
+            MainPage = new MainPage();
         }
 
 		protected override void OnStart ()

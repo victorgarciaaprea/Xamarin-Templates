@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using BlankApp.Model;
-using BlankApp.View;
-using BlankApp.ViewModel;
+using BlankApp.Models;
+using BlankApp.Views;
+using BlankApp.ViewModels;
 
-namespace BlankApp.View
+namespace BlankApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItemsPage : ContentPage
@@ -39,7 +39,7 @@ namespace BlankApp.View
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewItemPage());
+            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
         }
 
         protected override void OnAppearing()

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using BlankApp.Model;
-
+using BlankApp.Models;
 
 #if (!CreateBackendProject)
 [assembly: Xamarin.Forms.Dependency(typeof(BlankApp.Services.MockDataStore))]
