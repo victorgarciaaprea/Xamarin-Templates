@@ -35,10 +35,6 @@ EndProject
 #//#endif
 
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		BlankApp\BlankApp.projitems*{17013668-f025-46f7-ad60-72795f485d78}*SharedItemsImports = 13
-		BlankApp\BlankApp.projitems*{3ea9e612-e717-4e55-9034-c415cd62af9a}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
