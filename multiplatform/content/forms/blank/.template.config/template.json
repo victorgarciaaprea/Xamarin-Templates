@@ -99,6 +99,11 @@
             "dataType": "bool",
             "defaultValue": "true"
         },
+        "CreateMacProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
         "CreateAndroidProject": {
             "type": "parameter",
             "dataType": "bool",

@@ -130,7 +130,7 @@
                 "condition": "CreateBackendProject",
                 "exclude": [ "BlankApp/BlankApp/BlankApp.projitems" ],
                 "rename": {
-                    "BlankApp-Backend.projitems": "BlankApp.projitems"
+                    "BlankApp/BlankApp/BlankApp-Backend.projitems": "BlankApp/BlankApp/BlankApp.projitems"
                 }
             },
             {
@@ -151,8 +151,10 @@
             },
             {
                 "condition": "(!CreateBackendProject)",
-                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*", "BlankApp/BlankApp/BlankApp-Backend.projitems"]
+                "exclude": [ "BlankApp/BlankApp.MobileAppService/**/*",
+                    "BlankApp/BlankApp/BlankApp-Backend.projitems",
+                    "BlankApp/BlankApp/Services/AzureDataStore.cs"]
             }
         ]
-    }],
+    }]
 }

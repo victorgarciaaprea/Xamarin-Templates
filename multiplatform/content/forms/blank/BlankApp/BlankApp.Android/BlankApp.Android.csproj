@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.4.0.266-pre1" />
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.282" />
   </ItemGroup>
 
   <ItemGroup>

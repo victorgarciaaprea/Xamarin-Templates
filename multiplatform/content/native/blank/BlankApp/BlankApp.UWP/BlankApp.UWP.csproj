@@ -89,10 +89,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -130,7 +126,9 @@
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
-
+<ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.0"/>
+  </ItemGroup>
   <!--#if (!CreateSharedProject)
   <ItemGroup>
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
@@ -139,11 +137,9 @@
     </ProjectReference>
   </ItemGroup>
   #endif-->
-
   <!--#if (CreateSharedProject)
   <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
   #endif-->
-
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

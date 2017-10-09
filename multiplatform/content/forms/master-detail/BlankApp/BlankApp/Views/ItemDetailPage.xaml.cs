@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using BlankApp.Model;
-using BlankApp.ViewModel;
+using BlankApp.Models;
+using BlankApp.ViewModels;
 
-namespace BlankApp.View
+namespace BlankApp.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItemDetailPage : ContentPage

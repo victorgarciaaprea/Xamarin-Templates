@@ -8,7 +8,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 
-namespace BlankApp
+namespace BlankApp.Services
 {
 	public class AzureDataStore : IDataStore<Item>
 	{

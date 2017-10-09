@@ -89,10 +89,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -140,7 +136,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="slideout.png" />
     <Content Include="xamarin_logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -153,7 +148,13 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.282" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.0"/>
+    <!--#if (CreateBackendProject)
+    <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.1" />
+    #endif-->
+  </ItemGroup>
   <!--#if (!CreateSharedProject)
   <ItemGroup>
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
@@ -162,11 +163,9 @@
     </ProjectReference>
   </ItemGroup>
   #endif-->
-
   <!--#if (CreateSharedProject)
   <Import Condition="$(CreateSharedProject)" Project="..\BlankApp\BlankApp.projitems" Label="Shared" />
   #endif-->
-
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
