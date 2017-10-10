@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlankApp
+namespace BlankApp.Models
 {
     public class Item
     {

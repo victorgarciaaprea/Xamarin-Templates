@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace BlankApp
+namespace BlankApp.Helpers
 {
     public sealed class Command<T> : Command
     {

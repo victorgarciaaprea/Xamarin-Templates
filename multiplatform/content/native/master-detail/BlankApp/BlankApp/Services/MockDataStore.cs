@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlankApp
+using BlankApp.Models;
+
+namespace BlankApp.Services
 {
     public class MockDataStore : IDataStore<Item>
     {
@@ -12,17 +14,17 @@ namespace BlankApp
         public MockDataStore()
         {
             items = new List<Item>();
-            var _items = new List<Item>
+            var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is a nice description"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is a nice description"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is a nice description"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is a nice description"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is a nice description"},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is a nice description"},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
             };
 
-            foreach (Item item in _items)
+            foreach (var item in mockItems)
             {
                 items.Add(item);
             }
@@ -44,9 +46,9 @@ namespace BlankApp
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(Item item)
         {
-            var _item = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var _item = items.Where((Item arg) => arg.Id == item.id).FirstOrDefault();
             items.Remove(_item);
 
             return await Task.FromResult(true);

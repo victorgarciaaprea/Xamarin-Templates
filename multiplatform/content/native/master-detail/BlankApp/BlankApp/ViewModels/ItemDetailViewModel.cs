@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlankApp
+namespace BlankApp.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {
