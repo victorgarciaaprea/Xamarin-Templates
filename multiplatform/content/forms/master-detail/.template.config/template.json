@@ -9,6 +9,32 @@
         "language": "C#",
         "type": "project"
     },
+    "primaryOutputs": [ 
+                        {
+                         "condition": "CreateAndroidProject",
+                         "path": "BlankApp\\BlankApp.Android\\BlankApp.Android.csproj"
+                        },
+                        {
+                         "condition": "CreateiOSProject",
+                         "path": "BlankApp\\BlankApp.iOS\\BlankApp.iOS.csproj"
+                        },
+                        {
+                         "condition": "CreateUWPProject",
+                         "path": "BlankApp\\BlankApp.UWP\\BlankApp.UWP.csproj"
+                        },
+                        {
+                         "condition": "CreateSharedProject",
+                         "path": "BlankApp\\BlankApp\\BlankApp.shproj"
+                        },
+                        {
+                         "condition": "(!CreateSharedProject)",
+                         "path": "BlankApp\\BlankApp\\BlankApp.csproj"
+                        },
+                        {
+                         "condition":"CreateBackendProject",
+                         "path":"BlankApp\\BlankApp.MobileAppService\\BlankApp.MobileAppService.csproj"
+                        }
+                      ],
     "sourceName": "BlankApp", 
     "preferNameDirectory" : "true",
     "guids": [ 
@@ -30,9 +56,14 @@
         "MinimumOSVersion" : {
             "type": "parameter",
             "description": "Overrides the Info.plist's MinimumOSVersion",
-            "replaces": "$MinimumOSVersion",
+            "replaces": "8.0",
             "datatype": "string",
-            "defaultValue": "8.0"
+            "onlyIf": [
+                {
+                "after": "<string>",
+                "before": "</string>"
+                }
+            ]
         },
         "UseUniversal": {
             "type": "parameter",
@@ -49,7 +80,18 @@
             "dataType": "bool",
             "defaultValue": "false"
         },
-
+        "WindowsSdk": {
+            "type": "parameter",
+            "description": "Window SDK Version. Minimum Version is Fall Creator's Update (10.0.16278).",
+            "dataType": "string",
+            "replaces": "10.0.16267.0"
+        },
+        "AndroidSdk": {
+            "type": "parameter",
+            "dataType": "string",
+            "replaces": "v7.1"
+        },
+        
         // Project Symbols
         "CreateSharedProject": {
             "type": "parameter",
