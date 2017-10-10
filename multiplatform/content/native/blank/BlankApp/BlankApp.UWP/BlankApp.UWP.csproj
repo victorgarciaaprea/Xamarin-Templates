@@ -127,8 +127,8 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
 <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.0"/>
-  </ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1"/>
+</ItemGroup>
   <!--#if (!CreateSharedProject)
   <ItemGroup>
     <ProjectReference Include="..\BlankApp\BlankApp.csproj">
