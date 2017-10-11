@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
 
 using BlankApp.Views;
+#if (CreateBackendProject)
+using BlankApp.Services;
+#endif
+using Xamarin.Forms;
 
 namespace BlankApp
 {

@@ -1,8 +1,9 @@
-﻿using BlankApp;
-using System.Threading.Tasks;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+
+using BlankApp.Models;
+using BlankApp.ViewModels;
 
 namespace BlankApp.UWP.Views
 {

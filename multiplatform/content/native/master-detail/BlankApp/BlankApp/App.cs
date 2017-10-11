@@ -1,4 +1,7 @@
 ﻿using System;
+using BlankApp.Helpers;
+using BlankApp.Models;
+using BlankApp.Services;
 
 namespace BlankApp
 {

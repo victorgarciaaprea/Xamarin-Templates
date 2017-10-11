@@ -1,6 +1,9 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
+using BlankApp.Models;
+using BlankApp.ViewModels;
+
 namespace BlankApp.UWP.Views
 {
 	public sealed partial class BrowseItemDetail : Page

@@ -7,6 +7,8 @@ using Android.Support.V4.Widget;
 using Android.App;
 using Android.Content;
 
+using BlankApp.ViewModels;
+
 namespace BlankApp.Droid
 {
 	public class BrowseFragment : Android.Support.V4.App.Fragment, IFragmentVisible

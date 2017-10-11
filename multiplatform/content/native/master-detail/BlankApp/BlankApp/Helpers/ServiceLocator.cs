@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlankApp
+namespace BlankApp.Helpers
 {
     public sealed class ServiceLocator
     {

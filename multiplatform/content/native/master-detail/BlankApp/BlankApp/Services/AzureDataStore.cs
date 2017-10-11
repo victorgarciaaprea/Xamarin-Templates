@@ -4,11 +4,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
+using BlankApp.Models;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 
-namespace BlankApp
+namespace BlankApp.Services
 {
 	public class AzureDataStore : IDataStore<Item>
 	{
@@ -105,7 +106,6 @@ namespace BlankApp
 			}
 			return true;
 		}
-
 
 		public async Task<bool> SyncAsync()
 		{
