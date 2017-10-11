@@ -3,6 +3,9 @@ using Android.Content;
 using Android.OS;
 using Android.Widget;
 
+using BlankApp.Models;
+using BlankApp.ViewModels;
+
 namespace BlankApp.Droid
 {
 	[Activity(Label = "Details", ParentActivity = typeof(MainActivity))]

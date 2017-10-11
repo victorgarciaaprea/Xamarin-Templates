@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
+using BlankApp.Helpers;
+using BlankApp.Models;
+using BlankApp.Services;
+
 namespace BlankApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged

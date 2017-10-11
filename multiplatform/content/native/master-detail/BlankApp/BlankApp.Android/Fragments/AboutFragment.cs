@@ -3,6 +3,8 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 
+using BlankApp.ViewModels;
+
 namespace BlankApp.Droid
 {
 	public class AboutFragment : Android.Support.V4.App.Fragment, IFragmentVisible

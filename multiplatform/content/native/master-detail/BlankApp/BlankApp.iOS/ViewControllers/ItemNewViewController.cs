@@ -1,6 +1,8 @@
 ﻿using System;
-
 using UIKit;
+
+using BlankApp.Models;
+using BlankApp.ViewModels;
 
 namespace BlankApp.iOS
 {

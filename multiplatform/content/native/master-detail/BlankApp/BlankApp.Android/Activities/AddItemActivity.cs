@@ -5,6 +5,9 @@ using Android.OS;
 using Android.Widget;
 using Android.Support.Design.Widget;
 
+using BlankApp.Models;
+using BlankApp.ViewModels;
+
 namespace BlankApp.Droid
 {
 	[Activity(Label = "AddItemActivity")]

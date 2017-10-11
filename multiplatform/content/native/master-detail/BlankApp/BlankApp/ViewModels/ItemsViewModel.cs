@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
+using BlankApp.Helpers;
+using BlankApp.Models;
+
 namespace BlankApp.ViewModels
 {
     public class ItemsViewModel : BaseViewModel

@@ -1,5 +1,7 @@
 ﻿using System.Windows.Input;
 
+using BlankApp.Helpers;
+
 namespace BlankApp.ViewModels
 {
     public class AboutViewModel : BaseViewModel

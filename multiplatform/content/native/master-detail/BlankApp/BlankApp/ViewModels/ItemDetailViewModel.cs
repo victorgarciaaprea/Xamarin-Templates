@@ -1,5 +1,7 @@
 ﻿using System;
 
+using BlankApp.Models;
+
 namespace BlankApp.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel

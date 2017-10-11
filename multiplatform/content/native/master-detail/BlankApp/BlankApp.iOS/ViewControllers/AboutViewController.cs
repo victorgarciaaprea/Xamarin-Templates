@@ -1,6 +1,8 @@
 ﻿using System;
 using UIKit;
 
+using BlankApp.ViewModels;
+
 namespace BlankApp.iOS
 {
     public partial class AboutViewController : UIViewController

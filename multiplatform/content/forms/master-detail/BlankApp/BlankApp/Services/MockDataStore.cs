@@ -51,7 +51,7 @@ namespace BlankApp.Services
 
         public async Task<bool> DeleteItemAsync(Item item)
         {
-            var _item = items.Where((Item arg) => arg.Id == item.id).FirstOrDefault();
+            var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(_item);
 
             return await Task.FromResult(true);
