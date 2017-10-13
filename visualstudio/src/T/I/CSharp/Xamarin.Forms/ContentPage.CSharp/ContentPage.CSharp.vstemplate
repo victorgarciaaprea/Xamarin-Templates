@@ -9,7 +9,7 @@
 		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<DefaultName>Page.cs</DefaultName>
-    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+    <AppliesTo>CSharp + XamarinForms</AppliesTo>
     <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4515" />
   </TemplateData>
 	<TemplateContent>

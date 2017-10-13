@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
 	<TemplateData>
-		<Name>Content Page WHAT UP</Name>
+		<Name>Content Page</Name>
 		<Description>A page for displaying content using XAML.</Description>
 		<TemplateID>Xamarin.Forms.Templates.XamlPage.SAP</TemplateID>
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>90</SortOrder>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<DefaultName>Page.xaml</DefaultName>
-    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+    <AppliesTo>CSharp + XamarinForms</AppliesTo>
     <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
   </TemplateData>
   <TemplateContent>
