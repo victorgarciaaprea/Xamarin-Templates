@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Content View</Name>
+    <Description>A view for displaying content using XAML.</Description>
+    <TemplateID>Xamarin.Forms.Templates.XamlView.PCL</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>90</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>View.xaml</DefaultName>
+    <AppliesTo>CSharp + (WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject</AppliesTo>
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" CustomTool="MSBuild:UpdateDesignTimeXaml">XamlView.xaml</ProjectItem>
+    <ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">XamlView.xaml.cs</ProjectItem>
+  </TemplateContent>
+	<WizardExtension>
+		<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+	</WizardExtension>
+	<WizardData>
+		<packages repository="extension" repositoryId="Xamarin.Forms.Templates">
+			<package id="Xamarin.Forms" version="2.3.4.224" />
+		</packages>
+	</WizardData>  
+</VSTemplate>
