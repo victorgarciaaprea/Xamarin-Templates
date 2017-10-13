@@ -4,6 +4,7 @@
     <Identity Id="Xamarin.Templates.d31c6b2a-ce7d-4d05-a4f9-40bd97e5e368" Version="1.0" Language="en-US" Publisher="Joaquin Jares" />
     <DisplayName>Xamarin Templates</DisplayName>
     <Description>Templates for building iOS, Android, and Windows apps with Xamarin and Xamarin.Forms.</Description>
+    <Icon>Properties\ICN_Xamarin.ico</Icon>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
@@ -16,6 +17,7 @@
   </Prerequisites>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="T" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="T\I" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Xamarin.Templates.Multiplatform.pkgdef" />
     <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" AssemblyName="Xamarin.Templates" />
   </Assets>
