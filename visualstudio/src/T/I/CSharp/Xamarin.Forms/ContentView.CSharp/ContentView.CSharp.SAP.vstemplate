@@ -3,25 +3,16 @@
 	<TemplateData>
     <Name>Content View (C#)</Name>
     <Description>A view for displaying content using C#.</Description>
-		<TemplateID>Xamarin.Forms.Templates.View.PCL</TemplateID>
+		<TemplateID>Xamarin.Forms.Templates.View.SAP</TemplateID>
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>90</SortOrder>
 		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<DefaultName>View.cs</DefaultName>
-    <AppliesTo>CSharp + (WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject</AppliesTo>
+    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
     <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4515" />
   </TemplateData>
 	<TemplateContent>
 		<ProjectItem TargetFileName="$fileinputname$.cs" OpenInEditor="true" ReplaceParameters="true" ItemType="Compile">View.cs</ProjectItem>
 	</TemplateContent>
-	<WizardExtension>
-		<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
-	</WizardExtension>
-	<WizardData>
-		<packages repository="extension" repositoryId="Xamarin.Forms.Templates">
-			<package id="Xamarin.Forms" version="2.3.4.224" />
-		</packages>
-	</WizardData>
 </VSTemplate>

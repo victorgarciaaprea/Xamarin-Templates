@@ -3,27 +3,17 @@
   <TemplateData>
     <Name>Map Page</Name>
     <Description>A maps page using XAML.</Description>
-    <TemplateID>Xamarin.Forms.Templates.MapPage.PCL</TemplateID>
+    <TemplateID>Xamarin.Forms.Templates.MapPage.SAP</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>90</SortOrder>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>MapPage.xaml</DefaultName>
-    <AppliesTo>CSharp + (WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject</AppliesTo>
-    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
+    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
     <Hidden>true</Hidden> <!-- This template requires 2 nugets that may be difficult for the user to find, so we're hiding it for now to avoid confusion -->
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
   </TemplateData>
   <TemplateContent>
     <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" CustomTool="MSBuild:UpdateDesignTimeXaml">MapPage.xaml</ProjectItem>
     <ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">MapPage.xaml.cs</ProjectItem>
   </TemplateContent>
-  <WizardExtension>
-    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
-  </WizardExtension>
-  <WizardData>
-    <packages repository="extension" repositoryId="Xamarin.Forms.Templates">
-      <package id="Xamarin.Forms" version="2.3.4.224" />
-      <package id="Xamarin.Forms.Maps" version="2.3.4.224" />
-    </packages>
-  </WizardData>
 </VSTemplate>

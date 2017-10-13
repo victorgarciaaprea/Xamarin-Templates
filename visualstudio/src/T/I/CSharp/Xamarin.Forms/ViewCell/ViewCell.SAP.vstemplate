@@ -3,25 +3,16 @@
   <TemplateData>
     <Name>View Cell</Name>
     <Description>A view for a ListView cell using XAML.</Description>
-    <TemplateID>Xamarin.Forms.Templates.XamlView.PCL</TemplateID>
+    <TemplateID>Xamarin.Forms.Templates.XamlView.SAP</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>94</SortOrder>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>ViewCell.xaml</DefaultName>
-    <AppliesTo>CSharp + (WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject</AppliesTo>
+    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
     <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
   </TemplateData>
   <TemplateContent>
     <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" CustomTool="MSBuild:UpdateDesignTimeXaml">ViewCell.xaml</ProjectItem>
     <ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">ViewCell.xaml.cs</ProjectItem>
   </TemplateContent>
-	<WizardExtension>
-		<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
-	</WizardExtension>
-	<WizardData>
-		<packages repository="extension" repositoryId="Xamarin.Forms.Templates">
-			<package id="Xamarin.Forms" version="2.3.4.224" />
-		</packages>
-	</WizardData>  
 </VSTemplate>

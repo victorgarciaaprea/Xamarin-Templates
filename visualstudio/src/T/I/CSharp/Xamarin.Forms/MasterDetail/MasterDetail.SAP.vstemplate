@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name>Master Detail Page</Name>
+		<Description>A page that uses the master-detail navigation pattern using XAML.</Description>
+		<TemplateID>Xamarin.Forms.Templates.MasterDetailPage.SAP</TemplateID>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>90</SortOrder>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<DefaultName>MasterDetailPage.xaml</DefaultName>
+    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
+  </TemplateData>
+  <TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" 	CustomTool="MSBuild:UpdateDesignTimeXaml">TMasterDetailPage.xaml</ProjectItem>
+		<ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">TMasterDetailPage.xaml.cs</ProjectItem>
+    
+		<ProjectItem TargetFileName="$fileinputname$Master.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" 	CustomTool="MSBuild:UpdateDesignTimeXaml">TMaster.xaml</ProjectItem>
+		<ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$Master.xaml.cs">TMaster.xaml.cs</ProjectItem>
+    
+		<ProjectItem TargetFileName="$fileinputname$Detail.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" CustomTool="MSBuild:UpdateDesignTimeXaml">TDetail.xaml</ProjectItem>
+  	<ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$Detail.xaml.cs">TDetail.xaml.cs</ProjectItem>
+
+  	<ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$MenuItem.cs">MasterMenuItem.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
