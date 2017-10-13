@@ -77,14 +77,14 @@
     <Compile Include="Wizard\XPlatViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="T\CSharp\FormsProject.ico">
+    <None Include="T\P\CSharp\FormsProject.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="formsproject.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="T\CSharp\Cross-Platform\XamarinCrossPlatformApp\xamarincrossplatformapp.vstemplate">
+    <None Include="T\P\CSharp\Cross-Platform\XamarinCrossPlatformApp\xamarincrossplatformapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
     <Content Include="Xamarin.Templates.Multiplatform.pkgdef">
