@@ -159,7 +159,6 @@
     <None Include="T\I\CSharp\Xamarin.Forms\ContentPage.CSharp\ContentPage.CSharp.vstemplate">
       <Include>..\..\Xamarin.Forms.Shared\ContentPage.CSharp\*.*</Include>
     </None>
-    </None>
     <None Include="T\I\CSharp\Xamarin.Forms\ContentView.CSharp.SAP\ContentView.CSharp.SAP.vstemplate">
       <Include>..\..\Xamarin.Forms.Shared\ContentView.CSharp\*.*</Include>
     </None>
