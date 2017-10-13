@@ -9,7 +9,8 @@
 		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<DefaultName>Page.cs</DefaultName>
-    <AppliesTo>CSharp + (WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject</AppliesTo>
+    <AppliesTo>CSharp + ((WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject) | XamarinForms</AppliesTo>
+		<Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
   </TemplateData>
 	<TemplateContent>
 		<ProjectItem TargetFileName="$fileinputname$.cs" OpenInEditor="true" ReplaceParameters="true" ItemType="Compile">Page.cs</ProjectItem>
