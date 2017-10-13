@@ -138,7 +138,7 @@ Use the native user interface approach to create UIs for each platform, or use X
     <value>Xamarin.Forms</value>
   </data>
   <data name="HostInTheCloud" xml:space="preserve">
-    <value>Host in the cloud</value>
+    <value>Include mobile backend project</value>
   </data>
   <data name="iOS" xml:space="preserve">
     <value>iOS</value>
