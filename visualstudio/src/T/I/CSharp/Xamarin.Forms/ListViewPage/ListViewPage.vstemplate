@@ -8,7 +8,7 @@
 		<SortOrder>90</SortOrder>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<DefaultName>ListViewPage.xaml</DefaultName>
-    <AppliesTo>CSharp + SharedAssetsProject</AppliesTo>
+    <AppliesTo>CSharp</AppliesTo>
     <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
   </TemplateData>
   <TemplateContent>
