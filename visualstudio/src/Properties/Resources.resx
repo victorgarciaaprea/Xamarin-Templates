@@ -138,7 +138,7 @@ Use the native user interface approach to create UIs for each platform, or use X
     <value>Xamarin.Forms</value>
   </data>
   <data name="HostInTheCloud" xml:space="preserve">
-    <value>Host in the cloud</value>
+    <value>Include Azure Mobile Apps backend project</value>
   </data>
   <data name="iOS" xml:space="preserve">
     <value>iOS</value>
@@ -152,7 +152,7 @@ Use the native user interface approach to create UIs for each platform, or use X
 Use the native user interface approach to create UIs for each platform, or use Xamarin.Forms to create cross-platform, native UIs in XAML.</value>
   </data>
   <data name="MicrosoftAzure" xml:space="preserve">
-    <value>Microsoft Azure</value>
+    <value>Mobile Backend</value>
   </data>
   <data name="Native" xml:space="preserve">
     <value>Native</value>

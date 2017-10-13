@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+		<Name>List View Page</Name>
+		<Description>A page with a ListView for displaying data using XAML.</Description>
+		<TemplateID>Xamarin.Forms.Templates.ListViewPage.SAP</TemplateID>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>90</SortOrder>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<DefaultName>ListViewPage.xaml</DefaultName>
+    <AppliesTo>CSharp</AppliesTo>
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
+  </TemplateData>
+  <TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" CustomTool="MSBuild:UpdateDesignTimeXaml">ListViewPage.xaml</ProjectItem>
+		<ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">ListViewPage.xaml.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
