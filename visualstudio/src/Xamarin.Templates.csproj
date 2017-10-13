@@ -61,6 +61,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="Properties\ICN_Xamarin.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Compile Include="Wizard\AzureDialog.xaml.cs">
       <DependentUpon>AzureDialog.xaml</DependentUpon>
     </Compile>
