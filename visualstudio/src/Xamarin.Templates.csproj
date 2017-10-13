@@ -152,7 +152,7 @@
   </Target>
   -->
 
-
+  <ItemGroup>
     <None Include="T\I\CSharp\Xamarin.Forms\ContentPage.CSharp.SAP\ContentPage.CSharp.SAP.vstemplate">
       <Include>..\..\Xamarin.Forms.Shared\ContentPage.CSharp\*.*</Include>
     </None>
@@ -195,5 +195,5 @@
     <None Include="T\I\CSharp\Xamarin.Forms\ViewCell\ViewCell.vstemplate">
       <Include>..\..\Xamarin.Forms.Shared\ViewCell\*.*</Include>
     </None>
-
+  </ItemGroup>
 </Project>
