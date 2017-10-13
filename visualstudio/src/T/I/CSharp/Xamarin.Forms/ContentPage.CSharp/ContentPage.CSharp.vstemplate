@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
 	<TemplateData>
-    <Name>Content Page (C#)</Name>
+    <Name>Content Page (C#) FORMS</Name>
     <Description>A page for displaying content using C#.</Description>
     <TemplateID>Xamarin.Forms.Templates.Page.PCL</TemplateID>
 		<ProjectType>CSharp</ProjectType>
@@ -10,18 +10,8 @@
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<DefaultName>Page.cs</DefaultName>
     <AppliesTo>CSharp + (WindowsXaml | MultiTarget | XamarinXaml) + !SharedAssetsProject</AppliesTo>
-    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4515" />
   </TemplateData>
 	<TemplateContent>
 		<ProjectItem TargetFileName="$fileinputname$.cs" OpenInEditor="true" ReplaceParameters="true" ItemType="Compile">Page.cs</ProjectItem>
 	</TemplateContent>
-	<WizardExtension>
-		<Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-		<FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
-	</WizardExtension>
-	<WizardData>
-		<packages repository="extension" repositoryId="Xamarin.Forms.Templates">
-			<package id="Xamarin.Forms" version="2.3.4.224" />
-		</packages>
-	</WizardData>	
 </VSTemplate>
