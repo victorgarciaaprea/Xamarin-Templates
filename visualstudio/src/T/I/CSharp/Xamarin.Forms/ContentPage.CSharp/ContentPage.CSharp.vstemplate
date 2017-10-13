@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+	<TemplateData>
+    <Name>Content Page (C#)</Name>
+    <Description>A page for displaying content using C#.</Description>
+    <TemplateID>Xamarin.Forms.Templates.Page.SAP</TemplateID>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>90</SortOrder>
+		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<DefaultName>Page.cs</DefaultName>
+    <AppliesTo>CSharp</AppliesTo>
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4515" />
+  </TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.cs" OpenInEditor="true" ReplaceParameters="true" ItemType="Compile">Page.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Content View</Name>
+    <Description>A view for displaying content using XAML.</Description>
+    <TemplateID>Xamarin.Forms.Templates.XamlView.SAP</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>90</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>View.xaml</DefaultName>
+    <AppliesTo>CSharp</AppliesTo>
+    <Icon Package="{b3bae735-386c-4030-8329-ef48eeda4036}" ID="4597" />
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.xaml" ReplaceParameters="true" ItemType="EmbeddedResource" CustomTool="MSBuild:UpdateDesignTimeXaml">XamlView.xaml</ProjectItem>
+    <ProjectItem SubType="Code" ReplaceParameters="true" TargetFileName="$fileinputname$.xaml.cs">XamlView.xaml.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
