@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- Set startup process to always start with the experimental instance and logging enabled -->
+	<PropertyGroup>
+		<StartAction>Program</StartAction>
+		<StartProgram>$(DevEnvDir)devenv.exe</StartProgram>
+		<StartArguments>/rootSuffix Exp</StartArguments>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(LocEnabled)' == 'true'">
+		<!-- LocType and LocLanguages are properties used in MicroBuild props to set internal values,
+		so we set them here based on the LocMode and LocLang props set from outside (via Global or Environment properties) -->
+		<LocType>full</LocType>
+		<LocLanguages>VS</LocLanguages>
+		<LocProject>All</LocProject>
+		<!-- CopySatelliteDllsToStandardNETPaths is a MicroBuild property that should be True in order to copy the generated statellite assemblies to the default .net locations -->
+		<CopySatelliteDllsToStandardNETPaths>True</CopySatelliteDllsToStandardNETPaths>
+	</PropertyGroup>
+</Project>

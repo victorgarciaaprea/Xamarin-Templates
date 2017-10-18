@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <PackageReference Include="Xamarin.Localization" Version="1.0.*" />
+        <PackageReference Include="Xamarin.Localization.Project" Version="1.0.*" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TF_BUILD)' != 'true'">
+        <PackageReference Include="MicroBuild.Plugins.Localization" Version="1.0.*" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <LocProductName>duplo</LocProductName>
+        <AutoCommentResources>false</AutoCommentResources>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <SourceDir>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</SourceDir>
+        <RootDir>$(SourceDir)..\</RootDir>
+        <TempDir>$(RootDir)tmp\</TempDir>
+        <BuildDir>RESERVED</BuildDir>
+    </PropertyGroup>
+
+    <Target Name="BeforeBuild" DependsOnTargets="Localization" />
+    <Target Name="AfterBuild" DependsOnTargets="AfterLocalization" /> 
+</Project>

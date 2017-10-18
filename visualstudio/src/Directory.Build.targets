@@ -2,6 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!-- Until we can move to SDK style and XVSSDK -->
 	<Import Project="Xamarin.VSSDK.Xaml.targets" />
+	<Import Project="Xamarin.Localization.targets" /> 
 
 	<PropertyGroup>
 		<DeployExtension Condition=" '$(DeployExtension)' == '' And '$(Configuration)' == 'Debug' ">true</DeployExtension>
