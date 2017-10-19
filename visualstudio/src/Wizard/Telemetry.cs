@@ -80,10 +80,13 @@ namespace Xamarin.Templates.Wizards
 
                     public static void Post(CreateTemplateResult createTemplateResult, Exception exception)
                     {
+                        // Removing this code until we know what is and what is not PII with exception messages.
+                        /*
                         var telemetryEvent = CreateEvent(Id, EventNamespace, createTemplateResult);
                         telemetryEvent.Properties.Add(TemplateException, exception.Message);
 
                         TelemetryService.DefaultSession.PostEvent(telemetryEvent);
+                        */
                     }
                 }
             }
