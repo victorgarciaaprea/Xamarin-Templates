@@ -142,6 +142,10 @@
             {
                 "condition": "(!CreateUWPProject)",
                 "exclude": [ "BlankApp/BlankApp.UWP/**/*" ]
+            },
+            {
+                "condition": "(!CreateMacProject)",
+                "exclude": [ "BlankApp/BlankApp.macOS/**/*" ]
             }
         ]
     }],
