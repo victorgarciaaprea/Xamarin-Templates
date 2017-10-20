@@ -91,6 +91,12 @@
             "dataType": "string",
             "replaces": "v7.1"
         },
+        "XamarinFormsSdk": {
+            "type": "parameter",
+            "dataType": "string",
+            "replaces": "2.4.0.282",
+            "defaultValue": "2.5.0.19271-pre2"
+        },
         
         // Project Symbols
         "CreateSharedProject": {
