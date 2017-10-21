@@ -6,7 +6,7 @@
     <Description>Templates for building iOS, Android, and Windows apps with Xamarin and Xamarin.Forms.</Description>
     <Icon>Properties\ICN_Xamarin.ico</Icon>
   </Metadata>
-  <Installation>
+  <Installation AllUsers="true">
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
   </Installation>
   <Dependencies>
