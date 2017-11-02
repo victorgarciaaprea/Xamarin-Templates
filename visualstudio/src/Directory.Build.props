@@ -17,4 +17,16 @@
 		<!-- CopySatelliteDllsToStandardNETPaths is a MicroBuild property that should be True in order to copy the generated statellite assemblies to the default .net locations -->
 		<CopySatelliteDllsToStandardNETPaths>True</CopySatelliteDllsToStandardNETPaths>
 	</PropertyGroup>
+
+	<!-- CI properties for VSTS -->
+	<PropertyGroup>
+		<CI Condition="'$(CI)' == '' and '$(TF_BUILD)' == 'true'">true</CI>
+		<PR Condition="'$(PR)' == '' and '$(BUILD_BUILDREASON)' == 'PullRequest'">true</PR>
+		<PR Condition="'$(PR)' == '' and $([System.Text.RegularExpressions.Regex]::IsMatch('$(BUILD_SOURCEBRANCH)', 'refs/pull/\d+/merge'))">true</PR>
+
+		<GitBranch Condition="'$(PR)' == 'true'">$([System.Text.RegularExpressions.Regex]::Match($(BUILD_SOURCEBRANCH), '(?&lt;=refs/pull/)\d+(?=/merge)'))</GitBranch>
+		<GitBranch Condition="'$(GitBranch)' != ''">pr$(GitBranch)</GitBranch>
+		<GitSha>$(BUILD_SOURCEVERSION)</GitSha>
+		<GitCommit Condition="'$(GitSha)' != ''">$(GitSha.Substring(0, 7))</GitCommit>
+	</PropertyGroup>
 </Project>

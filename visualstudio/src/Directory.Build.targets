@@ -8,6 +8,10 @@
 		<DeployExtension Condition=" '$(DeployExtension)' == '' And '$(Configuration)' == 'Debug' ">true</DeployExtension>
 	</PropertyGroup>
 
+	<Target Name="UpdateBuildNumber" Condition="'$(CI)' == 'true'" BeforeTargets="Build" DependsOnTargets="GitVersion">
+    <Message Importance="high" Text="##vso[build.updatebuildnumber]$(GitBranch)-$(GitCommit) ($(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)+$(BUILD_BUILDID))" />
+	</Target>
+
   <Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
 		<PropertyGroup>
 			<VsixVersion Condition="'$(Configuration)' == 'Debug'">42.42.42</VsixVersion>
