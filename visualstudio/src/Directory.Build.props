@@ -26,6 +26,8 @@
 
 		<GitBranch Condition="'$(PR)' == 'true'">$([System.Text.RegularExpressions.Regex]::Match($(BUILD_SOURCEBRANCH), '(?&lt;=refs/pull/)\d+(?=/merge)'))</GitBranch>
 		<GitBranch Condition="'$(GitBranch)' != ''">pr$(GitBranch)</GitBranch>
+		<GitBranch Condition="'$(GitBranch)' == ''">$(BUILD_SOURCEBRANCHNAME)</GitBranch>
+		
 		<GitSha>$(BUILD_SOURCEVERSION)</GitSha>
 		<GitCommit Condition="'$(GitSha)' != ''">$(GitSha.Substring(0, 7))</GitCommit>
 	</PropertyGroup>
