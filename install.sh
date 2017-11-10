@@ -32,8 +32,8 @@ install_package() {
 
     echo ""
 
-    dotnet new --install Xamarin.Templates.Multiplatform.*.nupkg
-    dotnet new --install Xamarin.Templates.iOS.*.nupkg
+    dotnet new --install $root/Xamarin.Templates.Multiplatform.*.nupkg
+    dotnet new --install $root/Xamarin.Templates.iOS.*.nupkg
 
     echo ""
     echo "Successfully installed templates."
