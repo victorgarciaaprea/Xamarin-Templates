@@ -21,6 +21,7 @@ make_package() {
 
     nuget pack multiplatform/xamarin-templates-multiplatform.nuspec > /dev/null
     nuget pack ios/xamarin-templates-ios.nuspec > /dev/null
+    nuget pack android/xamarin-templates-android.nuspec > /dev/null
 
     echo "Succesfully packaged templates."
     echo ""
@@ -34,6 +35,7 @@ install_package() {
 
     dotnet new --install $root/Xamarin.Templates.Multiplatform.*.nupkg
     dotnet new --install $root/Xamarin.Templates.iOS.*.nupkg
+    dotnet new --install $root/Xamarin.Templates.Android.*.nupkg
 
     echo ""
     echo "Successfully installed templates."

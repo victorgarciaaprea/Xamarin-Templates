@@ -10,7 +10,7 @@ function reset_package()
     Write-Host "===Reset Intalled Templates==="
     Write-Host ""
 
-    Invoke-Expression "dotnet new --debug:reinit"
+    Invoke-Expression "dotnet new --debug:reinit" *> $null
 
     Write-Host "Removed user-defined templates."
     Write-Host ""
@@ -22,6 +22,8 @@ function make_package()
     Write-Host ""
 
     Invoke-Expression "nuget pack multiplatform/xamarin-templates-multiplatform.nuspec"
+    Invoke-Expression "nuget pack ios/xamarin-templates-ios.nuspec"
+    Invoke-Expression "nuget pack android/xamarin-templates-android.nuspec"
 
     Write-Host "Successfully packaged templates."
     Write-Host ""
@@ -33,11 +35,15 @@ function install_package()
     Write-Host "===Installing Templates==="
     Write-Host ""
 
-    Write-Host ""
-    Invoke-Expression "dotnet new --install `"$install_path`""
+    foreach($template in $install_path)
+    {
+        Invoke-Expression "dotnet new --install $template" *> $null
+    }
+    
     Write-Host ""
     Write-Host "Successfully installed templates."
     Write-Host ""
+    Invoke-Expression "dotnet new"
 }
 
 If ($install -eq $False -and $reset -eq $False -and $package -eq $False) {
