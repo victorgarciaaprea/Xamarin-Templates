@@ -106,7 +106,6 @@
         <Grid Grid.Column="0" Grid.Row="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition />
                 <ColumnDefinition /> 
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" >
@@ -115,12 +114,7 @@
                 <CheckBox Content="{x:Static res:Resources.iOS}" Margin="12,2" IsChecked="{Binding IsIOSSelected}" IsEnabled="{Binding IsIOSEnabled}" />
                 <CheckBox Content="{x:Static res:Resources.UWP}" Margin="12,2" IsChecked="{Binding IsUWPSelected}" IsEnabled="{Binding IsUWPEnabled}" />
             </StackPanel>
-            <StackPanel Grid.Column="1" >
-                <Label Content="{x:Static res:Resources.UITechnology}" Margin="5,2" FontWeight="Bold" />
-                <RadioButton Content="{x:Static res:Resources.Forms}" Margin="7,2" IsChecked="{Binding IsFormsSelected}" IsEnabled="{Binding IsTechnologyEnabled}" />
-                <RadioButton Content="{x:Static res:Resources.Native}" Margin="7,2" IsChecked="{Binding IsNativeSelected}" IsEnabled="{Binding IsTechnologyEnabled}" />
-            </StackPanel>
-            <StackPanel Grid.Column="2">
+            <StackPanel Grid.Column="1">
                 <StackPanel Orientation="Horizontal" >
                     <Label Content="{x:Static res:Resources.Sharing}" Margin="5,2" FontWeight="Bold" />
                     <TextBlock FontWeight="Bold" Margin="-6,0" VerticalAlignment="Center">
