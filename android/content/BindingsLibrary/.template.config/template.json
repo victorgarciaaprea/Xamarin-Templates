@@ -1,0 +1,27 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "android",
+    "app",
+    "general"
+  ],
+  "description": "A project for creating a Xamarin.Android class library that binds an .aar or .jar file.",
+  "name": "Bindings Library",
+  "defaultName": "BindingsLibrary1",
+  "identity": "Xamarin.Android.BindingsLibrary.CSharp",
+  "groupIdentity": "Xamarin.Android.BindingsLibrary",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "android-bindings-library",
+  "sourceName": "BindingsLibrary",
+  "guids": [
+    "{9AD234BD-EA9D-45E5-B335-359AC071A4D7}"
+  ],
+  "primaryOutputs": [
+    {
+      "path": "BindingsLibrary.csproj"
+    }
+  ]
+}

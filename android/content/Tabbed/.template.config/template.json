@@ -1,0 +1,27 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "android",
+    "app",
+    "general"
+  ],
+  "description": "A project for creating a bottom navigation based Xamarin.Android application.",
+  "name": "Tabbed",
+  "defaultName": "Tabbed1",
+  "identity": "Xamarin.Android.BottomNavigation.CSharp",
+  "groupIdentity": "Xamarin.Android.BottomNavigation",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "android-bottom-navigation",
+  "sourceName": "Tabbed",
+  "guids": [
+    "{52381C0D-EAAA-42D6-BAE9-66657B9E0A21}"
+  ],
+  "primaryOutputs": [
+    {
+      "path": "Tabbed.csproj"
+    }
+  ]
+}

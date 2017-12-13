@@ -1,0 +1,27 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "android",
+    "app",
+    "general"
+  ],
+  "description": "A project for creating an Android Wear based Xamarin.Android application.",
+  "name": "Wear",
+  "defaultName": "Wear1",
+  "identity": "Xamarin.Android.Wear.CSharp",
+  "groupIdentity": "Xamarin.Android.Wear",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "android-wear",
+  "sourceName": "Wear",
+  "guids": [
+    "{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}"
+  ],
+  "primaryOutputs": [
+    {
+      "path": "Wear.csproj"
+    }
+  ]
+}

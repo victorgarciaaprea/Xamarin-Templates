@@ -1,0 +1,27 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "android",
+    "app",
+    "general"
+  ],
+  "description": "A project for creating a Xamarin.Android application.",
+  "name": "Blank App",
+  "defaultName": "BlankApp1",
+  "identity": "Xamarin.Android.Blank.CSharp",
+  "groupIdentity": "Xamarin.Android.Blank",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "android-blank",
+  "sourceName": "BlankApp",
+  "guids": [
+    "{710A5ED9-2512-4560-98F3-64957C8C58F3}"
+  ],
+  "primaryOutputs": [
+    {
+      "path": "Blank.csproj"
+    }
+  ]
+}
