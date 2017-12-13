@@ -5,23 +5,23 @@
     "app",
     "general"
   ],
-  "name": "Single View App",
-  "defaultName": "SingleViewApp1",
-  "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
-  "groupIdentity": "Xamarin.iOS.SingleViewApp",
-  "identity": "Xamarin.iOS.SingleViewApp.CSharp",
-  "shortName": "ios-singleviewapp",
+  "name": "Master Detail App",
+  "defaultName": "MasterDetailApp1",
+  "description": "Creates an iOS application with a Storyboard that contains a UISplitViewController that navigates to a detail view when a row is selected in the master view.",
+  "groupIdentity": "Xamarin.iOS.MasterDetailApp",
+  "identity": "Xamarin.iOS.MasterDetailApp.CSharp",
+  "shortName": "ios-masterdetailapp",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "SingleViewApp",
+  "sourceName": "MasterDetailApp",
   "preferNameDirectory": true,
   "symbols": {
     "AppIdentifier": {
       "type": "parameter",
       "description": "Overrides the Info.plist's CFBundleIdentifier",
-      "replaces": "com.xamarin.singleview",
+      "replaces": "com.xamarin.masterdetailapp",
       "datatype": "string",
       "defaultValue": "com.companyname"
     },
@@ -50,7 +50,7 @@
   },
   "primaryOutputs": [
     {
-      "path": "SingleViewApp.csproj"
+      "path": "MasterDetailApp.csproj"
     }
   ],
 }
