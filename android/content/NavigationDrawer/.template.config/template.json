@@ -15,13 +15,13 @@
     "type": "project"
   },
   "shortName": "android-navigation-drawer",
-  "sourceName": "Drawer",
+  "sourceName": "NavigationDrawer",
   "guids": [
     "{07272096-7498-4F50-B9FC-AA5202BDA99D}"
   ],
   "primaryOutputs": [
     {
-      "path": "Drawer.csproj"
+      "path": "NavigationDrawer.csproj"
     }
   ]
 }

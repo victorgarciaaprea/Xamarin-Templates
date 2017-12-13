@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Tabbed.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("BottomNavigation.Resource", IsApplication=true)]
 
-namespace Tabbed
+namespace BottomNavigation.Resources
 {
 	
 	

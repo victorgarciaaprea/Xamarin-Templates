@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Drawer.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("NavigationDrawer.Resource", IsApplication=true)]
 
-namespace Drawer
+namespace NavigationDrawer.Resources
 {
 	
 	

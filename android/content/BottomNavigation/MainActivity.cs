@@ -1,11 +1,11 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Widget;
 
-namespace Tabbed
+namespace BottomNavigation
 {
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
