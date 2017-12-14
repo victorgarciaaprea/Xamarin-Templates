@@ -6,7 +6,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace MasterDetailApp
+namespace NewApp
 {
 	[Register ("DetailViewController")]
 	partial class DetailViewController

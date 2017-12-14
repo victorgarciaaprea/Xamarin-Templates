@@ -1,8 +1,7 @@
 ﻿using System;
-
 using UIKit;
 
-namespace MasterDetailApp
+namespace NewApp
 {
 	public partial class DetailViewController : UIViewController
 	{

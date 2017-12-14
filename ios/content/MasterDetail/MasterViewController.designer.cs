@@ -6,7 +6,7 @@
 //
 using Foundation;
 
-namespace MasterDetailApp
+namespace NewApp
 {
 	[Register ("MasterViewController")]
 	partial class MasterViewController

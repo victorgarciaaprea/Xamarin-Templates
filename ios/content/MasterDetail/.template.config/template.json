@@ -15,7 +15,7 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "MasterDetailApp",
+  "sourceName": "NewApp",
   "preferNameDirectory": true,
   "symbols": {
     "AppIdentifier": {
@@ -46,11 +46,15 @@
       "type": "parameter",
       "dataType": "bool",
       "defaultValue": "false"
-    },
-  },
-  "primaryOutputs": [
-    {
-      "path": "MasterDetailApp.csproj"
     }
-  ],
+  },
+  "sources": [
+    {
+      "source": "../base/"
+    },
+    {
+      "source": "./",
+      "target": "NewApp/"
+    }
+  ]
 }
