@@ -5,12 +5,12 @@
     "app",
     "general"
   ],
-  "name": "Tabbed App",
-  "defaultName": "TabbedApp",
-  "description": "Creates an iOS application with a Storyboard that contains a UITabBarController with bottom tabbed navigation for two child views.",
-  "groupIdentity": "Xamarin.iOS.TabbedApp",
-  "identity": "Xamarin.iOS.TabbedApp.CSharp",
-  "shortName": "ios-tabbedapp",
+  "name": "iOS Blank App",
+  "defaultName": "BlankApp",
+  "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
+  "groupIdentity": "Xamarin.iOS.BlankApp",
+  "identity": "Xamarin.iOS.BlankApp.CSharp",
+  "shortName": "ios-blankapp",
   "tags": {
     "language": "C#",
     "type": "project"
@@ -21,7 +21,7 @@
     "AppIdentifier": {
       "type": "parameter",
       "description": "Overrides the Info.plist's CFBundleIdentifier",
-      "replaces": "com.xamarin.tabbedapp",
+      "replaces": "com.xamarin.singleview",
       "datatype": "string",
       "defaultValue": "com.companyname"
     },
@@ -50,7 +50,10 @@
   },
   "sources": [
     {
-      "source": "../base/"
+      "source": "../base/",
+      "exclude": [
+        "Info.plist"
+      ]
     },
     {
       "source": "./",

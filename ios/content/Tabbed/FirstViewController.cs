@@ -2,7 +2,7 @@
 
 using UIKit;
 
-namespace TabbedApp
+namespace NewApp
 {
 	public partial class FirstViewController : UIViewController
 	{

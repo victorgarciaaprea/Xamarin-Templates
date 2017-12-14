@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace SingleViewApp
+namespace NewApp
 {
 	public class Application
 	{

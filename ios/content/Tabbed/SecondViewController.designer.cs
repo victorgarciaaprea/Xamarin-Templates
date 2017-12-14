@@ -5,7 +5,7 @@
 //
 using Foundation;
 
-namespace TabbedApp
+namespace NewApp
 {
 	[Register ("SecondViewController")]
 	partial class SecondViewController
