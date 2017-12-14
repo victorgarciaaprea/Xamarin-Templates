@@ -1,6 +1,6 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
-    <Name>Mobile App (Xamarin.Forms)</Name>
+    <Name>Cross-Platform App (Xamarin.Forms)</Name>
     <Description>A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.</Description>
     <Icon>FormsProject.ico</Icon>
     <TemplateGroupID>Xamarin.XPlatApp</TemplateGroupID>

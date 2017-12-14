@@ -119,7 +119,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.4.0.282" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <!--#if (CreateBackendProject)
     <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.1" />
     <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.1" />
