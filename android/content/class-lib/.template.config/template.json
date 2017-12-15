@@ -2,26 +2,22 @@
   "author": "Microsoft",
   "classifications": [
     "android",
-    "app",
-    "general"
+    "library",
+    "xamarin"
   ],
   "description": "A project for creating a Xamarin.Android class library.",
-  "name": "Class Library",
-  "defaultName": "ClassLibrary1",
+  "name": "Android Class Library",
+  "defaultName": "ClassLibrary",
   "identity": "Xamarin.Android.ClassLibrary.CSharp",
   "groupIdentity": "Xamarin.Android.ClassLibrary",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "shortName": "android-class-library",
-  "sourceName": "ClassLibrary",
+  "shortName": "android-library",
+  "sourceName": "NewLib",
+  "preferNameDirectory": true,  
   "guids": [
     "{AD48D497-12D0-4915-BB0D-A3FE11207175}"
-  ],
-  "primaryOutputs": [
-    {
-      "path": "ClassLibrary.csproj"
-    }
   ]
 }
