@@ -1,0 +1,79 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "android",
+    "app",
+    "general"
+  ],
+  "description": "A project for creating a Xamarin.Android application.",
+  "name": "Xamarin.Android App",
+  "defaultName": "App",
+  "identity": "Xamarin.Android.App.CSharp",
+  "groupIdentity": "Xamarin.Android.Template",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "shortName": "android-app",
+  "sourceName": "NewApp",
+  "preferNameDirectory": true,
+  "guids": [
+    "{710A5ED9-2512-4560-98F3-64957C8C58F3}"
+  ],
+  "symbols": {
+    "TemplateKind": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "blank",
+      "choices": [
+        {
+          "choice": "blank",
+          "description": "An empty Xamarin.Android app"
+        },
+        {
+          "choice": "single-view",
+          "description": "A Xamarin.Android app with a single view"
+        },
+        {
+          "choice": "nav-drawer",
+          "description": "A Xamarin.Android app with tabbed navigation"
+        },
+        {
+          "choice": "bottom-nav",
+          "description": "A Xamarin.Android app with master-detail navigation"
+        }
+      ]
+    },
+    "MinAndroidVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "MinAndroidVersion",
+      "defaultValue": "v7.1"
+    }
+  },
+  "sources": [
+    {
+      "source": "./"
+    },
+    {
+      "source": "../blank",
+      "target": "NewApp/",      
+      "condition": "(TemplateKind == \"blank\")"
+    },
+    {
+      "source": "../single-view",
+      "target": "NewApp/",      
+      "condition": "(TemplateKind == \"single-view\")"
+    },
+    {
+      "source": "../bottom-nav",
+      "target": "NewApp/",      
+      "condition": "(TemplateKind == \"bottom-nav\")"
+    },
+    {
+      "source": "../nav-drawer",
+      "target": "NewApp/",      
+      "condition": "(TemplateKind == \"nav-drawer\")"
+    }
+  ]
+}
