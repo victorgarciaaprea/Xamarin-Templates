@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace NewApp
 {
-	[Activity(Label = "NewApp", Theme = "@style/AppTheme", MainLauncher = true]
+	[Activity(Label = "NewApp", Theme = "@style/AppTheme", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
 		int count = 1;
