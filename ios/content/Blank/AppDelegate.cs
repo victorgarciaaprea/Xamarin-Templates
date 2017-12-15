@@ -20,7 +20,7 @@ namespace Blank
         {
             // create a new window instance based on the screen size
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
-            Window.RootViewController = new ViewController();
+            Window.RootViewController = new UIViewController();
 
             // make the window visible
             Window.MakeKeyAndVisible();
