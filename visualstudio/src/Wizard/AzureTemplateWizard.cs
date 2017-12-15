@@ -103,7 +103,7 @@ namespace Xamarin.Templates.Wizards
             var sdks = Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformsForSDK("Windows", new Version(10, 0))
                        .Where(s => s.StartsWith("UAP")).Select(s => new Version(s.Substring(13))).Where(v => v >= MinWindowsVersion); //the value is of the form "UAP, Version=x.x.x.x"
             
-            return sdks.Count() > 0 ? $"\"{sdks.First()}\"": string.Empty;
+            return sdks.Count() > 0 ? $"{sdks.First()}": string.Empty;
         }
 
         string GetLatestAndroidSDK()
@@ -113,7 +113,7 @@ namespace Xamarin.Templates.Wizards
             var commandBus = componentModel.GetService<ICommandBus>();
             var sdkInfo = commandBus.Execute<AndroidModel.SdkInfo>(new AndroidCommands.GetSdkInfo());
             
-            return $"\"{sdkInfo.LatestInstalledFramework.Version}\""; //quotes are so the engine understands this as a string
+            return $"{sdkInfo.LatestInstalledFramework.Version}"; //quotes are so the engine understands this as a string
         }
 
         string GetLatestiOSSDK()
@@ -123,7 +123,7 @@ namespace Xamarin.Templates.Wizards
             var commandBus = componentModel.GetService<ICommandBus>();
             var sdkInfo = commandBus.Execute<IOSModel.SdkInfo>(new IOSCommands.GetSdkInfo());
 
-            return $"\"{sdkInfo.LatestInstalledIOSSdk}\""; //quotes are so the engine understands this as a string
+            return $"{sdkInfo.LatestInstalledIOSSdk}"; //quotes are so the engine understands this as a string
         }
 
         private AzureDialog CreateAzureDialog()
