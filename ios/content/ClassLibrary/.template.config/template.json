@@ -1,0 +1,25 @@
+﻿{
+  "author": "Microsoft",
+  "classifications": [
+    "ios",
+    "app",
+    "general"
+  ],
+  "name": "Class Library",
+  "defaultName": "ClassLibrary1",
+  "description": "Creates an iOS library project.",
+  "groupIdentity": "Xamarin.iOS.ClassLibrary",
+  "identity": "Xamarin.iOS.ClassLibrary.CSharp",
+  "shortName": "ios-classlibrary",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "ClassLibrary",
+  "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+      "path": "ClassLibrary1.csproj"
+    }
+  ],
+}

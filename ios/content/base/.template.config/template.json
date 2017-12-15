@@ -1,0 +1,103 @@
+﻿{
+  "author": "Microsoft",
+  "classifications": [
+    "iOS",
+    "Mobile",
+    "Xamarin"
+  ],
+  "name": "Xamarin.iOS App",
+  "groupIdentity": "Xamarin.iOS.Template",
+  "defaultName": "App",
+  "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
+  "identity": "Xamarin.iOS.App.CSharp",
+  "shortName": "ios-app",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "NewApp",
+  "preferNameDirectory": true,
+  "symbols": {
+    "TemplateKind": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "blank",
+      "choices": [
+        {
+          "choice": "blank",
+          "description": "An empty Xamarin.iOS app"
+        },
+        {
+          "choice": "single-view",
+          "description": "A Xamarin.iOS app with a single view"
+        },
+        {
+          "choice": "tabbed",
+          "description": "A Xamarin.iOS app with tabbed navigation"
+        },
+        {
+          "choice": "master-detail",
+          "description": "A Xamarin.iOS app with master-detail navigation"
+        }
+      ]
+    },
+    "DeviceFamily": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "universal",
+      "choices": [
+        {
+          "choice": "universal",
+          "description": "Support both iPhone and iPad devices"
+        },
+        {
+          "choice": "iphone",
+          "description": "Support only iPhone devices"
+        },
+        {
+          "choice": "ipad",
+          "description": "Support only iPad devices"
+        }
+      ]
+    },
+    "AppIdentifier": {
+      "type": "parameter",
+      "description": "Overrides the Info.plist's CFBundleIdentifier",
+      "replaces": "com.companyname.NewApp",
+      "datatype": "string",
+      "defaultValue": "com.companyname.NewApp"
+    },
+    "MinimumOSVersion": {
+      "type": "parameter",
+      "description": "Overrides the Info.plist's MinimumOSVersion",
+      "replaces": "MinOSVersion",
+      "datatype": "string",
+      "defaultValue": "11.2"
+    }
+  },
+  "sources": [
+    {
+      "source": "./"
+    },
+    {
+      "source": "../blank/",
+      "target": "NewApp/",
+      "condition": "(TemplateKind == \"blank\")"
+    },
+    {
+      "source": "../single-view/",
+      "target": "NewApp/",
+      "condition": "(TemplateKind == \"single-view\")"
+    },
+    {
+      "source": "../master-detail/",
+      "target": "NewApp/",
+      "condition": "(TemplateKind == \"master-detail\")"
+    },
+    {
+      "source": "../tabbed/",
+      "target": "NewApp/",
+      "condition": "(TemplateKind == \"tabbed\")"
+    }
+  ]
+}
