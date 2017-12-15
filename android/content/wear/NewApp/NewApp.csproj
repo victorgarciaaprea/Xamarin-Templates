@@ -6,8 +6,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Wear</RootNamespace>
-    <AssemblyName>Wear</AssemblyName>
+    <RootNamespace>NewApp</RootNamespace>
+    <AssemblyName>NewApp</AssemblyName>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -53,7 +53,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

@@ -2,14 +2,14 @@
   "author": "Microsoft",
   "classifications": [
     "android",
-    "app",
-    "general"
+    "mobile",
+    "xamarin"
   ],
-  "description": "A project for creating a Xamarin.Android application.",
+  "description": "A template for creating a Xamarin.Android apps for phones and tablets",
   "name": "Xamarin.Android App",
   "defaultName": "App",
   "identity": "Xamarin.Android.App.CSharp",
-  "groupIdentity": "Xamarin.Android.Template",
+  "groupIdentity": "Xamarin.Android.App",
   "tags": {
     "language": "C#",
     "type": "project"

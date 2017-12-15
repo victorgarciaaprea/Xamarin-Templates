@@ -13,7 +13,7 @@ using Android.Support.Wearable.Activity;
 using Java.Interop;
 using Android.Views.Animations;
 
-namespace Wear
+namespace NewApp
 {
     [Activity(Label = "@string/app_name", MainLauncher = true)]
     public class MainActivity : WearableActivity
