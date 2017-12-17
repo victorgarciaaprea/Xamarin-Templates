@@ -77,6 +77,8 @@
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />

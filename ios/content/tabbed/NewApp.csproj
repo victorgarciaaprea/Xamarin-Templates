@@ -75,21 +75,11 @@
       <DependentUpon>SecondViewController.cs</DependentUpon>
     </Compile>
     <InterfaceDefinition Include="Main.storyboard" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\First.imageset\First.pdf">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Second.imageset\Second.pdf">
-      <InProject>false</InProject>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\First.pdf" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\Second.pdf" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
@@ -99,6 +89,8 @@
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
