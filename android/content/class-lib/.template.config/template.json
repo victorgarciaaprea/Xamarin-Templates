@@ -6,7 +6,7 @@
     "xamarin"
   ],
   "description": "A project for creating a Xamarin.Android class library.",
-  "name": "Android Class Library",
+  "name": "Xamarin.Android Class Library",
   "defaultName": "ClassLibrary",
   "identity": "Xamarin.Android.ClassLibrary.CSharp",
   "groupIdentity": "Xamarin.Android.ClassLibrary",
