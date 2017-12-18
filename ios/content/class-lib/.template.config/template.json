@@ -2,11 +2,11 @@
   "author": "Microsoft",
   "classifications": [
     "ios",
-    "app",
-    "general"
+    "library",
+    "xamarin"
   ],
-  "name": "Class Library",
-  "defaultName": "ClassLibrary1",
+  "name": "Xamarin.iOS Class Library",
+  "defaultName": "ClassLibrary",
   "description": "Creates an iOS library project.",
   "groupIdentity": "Xamarin.iOS.ClassLibrary",
   "identity": "Xamarin.iOS.ClassLibrary.CSharp",

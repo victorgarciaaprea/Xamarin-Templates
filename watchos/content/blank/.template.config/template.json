@@ -1,0 +1,36 @@
+﻿{
+  "author": "Microsoft",
+  "classifications": [
+    "watchos",
+    "wearable",
+    "Xamarin"
+  ],
+  "name": "Xamarin.watchOS App",
+  "groupIdentity": "Xamarin.watchOS.Template",
+  "defaultName": "App",
+  "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
+  "identity": "Xamarin.watchOS.App.CSharp",
+  "shortName": "watchos-app",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "NewApp",
+  "preferNameDirectory": true,
+  "symbols": {
+    "AppIdentifier": {
+      "type": "parameter",
+      "description": "Overrides the Info.plist's CFBundleIdentifier",
+      "replaces": "com.companyname.NewApp",
+      "datatype": "string",
+      "defaultValue": "com.companyname.NewApp"
+    },
+    "MinimumOSVersion": {
+      "type": "parameter",
+      "description": "Overrides the Info.plist's MinimumOSVersion",
+      "replaces": "MinOSVersion",
+      "datatype": "string",
+      "defaultValue": "11.2"
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "author": "Microsoft",
   "classifications": [
     "android",
-    "wear",
+    "wearable",
     "xamarin"
   ],
   "description": "A project for creating an Android Wear based Xamarin.Android application.",
