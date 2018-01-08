@@ -19,4 +19,12 @@
     <Assembly>Xamarin.Templates</Assembly>
     <FullClassName>Xamarin.Templates.Wizards.AzureTemplateWizard</FullClassName>
   </WizardExtension>
+  <!-- This wizards use only RunFinished and have no replacement parameters -->
+  <WizardExtension>
+    <Assembly>Xamarin.Templates</Assembly>
+    <FullClassName>Xamarin.Templates.iPhoneConfigurationWizard</FullClassName>
+  </WizardExtension>  <WizardExtension>
+    <Assembly>Xamarin.Templates</Assembly>
+    <FullClassName>Xamarin.Templates.BuildAndDeployWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

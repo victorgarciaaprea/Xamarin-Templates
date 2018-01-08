@@ -72,9 +72,12 @@
     </Compile>
     <Compile Include="Wizard\AzureEnabledToVisibilityConverter.cs" />
     <Compile Include="Wizard\AzureTemplateWizard.cs" />
+    <Compile Include="Wizard\BuildAndDeployWizard.cs" />
     <Compile Include="Wizard\CreateTemplateResult.cs" />
     <Compile Include="Wizard\DialogBase.cs" />
+    <Compile Include="Wizard\iPhoneConfigurationWizard.cs" />
     <Compile Include="Wizard\Telemetry.cs" />
+    <Compile Include="Wizard\WizardBase.cs" />
     <Compile Include="Wizard\XPlatItemViewModel.cs" />
     <Compile Include="Wizard\XPlatViewModel.cs" />
   </ItemGroup>
@@ -151,7 +154,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
   <ItemGroup>
     <None Include="T\I\CSharp\Xamarin.Forms\ContentPage.CSharp\ContentPage.CSharp.vstemplate">
       <Include>..\..\Xamarin.Forms.Shared\ContentPage.CSharp\*.*</Include>

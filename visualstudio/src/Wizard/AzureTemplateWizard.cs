@@ -175,11 +175,11 @@ namespace Xamarin.Templates.Wizards
         private void CreateTemplate(XPlatViewModel model)
         {
             var wizard = CreateTemplatingWizard();
-            wizard.RunStarted(automationObject, AddReplacements(model, replacements), WizardRunKind.AsMultiProject, new object[]{ });
-            wizard.RunFinished();
+			wizard.RunStarted(automationObject, AddReplacements(model, replacements), WizardRunKind.AsMultiProject, new object[]{ });
+			wizard.RunFinished();
         }
 
-        private Dictionary<string, string> AddReplacements(XPlatViewModel model, Dictionary<string, string> replacements)
+		private Dictionary<string, string> AddReplacements(XPlatViewModel model, Dictionary<string, string> replacements)
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
@@ -282,7 +282,6 @@ namespace Xamarin.Templates.Wizards
             replacements.TryGetValue(key, out value);
             return value;
         }
-
 
         string SolutionPath
         {
