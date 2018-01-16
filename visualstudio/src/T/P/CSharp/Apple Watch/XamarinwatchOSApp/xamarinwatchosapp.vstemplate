@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>watchOS App (Xamarin)</Name>
+    <Description>A project for creating a watchOS app with Xamarin.</Description>
+    <Icon>FormsProject.ico</Icon>
+    <TemplateGroupID>Xamarin.watchOSApp</TemplateGroupID>
+    <TemplateID>Xamarin.watchOSApp.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>App</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>100</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+  
+  </WizardExtension>
+</VSTemplate>

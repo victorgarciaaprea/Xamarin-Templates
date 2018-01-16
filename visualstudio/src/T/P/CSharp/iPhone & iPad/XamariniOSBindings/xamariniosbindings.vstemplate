@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>iOS Bindings Library (Xamarin)</Name>
+    <Description>A project for creating a Xamarin.iOS class library that binds to a native iOS library.</Description>
+    <Icon>FormsProject.ico</Icon>
+    <TemplateGroupID>Xamarin.iOSBindings</TemplateGroupID>
+    <TemplateID>Xamarin.iOSBindings.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>ClassLibrary</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>300</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+  
+  </WizardExtension>
+</VSTemplate>

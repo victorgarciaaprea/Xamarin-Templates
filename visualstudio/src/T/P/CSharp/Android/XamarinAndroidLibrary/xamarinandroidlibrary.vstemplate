@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>Android Class Library (Xamarin)</Name>
+    <Description>A Xamarin.Android class library project.</Description>
+    <Icon>FormsProject.ico</Icon>
+    <TemplateGroupID>Xamarin.AndroidLibrary</TemplateGroupID>
+    <TemplateID>Xamarin.AndroidLibrary.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>ClassLibrary</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>300</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+  
+  </WizardExtension>
+</VSTemplate>

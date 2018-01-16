@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>iOS App (Xamarin)</Name>
+    <Description>Project templates for creating iOS apps for iPhone and iPad with Xamarin.</Description>
+    <Icon>FormsProject.ico</Icon>
+    <TemplateGroupID>Xamarin.iOSApp</TemplateGroupID>
+    <TemplateID>Xamarin.iOSApp.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>App</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>100</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+  
+  </WizardExtension>
+</VSTemplate>

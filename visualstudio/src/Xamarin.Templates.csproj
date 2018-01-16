@@ -92,6 +92,33 @@
     <None Include="T\P\CSharp\Cross-Platform\XamarinCrossPlatformApp\xamarincrossplatformapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
+    <None Include="T\P\CSharp\Cross-Platform\XamarinCrossPlatformUITest\xamarincrossplatformuitest.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\Android\XamarinAndroidApp\xamarinandroidapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\Android\XamarinAndroidWearApp\xamarinandroidwearapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\Android\XamarinAndroidLibrary\xamarinandroidlibrary.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\Android\XamarinAndroidBindings\xamarinandroidbindings.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSApp\xamariniosapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSLibrary\xamarinioslibrary.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSBindings\xamariniosbindings.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\Apple Watch\XamarinwatchOSApp\xamarinioswatchosapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
     <Content Include="Xamarin.Templates.Multiplatform.pkgdef">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>iOS Class Library (Xamarin)</Name>
+    <Description>A Xamarin.iOS class library project.</Description>
+    <Icon>FormsProject.ico</Icon>
+    <TemplateGroupID>Xamarin.iOSLibrary</TemplateGroupID>
+    <TemplateID>Xamarin.iOSLibrary.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>ClassLibrary</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>200</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+  
+  </WizardExtension>
+</VSTemplate>

@@ -1,0 +1,20 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name>Android Wear App (Xamarin)</Name>
+    <Description>A project for creating an Android Wear app with Xamarin.</Description>
+    <Icon>FormsProject.ico</Icon>
+    <TemplateGroupID>Xamarin.AndroidWearApp</TemplateGroupID>
+    <TemplateID>Xamarin.AndroidWearApp.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>App</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>200</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+  </TemplateContent>
+  <WizardExtension>
+  
+  </WizardExtension>
+</VSTemplate>
