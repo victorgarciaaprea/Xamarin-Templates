@@ -1,0 +1,229 @@
+﻿{
+    "author": "Microsoft",
+    "classifications": [
+        "Xamarin.Forms",
+        "Cross-platform"
+    ],
+    "name": "Xamarin.Forms App",
+    "groupIdentity": "Xamarin.Forms.App",
+    "identity": "Xamarin.Forms.App.CSharp",
+    "shortName": "forms-app",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "BlankApp",
+    "defaultName": "App",
+    "preferNameDirectory": "true",
+    "guids": [
+        "99E19497-29A6-4B77-B773-BEC55F9B55DC", // .NET Standard Library
+        "17013668-F025-46F7-AD60-72795F485D78", // Shared Project
+        "8D9F8CF0-E178-402D-8D40-A88B7B5F3D42", // Android
+        "91D74A40-E440-42AD-B51F-C2D641C49384", // iOS
+        "3EA9E612-E717-4E55-9034-C415CD62AF9A" // UWP
+    ],
+    "symbols": {
+        "TemplateKind": {
+            "type": "parameter",
+            "datatype": "choice",
+            "defaultValue": "blank",
+            "choices": [
+                {
+                    "choice": "blank",
+                    "description": "An empty Xamarin.Forms app"
+                },
+                {
+                    "choice": "master-detail",
+                    "description": "A Xamarin.Forms app with master-detail navigation"
+                }
+            ]
+        },
+        "AppIdentifier": {
+            "type": "parameter",
+            "description": "Overrides the Info.plist's CFBundleIdentifier",
+            "replaces": "com.xamarin.BlankApp",
+            "datatype": "string",
+            "defaultValue": "com.companyname"
+        },
+        "WindowsSdk": {
+            "type": "parameter",
+            "description": "Window SDK Version. Minimum Version is Fall Creator's Update (10.0.16278).",
+            "dataType": "string",
+            "replaces": "10.0.16267.0"
+        },
+        "AndroidSdk": {
+            "type": "parameter",
+            "dataType": "string",
+            "replaces": "v7.1"
+        },
+        // "XamarinFormsSdk": {
+        //     "type": "parameter",
+        //     "dataType": "string",
+        //     "replaces": "2.4.0.282",
+        //     "defaultValue": "2.5.0.121934"
+        // },
+        // Project Symbols
+        "CreateSharedProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateiOSProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateMacProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+        "CreateAndroidProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateUWPProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "CreateBackendProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        },
+        "CreateUITestProject": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "false"
+        }
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "condition": "(!CreateSharedProject)",
+                    "exclude": "BlankApp/BlankApp/**/*"
+                },
+                {
+                    "condition": "(!CreateiOSProject)",
+                    "exclude": [
+                        "BlankApp/BlankApp.iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateAndroidProject)",
+                    "exclude": [
+                        "BlankApp/BlankApp.Android/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateUWPProject)",
+                    "exclude": [
+                        "BlankApp/BlankApp.UWP/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateMacProject)",
+                    "exclude": [
+                        "BlankApp/BlankApp.macOS/**/*"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "../blank/",
+            "condition": "(TemplateKind == \"blank\")",
+            "target": "BlankApp/",
+            "modifiers": [
+                {
+                    "condition": "CreateSharedProject",
+                    "exclude": [
+                        "BlankApp/BlankApp.csproj"
+                    ]
+                },
+                {
+                    "condition": "(!CreateSharedProject)",
+                    "exclude": [
+                        "BlankApp/BlankApp.shproj",
+                        "BlankApp/BlankApp.projitems"
+                    ]
+                },
+                {
+                    "condition": "(!CreateiOSProject)",
+                    "exclude": [
+                        "BlankApp.iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateAndroidProject)",
+                    "exclude": [
+                        "BlankApp.Android/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateUWPProject)",
+                    "exclude": [
+                        "BlankApp.UWP/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateMacProject)",
+                    "exclude": [
+                        "BlankApp.macOS/**/*"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "../master-detail/",
+            "condition": "(TemplateKind == \"master-detail\")",
+            "target": "BlankApp/",
+            "modifiers": [
+                {
+                    "condition": "(!CreateSharedProject)",
+                    "exclude": [
+                        "BlankApp/BlankApp.projitems"
+                    ]
+                },
+                {
+                    "condition": "(!CreateBackendProject)",
+                    "exclude": [
+                        "BlankApp.MobileAppService/**/*",
+                        "BlankApp/Services/AzureDataStore.cs"
+                    ]
+                },
+                {
+                    "condition": "(!CreateiOSProject)",
+                    "exclude": [
+                        "BlankApp.iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateAndroidProject)",
+                    "exclude": [
+                        "BlankApp.Android/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateUWPProject)",
+                    "exclude": [
+                        "BlankApp.UWP/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateMacProject)",
+                    "exclude": [
+                        "BlankApp.macOS/**/*"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "../uitest/",
+            "condition": "CreateUITestProject",
+            "target": "BlankApp/BlankApp.UITests/"
+        }
+    ]
+}

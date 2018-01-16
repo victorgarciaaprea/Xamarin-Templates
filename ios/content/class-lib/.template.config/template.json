@@ -10,7 +10,7 @@
   "description": "Creates an iOS library project.",
   "groupIdentity": "Xamarin.iOS.ClassLibrary",
   "identity": "Xamarin.iOS.ClassLibrary.CSharp",
-  "shortName": "ios-classlibrary",
+  "shortName": "ios-library",
   "tags": {
     "language": "C#",
     "type": "project"

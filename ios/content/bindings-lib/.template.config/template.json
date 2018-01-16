@@ -1,0 +1,20 @@
+{
+  "author": "Microsoft",
+  "classifications": [
+    "ios",
+    "bindings",
+    "xamarin"
+  ],
+  "name": "Xamarin.iOS Bindings Library",
+  "defaultName": "NativeLibrary",
+  "description": "Creates a Xamarin.iOS binding to a native library.",
+  "groupIdentity": "Xamarin.iOS.NativeLibrary",
+  "identity": "Xamarin.iOS.NativeLibrary.CSharp",
+  "shortName": "ios-bindings",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "NativeLibrary",
+  "preferNameDirectory": true
+}
