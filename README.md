@@ -1,7 +1,9 @@
+
 # Xamarin Templates
 
 This repo holds all the Xamarin project and item templates for Visual Studio and Visual Studio for Mac. These templates are designed to be used with the [.NET Core Template Engine](https://github.com/dotnet/templating).
 
+**[List of available templates](https://github.com/xamarin/xamarin-templates/wiki/Current-Templates)**
 
 ## Getting Started
 
