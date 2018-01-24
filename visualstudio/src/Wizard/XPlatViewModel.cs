@@ -340,23 +340,23 @@ namespace Xamarin.Templates.Wizards
                 {
                     PCL = new AzureTypeItem
                     {
-                        NoAzure = "Xamarin.Forms.BlankApp"
+                        NoAzure = "blank"
                     },
                     Shared = new AzureTypeItem
                     {
-                        NoAzure = "Xamarin.Forms.BlankApp"
-                    }
+                        NoAzure = "blank"
+					}
                 },
                 Native = new ReferenceTypeItem
                 {
                     PCL = new AzureTypeItem
                     {
-                        NoAzure = "Xamarin.Native.BlankApp"
-                    },
+                        NoAzure = "blank"
+					},
                     Shared = new AzureTypeItem
                     {
-                        NoAzure = "Xamarin.Native.BlankApp"
-                    }
+                        NoAzure = "blank"
+					}
                 }
 
             });
@@ -370,27 +370,27 @@ namespace Xamarin.Templates.Wizards
                 {
                     Shared = new AzureTypeItem
                     {
-                        Azure = "Xamarin.Forms.MasterDetailApp",
-                        NoAzure = "Xamarin.Forms.MasterDetailApp"
-                    },
+                        Azure = "master-detail",
+                        NoAzure = "master-detail"
+					},
                     PCL = new AzureTypeItem
                     {
-                        Azure = "Xamarin.Forms.MasterDetailApp",
-                        NoAzure = "Xamarin.Forms.MasterDetailApp"
-                    }
+                        Azure = "master-detail",
+                        NoAzure = "master-detail"
+					}
                 },
                 Native = new ReferenceTypeItem
                 {
                     Shared = new AzureTypeItem
                     {
-                        Azure = "Xamarin.Native.MasterDetailApp",
-                        NoAzure = "Xamarin.Native.MasterDetailApp"
-                    },
+                        Azure = "master-detail",
+                        NoAzure = "master-detail"
+					},
                     PCL = new AzureTypeItem
                     {
-                        Azure = "Xamarin.Native.MasterDetailApp",
-                        NoAzure = "Xamarin.Native.MasterDetailApp"
-                    }
+                        Azure = "master-detail",
+                        NoAzure = "master-detail"
+					}
                 }
             }
             );
