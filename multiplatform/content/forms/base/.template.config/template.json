@@ -78,12 +78,12 @@
             "dataType": "string",
             "replaces": "v7.1"
         },
-        // "XamarinFormsSdk": {
-        //     "type": "parameter",
-        //     "dataType": "string",
-        //     "replaces": "2.4.0.282",
-        //     "defaultValue": "2.5.0.121934"
-        // },
+        "XamarinFormsSdk": {
+            "type": "parameter",
+            "dataType": "string",
+            "replaces": "XamarinFormsSdk",
+            "defaultValue": "2.5.0.122203"
+        },
         "ProjectID": {
             "type": "generated",
             "generator": "guid",
