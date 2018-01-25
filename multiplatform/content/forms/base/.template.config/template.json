@@ -84,6 +84,16 @@
         //     "replaces": "2.4.0.282",
         //     "defaultValue": "2.5.0.121934"
         // },
+        "ProjectID": {
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "Project_ID"
+        },
+        "UserID": {
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "User_ID"
+        },
         // Project Symbols
         "CreateSharedProject": {
             "type": "parameter",
