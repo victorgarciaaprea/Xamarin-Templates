@@ -113,6 +113,9 @@ namespace Xamarin.Templates.Wizards
             var commandBus = componentModel.GetService<ICommandBus>();
             var sdkInfo = commandBus.Execute<AndroidModel.SdkInfo>(new AndroidCommands.GetSdkInfo());
             
+			if (sdkInfo.LatestInstalledFramework == null)
+				return string.Empty;
+
             return $"{sdkInfo.LatestInstalledFramework.Version}"; //quotes are so the engine understands this as a string
         }
 
