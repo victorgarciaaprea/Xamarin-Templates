@@ -44,11 +44,29 @@
         }
       ]
     },
-    "MinAndroidVersion": {
+    "AndroidSDKVersion": {
       "type": "parameter",
       "datatype": "string",
-      "replaces": "MinAndroidVersion",
-      "defaultValue": "v7.1"
+      "replaces": "AndroidSDKVersion",
+      "defaultValue": "v8.1"
+    },
+    "TargetAndroidAPI": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "TargetAndroidAPI",
+      "defaultValue": "27"
+    },
+    "MinAndroidAPI": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "MinAndroidAPI",
+      "defaultValue": "19"
+    },
+    "SupportLibVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "SupportLibVersion",
+      "defaultValue": "26.1.0.1"
     }
   },
   "sources": [

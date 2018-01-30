@@ -3,7 +3,7 @@
           android:versionCode="1" 
           android:versionName="1.0" 
           package="NewApp.NewApp">
-  <uses-sdk android:minSdkVersion="21" />
+  <uses-sdk android:minSdkVersion="MinAndroidAPI" android:targetSdkVersion="TargetAndroidAPI" />
   <application android:allowBackup="true" android:icon="@mipmap/icon" android:label="@string/app_name">
   </application>
 </manifest>

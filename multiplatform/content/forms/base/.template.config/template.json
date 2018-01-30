@@ -13,7 +13,7 @@
         "type": "project"
     },
     "sourceName": "BlankApp",
-    "primaryOutputs": [ 
+    "primaryOutputs": [
         {
             "condition": "CreateAndroidProject",
             "path": "BlankApp\\BlankApp.Android\\BlankApp.Android.csproj"
@@ -73,10 +73,29 @@
             "dataType": "string",
             "replaces": "10.0.16267.0"
         },
-        "AndroidSdk": {
+        "AndroidSDKVersion": {
             "type": "parameter",
-            "dataType": "string",
-            "replaces": "v7.1"
+            "datatype": "string",
+            "replaces": "AndroidSDKVersion",
+            "defaultValue": "v8.1"
+        },
+        "TargetAndroidAPI": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "TargetAndroidAPI",
+            "defaultValue": "27"
+        },
+        "MinAndroidAPI": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "MinAndroidAPI",
+            "defaultValue": "19"
+        },
+        "SupportLibVersion": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "SupportLibVersion",
+            "defaultValue": "26.1.0.1"
         },
         "XamarinFormsSdk": {
             "type": "parameter",
