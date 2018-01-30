@@ -24,6 +24,7 @@ function make_package()
     Invoke-Expression "nuget pack multiplatform/xamarin-templates-multiplatform.nuspec"
     Invoke-Expression "nuget pack ios/xamarin-templates-ios.nuspec"
     Invoke-Expression "nuget pack watchos/xamarin-templates-watchos.nuspec"
+    Invoke-Expression "nuget pack tvos/xamarin-templates-tvos.nuspec"
     Invoke-Expression "nuget pack android/xamarin-templates-android.nuspec"
 
     Write-Host "Successfully packaged templates."

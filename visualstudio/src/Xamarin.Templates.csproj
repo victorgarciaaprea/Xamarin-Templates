@@ -116,7 +116,10 @@
     <None Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSBindings\xamariniosbindings.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
-    <None Include="T\P\CSharp\Apple Watch\XamarinwatchOSApp\xamarinioswatchosapp.vstemplate">
+    <None Include="T\P\CSharp\Apple Watch\XamarinwatchOSApp\xamarinwatchosapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\Apple TV\XamarintvOSApp\xamarintvosapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
     <Content Include="Xamarin.Templates.Multiplatform.pkgdef">
