@@ -18,7 +18,7 @@
   "sourceName": "NewLib",
   "primaryOutputs": [
     {
-        "path": "NewLib\\NewLib.csproj"
+        "path": "NewLib.csproj"
     }
   ],
   "preferNameDirectory": true,  

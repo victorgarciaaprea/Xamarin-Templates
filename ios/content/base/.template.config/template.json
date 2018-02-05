@@ -18,7 +18,7 @@
   "sourceName": "NewApp",
   "primaryOutputs": [
     {
-        "path": "NewApp\\NewApp.csproj"
+        "path": "NewApp.csproj"
     }
   ],
   "preferNameDirectory": true,
@@ -82,26 +82,22 @@
   },
   "sources": [
     {
-      "source": "./"
+      "source": "./NewApp"
     },
     {
       "source": "../blank/",
-      "target": "NewApp/",
       "condition": "(kind == \"blank\")"
     },
     {
       "source": "../single-view/",
-      "target": "NewApp/",
       "condition": "(kind == \"single-view\")"
     },
     {
       "source": "../master-detail/",
-      "target": "NewApp/",
       "condition": "(kind == \"master-detail\")"
     },
     {
       "source": "../tabbed/",
-      "target": "NewApp/",
       "condition": "(kind == \"tabbed\")"
     }
   ]
