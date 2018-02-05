@@ -16,12 +16,17 @@
   },
   "shortName": "android-app",
   "sourceName": "NewApp",
+  "primaryOutputs": [
+    {
+        "path": "NewApp\\NewApp.csproj"
+    }
+  ],
   "preferNameDirectory": true,
   "guids": [
     "{710A5ED9-2512-4560-98F3-64957C8C58F3}"
   ],
   "symbols": {
-    "TemplateKind": {
+    "kind": {
       "type": "parameter",
       "datatype": "choice",
       "defaultValue": "blank",
@@ -76,22 +81,22 @@
     {
       "source": "../blank",
       "target": "NewApp/",      
-      "condition": "(TemplateKind == \"blank\")"
+      "condition": "(kind == \"blank\")"
     },
     {
       "source": "../single-view",
       "target": "NewApp/",      
-      "condition": "(TemplateKind == \"single-view\")"
+      "condition": "(kind == \"single-view\")"
     },
     {
       "source": "../bottom-nav",
       "target": "NewApp/",      
-      "condition": "(TemplateKind == \"bottom-nav\")"
+      "condition": "(kind == \"bottom-nav\")"
     },
     {
       "source": "../nav-drawer",
       "target": "NewApp/",      
-      "condition": "(TemplateKind == \"nav-drawer\")"
+      "condition": "(kind == \"nav-drawer\")"
     }
   ]
 }

@@ -18,7 +18,7 @@
   "sourceName": "NewApp",
   "preferNameDirectory": true,
   "symbols": {
-    "TemplateKind": {
+    "kind": {
       "type": "parameter",
       "datatype": "choice",
       "defaultValue": "blank",
@@ -82,22 +82,22 @@
     {
       "source": "../blank/",
       "target": "NewApp/",
-      "condition": "(TemplateKind == \"blank\")"
+      "condition": "(kind == \"blank\")"
     },
     {
       "source": "../single-view/",
       "target": "NewApp/",
-      "condition": "(TemplateKind == \"single-view\")"
+      "condition": "(kind == \"single-view\")"
     },
     {
       "source": "../master-detail/",
       "target": "NewApp/",
-      "condition": "(TemplateKind == \"master-detail\")"
+      "condition": "(kind == \"master-detail\")"
     },
     {
       "source": "../tabbed/",
       "target": "NewApp/",
-      "condition": "(TemplateKind == \"tabbed\")"
+      "condition": "(kind == \"tabbed\")"
     }
   ]
 }

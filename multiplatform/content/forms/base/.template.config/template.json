@@ -45,7 +45,7 @@
         "3EA9E612-E717-4E55-9034-C415CD62AF9A" // UWP
     ],
     "symbols": {
-        "TemplateKind": {
+        "kind": {
             "type": "parameter",
             "datatype": "choice",
             "defaultValue": "blank",
@@ -185,7 +185,7 @@
         },
         {
             "source": "../blank/",
-            "condition": "(TemplateKind == \"blank\")",
+            "condition": "(kind == \"blank\")",
             "target": "BlankApp/",
             "modifiers": [
                 {
@@ -229,7 +229,7 @@
         },
         {
             "source": "../master-detail/",
-            "condition": "(TemplateKind == \"master-detail\")",
+            "condition": "(kind == \"master-detail\")",
             "target": "BlankApp/",
             "modifiers": [
                 {

@@ -15,13 +15,13 @@
     "type": "project"
   },
   "shortName": "android-bindings",
-  "sourceName": "BindingsLibrary",
+  "sourceName": "NewLib",
   "guids": [
     "{9AD234BD-EA9D-45E5-B335-359AC071A4D7}"
   ],
   "primaryOutputs": [
     {
-      "path": "BindingsLibrary.csproj"
+      "path": "NewLib.csproj"
     }
   ]
 }

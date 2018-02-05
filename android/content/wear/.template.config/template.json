@@ -16,8 +16,39 @@
   },
   "shortName": "android-wear",
   "sourceName": "NewApp",
+  "primaryOutputs": [
+    {
+        "path": "NewApp\\NewApp.csproj"
+    }
+  ],
   "preferNameDirectory": true,  
   "guids": [
     "{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}"
-  ]
+  ],
+  "symbols": {
+    "AndroidSDKVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "AndroidSDKVersion",
+      "defaultValue": "v8.1"
+    },
+    "TargetAndroidAPI": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "TargetAndroidAPI",
+      "defaultValue": "27"
+    },
+    "MinAndroidAPI": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "MinAndroidAPI",
+      "defaultValue": "19"
+    },
+    "SupportLibVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "SupportLibVersion",
+      "defaultValue": "26.1.0.1"
+    }
+  }
 }

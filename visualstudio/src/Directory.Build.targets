@@ -59,6 +59,9 @@
   <Target Name="PackageTemplates" DependsOnTargets="DownloadNuget;GetVsixVersion" BeforeTargets="CreateVsixContainer" >
     <ItemGroup>
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\multiplatform\xamarin-templates-multiplatform.nuspec" />
+      <NuSpec Include="$(MSBuildThisFileDirectory)..\..\android\xamarin-templates-android.nuspec" />
+      <NuSpec Include="$(MSBuildThisFileDirectory)..\..\ios\xamarin-templates-ios.nuspec" />
+      <NuSpec Include="$(MSBuildThisFileDirectory)..\..\tvos\xamarin-templates-tvos.nuspec" />
     </ItemGroup>
     <PropertyGroup>
       <TemplatesFolder>$(MSBuildThisFileDirectory)Templates</TemplatesFolder>
@@ -75,9 +78,27 @@
         <IncludeInVSIX>true</IncludeInVSIX>
         <VSIXSubPath>Templates</VSIXSubPath>
       </VsixSourceItem>
+      <VsixSourceItem Include="Templates\Xamarin.Templates.Android.$(VsixVersion).nupkg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <IncludeInVSIX>true</IncludeInVSIX>
+        <VSIXSubPath>Templates</VSIXSubPath>
+      </VsixSourceItem>      
+      <VsixSourceItem Include="Templates\Xamarin.Templates.IOS.$(VsixVersion).nupkg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <IncludeInVSIX>true</IncludeInVSIX>
+        <VSIXSubPath>Templates</VSIXSubPath>
+      </VsixSourceItem>      
+      <VsixSourceItem Include="Templates\Xamarin.Templates.TVOS.$(VsixVersion).nupkg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <IncludeInVSIX>true</IncludeInVSIX>
+        <VSIXSubPath>Templates</VSIXSubPath>
+      </VsixSourceItem>
     </ItemGroup>
 
     <Message Text="Added Content $(TemplatesFolder)\Xamarin.Templates.Multiplatform.$(VsixVersion).nupkg" Importance="high" />
+    <Message Text="Added Content $(TemplatesFolder)\Xamarin.Templates.Android.$(VsixVersion).nupkg" Importance="high" />
+    <Message Text="Added Content $(TemplatesFolder)\Xamarin.Templates.IOS.$(VsixVersion).nupkg" Importance="high" />
+    <Message Text="Added Content $(TemplatesFolder)\Xamarin.Templates.TVOS.$(VsixVersion).nupkg" Importance="high" />
 </Target>
 
 	<Target Name="CopyArtifacts" AfterTargets="CreateVsixContainer" Condition="'$(Out)' != ''">

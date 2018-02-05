@@ -188,7 +188,7 @@ namespace Xamarin.Templates.Wizards
             replacements.Add("$language$", "CSharp");
             replacements.Add("$groupid$", "Xamarin.Forms.App");
 
-			replacements.Add("$passthrough:TemplateKind$", model.SelectedTemplatePath);
+			replacements.Add("$passthrough:kind$", model.SelectedTemplatePath);
 
             if (model.IsAzureSelected)
                 replacements.Add("$passthrough:CreateBackendProject$", "true");
