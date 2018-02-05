@@ -12,7 +12,7 @@
         "language": "C#",
         "type": "project"
     },
-    "sourceName": "BlankApp",
+    "sourceName": "NewApp",
     "defaultName": "UITest",
     "preferNameDirectory": "true",
     "guids": [

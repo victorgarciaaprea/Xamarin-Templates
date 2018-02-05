@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B19C892E-2628-4CA7-AD27-08D406A3B14B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BlankApp.UITests</RootNamespace>
-    <AssemblyName>BlankApp.UITests</AssemblyName>
+    <RootNamespace>NewApp.UITests</RootNamespace>
+    <AssemblyName>NewApp.UITests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,15 +32,15 @@
     <PackageReference Include="Xamarin.UITest" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlankApp.iOS\BlankApp.iOS.csproj">
+    <ProjectReference Include="..\NewApp.iOS\NewApp.iOS.csproj">
       <Project>{D6D5ED00-6AAF-4230-AD5D-A751CD527517}</Project>
-      <Name>BlankApp.iOS</Name>
+      <Name>NewApp.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\BlankApp.Android\BlankApp.Android.csproj">
+    <ProjectReference Include="..\NewApp.Android\NewApp.Android.csproj">
       <Project>{F2383E29-0C4D-485C-AF8F-347463578E1D}</Project>
-      <Name>BlankApp.Android</Name>
+      <Name>NewApp.Android</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>

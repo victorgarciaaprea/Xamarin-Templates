@@ -12,27 +12,27 @@
         "language": "C#",
         "type": "project"
     },
-    "sourceName": "BlankApp",
+    "sourceName": "NewApp",
     "primaryOutputs": [
         {
             "condition": "CreateAndroidProject",
-            "path": "BlankApp\\BlankApp.Android\\BlankApp.Android.csproj"
+            "path": "NewApp\\NewApp.Android\\NewApp.Android.csproj"
         },
         {
             "condition": "CreateiOSProject",
-            "path": "BlankApp\\BlankApp.iOS\\BlankApp.iOS.csproj"
+            "path": "NewApp\\NewApp.iOS\\NewApp.iOS.csproj"
         },
         {
             "condition": "CreateUWPProject",
-            "path": "BlankApp\\BlankApp.UWP\\BlankApp.UWP.csproj"
+            "path": "NewApp\\NewApp.UWP\\NewApp.UWP.csproj"
         },
         {
             "condition": "CreateSharedProject",
-            "path": "BlankApp\\BlankApp\\BlankApp.shproj"
+            "path": "NewApp\\NewApp\\NewApp.shproj"
         },
         {
             "condition": "(!CreateSharedProject)",
-            "path": "BlankApp\\BlankApp\\BlankApp.csproj"
+            "path": "NewApp\\NewApp\\NewApp.csproj"
         }
     ],
     "defaultName": "App",
@@ -63,7 +63,7 @@
         "AppIdentifier": {
             "type": "parameter",
             "description": "Overrides the Info.plist's CFBundleIdentifier",
-            "replaces": "com.xamarin.BlankApp",
+            "replaces": "com.xamarin.NewApp",
             "datatype": "string",
             "defaultValue": "com.companyname"
         },
@@ -155,30 +155,30 @@
             "modifiers": [
                 {
                     "condition": "(!CreateSharedProject)",
-                    "exclude": "BlankApp/BlankApp/**/*"
+                    "exclude": "NewApp/NewApp/**/*"
                 },
                 {
                     "condition": "(!CreateiOSProject)",
                     "exclude": [
-                        "BlankApp/BlankApp.iOS/**/*"
+                        "NewApp/NewApp.iOS/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateAndroidProject)",
                     "exclude": [
-                        "BlankApp/BlankApp.Android/**/*"
+                        "NewApp/NewApp.Android/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateUWPProject)",
                     "exclude": [
-                        "BlankApp/BlankApp.UWP/**/*"
+                        "NewApp/NewApp.UWP/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateMacProject)",
                     "exclude": [
-                        "BlankApp/BlankApp.macOS/**/*"
+                        "NewApp/NewApp.macOS/**/*"
                     ]
                 }
             ]
@@ -186,43 +186,43 @@
         {
             "source": "../blank/",
             "condition": "(kind == \"blank\")",
-            "target": "BlankApp/",
+            "target": "NewApp/",
             "modifiers": [
                 {
                     "condition": "CreateSharedProject",
                     "exclude": [
-                        "BlankApp/BlankApp.csproj"
+                        "NewApp/NewApp.csproj"
                     ]
                 },
                 {
                     "condition": "(!CreateSharedProject)",
                     "exclude": [
-                        "BlankApp/BlankApp.shproj",
-                        "BlankApp/BlankApp.projitems"
+                        "NewApp/NewApp.shproj",
+                        "NewApp/NewApp.projitems"
                     ]
                 },
                 {
                     "condition": "(!CreateiOSProject)",
                     "exclude": [
-                        "BlankApp.iOS/**/*"
+                        "NewApp.iOS/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateAndroidProject)",
                     "exclude": [
-                        "BlankApp.Android/**/*"
+                        "NewApp.Android/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateUWPProject)",
                     "exclude": [
-                        "BlankApp.UWP/**/*"
+                        "NewApp.UWP/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateMacProject)",
                     "exclude": [
-                        "BlankApp.macOS/**/*"
+                        "NewApp.macOS/**/*"
                     ]
                 }
             ]
@@ -230,43 +230,43 @@
         {
             "source": "../master-detail/",
             "condition": "(kind == \"master-detail\")",
-            "target": "BlankApp/",
+            "target": "NewApp/",
             "modifiers": [
                 {
                     "condition": "(!CreateSharedProject)",
                     "exclude": [
-                        "BlankApp/BlankApp.projitems"
+                        "NewApp/NewApp.projitems"
                     ]
                 },
                 {
                     "condition": "(!CreateBackendProject)",
                     "exclude": [
-                        "BlankApp.MobileAppService/**/*",
-                        "BlankApp/Services/AzureDataStore.cs"
+                        "NewApp.MobileAppService/**/*",
+                        "NewApp/Services/AzureDataStore.cs"
                     ]
                 },
                 {
                     "condition": "(!CreateiOSProject)",
                     "exclude": [
-                        "BlankApp.iOS/**/*"
+                        "NewApp.iOS/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateAndroidProject)",
                     "exclude": [
-                        "BlankApp.Android/**/*"
+                        "NewApp.Android/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateUWPProject)",
                     "exclude": [
-                        "BlankApp.UWP/**/*"
+                        "NewApp.UWP/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateMacProject)",
                     "exclude": [
-                        "BlankApp.macOS/**/*"
+                        "NewApp.macOS/**/*"
                     ]
                 }
             ]
@@ -274,7 +274,7 @@
         {
             "source": "../uitest/",
             "condition": "CreateUITestProject",
-            "target": "BlankApp/BlankApp.UITests/"
+            "target": "NewApp/NewApp.UITests/"
         }
     ]
 }
