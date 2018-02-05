@@ -15,11 +15,11 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "ClassLibrary",
+  "sourceName": "NewLib",
   "preferNameDirectory": true,
   "primaryOutputs": [
     {
-      "path": "ClassLibrary1.csproj"
+      "path": "NewLib.csproj"
     }
-  ],
+  ]
 }

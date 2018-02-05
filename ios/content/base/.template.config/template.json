@@ -6,7 +6,7 @@
     "Xamarin"
   ],
   "name": "Xamarin.iOS App",
-  "groupIdentity": "Xamarin.iOS.Template",
+  "groupIdentity": "Xamarin.iOS.App",
   "defaultName": "App",
   "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
   "identity": "Xamarin.iOS.App.CSharp",
@@ -16,6 +16,11 @@
     "type": "project"
   },
   "sourceName": "NewApp",
+  "primaryOutputs": [
+    {
+        "path": "NewApp\\NewApp.csproj"
+    }
+  ],
   "preferNameDirectory": true,
   "symbols": {
     "kind": {

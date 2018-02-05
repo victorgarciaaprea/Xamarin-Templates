@@ -6,7 +6,7 @@
     "xamarin"
   ],
   "name": "Xamarin.iOS Bindings Library",
-  "defaultName": "NativeLibrary",
+  "defaultName": "ClassLibrary",
   "description": "Creates a Xamarin.iOS binding to a native library.",
   "groupIdentity": "Xamarin.iOS.NativeLibrary",
   "identity": "Xamarin.iOS.NativeLibrary.CSharp",
@@ -15,6 +15,11 @@
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "NativeLibrary",
+  "sourceName": "NewLib",
+  "primaryOutputs": [
+    {
+        "path": "NewLib.csproj"
+    }
+  ],
   "preferNameDirectory": true
 }
