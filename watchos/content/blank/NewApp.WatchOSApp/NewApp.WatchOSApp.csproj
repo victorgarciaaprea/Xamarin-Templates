@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon172.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon196.png"/>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon48.png"/>

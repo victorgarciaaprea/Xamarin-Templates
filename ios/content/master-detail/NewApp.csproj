@@ -76,6 +76,7 @@
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
 		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />

@@ -3,7 +3,8 @@
     {
       "scale": "1x",
       "size": "1024x1024",
-      "idiom": "watch-marketing"
+      "idiom": "watch-marketing",
+      "filename": "icon1024.png"
     },
     {
       "role": "notificationCenter",
