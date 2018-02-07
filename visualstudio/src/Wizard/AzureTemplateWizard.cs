@@ -227,11 +227,6 @@ namespace Xamarin.Templates.Wizards
                 replacements.Add("$passthrough:CreateUWPProject$", "false");
             }
 
-            if (replacements.ContainsKey("$destinationdirectory$"))
-            {
-                replacements["$destinationdirectory$"] = Path.GetDirectoryName(replacements["$destinationdirectory$"]);
-            }
-
             return replacements;
         }
 

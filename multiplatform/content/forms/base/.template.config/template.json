@@ -16,23 +16,23 @@
     "primaryOutputs": [
         {
             "condition": "CreateAndroidProject",
-            "path": "NewApp\\NewApp.Android\\NewApp.Android.csproj"
+            "path": "NewApp.Android\\NewApp.Android.csproj"
         },
         {
             "condition": "CreateiOSProject",
-            "path": "NewApp\\NewApp.iOS\\NewApp.iOS.csproj"
+            "path": "NewApp.iOS\\NewApp.iOS.csproj"
         },
         {
             "condition": "CreateUWPProject",
-            "path": "NewApp\\NewApp.UWP\\NewApp.UWP.csproj"
+            "path": "NewApp.UWP\\NewApp.UWP.csproj"
         },
         {
             "condition": "CreateSharedProject",
-            "path": "NewApp\\NewApp\\NewApp.shproj"
+            "path": "NewApp\\NewApp.shproj"
         },
         {
             "condition": "(!CreateSharedProject)",
-            "path": "NewApp\\NewApp\\NewApp.csproj"
+            "path": "NewApp\\NewApp.csproj"
         }
     ],
     "defaultName": "App",
@@ -95,7 +95,7 @@
             "type": "parameter",
             "datatype": "string",
             "replaces": "SupportLibVersion",
-            "defaultValue": "27.0.2-preview1.0.1"
+            "defaultValue": "27.0.2-preview1"
         },
         "XamarinFormsSdk": {
             "type": "parameter",
@@ -155,30 +155,30 @@
             "modifiers": [
                 {
                     "condition": "(!CreateSharedProject)",
-                    "exclude": "NewApp/NewApp/**/*"
+                    "exclude": "NewApp/**/*"
                 },
                 {
                     "condition": "(!CreateiOSProject)",
                     "exclude": [
-                        "NewApp/NewApp.iOS/**/*"
+                        "NewApp.iOS/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateAndroidProject)",
                     "exclude": [
-                        "NewApp/NewApp.Android/**/*"
+                        "NewApp.Android/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateUWPProject)",
                     "exclude": [
-                        "NewApp/NewApp.UWP/**/*"
+                        "NewApp.UWP/**/*"
                     ]
                 },
                 {
                     "condition": "(!CreateMacProject)",
                     "exclude": [
-                        "NewApp/NewApp.macOS/**/*"
+                        "NewApp.macOS/**/*"
                     ]
                 }
             ]
@@ -186,7 +186,6 @@
         {
             "source": "../blank/",
             "condition": "(kind == \"blank\")",
-            "target": "NewApp/",
             "modifiers": [
                 {
                     "condition": "CreateSharedProject",
@@ -230,7 +229,6 @@
         {
             "source": "../master-detail/",
             "condition": "(kind == \"master-detail\")",
-            "target": "NewApp/",
             "modifiers": [
                 {
                     "condition": "(!CreateSharedProject)",
