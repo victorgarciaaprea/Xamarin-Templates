@@ -24,10 +24,10 @@
     <Assembly>Microsoft.VisualStudio.TemplateEngine.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
     <FullClassName>Microsoft.VisualStudio.TemplateEngine.Wizard.TemplateEngineWizard</FullClassName>
   </WizardExtension>  
-  <WizardExtension>
-    <Assembly>Xamarin.Templates</Assembly>
-    <FullClassName>Xamarin.Templates.iPhoneConfigurationWizard</FullClassName>
-  </WizardExtension>
+	<WizardExtension>
+		<Assembly>Xamarin.VisualStudio.TemplateWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756</Assembly>
+		<FullClassName>Xamarin.VisualStudio.TemplateWizards.SetConfigurationAndPlatformWizard</FullClassName>
+	</WizardExtension>
   <WizardExtension>
     <Assembly>Xamarin.Templates</Assembly>
     <FullClassName>Xamarin.Templates.BuildAndDeployWizard</FullClassName>

@@ -25,10 +25,6 @@
   </WizardExtension>  
   <WizardExtension>
     <Assembly>Xamarin.Templates</Assembly>
-    <FullClassName>Xamarin.Templates.iPhoneConfigurationWizard</FullClassName>
-  </WizardExtension>
-  <WizardExtension>
-    <Assembly>Xamarin.Templates</Assembly>
     <FullClassName>Xamarin.Templates.BuildAndDeployWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>
