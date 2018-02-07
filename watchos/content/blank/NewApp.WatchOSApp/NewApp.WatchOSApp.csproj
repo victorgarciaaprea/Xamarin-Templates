@@ -97,13 +97,13 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon172.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon196.png">
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon48.png">
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon55.png">
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon58.png">
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon80.png">
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon87.png">
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon88.png">
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon196.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon48.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon55.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon58.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon80.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon87.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon88.png"/>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -117,7 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewApp.WatchOSExtension\NewApp.WatchOSExtension.csproj">
-      <Name>Blank.WatchOSExtension</Name>
+      <Name>NewApp.WatchOSExtension</Name>
       <Project>{9F743938-8AFB-432F-A974-861B6F14EE7D}</Project>
       <IsAppExtension>True</IsAppExtension>
     </ProjectReference>

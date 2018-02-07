@@ -62,6 +62,7 @@
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\android\xamarin-templates-android.nuspec" />
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\ios\xamarin-templates-ios.nuspec" />
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\tvos\xamarin-templates-tvos.nuspec" />
+      <NuSpec Include="$(MSBuildThisFileDirectory)..\..\watchos\xamarin-templates-watchos.nuspec" />
     </ItemGroup>
     <PropertyGroup>
       <TemplatesFolder>$(MSBuildThisFileDirectory)Templates</TemplatesFolder>
@@ -89,6 +90,11 @@
         <VSIXSubPath>Templates</VSIXSubPath>
       </VsixSourceItem>      
       <VsixSourceItem Include="Templates\Xamarin.Templates.TVOS.$(VsixVersion).nupkg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <IncludeInVSIX>true</IncludeInVSIX>
+        <VSIXSubPath>Templates</VSIXSubPath>
+      </VsixSourceItem>
+      <VsixSourceItem Include="Templates\Xamarin.Templates.WATCHOS.$(VsixVersion).nupkg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         <IncludeInVSIX>true</IncludeInVSIX>
         <VSIXSubPath>Templates</VSIXSubPath>

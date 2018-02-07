@@ -6,7 +6,7 @@
     "Xamarin"
   ],
   "name": "Xamarin.tvOS App",
-  "groupIdentity": "Xamarin.tvOS.Template",
+  "groupIdentity": "Xamarin.tvOS.App",
   "defaultName": "App",
   "description": "Creates a basic tvOS application with a Storyboard containing a single view, and a View Controller class to manage it.\n\nUse this as a starting point for your first tvOS application.",
   "identity": "Xamarin.tvOS.App.CSharp",
@@ -16,6 +16,11 @@
     "type": "project"
   },
   "sourceName": "NewApp",
+  "primaryOutputs": [
+    {
+        "path": "NewApp.csproj"
+    }
+  ],
   "preferNameDirectory": true,
   "symbols": {
     "AppIdentifier": {

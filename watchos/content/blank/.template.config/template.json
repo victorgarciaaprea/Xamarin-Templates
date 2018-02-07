@@ -6,7 +6,7 @@
     "Xamarin"
   ],
   "name": "Xamarin.watchOS App",
-  "groupIdentity": "Xamarin.watchOS.Template",
+  "groupIdentity": "Xamarin.watchOS.App",
   "defaultName": "App",
   "description": "Creates a simple, one-page iOS application with a Storyboard that contains the View, and a View Controller class to manage it.\n\nUse this as a starting point for your first iOS application.",
   "identity": "Xamarin.watchOS.App.CSharp",
@@ -16,7 +16,15 @@
     "type": "project"
   },
   "sourceName": "NewApp",
-  "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+        "path": "NewApp.WatchOSApp\\NewApp.WatchOSApp.csproj"
+    },
+    {
+        "path": "NewApp.WatchOSExtension\\NewApp.WatchOSExtension.csproj"
+    }
+  ],
+  "preferNameDirectory": "true",
   "symbols": {
     "AppIdentifier": {
       "type": "parameter",
