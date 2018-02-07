@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>tvOS App (Xamarin)</Name>
     <Description>A project for creating a tvOS app with Xamarin.</Description>
-    <Icon>FormsProject.ico</Icon>
+    <Icon>tvos-app.png</Icon>
     <TemplateGroupID>Xamarin.tvOSApp</TemplateGroupID>
     <TemplateID>Xamarin.tvOSApp.CSharp</TemplateID>
     <Hidden>false</Hidden>

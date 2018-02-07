@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>Android Class Library (Xamarin)</Name>
     <Description>A Xamarin.Android class library project.</Description>
-    <Icon>FormsProject.ico</Icon>
+    <Icon>android-library.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidLibrary</TemplateGroupID>
     <TemplateID>Xamarin.AndroidLibrary.CSharp</TemplateID>
     <Hidden>false</Hidden>

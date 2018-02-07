@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>iOS App (Xamarin)</Name>
     <Description>Project templates for creating iOS apps for iPhone and iPad with Xamarin.</Description>
-    <Icon>FormsProject.ico</Icon>
+    <Icon>ios-app.png</Icon>
     <TemplateGroupID>Xamarin.iOSApp</TemplateGroupID>
     <TemplateID>Xamarin.iOSApp.CSharp</TemplateID>
     <Hidden>false</Hidden>

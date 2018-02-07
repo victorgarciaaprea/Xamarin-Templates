@@ -122,6 +122,42 @@
     <None Include="T\P\CSharp\Apple TV\XamarintvOSApp\xamarintvosapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
+    <Content Include="T\P\CSharp\Android\XamarinAndroidApp\android-app.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="T\P\CSharp\Android\XamarinAndroidBindings\android-library.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="T\P\CSharp\Android\XamarinAndroidLibrary\android-library.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="T\P\CSharp\Android\XamarinAndroidWearApp\android-wear.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="T\P\CSharp\Apple TV\XamarintvOSApp\tvos-app.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="T\P\CSharp\Apple Watch\XamarinwatchOSApp\watchos-app.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSApp\ios-app.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSBindings\ios-library.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSLibrary\ios-library.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Xamarin.Templates.Multiplatform.pkgdef">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

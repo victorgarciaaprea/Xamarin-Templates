@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>Android App (Xamarin)</Name>
     <Description>Project templates for creating Android phone and tablet apps with Xamarin.</Description>
-    <Icon>FormsProject.ico</Icon>
+    <Icon>android-app.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidApp</TemplateGroupID>
     <TemplateID>Xamarin.AndroidApp.CSharp</TemplateID>
     <Hidden>false</Hidden>

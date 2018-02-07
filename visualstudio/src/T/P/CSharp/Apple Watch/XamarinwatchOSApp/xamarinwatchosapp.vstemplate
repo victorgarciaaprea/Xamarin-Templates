@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>watchOS App (Xamarin)</Name>
     <Description>A project for creating a watchOS app with Xamarin.</Description>
-    <Icon>FormsProject.ico</Icon>
+    <Icon>watchos-app.png</Icon>
     <TemplateGroupID>Xamarin.watchOSApp</TemplateGroupID>
     <TemplateID>Xamarin.watchOSApp.CSharp</TemplateID>
     <Hidden>false</Hidden>

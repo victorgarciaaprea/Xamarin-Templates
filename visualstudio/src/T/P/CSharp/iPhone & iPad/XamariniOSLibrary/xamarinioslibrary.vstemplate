@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>iOS Class Library (Xamarin)</Name>
     <Description>A Xamarin.iOS class library project.</Description>
-    <Icon>FormsProject.ico</Icon>
+    <Icon>ios-library.ico</Icon>
     <TemplateGroupID>Xamarin.iOSLibrary</TemplateGroupID>
     <TemplateID>Xamarin.iOSLibrary.CSharp</TemplateID>
     <Hidden>false</Hidden>
