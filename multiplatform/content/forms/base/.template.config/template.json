@@ -35,6 +35,10 @@
             "path": "NewApp\\NewApp.csproj"
         },
         {
+            "condition": "CreateBackendProject",
+            "path": "NewApp.MobileAppService\\NewApp.MobileAppService.csproj"
+        },
+        {
             "condition": "CreateUITestProject",
             "path": "NewApp.UITests\\NewApp.UITests.csproj"
         }
