@@ -272,7 +272,7 @@
         {
             "source": "../uitest/",
             "condition": "CreateUITestProject",
-            "target": "NewApp/NewApp.UITests/"
+            "target": "NewApp.UITests/"
         }
     ]
 }
