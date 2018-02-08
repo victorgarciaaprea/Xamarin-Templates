@@ -33,6 +33,10 @@
         {
             "condition": "(!CreateSharedProject)",
             "path": "NewApp\\NewApp.csproj"
+        },
+        {
+            "condition": "CreateUITestProject",
+            "path": "NewApp.UITests\\NewApp.UITests.csproj"
         }
     ],
     "defaultName": "App",
