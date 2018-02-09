@@ -5,6 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectGuid>{8F1AEAD1-CD2E-4EB2-836D-AE756FD7710A}</ProjectGuid>
     <ProjectTypeGuids>{06FA79CB-D6CD-4721-BB4B-1BD202089C55};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{7845f015-8eef-4d78-9b76-cd51413557df}</TemplateGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>NewApp</RootNamespace>
     <AssemblyName>NewApp</AssemblyName>

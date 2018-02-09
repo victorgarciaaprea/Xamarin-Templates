@@ -5,6 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectTypeGuids>{1E2E965C-F6D2-49ED-B86E-418A60C69EEF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{651BBA40-27EF-4218-B520-819459E6830C}</ProjectGuid>
+    <TemplateGuid>22c3201b-89f4-43a0-a2fc-a31418d6fe44</TemplateGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>NewApp.WatchOSExtension</RootNamespace>
     <AssemblyName>NewApp.WatchOSExtension</AssemblyName>

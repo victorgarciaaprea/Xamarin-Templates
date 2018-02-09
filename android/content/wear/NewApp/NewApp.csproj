@@ -5,6 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}</ProjectGuid>
+    <TemplateGuid>{0af826e4-e8b7-435f-b02e-4101b634e385}</TemplateGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>NewApp</RootNamespace>
     <AssemblyName>NewApp</AssemblyName>

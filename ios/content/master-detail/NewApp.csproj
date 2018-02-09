@@ -5,6 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectGuid>{4C22BFDA-5874-4348-B67D-2B06D262BAE4}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{e1087329-5912-47eb-bd6a-19b74ccb7863}</TemplateGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>NewApp</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
