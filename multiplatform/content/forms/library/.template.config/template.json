@@ -1,0 +1,45 @@
+﻿{
+    "author": "Microsoft",
+    "classifications": [
+        "Xamarin.Forms",
+        "cross-platform",
+        "library"
+    ],
+    "name": "Xamarin.Forms Library",
+    "groupIdentity": "Xamarin.Forms.Library",
+    "identity": "Xamarin.Forms.Library.CSharp",
+    "shortName": "forms-lib",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "sourceName": "NewLib",
+    "primaryOutputs": [
+        {
+            "path": "NewLib.csproj"
+        }
+    ],
+    "defaultName": "Library",
+    "preferNameDirectory": "true",
+    "guids": [
+        "99E19497-29A6-4B77-B773-BEC55F9B55DC" // .NET Standard Library
+    ],
+    "symbols": {
+        "XamarinFormsSdk": {
+            "type": "parameter",
+            "dataType": "string",
+            "replaces": "XamarinFormsSdk",
+            "defaultValue": "2.5.0.122203"
+        },
+        "ProjectID": {
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "Project_ID"
+        },
+        "UserID": {
+            "type": "generated",
+            "generator": "guid",
+            "replaces": "User_ID"
+        }
+    }
+}
