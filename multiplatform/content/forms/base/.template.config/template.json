@@ -15,6 +15,14 @@
     "sourceName": "NewApp",
     "primaryOutputs": [
         {
+            "condition": "CreateSharedProject",
+            "path": "NewApp\\NewApp.shproj"
+        },
+        {
+            "condition": "(!CreateSharedProject)",
+            "path": "NewApp\\NewApp.csproj"
+        },
+        {
             "condition": "CreateAndroidProject",
             "path": "NewApp.Android\\NewApp.Android.csproj"
         },
@@ -25,14 +33,6 @@
         {
             "condition": "CreateUWPProject",
             "path": "NewApp.UWP\\NewApp.UWP.csproj"
-        },
-        {
-            "condition": "CreateSharedProject",
-            "path": "NewApp\\NewApp.shproj"
-        },
-        {
-            "condition": "(!CreateSharedProject)",
-            "path": "NewApp\\NewApp.csproj"
         },
         {
             "condition": "CreateBackendProject",
