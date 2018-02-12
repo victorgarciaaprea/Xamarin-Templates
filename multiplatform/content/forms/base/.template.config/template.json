@@ -71,9 +71,36 @@
         "AppIdentifier": {
             "type": "parameter",
             "description": "Overrides the Info.plist's CFBundleIdentifier",
-            "replaces": "com.xamarin.NewApp",
             "datatype": "string",
             "defaultValue": "com.companyname"
+        },
+        "AndroidAppIdentifier": {
+            "type": "parameter",
+            "description": "Overrides the package name in the AndroidManifest.xml",
+            "datatype": "string"
+        },
+        "iOSAppIdentifier": {
+            "type": "parameter",
+            "description": "Overrides the Info.plist's CFBundleIdentifier",
+            "datatype": "string"
+        },
+        "AndroidAppIdentifierReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "AndroidAppIdentifier",
+                "fallbackVariableName": "AppIdentifier"
+            },
+            "replaces": "com.companyname.NewApp.Android"
+        },
+        "iOSAppIdentifierReplacer": {
+            "type": "generated",
+            "generator": "coalesce",
+            "parameters": {
+                "sourceVariableName": "iOSAppIdentifier",
+                "fallbackVariableName": "AppIdentifier"
+            },
+            "replaces": "com.companyname.NewApp.iOS"
         },
         "WindowsSdk": {
             "type": "parameter",
