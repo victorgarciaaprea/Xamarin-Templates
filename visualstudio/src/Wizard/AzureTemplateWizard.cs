@@ -199,7 +199,7 @@ namespace Xamarin.Templates.Wizards
             {
                 var androidSdk = GetLatestAndroidSDK();
                 if (!string.IsNullOrEmpty(androidSdk))
-                    replacements.Add("$passthrough:AndroidSdk$", androidSdk);
+                    replacements.Add("$passthrough:AndroidSdkVersion$", androidSdk);
             }
             else
             {
