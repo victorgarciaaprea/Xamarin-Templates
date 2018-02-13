@@ -9,7 +9,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>NewApp.Droid</RootNamespace>
     <AssemblyName>NewApp.Android</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
