@@ -5,7 +5,7 @@
     <Icon>android-library.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidLibrary</TemplateGroupID>
     <TemplateID>Xamarin.AndroidLibrary.CSharp</TemplateID>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
     <DefaultName>ClassLibrary</DefaultName>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>300</SortOrder>

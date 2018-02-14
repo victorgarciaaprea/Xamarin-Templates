@@ -5,7 +5,7 @@
     <Icon>android-app.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidApp</TemplateGroupID>
     <TemplateID>Xamarin.AndroidApp.CSharp</TemplateID>
-    <Hidden>false</Hidden>
+    <Hidden>true</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>100</SortOrder>

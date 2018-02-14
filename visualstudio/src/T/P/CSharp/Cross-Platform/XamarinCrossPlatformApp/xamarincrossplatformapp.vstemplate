@@ -17,7 +17,7 @@
   </TemplateContent>
   <WizardExtension>
     <Assembly>Xamarin.Templates</Assembly>
-    <FullClassName>Xamarin.Templates.Wizards.AzureTemplateWizard</FullClassName>
+    <FullClassName>Xamarin.Templates.Wizards.CrossPlatformTemplateWizard</FullClassName>
   </WizardExtension>
   <!-- This wizards use only RunFinished and have no replacement parameters -->
   <WizardExtension>
