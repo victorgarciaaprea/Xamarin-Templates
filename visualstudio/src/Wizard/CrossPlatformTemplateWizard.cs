@@ -23,7 +23,7 @@ using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 
 namespace Xamarin.Templates.Wizards
 {
-    public class AzureTemplateWizard : IWizard
+    public class CrossPlatformTemplateWizard : IWizard
     {
         enum TemplateLanguage { CSharp, FSharp };
 
@@ -54,7 +54,7 @@ namespace Xamarin.Templates.Wizards
 
             latestWindowSdk = GetLatestWindowsSDK();
             
-            var dialog = CreateAzureDialog();
+            var dialog = CreateCrossPlatformDialog();
             dialog.SetUWPEnabled(dte, latestWindowSdk);
             dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
             if (!dialog.ShowDialog().GetValueOrDefault())
@@ -116,9 +116,9 @@ namespace Xamarin.Templates.Wizards
             return $"{sdkInfo.LatestInstalledIOSSdk}"; //quotes are so the engine understands this as a string
         }
 
-        private AzureDialog CreateAzureDialog()
+        private CrossPlatformDialog CreateCrossPlatformDialog()
         {
-            var dialog = new AzureDialog();
+            var dialog = new CrossPlatformDialog();
             var dialogWindow = dialog as System.Windows.Window;
             if (dialogWindow != null)
             {

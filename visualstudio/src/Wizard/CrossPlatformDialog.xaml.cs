@@ -19,9 +19,9 @@ namespace Xamarin.Templates.Wizards
 	/// <summary>
 	/// Interaction logic for AzureDialog.xaml
 	/// </summary>
-	public partial class AzureDialog : DialogBase
+	public partial class CrossPlatformDialog : DialogBase
 	{
-		public AzureDialog ()
+		public CrossPlatformDialog ()
 		{
 			InitializeComponent ();
         }

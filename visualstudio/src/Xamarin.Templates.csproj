@@ -67,11 +67,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Compile Include="Wizard\AzureDialog.xaml.cs">
-      <DependentUpon>AzureDialog.xaml</DependentUpon>
+    <Compile Include="Wizard\CrossPlatformDialog.xaml.cs">
+      <DependentUpon>CrossPlatformDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wizard\AzureEnabledToVisibilityConverter.cs" />
-    <Compile Include="Wizard\AzureTemplateWizard.cs" />
+    <Compile Include="Wizard\CrossPlatformTemplateWizard.cs" />
     <Compile Include="Wizard\BuildAndDeployWizard.cs" />
     <Compile Include="Wizard\CreateTemplateResult.cs" />
     <Compile Include="Wizard\DialogBase.cs" />
@@ -195,7 +195,7 @@
     <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Wizard\AzureDialog.xaml">
+    <Page Include="Wizard\CrossPlatformDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
