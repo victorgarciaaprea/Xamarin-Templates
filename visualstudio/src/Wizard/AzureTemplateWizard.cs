@@ -106,19 +106,6 @@ namespace Xamarin.Templates.Wizards
             return sdks.Count() > 0 ? $"{sdks.First()}": string.Empty;
         }
 
-        string GetLatestAndroidSDK()
-        {
-            var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
-
-            var commandBus = componentModel.GetService<ICommandBus>();
-            var sdkInfo = commandBus.Execute<AndroidModel.SdkInfo>(new AndroidCommands.GetSdkInfo());
-            
-			if (sdkInfo.LatestInstalledFramework == null)
-				return string.Empty;
-
-            return $"{sdkInfo.LatestInstalledFramework.Version}"; //quotes are so the engine understands this as a string
-        }
-
         string GetLatestiOSSDK()
         {
             var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
@@ -195,13 +182,7 @@ namespace Xamarin.Templates.Wizards
             if (!model.IsSharedSelected)
                 replacements.Add("$passthrough:CreateSharedProject$", "false");
 
-            if (model.IsAndroidSelected)
-            {
-                var androidSdk = GetLatestAndroidSDK();
-                if (!string.IsNullOrEmpty(androidSdk))
-                    replacements.Add("$passthrough:AndroidSdkVersion$", androidSdk);
-            }
-            else
+            if (!model.IsAndroidSelected)
             {
                 replacements.Add("$passthrough:CreateAndroidProject$", "false");
             }
