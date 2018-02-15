@@ -18,8 +18,8 @@ namespace NewApp.UITests
 			}
 			else
 			{
-				_itemNameEntry = x => x.Class("EntryEditText").Index(0);
-				_itemDescriptionEditor = x => x.Class("EditorEditText").Index(0);
+				_itemNameEntry = x => x.Class("FormsEditText").Index(0);
+				_itemDescriptionEditor = x => x.Class("FormsEditText").Index(1);
 				_saveToolbarItem = x => x.Class("android.support.v7.view.menu.ActionMenuItemView").Index(0);
 			}
 		}
