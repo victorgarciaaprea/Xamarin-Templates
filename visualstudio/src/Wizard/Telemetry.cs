@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Telemetry;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Xamarin.VisualStudio.Contracts.Commands;
 using Xamarin.VisualStudio.Contracts.Model;
 
@@ -14,10 +15,17 @@ namespace Xamarin.Templates.Wizards
         {
             static string GetXVSVersion()
             {
-                var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
-                var commandBus = componentModel?.GetService<ICommandBus>();
-                var versions = commandBus?.Execute(new GetVersions());
-                return versions?.XVSInformationalVersion;
+				try
+				{ 
+					var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
+					var commandBus = componentModel?.GetService<ICommandBus>();
+					var versions = commandBus?.Execute(new GetVersions());
+					return versions?.XVSInformationalVersion;
+				}
+				catch (FileNotFoundException)//this is to avoid a known watson crash
+				{
+					return string.Empty;
+				}
             }
 
             public static class NewProject
