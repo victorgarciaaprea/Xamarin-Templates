@@ -10,8 +10,9 @@ namespace NewApp
 	public partial class App : Application
 	{
 		#if (CreateBackendProject)
-		public static bool UseMockDataStore = true;
-		public static string AzureMobileAppUrl = "https://[CONFIGURE-THIS-URL].azurewebsites.net";
+		//TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
+        public static string AzureBackendUrl = "http://localhost:5000";
+        public static bool UseMockDataStore = true;
 		#endif
 		
 		public App ()

@@ -126,15 +126,18 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <!--#if (CreateBackendProject)
+    <Reference Include="System.Net.Http" />
+    #endif-->
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <!--#if (CreateUITestProject)
-    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.4"/>
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.4" />
     <#endif-->
     <!--#if (CreateBackendProject)
-    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.0.1" />
-    <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     #endif-->
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

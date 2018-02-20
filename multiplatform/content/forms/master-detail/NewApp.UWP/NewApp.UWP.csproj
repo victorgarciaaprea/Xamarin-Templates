@@ -148,7 +148,8 @@
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1"/>
     <!--#if (CreateBackendProject)
-    <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     #endif-->
   </ItemGroup>
   <!--#if (!CreateSharedProject)

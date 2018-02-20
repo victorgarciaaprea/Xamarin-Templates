@@ -1,151 +1,83 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
+using Plugin.Connectivity;
 using NewApp.Models;
-using Microsoft.WindowsAzure.MobileServices;
-using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
-using Microsoft.WindowsAzure.MobileServices.Sync;
 
 namespace NewApp.Services
 {
 	public class AzureDataStore : IDataStore<Item>
 	{
-        bool isInitialized;
-		IMobileServiceSyncTable<Item> itemsTable;
+		HttpClient client;
+		IEnumerable<Item> items;
 
-		public MobileServiceClient MobileService { get; set; }
+		public AzureDataStore()
+		{
+			client = new HttpClient();
+			client.BaseAddress = new Uri($"{App.AzureBackendUrl}/");
+
+			items = new List<Item>();
+		}
 
 		public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
 		{
-			await InitializeAsync();
-			if (forceRefresh)
-				await PullLatestAsync();
+			if (forceRefresh && CrossConnectivity.Current.IsConnected)
+			{
+				var json = await client.GetStringAsync($"api/item");
+				items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
+			}
 
-			return await itemsTable.ToEnumerableAsync();
+			return items;
 		}
 
 		public async Task<Item> GetItemAsync(string id)
 		{
-			await InitializeAsync();
-			await PullLatestAsync();
-			var items = await itemsTable.Where(s => s.Id == id).ToListAsync();
+			if (id != null && CrossConnectivity.Current.IsConnected)
+			{
+				var json = await client.GetStringAsync($"api/item/{id}");
+				return await Task.Run(() => JsonConvert.DeserializeObject<Item>(json));
+			}
 
-			if (items == null || items.Count == 0)
-				return null;
-
-			return items[0];
+			return null;
 		}
 
 		public async Task<bool> AddItemAsync(Item item)
 		{
-			await InitializeAsync();
-			await PullLatestAsync();
-			await itemsTable.InsertAsync(item);
-			await SyncAsync();
+			if (item == null || !CrossConnectivity.Current.IsConnected)
+				return false;
 
-			return true;
+			var serializedItem = JsonConvert.SerializeObject(item);
+
+			var response = await client.PostAsync($"api/item", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+
+			return response.IsSuccessStatusCode;
 		}
 
 		public async Task<bool> UpdateItemAsync(Item item)
 		{
-			await InitializeAsync();
-			await itemsTable.UpdateAsync(item);
-			await SyncAsync();
-
-			return true;
-		}
-
-		public async Task<bool> DeleteItemAsync(Item item)
-		{
-			await InitializeAsync();
-			await PullLatestAsync();
-			await itemsTable.DeleteAsync(item);
-			await SyncAsync();
-
-			return true;
-		}
-
-		public async Task InitializeAsync()
-		{
-			if (isInitialized)
-				return;
-
-			MobileService = new MobileServiceClient(App.AzureMobileAppUrl)
-			{
-				SerializerSettings = new MobileServiceJsonSerializerSettings
-				{
-					CamelCasePropertyNames = true
-				}
-			};
-
-            var path = "syncstore.db";
-            path = Path.Combine(MobileServiceClient.DefaultDatabasePath, path);
-            var store = new MobileServiceSQLiteStore(path);
-
-			store.DefineTable<Item>();
-			await MobileService.SyncContext.InitializeAsync(store, new MobileServiceSyncHandler());
-			itemsTable = MobileService.GetSyncTable<Item>();
-
-			isInitialized = true;
-		}
-
-		public async Task<bool> PullLatestAsync()
-		{
-			try
-			{
-				await itemsTable.PullAsync($"all{typeof(Item).Name}", itemsTable.CreateQuery());
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine($"Unable to pull items: {ex.Message}");
-
+			if (item == null || item.Id == null || !CrossConnectivity.Current.IsConnected)
 				return false;
-			}
-			return true;
+
+			var serializedItem = JsonConvert.SerializeObject(item);
+			var buffer = Encoding.UTF8.GetBytes(serializedItem);
+			var byteContent = new ByteArrayContent(buffer);
+
+			var response = await client.PutAsync(new Uri($"api/item/{item.Id}"), byteContent);
+
+			return response.IsSuccessStatusCode;
 		}
 
-		public async Task<bool> SyncAsync()
+		public async Task<bool> DeleteItemAsync(string id)
 		{
-			try
-			{
-				await MobileService.SyncContext.PushAsync();
-				if (!(await PullLatestAsync().ConfigureAwait(false)))
-					return false;
-			}
-			catch (MobileServicePushFailedException exc)
-			{
-				if (exc.PushResult == null)
-				{
-					Debug.WriteLine($"Unable to sync, that is alright as we have offline capabilities: {exc.Message}");
-
-					return false;
-				}
-				foreach (var error in exc.PushResult.Errors)
-				{
-					if (error.OperationKind == MobileServiceTableOperationKind.Update && error.Result != null)
-					{
-						//Update failed, reverting to server's copy.
-						await error.CancelAndUpdateItemAsync(error.Result);
-					}
-					else
-					{
-						// Discard local change.
-						await error.CancelAndDiscardItemAsync();
-					}
-
-					Debug.WriteLine($"Error executing sync operation. Item: {error.TableName} ({error.Item["id"]}). Operation discarded.");
-				}
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine($"Unable to sync items: {ex.Message}");
+			if (string.IsNullOrEmpty(id) && !CrossConnectivity.Current.IsConnected)
 				return false;
-			}
 
-			return true;
+			var response = await client.DeleteAsync($"api/item/{id}");
+
+			return response.IsSuccessStatusCode;
 		}
 	}
 }
