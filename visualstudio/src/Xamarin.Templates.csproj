@@ -67,6 +67,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Compile Include="Wizard\AndroidDialog.xaml.cs">
+      <DependentUpon>AndroidDialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Wizard\AndroidViewModel.cs" />
+    <Compile Include="Wizard\AndroidWizard.cs" />
     <Compile Include="Wizard\CrossPlatformDialog.xaml.cs">
       <DependentUpon>CrossPlatformDialog.xaml</DependentUpon>
     </Compile>
@@ -195,6 +201,10 @@
     <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Wizard\AndroidDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
     <Page Include="Wizard\CrossPlatformDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
