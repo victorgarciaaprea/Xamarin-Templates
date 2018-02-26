@@ -13,9 +13,9 @@ using Microsoft.VisualStudio.TemplateWizard;
 
 namespace Xamarin.Templates.Wizard
 {
-	public class AndroidTemplateWizard  : IWizard
+	class IOSTemplateWizard : IWizard
 	{
-		AndroidViewModel model;
+		IOSViewModel model;
 		Dictionary<string, string> replacements;
 		object automationObject;
 
@@ -24,21 +24,24 @@ namespace Xamarin.Templates.Wizard
 			CreateTemplate(model);
 		}
 
-		private void CreateTemplate(AndroidViewModel model)
+		//create template needs a generic model
+		private void CreateTemplate(IOSViewModel model)
 		{
 			var wizard = CreateTemplatingWizard();
 			wizard.RunStarted(automationObject, AddReplacements(model, replacements), WizardRunKind.AsMultiProject, new object[] { });
 			wizard.RunFinished();
 		}
 
-		private Dictionary<string, string> AddReplacements(AndroidViewModel model, Dictionary<string, string> replacements)
+		//this one needs overriding
+		private Dictionary<string, string> AddReplacements(IOSViewModel model, Dictionary<string, string> replacements)
 		{
 			replacements.Add("$uistyle$", "none");
 			replacements.Add("$language$", "CSharp");
-			replacements.Add("$groupid$", "Xamarin.Android.App");
+			replacements.Add("$groupid$", "Xamarin.iOS.App");
 
 			replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
-			replacements.Add("$passthrough:MinAndroidAPI$", model.AndroidFramework.ApiLevel.ToString());
+			replacements.Add("$passthrough:MinimumOSVersion", model.MinOSVersion);
+			replacements.Add("$passthrough:DeviceFamily$", model.DeviceFamily);
 
 			return replacements;
 		}
@@ -56,18 +59,19 @@ namespace Xamarin.Templates.Wizard
 
 			replacements = replacementsDictionary;
 
-			var dialog = CreateAndroidDialog();
+			var dialog = CreateDialog();
 			dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
 			if (!dialog.ShowDialog().GetValueOrDefault())
 			{
 				throw new WizardBackoutException();
 			}
-			model = ((AndroidViewModel)dialog.DataContext);
+			model = ((IOSViewModel)dialog.DataContext);
 		}
 
-		private AndroidDialog CreateAndroidDialog()
+		// this one needs to be generic
+		private IOSDialog CreateDialog()
 		{
-			var dialog = new AndroidDialog();
+			var dialog = new IOSDialog();
 			var dialogWindow = dialog as System.Windows.Window;
 			if (dialogWindow != null)
 			{

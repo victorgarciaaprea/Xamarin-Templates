@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Merq;
+
+using System;
 using System.IO;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.ComponentModelHost;
+using Xamarin.VisualStudio.Contracts.Commands.Android;
+using Xamarin.VisualStudio.Contracts.Model.Android;
 
 namespace Xamarin.Templates.Wizard
 {
@@ -20,12 +25,15 @@ namespace Xamarin.Templates.Wizard
 			{
 				selectedTemplate = value;
 
-				PropertyChanged(this, new PropertyChangedEventArgs("SelectedTemplate"));
+				PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedTemplate)));
 			}
 		}
 
 		public AndroidViewModel()
 		{
+			AndroidFrameworks = GetFrameworks();
+			AndroidFramework = AndroidFrameworks.First(f => f.ApiLevel == 21);
+
 			Templates = CreateTemplatesContext();
 		}
 
@@ -41,7 +49,26 @@ namespace Xamarin.Templates.Wizard
 			};
 		}
 
-		public event PropertyChangedEventHandler PropertyChanged;
+		static IList<AndroidFramework> GetFrameworks()
+		{
+			try
+			{
+				var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
+				var commandBus = componentModel?.GetService<ICommandBus>();
+				var versions = commandBus?.Execute(new GetSdkInfo());
+				return versions?.Frameworks.OrderByDescending(f => f.ApiLevel).ToList();
+			}
+			catch (FileNotFoundException)//this is to avoid a known watson crash
+			{
+				return new List<AndroidFramework>();
+			}
+		}
+
+		public IList<AndroidFramework> AndroidFrameworks { get; set; }
+
+		public AndroidFramework AndroidFramework { get; set; }
+
+		public event PropertyChangedEventHandler PropertyChanged = (s, e) => { };
 	}
 
 	public class AndroidItemViewModel

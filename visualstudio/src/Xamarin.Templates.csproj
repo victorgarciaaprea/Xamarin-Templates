@@ -81,6 +81,11 @@
     <Compile Include="Wizard\BuildAndDeployWizard.cs" />
     <Compile Include="Wizard\CreateTemplateResult.cs" />
     <Compile Include="Wizard\DialogBase.cs" />
+    <Compile Include="Wizard\IOSDialog.xaml.cs">
+      <DependentUpon>IOSDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\IOSViewModel.cs" />
+    <Compile Include="Wizard\IOSWizard.cs" />
     <Compile Include="Wizard\iPhoneConfigurationWizard.cs" />
     <Compile Include="Wizard\Telemetry.cs" />
     <Compile Include="Wizard\WizardBase.cs" />
@@ -208,6 +213,10 @@
     <Page Include="Wizard\CrossPlatformDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wizard\IOSDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
