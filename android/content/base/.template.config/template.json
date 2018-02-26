@@ -71,7 +71,7 @@
       "type": "parameter",
       "datatype": "string",
       "replaces": "SupportLibVersion",
-      "defaultValue": "27.0.2-preview1"
+      "defaultValue": "27.*"
     }
   },
   "sources": [

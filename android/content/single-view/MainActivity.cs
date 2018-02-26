@@ -1,27 +1,53 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Support.V7.App;
+using Android.Views;
 
 namespace NewApp
 {
-	[Activity(Label = "NewApp", Theme = "@style/AppTheme", MainLauncher = true)]
-	public class MainActivity : Activity
+	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+	public class MainActivity : AppCompatActivity
 	{
-		int count = 1;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
-			// Set our view from the "main" layout resource
-			SetContentView(Resource.Layout.Main);
+			SetContentView(Resource.Layout.activity_main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button = FindViewById<Button>(Resource.Id.myButton);
+			Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolbar);
 
-			button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+			FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            fab.Click += FabOnClick;
 		}
+
+		public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
+            return true;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            int id = item.ItemId;
+            if (id == Resource.Id.action_settings)
+            {
+                return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+        private void FabOnClick(object sender, EventArgs eventArgs)
+        {
+            View view = (View) sender;
+            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
+        }
 	}
 }
 
