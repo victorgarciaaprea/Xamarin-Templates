@@ -32,18 +32,22 @@
     <PackageReference Include="Xamarin.UITest" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
+    <!--#if (CreateiOSProject)
     <ProjectReference Include="..\NewApp.iOS\NewApp.iOS.csproj">
       <Project>{D6D5ED00-6AAF-4230-AD5D-A751CD527517}</Project>
       <Name>NewApp.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+    #endif-->
+    <!--#if (CreateAndroidProject)
     <ProjectReference Include="..\NewApp.Android\NewApp.Android.csproj">
       <Project>{F2383E29-0C4D-485C-AF8F-347463578E1D}</Project>
       <Name>NewApp.Android</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+    #endif-->
   </ItemGroup>
   <ItemGroup>
   <!--#if (kind == 'blank')
