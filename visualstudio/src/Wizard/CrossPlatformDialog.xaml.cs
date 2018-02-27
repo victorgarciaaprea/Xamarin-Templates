@@ -23,7 +23,7 @@ namespace Xamarin.Templates.Wizards
 	{
 		public CrossPlatformDialog ()
 		{
-			//InitializeComponent ();
+			InitializeComponent ();
         }
 
         internal void SetUWPEnabled(DTE2 dte, string latestSdk)
