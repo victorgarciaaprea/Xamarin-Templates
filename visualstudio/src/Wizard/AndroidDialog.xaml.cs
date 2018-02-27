@@ -25,11 +25,6 @@ namespace Xamarin.Templates.Wizard
 			InitializeComponent();
 		}
 
-		private void CodeSharingStrategy_Navigate(object sender, RequestNavigateEventArgs e)
-		{
-			System.Diagnostics.Process.Start(e.Uri.ToString());
-		}
-
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
 			DialogResult = true;

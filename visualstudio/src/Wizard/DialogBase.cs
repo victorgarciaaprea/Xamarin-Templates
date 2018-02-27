@@ -9,5 +9,6 @@ namespace Xamarin.Templates
 	public class DialogBase : Microsoft.VisualStudio.PlatformUI.DialogWindow
 	{
 		public DialogBase () { }
+
 	}
 }

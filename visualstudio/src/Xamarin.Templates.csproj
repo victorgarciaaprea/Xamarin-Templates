@@ -81,6 +81,7 @@
     <Compile Include="Wizard\BuildAndDeployWizard.cs" />
     <Compile Include="Wizard\CreateTemplateResult.cs" />
     <Compile Include="Wizard\DialogBase.cs" />
+    <Compile Include="Wizard\DialogWizardBase.cs" />
     <Compile Include="Wizard\IOSDialog.xaml.cs">
       <DependentUpon>IOSDialog.xaml</DependentUpon>
     </Compile>
