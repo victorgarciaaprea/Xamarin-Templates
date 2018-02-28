@@ -10,8 +10,8 @@
     <TemplateGuid>{77efb91c-a7e9-4b0e-a7c5-31eeec3c6d46}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BindingsLibrary</RootNamespace>
-    <AssemblyName>BindingsLibrary</AssemblyName>
+    <RootNamespace>NewLib</RootNamespace>
+    <AssemblyName>NewLib</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>AndroidSDKVersion</TargetFrameworkVersion>

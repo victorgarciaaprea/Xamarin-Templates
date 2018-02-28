@@ -231,7 +231,6 @@
                 {
                     "condition": "(!CreateSharedProject)",
                     "exclude": [
-                        "NewApp/NewApp.shproj",
                         "NewApp/NewApp.projitems"
                     ]
                 },
@@ -265,6 +264,12 @@
             "source": "../master-detail/",
             "condition": "(kind == \"master-detail\")",
             "modifiers": [
+                {
+                    "condition": "CreateSharedProject",
+                    "exclude": [
+                        "NewApp/NewApp.csproj"
+                    ]
+                },
                 {
                     "condition": "(!CreateSharedProject)",
                     "exclude": [
@@ -307,7 +312,25 @@
         {
             "source": "../uitest/",
             "condition": "CreateUITestProject",
-            "target": "NewApp.UITests/"
+            "target": "NewApp.UITests/",
+            "modifiers": [
+                {
+                    "condition": "(kind == \"blank\")",
+                    "exclude": [
+                        "Pages/**/*",
+                        "Tests/**/*"
+                    ],
+                    "rename": {
+                        "BlankAppTests.cs": "Tests.cs"
+                    }
+                },
+                {
+                    "condition": "(kind == \"master-detail\")",
+                    "exclude": [
+                        "BlankAppTests.cs"
+                    ]
+                }
+            ]
         }
     ]
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
 
