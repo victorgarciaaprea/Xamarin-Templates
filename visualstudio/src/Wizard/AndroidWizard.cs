@@ -1,0 +1,30 @@
+﻿using EnvDTE;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Reflection;
+using System.Windows;
+using System.Windows.Interop;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using Microsoft.VisualStudio.TemplateWizard;
+
+namespace Xamarin.Templates.Wizard
+{
+	class AndroidTemplateWizard : DialogWizardBase<AndroidDialog, AndroidViewModel>
+	{
+		protected override Dictionary<string, string> AddReplacements()
+		{
+			replacements.Add("$uistyle$", "none");
+			replacements.Add("$language$", "CSharp");
+			replacements.Add("$groupid$", "Xamarin.Android.App");
+
+			replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
+			replacements.Add("$passthrough:MinAndroidAPI$", model.AndroidFramework.ApiLevel.ToString());
+
+			return replacements;
+		}
+	}
+}

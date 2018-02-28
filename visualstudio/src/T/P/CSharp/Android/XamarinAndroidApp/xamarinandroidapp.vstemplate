@@ -5,7 +5,7 @@
     <Icon>android-app.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidApp</TemplateGroupID>
     <TemplateID>Xamarin.AndroidApp.CSharp</TemplateID>
-    <Hidden>true</Hidden>
+    <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>100</SortOrder>
@@ -13,15 +13,9 @@
   </TemplateData>
   <TemplateContent>
     <ProjectCollection />
-    <CustomParameters>
-      <CustomParameter Name="$language$" Value="CSharp" />
-      <CustomParameter Name="$uistyle$" Value="none" />
-      <CustomParameter Name="$groupid$" Value="Xamarin.Android.App" />
-      <CustomParameter Name="$kind$" Value="blank" />
-    </CustomParameters>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>Microsoft.VisualStudio.TemplateEngine.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-    <FullClassName>Microsoft.VisualStudio.TemplateEngine.Wizard.TemplateEngineWizard</FullClassName>
-  </WizardExtension>  
+    <Assembly>Xamarin.Templates</Assembly>
+    <FullClassName>Xamarin.Templates.Wizard.AndroidTemplateWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -24,5 +24,13 @@
     {
       "path": "NewLib.csproj"
     }
-  ]
+  ],
+  "symbols":{
+    "AndroidSDKVersion": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "AndroidSDKVersion",
+      "defaultValue": "v8.1"
+    }
+  }
 }

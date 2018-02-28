@@ -1,0 +1,116 @@
+﻿<ui:DialogBase x:Class="Xamarin.Templates.Wizard.IOSDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Xamarin.Templates.Wizard"
+        xmlns:res="clr-namespace:Xamarin.Templates.Properties"
+        xmlns:ui="clr-namespace:Xamarin.Templates"
+        mc:Ignorable="d"
+        Title="New iOS App" Height="410" Width="720" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Window.DataContext>
+        <local:IOSViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="ItemTemplate" >
+                <StackPanel Orientation="Vertical" Margin="1">
+                    <Image Width="32" Height="32" Stretch="Fill" Source="{Binding Icon}"  Margin="0,5,0,0" VerticalAlignment="Top"/>
+                    <TextBlock MinWidth="75" MaxWidth="85" TextAlignment="Center" TextWrapping="Wrap" Margin="2,5,2,5" Text="{Binding Name}" />
+                </StackPanel>
+            </DataTemplate>
+            <Style TargetType="{x:Type ListViewItem}" x:Key="ListViewStyleTemplates" >
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="UIElement.SnapsToDevicePixels" Value="True"/>
+                <Setter Property="AutomationProperties.Name" Value="{Binding Name}" />
+                <Setter Property="AutomationProperties.HelpText" Value="{Binding Description}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ListViewItem}">
+                            <Border SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <ContentPresenter x:Name="contentPresenter"
+                                      Content="{TemplateBinding ContentControl.Content}"
+                                      Visibility="Visible"
+                                      ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                      ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Top"
+                                      SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                </Trigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsSelected" Value="True"/>
+                                        <Condition Property="IsFocused" Value="True"/>
+                                    </MultiTrigger.Conditions>
+                                    <MultiTrigger.Setters>
+                                        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                    </MultiTrigger.Setters>
+                                </MultiTrigger>
+                                <MultiTrigger>
+                                    <MultiTrigger.Conditions>
+                                        <Condition Property="IsSelected" Value="True"/>
+                                        <Condition Property="IsFocused" Value="False"/>
+                                    </MultiTrigger.Conditions>
+                                    <MultiTrigger.Setters>
+                                        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+                                    </MultiTrigger.Setters>
+                                </MultiTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Row="1" Grid.Column="0" Margin="10,10" SelectionMode="Single" ItemContainerStyle="{StaticResource ListViewStyleTemplates}" ItemTemplate="{StaticResource ItemTemplate}" SelectedItem="{Binding SelectedTemplate}" ItemsSource="{Binding Templates}" x:Name="lvTemplates">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <Label Grid.Column="0" Grid.Row="0" Content="{x:Static res:Resources.SelectATemplate}" Margin="10,10,0,0" />
+        <Grid Grid.Column="0" Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Label Content="Device Support" Margin="5,2" FontWeight="Bold" />
+                <RadioButton Content="Universal" Margin="7,2" IsChecked="{Binding IsUniversal}" />
+                <RadioButton Content="iPhone" Margin="7,2" IsChecked="{Binding IsIPhone}" />
+                <RadioButton Content="iPad" Margin="7,2" IsChecked="{Binding IsIPad}" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" >
+                <Label Content="Minimum iOS Version" Margin="5,2" FontWeight="Bold" />
+                <ComboBox Margin="10,2,12,0" SelectedIndex="0" ItemsSource="{Binding Frameworks}" SelectedValue="{Binding MinOSVersion}" />
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding SelectedItem.Description, ElementName=lvTemplates}"/>
+        <Separator Grid.Row="1" Grid.Column="1" Margin="5,0,5,10" VerticalAlignment="Bottom" />
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" IsDefault="True" Margin="5,5" MinWidth="80" Click="button_Click" />
+            <Button Content="Cancel" IsCancel="True" Margin="5,5" MinWidth="80"/>
+        </StackPanel>
+    </Grid>
+</ui:DialogBase>
