@@ -124,9 +124,7 @@
     <value>Blank App</value>
   </data>
   <data name="BlankAppDescription" xml:space="preserve">
-    <value>A cross-platform template for building cross-platform, native mobile apps for iOS, Android, and Universal Windows Platform.
-    
-Use the native user interface approach to create UIs for each platform, or use Xamarin.Forms to create cross-platform, native UIs in XAML.</value>
+    <value>A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.</value>
   </data>
   <data name="BlankAppXaml" xml:space="preserve">
     <value>Blank App (XAML)</value>
@@ -147,9 +145,7 @@ Use the native user interface approach to create UIs for each platform, or use X
     <value>Master Detail</value>
   </data>
   <data name="MasterDetailDescription" xml:space="preserve">
-    <value>A project template for creating cross-platform, native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with master-detail navigation pattern.
-
-Use the native user interface approach to create UIs for each platform, or use Xamarin.Forms to create cross-platform, native UIs in XAML.</value>
+    <value>A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with master-detail navigation pattern.</value>
   </data>
   <data name="MicrosoftAzure" xml:space="preserve">
     <value>Mobile Backend</value>
