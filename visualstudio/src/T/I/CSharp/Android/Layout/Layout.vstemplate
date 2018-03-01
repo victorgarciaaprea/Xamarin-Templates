@@ -1,0 +1,18 @@
+<VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>layout.axml</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5048" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5049" />
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4535" />
+    <ProjectType>CSharp</ProjectType>
+    <TemplateGroupID>MonoAndroid</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>1</SortOrder>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.Android.LayoutItem</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ItemType="AndroidResource" SubType="Designer" TargetFileName="$fileinputname$.axml" ReplaceParameters="false">Layout.axml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

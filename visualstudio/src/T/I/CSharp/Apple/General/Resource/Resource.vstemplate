@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2390" />
+    <Description Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="2391" />
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4565" />
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>Resource.resx</DefaultName>
+		<TemplateGroupID>Xamarin</TemplateGroupID>
+    <ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+  <TemplateContent>
+    <ProjectItem>Resource.resx</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$itemproperties$" Value="CustomTool" />
+      <CustomParameter Name="$CustomTool$" Value="ResXFileCodeGenerator" />
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

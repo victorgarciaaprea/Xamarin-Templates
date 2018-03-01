@@ -1,0 +1,17 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>EmptyStoryboard.storyboard</DefaultName>
+    <Name>Empty Storyboard</Name>
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4151" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>300</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+    <TemplateGroupID>Xamarin.iOS</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.storyboard" ReplaceParameters="false">StoryboardEmpty.storyboard</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

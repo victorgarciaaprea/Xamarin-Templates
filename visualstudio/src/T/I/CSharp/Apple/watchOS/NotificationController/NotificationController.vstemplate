@@ -1,0 +1,18 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>NotificationController.cs</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4216" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4217" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+    <TemplateGroupID>Xamarin.watchOS.Extension</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.watchOS.IT.NotificationController</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">NotificationController.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs\$fileinputname$.designer.cs" ReplaceParameters="true">NotificationController.designer.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

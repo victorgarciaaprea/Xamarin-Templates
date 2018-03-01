@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>UIViewController.cs</DefaultName>
+    <Name>UIViewController Class</Name>
+    <Description>Creates a new UIViewController class and sample UIView class.</Description>
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>100</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+		<TemplateGroupID>Xamarin.iOS.Shared</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+		<ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">UIViewController.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

@@ -1,0 +1,23 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>ViewController.cs</DefaultName>
+    <Name>View Controller with View</Name>
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4187" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+    <TemplateGroupID>Xamarin.iOS</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.iOS.IT.ViewController</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ViewController.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs\$fileinputname$.designer.cs" ReplaceParameters="true">ViewController.designer.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.xib" ReplaceParameters="true">ViewController.xib</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$customclassname$" Value="$fileinputname$"/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

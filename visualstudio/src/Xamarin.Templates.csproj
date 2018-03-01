@@ -270,4 +270,106 @@
       <Include>..\..\Xamarin.Forms.Shared\ViewCell\*.*</Include>
     </None>
   </ItemGroup>
+  <!--iOS Item Templates-->
+  <ItemGroup>
+    <None Include="T\I\CSharp\Apple\Code\AssetCatalog\AssetCatalog.vstemplate" />
+    <None Include="T\I\CSharp\Apple\Code\Class\Class.vstemplate" />
+    <None Include="T\I\CSharp\Apple\Code\XMLFile\XMLFile.vstemplate" />
+    <None Include="T\I\CSharp\Apple\General\AssemblyInfo\AssemblyInfo.vstemplate" />
+    <None Include="T\I\CSharp\Apple\General\Resource\Resource.vstemplate" />
+    <None Include="T\I\CSharp\Apple\General\TextFile\TextFile.vstemplate" />
+    <None Include="T\I\CSharp\Apple\Property List\Entitlements\Entitlements.vstemplate" />
+    <None Include="T\I\CSharp\Apple\Property List\PropertyList\PropertyList.vstemplate" />
+    <None Include="T\I\CSharp\Apple\Property List\Settings\Settings.vstemplate" />
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedBokehParticleSystem\bokeh.png" />
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedBokehParticleSystem\UnifiedBokehParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedConfettiParticleSystem\UnifiedConfettiParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedFireParticleSystem\UnifiedFireParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedRainParticleSystem\UnifiedRainParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedReactorParticleSystem\UnifiedReactorParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedSmokeParticleSystem\UnifiedSmokeParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SceneKit\UnifiedStarsParticleSystem\UnifiedStarsParticleSystem.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedBokehParticleEffect\UnifiedBokehParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedFirefliesParticleEffect\UnifiedFirefliesParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedFireParticleEffect\UnifiedFireParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedMagicParticleEffect\UnifiedMagicParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedRainParticleEffect\UnifiedRainParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedSmokeParticleEffect\UnifiedSmokeParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedSnowParticleEffect\UnifiedSnowParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\SpriteKit\UnifiedSparkParticleEffect\UnifiedSparkParticleEffect.vstemplate">
+      <Include>..\..\Shared\**\*.*</Include>
+    </None>
+    <None Include="T\I\CSharp\Apple\User Interface\StoryboardEmpty\StoryboardEmpty.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\TableViewCell\TableViewCell.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\UIView\UIView.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\UIViewController\UIViewController.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\ViewControllerStoryboard\ViewControllerStoryboard.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\ViewXib\ViewXib.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\CollectionViewCell\CollectionViewCell.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\Metal\Metal.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\MonoTouchDialog\MonoTouchDialog.vstemplate" />
+  </ItemGroup>
+  <!-- Android Item templates -->
+  <ItemGroup>
+    <None Include="T\I\CSharp\Android\ShareCompat\ShareCompat.vstemplate" />
+    <None Include="T\I\CSharp\Android\Share\Share.vstemplate" />
+    <None Include="T\I\CSharp\Android\RecyclerViewAdapter\RecyclerViewAdapter.vstemplate" />
+    <None Include="T\I\CSharp\Android\Menu\Menu.vstemplate" />
+    <None Include="T\I\CSharp\Android\Search\Search.vstemplate" />
+    <None Include="T\I\CSharp\Android\SearchCompat\SearchCompat.vstemplate" />
+    <None Include="T\I\CSharp\Android\MenuCompat\MenuCompat.vstemplate" />
+    <None Include="T\I\CSharp\Android\Adapter\Adapter.vstemplate" />
+    <None Include="T\I\CSharp\Android\Activity\Activity.vstemplate" />
+    <None Include="T\I\CSharp\Android\BroadcastReceiver\BroadcastReceiver.vstemplate" />
+    <None Include="T\I\CSharp\Android\Class\Class.vstemplate" />
+    <None Include="T\I\CSharp\Android\Razor\Razor.vstemplate" />
+    <None Include="T\I\CSharp\Android\Fragment\Fragment.vstemplate" />
+    <None Include="T\I\CSharp\Android\Interface\Interface.vstemplate" />
+    <None Include="T\I\CSharp\Android\Layout\Layout.vstemplate" />
+    <None Include="T\I\CSharp\Android\View\View.vstemplate" />
+  </ItemGroup>
+  <!-- watchOS Item Templates -->
+  <ItemGroup>
+    <None Include="T\I\CSharp\Apple\User Interface\watchOS\watchOSStoryboardEmpty\StoryboardEmpty.vstemplate" />
+    <None Include="T\I\CSharp\Apple\watchOS\ComplicationController\ComplicationController.vstemplate" />
+    <None Include="T\I\CSharp\Apple\watchOS\InterfaceController\InterfaceController.vstemplate" />
+    <None Include="T\I\CSharp\Apple\watchOS\NotificationController\NotificationController.vstemplate" />
+    <None Include="T\I\CSharp\Apple\watchOS\NotificationSimulationFile\NotificationSimulationFile.vstemplate" />
+  </ItemGroup>
+  <!-- tvOS Item Templates -->
+  <ItemGroup>
+    <None Include="T\I\CSharp\Apple\User Interface\tvOS\tvOSStoryboardEmpty\StoryboardEmpty.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\tvOS\tvOSTableViewCell\TableViewCell.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\tvOS\tvOSViewControllerXib\ViewControllerXib.vstemplate" />
+    <None Include="T\I\CSharp\Apple\User Interface\tvOS\tvOSViewXib\ViewXib.vstemplate" />
+  </ItemGroup>
+  <ItemGroup />
 </Project>

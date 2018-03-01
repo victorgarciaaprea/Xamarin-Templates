@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>BokehParticleEffect.sks</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4168" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4169" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>10</SortOrder>
+		<Icon>ICN_SpriteKit.ico</Icon>
+		<TemplateGroupID>Xamarin.iOS</TemplateGroupID>
+    <ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+		<ProjectItem SubType="" TargetFileName="$fileinputname$.sks" ReplaceParameters="false">BokehParticleEffect.sks</ProjectItem>
+		<ProjectItem SubType="" TargetFileName="bokeh.png" ReplaceParameters="false">bokeh.png</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

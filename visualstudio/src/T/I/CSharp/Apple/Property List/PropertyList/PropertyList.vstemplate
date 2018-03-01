@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>PropertyList</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4192" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4193" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>10</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+		<TemplateGroupID>Xamarin.iOS.Shared</TemplateGroupID>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.iOS.IT.PropertyList</TemplateID>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+		<ProjectItem SubType="" TargetFileName="$fileinputname$.plist" ReplaceParameters="false">Info.plist</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

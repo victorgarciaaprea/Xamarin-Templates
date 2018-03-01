@@ -1,0 +1,22 @@
+<VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>View.cs</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5052" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5053" />
+    <Icon>__TemplateIcon.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <TemplateGroupID>MonoAndroid</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>6</SortOrder>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.Android.ViewItem</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>Mono.Android</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem SubType="Code" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">View.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

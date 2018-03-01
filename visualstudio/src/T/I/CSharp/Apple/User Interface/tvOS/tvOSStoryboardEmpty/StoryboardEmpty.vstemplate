@@ -1,0 +1,18 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>EmptyStoryboard.storyboard</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4196" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4197" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>100</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+    <TemplateGroupID>Xamarin.tvOS</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.tvOS.IT.EmptyStoryboard</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.storyboard" ReplaceParameters="false">StoryboardEmpty.storyboard</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,19 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>share.xml</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="6034" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="6035" />
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4535" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>20</SortOrder>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateGroupID>MonoAndroid</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.Android.ShareCompatItem</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.xml" ReplaceParameters="true">menu_compat_share.xml</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

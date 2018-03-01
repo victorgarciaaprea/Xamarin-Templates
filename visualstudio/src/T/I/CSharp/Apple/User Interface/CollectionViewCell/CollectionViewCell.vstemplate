@@ -1,0 +1,19 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>CollectionViewCell.cs</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4144" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4145" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>600</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+		<TemplateGroupID>Xamarin.iOS</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">CollectionViewCell.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.designer.cs" ReplaceParameters="true">CollectionViewCell.designer.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.xib" ReplaceParameters="true">CollectionViewCell.xib</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

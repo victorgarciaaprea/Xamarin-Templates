@@ -1,0 +1,21 @@
+<VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>Receiver.fs</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5040" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5041" />
+		<Icon>__TemplateIcon.ico</Icon>
+		<ProjectType>FSharp</ProjectType>
+		<TemplateGroupID>MonoAndroid</TemplateGroupID>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<SortOrder>5</SortOrder>
+		<ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>Mono.Android</Assembly>
+			</Reference>
+		</References>
+		<ProjectItem SubType="Code" TargetFileName="$fileinputname$.fs" ReplaceParameters="true">Activity.fs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

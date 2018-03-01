@@ -1,0 +1,21 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>DialogViewController.cs</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4206" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4207" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>999</SortOrder>
+		<Icon>__TemplateIcon.ico</Icon>
+		<TemplateGroupID>Xamarin.iOS.Shared</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>MonoTouch.Dialog-1</Assembly>
+			</Reference>
+		</References>
+		<ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">MonoTouchDialog.cs</ProjectItem>
+	</TemplateContent>
+</VSTemplate>

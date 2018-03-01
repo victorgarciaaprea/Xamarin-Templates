@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>Adapter.cs</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="6036" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="6037" />
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4535" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>20</SortOrder>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateGroupID>MonoAndroid</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.Android.RecyclerViewAdapterItem</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="Code" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">RecyclerAdapter.cs</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>NuGet.VisualStudio.TemplateWizard</FullClassName>
+  </WizardExtension>
+  <WizardData>
+    <packages repository="extension" repositoryId="Xamarin.VisualStudio">
+      <package id="Xamarin.Android.Support.v4" version="23.4.0.1" />
+      <package id="Xamarin.Android.Support.v7.RecyclerView" version="23.4.0.1" />
+    </packages>
+  </WizardData>
+</VSTemplate>

@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>NotificationPayload.json</DefaultName>
+    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4218" />
+    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4219" />
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+    <TemplateGroupID>Xamarin.watchOS.Extension</TemplateGroupID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <ShowByDefault>false</ShowByDefault>
+    <TemplateID>Xamarin.watchOS.IT.NotificationPayload</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.json" ReplaceParameters="false">NotificationPayload.json</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
