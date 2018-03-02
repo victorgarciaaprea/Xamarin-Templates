@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Templates.Wizard;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -82,4 +83,28 @@ namespace Xamarin.Templates.Wizards
             FailedPlatforms = failedPlatforms;
         }
     }
+
+	class BaseCreateTemplateResult
+	{
+		private ItemViewModel model;
+		private string safeProjectName;
+
+		public string Platform { get; }
+
+		public BaseCreateTemplateResult(string safeProjectName, ItemViewModel model, string platform)
+		{
+			this.model = model;
+			this.safeProjectName = safeProjectName;
+			this.Platform = platform;
+		}
+
+		public bool Success { get; private set; }
+
+		public void CheckIfSolutionWasSuccessfulyCreated(Solution solution)
+		{
+			Success = solution.Projects.Count > 0;
+		}
+
+		public string SelectedTemplateId => model.Id;
+	}
 }

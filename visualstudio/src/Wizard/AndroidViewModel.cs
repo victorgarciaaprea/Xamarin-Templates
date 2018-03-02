@@ -13,7 +13,7 @@ using Xamarin.VisualStudio.Contracts.Model.Android;
 
 namespace Xamarin.Templates.Wizard
 {
-	public class AndroidViewModel : INotifyPropertyChanged
+	public class AndroidViewModel : ViewModelBase, INotifyPropertyChanged
 	{
 		public List<ItemViewModel> Templates { get; private set; }
 

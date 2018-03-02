@@ -155,9 +155,9 @@ namespace Xamarin.Templates.Wizards
 
                 result.CheckIfSolutionWasSuccessfulyCreated(dte.Solution);
                 
-                Telemetry.Events.NewProject.Create.Post(result);
+                CrossPlatformTelemetry.Events.NewProject.Create.Post(result);
             } catch (Exception ex) {
-                Telemetry.Events.NewProject.Fault.Post(result, ex);
+                CrossPlatformTelemetry.Events.NewProject.Fault.Post(result, ex);
                 throw;
             }
         }

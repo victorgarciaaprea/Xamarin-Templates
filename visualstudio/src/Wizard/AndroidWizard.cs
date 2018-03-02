@@ -26,5 +26,7 @@ namespace Xamarin.Templates.Wizard
 
 			return replacements;
 		}
+
+		protected override string TelemetryPlatform => "Android";
 	}
 }

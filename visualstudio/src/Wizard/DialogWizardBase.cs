@@ -10,23 +10,41 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TemplateWizard;
+using Xamarin.Templates.Wizards;
+using EnvDTE80;
 
 namespace Xamarin.Templates.Wizard
 {
-	abstract class DialogWizardBase<Dialog, Model> : IWizard where Dialog : DialogBase, new()
+	abstract class DialogWizardBase<Dialog, Model> : IWizard where Dialog : DialogBase, new() where Model : ViewModelBase
 	{
 		protected Model model;
 		protected Dictionary<string, string> replacements;
 		object automationObject;
+		private DTE2 dte;
 
 		public void RunFinished()
 		{
-			CreateTemplate();
+			var result = new BaseCreateTemplateResult(SafeProjectName, model.SelectedTemplate, TelemetryPlatform);
+
+			try
+			{
+				CreateTemplate();
+
+				result.CheckIfSolutionWasSuccessfulyCreated(dte.Solution);
+
+				BasePlatformTelemetry.Events.NewProject.Create.Post(result);
+			}
+			catch (Exception ex)
+			{
+				BasePlatformTelemetry.Events.NewProject.Fault.Post(result, ex);
+				throw;
+			}
 		}
 
 		public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
 		{
 			this.automationObject = automationObject;
+			dte = automationObject as DTE2;
 
 			replacements = replacementsDictionary;
 
@@ -104,5 +122,7 @@ namespace Xamarin.Templates.Wizard
 		}
 
 		protected abstract Dictionary<string, string> AddReplacements();
+
+		protected abstract string TelemetryPlatform { get; }
 	}
 }
