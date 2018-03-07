@@ -53,9 +53,7 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
-      <Version>25.4.0.2</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="SupportLibVersion" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
