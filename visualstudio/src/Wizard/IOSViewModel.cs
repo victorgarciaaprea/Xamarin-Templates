@@ -13,7 +13,7 @@ using Xamarin.VisualStudio.Contracts.Commands.IOS;
 
 namespace Xamarin.Templates.Wizard
 {
-	class IOSViewModel : ViewModelBase, INotifyPropertyChanged
+	class IOSViewModel : IViewModel, INotifyPropertyChanged
 	{
 		public List<ItemViewModel> Templates { get; private set; }
 

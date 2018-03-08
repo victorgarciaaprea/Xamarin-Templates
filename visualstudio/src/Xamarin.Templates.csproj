@@ -89,7 +89,7 @@
     <Compile Include="Wizard\IOSWizard.cs" />
     <Compile Include="Wizard\iPhoneConfigurationWizard.cs" />
     <Compile Include="Wizard\Telemetry.cs" />
-    <Compile Include="Wizard\ViewModelBase.cs" />
+    <Compile Include="Wizard\IViewModel.cs" />
     <Compile Include="Wizard\WizardBase.cs" />
     <Compile Include="Wizard\XPlatItemViewModel.cs" />
     <Compile Include="Wizard\XPlatViewModel.cs" />

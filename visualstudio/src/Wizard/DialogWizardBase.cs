@@ -15,7 +15,7 @@ using EnvDTE80;
 
 namespace Xamarin.Templates.Wizard
 {
-	abstract class DialogWizardBase<Dialog, Model> : IWizard where Dialog : DialogBase, new() where Model : ViewModelBase
+	abstract class DialogWizardBase<Dialog, Model> : IWizard where Dialog : DialogBase, new() where Model : IViewModel
 	{
 		protected Model model;
 		protected Dictionary<string, string> replacements;
