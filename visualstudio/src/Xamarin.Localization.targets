@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <LocProductName>duplo</LocProductName>
+        <LocProductName>xamarin-templates</LocProductName>
         <AutoCommentResources>false</AutoCommentResources>
     </PropertyGroup>
 
