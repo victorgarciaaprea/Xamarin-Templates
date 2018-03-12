@@ -1,0 +1,1 @@
+Folder structure to let the Loc team push the translated LCL files and our build system to sync them
