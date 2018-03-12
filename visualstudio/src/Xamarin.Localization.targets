@@ -18,9 +18,7 @@
         <SourceDir>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</SourceDir>
         <RootDir>$(SourceDir)..\</RootDir>
         <TempDir>$(RootDir)tmp\</TempDir>
-        <BuildDir>RESERVED</BuildDir>
     </PropertyGroup>
 
-    <Target Name="BeforeBuild" DependsOnTargets="Localization" />
     <Target Name="AfterBuild" DependsOnTargets="AfterLocalization" /> 
 </Project>
