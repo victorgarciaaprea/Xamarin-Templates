@@ -1,7 +1,7 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
-    <Name>watchOS App (Xamarin)</Name>
-    <Description>A project for creating a watchOS app with Xamarin.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2004" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2005" />
     <Icon>watchos-app.png</Icon>
     <TemplateGroupID>Xamarin.watchOSApp</TemplateGroupID>
     <TemplateID>Xamarin.watchOSApp.CSharp</TemplateID>

@@ -1,8 +1,8 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
 	<TemplateData>
 		<DefaultName>RainParticleEffect.sks</DefaultName>
-		<Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4176" />
-    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4177" />
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2044" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2045" />
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>10</SortOrder>
 		<Icon>ICN_SpriteKit.ico</Icon>

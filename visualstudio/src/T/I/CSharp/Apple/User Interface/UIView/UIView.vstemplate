@@ -1,8 +1,8 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
 	<TemplateData>
 		<DefaultName>UIView.cs</DefaultName>
-    <Name>UIView Class</Name>
-    <Description>Creates a new, empty UIView class.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2070" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2071" />
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>200</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>

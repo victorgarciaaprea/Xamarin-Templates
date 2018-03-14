@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
 	<TemplateData>
-		<Name>Tabbed Page</Name>
-		<Description>A page that uses the tabbed navigation pattern and contains children pages using XAML.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3018" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3019" />
 		<TemplateID>Xamarin.Forms.Templates.TabbedPage.SAP</TemplateID>
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>90</SortOrder>

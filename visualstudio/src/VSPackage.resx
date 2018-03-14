@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1002" xml:space="preserve">
+    <value>Android App (Xamarin)</value>
+  </data>
+  <data name="1003" xml:space="preserve">
+    <value>Project templates for creating Android phone and tablet apps with Xamarin.</value>
+  </data>
+  <data name="1004" xml:space="preserve">
+    <value>Android Bindings Library (Xamarin)</value>
+  </data>
+  <data name="1005" xml:space="preserve">
+    <value>A project for creating a Xamarin.Android class library that binds to a native Java library.</value>
+  </data>
+  <data name="1006" xml:space="preserve">
+    <value>Android Class Library (Xamarin)</value>
+  </data>
+  <data name="1007" xml:space="preserve">
+    <value>A Xamarin.Android class library project.</value>
+  </data>
+  <data name="1008" xml:space="preserve">
+    <value>Android Wear App (Xamarin)</value>
+  </data>
+  <data name="1009" xml:space="preserve">
+    <value>A project for creating an Android Wear app with Xamarin.</value>
+  </data>
+  <data name="1100" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="1101" xml:space="preserve">
+    <value>An empty Android activity.  An activity is like a WinForms Form.</value>
+  </data>
+  <data name="1102" xml:space="preserve">
+    <value>Adapter</value>
+  </data>
+  <data name="1103" xml:space="preserve">
+    <value>Base adapter with view re-use implemented</value>
+  </data>
+  <data name="1104" xml:space="preserve">
+    <value>Broadcast Receiver</value>
+  </data>
+  <data name="1105" xml:space="preserve">
+    <value>An empty Android broadcast receiver.  A broadcast receiver receives and reacts to announcements sent by Android processes.</value>
+  </data>
+  <data name="1106" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="1107" xml:space="preserve">
+    <value>An empty class definition</value>
+  </data>
+  <data name="1108" xml:space="preserve">
+    <value>Fragment</value>
+  </data>
+  <data name="1109" xml:space="preserve">
+    <value>An empty Android fragment.  Use fragments in Android 3.0+ to break your activities into smaller components.</value>
+  </data>
+  <data name="1110" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="1111" xml:space="preserve">
+    <value>An empty interface definition</value>
+  </data>
+  <data name="1112" xml:space="preserve">
+    <value>Android Layout</value>
+  </data>
+  <data name="1113" xml:space="preserve">
+    <value>A resource file for describing an Android layout</value>
+  </data>
+  <data name="1114" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="1115" xml:space="preserve">
+    <value>Standard Android Menu with 1 Item for API 15+</value>
+  </data>
+  <data name="1116" xml:space="preserve">
+    <value>Menu Compat</value>
+  </data>
+  <data name="1117" xml:space="preserve">
+    <value>Standard Android Menu with 1 Item for Support v7 AppCompat</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1118" xml:space="preserve">
+    <value>Recycler View Adapter</value>
+  </data>
+  <data name="1119" xml:space="preserve">
+    <value>Recycler View Adapter with click handlers</value>
+  </data>
+  <data name="1120" xml:space="preserve">
+    <value>Search Menu</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1121" xml:space="preserve">
+    <value>Standard Android Search Menu for API 15+</value>
+  </data>
+  <data name="1122" xml:space="preserve">
+    <value>Search Menu AppCompat</value>
+  </data>
+  <data name="1123" xml:space="preserve">
+    <value>Search Menu for Support V7 AppCompat</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1124" xml:space="preserve">
+    <value>Share Menu</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1125" xml:space="preserve">
+    <value>Standard Share Menu for Android API 15+</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1126" xml:space="preserve">
+    <value>Share Menu AppCompat</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1127" xml:space="preserve">
+    <value>Share Menu for Support V7 AppCompat</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="1128" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="1129" xml:space="preserve">
+    <value>An empty Android view.  A view can be like a WinForms Control, or a grouping of other Android views.</value>
+  </data>
+  <data name="2002" xml:space="preserve">
+    <value>tvOS App (Xamarin)</value>
+  </data>
+  <data name="2003" xml:space="preserve">
+    <value>A project for creating a tvOS app with Xamarin.</value>
+  </data>
+  <data name="2004" xml:space="preserve">
+    <value>watchOS App (Xamarin)</value>
+  </data>
+  <data name="2005" xml:space="preserve">
+    <value>A project for creating a watchOS app with Xamarin.</value>
+  </data>
+  <data name="2006" xml:space="preserve">
+    <value>iOS App (Xamarin)</value>
+  </data>
+  <data name="2007" xml:space="preserve">
+    <value>Project templates for creating iOS apps for iPhone and iPad with Xamarin.</value>
+  </data>
+  <data name="2008" xml:space="preserve">
+    <value>iOS Bindings Library (Xamarin)</value>
+  </data>
+  <data name="2009" xml:space="preserve">
+    <value>A project for creating a Xamarin.iOS class library that binds to a native iOS library.</value>
+  </data>
+  <data name="2010" xml:space="preserve">
+    <value>iOS Class Library (Xamarin)</value>
+  </data>
+  <data name="2011" xml:space="preserve">
+    <value>A Xamarin.iOS class library project.</value>
+  </data>
+  <data name="2012" xml:space="preserve">
+    <value>Asset Catalog</value>
+  </data>
+  <data name="2013" xml:space="preserve">
+    <value>Creates an asset catalog.</value>
+  </data>
+  <data name="2014" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="2015" xml:space="preserve">
+    <value>An empty class definition</value>
+  </data>
+  <data name="2016" xml:space="preserve">
+    <value>Entitlements.plist</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="2017" xml:space="preserve">
+    <value>Creates an empty entitlements file.</value>
+  </data>
+  <data name="2018" xml:space="preserve">
+    <value>Info.plist</value>
+    <comment>{Locked}</comment>
+  </data>
+  <data name="2019" xml:space="preserve">
+    <value>Creates an empty property list.</value>
+  </data>
+  <data name="2020" xml:space="preserve">
+    <value>Settings Bundle</value>
+  </data>
+  <data name="2021" xml:space="preserve">
+    <value>A bundle for specifying an iOS Application's settings</value>
+  </data>
+  <data name="2022" xml:space="preserve">
+    <value>Bokeh (Scene)</value>
+  </data>
+  <data name="2023" xml:space="preserve">
+    <value>Creates a bokeh particle system.</value>
+  </data>
+  <data name="2024" xml:space="preserve">
+    <value>Confetti (Scene)</value>
+  </data>
+  <data name="2025" xml:space="preserve">
+    <value>Creates a confetti particle system.</value>
+  </data>
+  <data name="2026" xml:space="preserve">
+    <value>Fire (Scene)</value>
+  </data>
+  <data name="2027" xml:space="preserve">
+    <value>Creates a fire particle system.</value>
+  </data>
+  <data name="2028" xml:space="preserve">
+    <value>Rain (Scene)</value>
+  </data>
+  <data name="2029" xml:space="preserve">
+    <value>Creates a rain particle system.</value>
+  </data>
+  <data name="2030" xml:space="preserve">
+    <value>Reactor (Scene)</value>
+  </data>
+  <data name="2031" xml:space="preserve">
+    <value>Creates a reactor particle system.</value>
+  </data>
+  <data name="2032" xml:space="preserve">
+    <value>Smoke (Scene)</value>
+  </data>
+  <data name="2033" xml:space="preserve">
+    <value>Creates a smoke particle system.</value>
+  </data>
+  <data name="2034" xml:space="preserve">
+    <value>Stars (Scene)</value>
+  </data>
+  <data name="2035" xml:space="preserve">
+    <value>Creates a stars particle system.</value>
+  </data>
+  <data name="2036" xml:space="preserve">
+    <value>Bokeh (Sprite)</value>
+  </data>
+  <data name="2037" xml:space="preserve">
+    <value>Creates a bokeh particle effect.</value>
+  </data>
+  <data name="2038" xml:space="preserve">
+    <value>Fireflies (Sprite)</value>
+  </data>
+  <data name="2039" xml:space="preserve">
+    <value>Creates a fireflies particle effect.</value>
+  </data>
+  <data name="2040" xml:space="preserve">
+    <value>Fire (Sprite)</value>
+  </data>
+  <data name="2041" xml:space="preserve">
+    <value>Creates a fire particle effect.</value>
+  </data>
+  <data name="2042" xml:space="preserve">
+    <value>Magic (Sprite)</value>
+  </data>
+  <data name="2043" xml:space="preserve">
+    <value>Creates a magic particle effect.</value>
+  </data>
+  <data name="2044" xml:space="preserve">
+    <value>Rain (Sprite)</value>
+  </data>
+  <data name="2045" xml:space="preserve">
+    <value>Creates a rain particle effect.</value>
+  </data>
+  <data name="2046" xml:space="preserve">
+    <value>Smoke (Sprite)</value>
+  </data>
+  <data name="2047" xml:space="preserve">
+    <value>Creates a smoke particle effect.</value>
+  </data>
+  <data name="2048" xml:space="preserve">
+    <value>Snow (Sprite)</value>
+  </data>
+  <data name="2049" xml:space="preserve">
+    <value>Creates a snow particle effect.</value>
+  </data>
+  <data name="2050" xml:space="preserve">
+    <value>Spark (Sprite)</value>
+  </data>
+  <data name="2051" xml:space="preserve">
+    <value>Creates a spark particle effect.</value>
+  </data>
+  <data name="2052" xml:space="preserve">
+    <value>Collection View Cell</value>
+  </data>
+  <data name="2053" xml:space="preserve">
+    <value>A custom class and an Interface Builder document for creating a Collection View Cell</value>
+  </data>
+  <data name="2054" xml:space="preserve">
+    <value>Metal File</value>
+  </data>
+  <data name="2055" xml:space="preserve">
+    <value>Creates a new metal file.</value>
+  </data>
+  <data name="2056" xml:space="preserve">
+    <value>Dialog View Controller</value>
+  </data>
+  <data name="2057" xml:space="preserve">
+    <value>A MonoTouch.Dialog ViewController: simplified UITableViews with Xamarin.iOS.</value>
+  </data>
+  <data name="2058" xml:space="preserve">
+    <value>Empty Storyboard</value>
+  </data>
+  <data name="2059" xml:space="preserve">
+    <value>Creates an empty Interface Builder Storyboard for an iOS interface.</value>
+  </data>
+  <data name="2060" xml:space="preserve">
+    <value>Table View Cell</value>
+  </data>
+  <data name="2061" xml:space="preserve">
+    <value>A custom class and an Interface Builder document for creating a Table View Cell</value>
+  </data>
+  <data name="2062" xml:space="preserve">
+    <value>Empty Storyboard</value>
+  </data>
+  <data name="2063" xml:space="preserve">
+    <value>Creates an empty Interface Builder Storyboard for an tvOS interface.</value>
+  </data>
+  <data name="2064" xml:space="preserve">
+    <value>Table View Cell</value>
+  </data>
+  <data name="2065" xml:space="preserve">
+    <value>A custom class and an Interface Builder document for creating a Table View Cell</value>
+  </data>
+  <data name="2066" xml:space="preserve">
+    <value>View Controller</value>
+  </data>
+  <data name="2067" xml:space="preserve">
+    <value>A custom class and an Interface Builder document for creating a View Controller using size classes</value>
+  </data>
+  <data name="2068" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="2069" xml:space="preserve">
+    <value>An Interface Builder document for creating a view</value>
+  </data>
+  <data name="2070" xml:space="preserve">
+    <value>UIView Class</value>
+  </data>
+  <data name="2071" xml:space="preserve">
+    <value>Creates a new, empty UIView class.</value>
+  </data>
+  <data name="2072" xml:space="preserve">
+    <value>UIViewController Class</value>
+  </data>
+  <data name="2073" xml:space="preserve">
+    <value>Creates a new UIViewController class and sample UIView class.</value>
+  </data>
+  <data name="2074" xml:space="preserve">
+    <value>View Controller with Storyboard</value>
+  </data>
+  <data name="2075" xml:space="preserve">
+    <value>Creates a view controller for Xamarin.iOS with storyboard support.</value>
+  </data>
+  <data name="2076" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="2077" xml:space="preserve">
+    <value>An Interface Builder document for creating an iOS view.</value>
+  </data>
+  <data name="2078" xml:space="preserve">
+    <value>Empty Storyboard</value>
+  </data>
+  <data name="2079" xml:space="preserve">
+    <value>Creates an empty Interface Builder Storyboard for an watchOS interface.</value>
+  </data>
+  <data name="2080" xml:space="preserve">
+    <value>Complication Controller</value>
+  </data>
+  <data name="2081" xml:space="preserve">
+    <value>A custom class for creating an Complication Controller.</value>
+  </data>
+  <data name="2082" xml:space="preserve">
+    <value>Interface Controller</value>
+  </data>
+  <data name="2083" xml:space="preserve">
+    <value>A custom class for creating an Interface Controller.</value>
+  </data>
+  <data name="2084" xml:space="preserve">
+    <value>Notification Controller</value>
+  </data>
+  <data name="2085" xml:space="preserve">
+    <value>A custom class for creating an Notification Controller.</value>
+  </data>
+  <data name="2086" xml:space="preserve">
+    <value>Notification Simulation File</value>
+  </data>
+  <data name="2087" xml:space="preserve">
+    <value>Apple Push Notification Service payload in JSON format.</value>
+  </data>
+  <data name="3002" xml:space="preserve">
+    <value>Mobile App (Xamarin.Forms)</value>
+  </data>
+  <data name="3003" xml:space="preserve">
+    <value>A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.</value>
+  </data>
+  <data name="3004" xml:space="preserve">
+    <value>Content Page</value>
+  </data>
+  <data name="3005" xml:space="preserve">
+    <value>A page for displaying content using XAML.</value>
+  </data>
+  <data name="3006" xml:space="preserve">
+    <value>Content Page (C#)</value>
+  </data>
+  <data name="3007" xml:space="preserve">
+    <value>A page for displaying content using C#.</value>
+  </data>
+  <data name="3008" xml:space="preserve">
+    <value>Content View</value>
+  </data>
+  <data name="3009" xml:space="preserve">
+    <value>A view for displaying content using XAML.</value>
+  </data>
+  <data name="3010" xml:space="preserve">
+    <value>Content View (C#)</value>
+  </data>
+  <data name="3011" xml:space="preserve">
+    <value>A view for displaying content using C#.</value>
+  </data>
+  <data name="3012" xml:space="preserve">
+    <value>List View Page</value>
+  </data>
+  <data name="3013" xml:space="preserve">
+    <value>A page with a ListView for displaying data using XAML.</value>
+  </data>
+  <data name="3014" xml:space="preserve">
+    <value>Map Page</value>
+  </data>
+  <data name="3015" xml:space="preserve">
+    <value>A maps page using XAML.</value>
+  </data>
+  <data name="3016" xml:space="preserve">
+    <value>Master Detail Page</value>
+  </data>
+  <data name="3017" xml:space="preserve">
+    <value>A page that uses the master-detail navigation pattern using XAML.</value>
+  </data>
+  <data name="3018" xml:space="preserve">
+    <value>Tabbed Page</value>
+  </data>
+  <data name="3019" xml:space="preserve">
+    <value>A page that uses the tabbed navigation pattern and contains children pages using XAML.</value>
+  </data>
+  <data name="3020" xml:space="preserve">
+    <value>View Cell</value>
+  </data>
+  <data name="3021" xml:space="preserve">
+    <value>A view for a ListView cell using XAML.</value>
+  </data>
+</root>

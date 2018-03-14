@@ -1,7 +1,7 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
-    <Name>iOS Bindings Library (Xamarin)</Name>
-    <Description>A project for creating a Xamarin.iOS class library that binds to a native iOS library.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2008" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2009" />
     <Icon>ios-library.ico</Icon>
     <TemplateGroupID>Xamarin.iOSBindings</TemplateGroupID>
     <TemplateID>Xamarin.iOSBindings.CSharp</TemplateID>

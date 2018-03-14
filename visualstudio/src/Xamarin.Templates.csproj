@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="XamarinTemplatesPackage.cs" />
     <Content Include="Properties\ICN_Xamarin.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -226,6 +227,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="VSPackage.resx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\External\XamarinVS.Contracts\src\VisualStudio.Contracts\Xamarin.VisualStudio.Contracts.csproj">

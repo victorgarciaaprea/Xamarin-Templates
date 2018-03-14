@@ -1,8 +1,8 @@
 <VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>Activity.cs</DefaultName>
-    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5030" />
-    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="5031" />
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1100" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1101" />
     <Icon>__TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <TemplateGroupID>MonoAndroid</TemplateGroupID>
