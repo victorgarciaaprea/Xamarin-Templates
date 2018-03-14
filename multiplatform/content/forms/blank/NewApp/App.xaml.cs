@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
+[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace NewApp
 {
 	public partial class App : Application
