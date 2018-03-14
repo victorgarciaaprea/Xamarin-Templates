@@ -30,5 +30,10 @@
 		
 		<GitSha>$(BUILD_SOURCEVERSION)</GitSha>
 		<GitCommit Condition="'$(GitSha)' != ''">$(GitSha.Substring(0, 7))</GitCommit>
+
+		<IsExperimental>false</IsExperimental>
+		<IsExperimental Condition="'$(CI)' != 'true'">true</IsExperimental>
+		<IsSystemComponent>true</IsSystemComponent>
+		<IsSystemComponent Condition="'$(CI)' != 'true'">false</IsSystemComponent>
 	</PropertyGroup>
 </Project>

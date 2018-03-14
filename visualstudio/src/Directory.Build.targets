@@ -113,6 +113,8 @@
 		<Copy SourceFiles="@(_CreatedVsixContainer)" DestinationFolder="$(Out)" />
 	</Target>
 
+	<Target Name="IsExperimental" Returns="$(IsExperimental)" />
+	<Target Name="IsSystemComponent" Returns="$(IsSystemComponent)" />
 
   <!-- Patch VSSDK uninstall VSIX broken logic	
 	Before we even import Clarius.VisualStudio targets, which in turn import VSSDK ones, 
