@@ -177,4 +177,52 @@
   <data name="UWP" xml:space="preserve">
     <value>Windows (UWP)</value>
   </data>
+  <data name="AndroidViewModel_BlankApp_Description" xml:space="preserve">
+    <value>An Android app with an Activity class and empty layout file.</value>
+  </data>
+  <data name="AndroidViewModel_BlankApp_Name" xml:space="preserve">
+    <value>Blank App</value>
+  </data>
+  <data name="AndroidViewModel_NavigationDrawerApp_Description" xml:space="preserve">
+    <value>An Android app that uses a panel on the left side to present navigation options. Use this as an alternative to tabs if you have lots of navigation targets and want to maximize screen space.</value>
+  </data>
+  <data name="AndroidViewModel_NavigationDrawerApp_Name" xml:space="preserve">
+    <value>Navigation Drawer App</value>
+  </data>
+  <data name="AndroidViewModel_SingleViewApp_Description" xml:space="preserve">
+    <value>An Android app with a single Activity and simple AXML layout file. Use this basic template as a starting point for any Android app.</value>
+  </data>
+  <data name="AndroidViewModel_SingleViewApp_Name" xml:space="preserve">
+    <value>Single View App</value>
+  </data>
+  <data name="AndroidViewModel_TabbedApp_Description" xml:space="preserve">
+    <value>An Android app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have few navigation targets that will be frequently switched between.</value>
+  </data>
+  <data name="AndroidViewModel_TabbedApp_Name" xml:space="preserve">
+    <value>Tabbed App</value>
+  </data>
+  <data name="IOSViewModel_BlankApp_Description" xml:space="preserve">
+    <value>An iOS app with an empty UIViewController and no Storyboard file.</value>
+  </data>
+  <data name="IOSViewModel_BlankApp_Name" xml:space="preserve">
+    <value>Blank App</value>
+  </data>
+  <data name="IOSViewModel_MasterDetailApp_Description" xml:space="preserve">
+    <value>An iOS app that uses a split view and the master-detail navigation pattern. Use this if your app will display a list of data that will show more detail when an item is selected.</value>
+  </data>
+  <data name="IOSViewModel_MasterDetailApp_Name" xml:space="preserve">
+    <value>Master-Detail App</value>
+  </data>
+  <data name="IOSViewModel_SingleViewApp_Description" xml:space="preserve">
+    <value>An iOS app with a Storyboard file and single UIViewController. Use this basic template as a starting point for any iOS app.</value>
+  </data>
+  <data name="IOSViewModel_SingleViewApp_Name" xml:space="preserve">
+    <value>Single View App</value>
+  </data>
+  <data name="IOSViewModel_TabbedApp_Description" xml:space="preserve">
+    <value>An iOS app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have different content categories that will be frequently switched between.</value>
+  </data>
+  <data name="IOSViewModel_TabbedApp_Name" xml:space="preserve">
+    <value>Tabbed App</value>
+  </data>
 </root>
