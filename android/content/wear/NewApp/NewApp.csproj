@@ -87,8 +87,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Support.Wear" Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Android.Support.Fragment" Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Wear" Version="2.2.0" />
-    <PackageReference Include="Xamarin.GooglePlayServices.Wearable" Version="60.*" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
