@@ -4,8 +4,11 @@
              xmlns:local="clr-namespace:NewApp"
              x:Class="NewApp.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
+    </StackLayout>
 
 </ContentPage>
