@@ -1,7 +1,7 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
-    <Name>Android Bindings Library (Xamarin)</Name>
-    <Description>A project for creating a Xamarin.Android class library that binds to a native Java library.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1004" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1005" />
     <Icon>android-library.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidBinding</TemplateGroupID>
     <TemplateID>Xamarin.AndroidBinding.CSharp</TemplateID>

@@ -1,8 +1,8 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
 	<TemplateData>
 		<DefaultName>SmokeParticleSystem.scnp</DefaultName>
-    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4164" />
-    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="4165" />
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2032" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2033" />
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>10</SortOrder>
 		<Icon>ICN_SceneKit.ico</Icon>

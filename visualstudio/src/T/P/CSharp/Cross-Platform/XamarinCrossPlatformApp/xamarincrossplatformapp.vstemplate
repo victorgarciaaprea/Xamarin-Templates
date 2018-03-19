@@ -1,7 +1,7 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
-    <Name>Mobile App (Xamarin.Forms)</Name>
-    <Description>A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3002" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3003" />
     <Icon>FormsProject.ico</Icon>
     <TemplateGroupID>Xamarin.XPlatApp</TemplateGroupID>
     <TemplateID>Xamarin.XPlatApp.CSharp</TemplateID>

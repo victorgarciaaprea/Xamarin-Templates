@@ -1,7 +1,7 @@
 ﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
   <TemplateData>
-    <Name>Android App (Xamarin)</Name>
-    <Description>Project templates for creating Android phone and tablet apps with Xamarin.</Description>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1002" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1003" />
     <Icon>android-app.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidApp</TemplateGroupID>
     <TemplateID>Xamarin.AndroidApp.CSharp</TemplateID>

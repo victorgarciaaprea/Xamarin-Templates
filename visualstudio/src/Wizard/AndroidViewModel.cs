@@ -1,19 +1,16 @@
 ﻿using Merq;
-
-using System;
-using System.IO;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.ComponentModelHost;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using Xamarin.Templates.Properties;
 using Xamarin.VisualStudio.Contracts.Commands.Android;
 using Xamarin.VisualStudio.Contracts.Model.Android;
 
 namespace Xamarin.Templates.Wizard
 {
-	public class AndroidViewModel : IViewModel, INotifyPropertyChanged
+    public class AndroidViewModel : IViewModel, INotifyPropertyChanged
 	{
 		public List<ItemViewModel> Templates { get; private set; }
 
@@ -42,10 +39,10 @@ namespace Xamarin.Templates.Wizard
 			var icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg");
 			return new List<ItemViewModel>
 			{
-				new ItemViewModel { Id = "single-view", Name = "Single View App", Icon = icon, Description = "An Android app with a single Activity and simple AXML layout file. Use this basic template as a starting point for any Android app." },
-				new ItemViewModel { Id = "nav-drawer", Name = "Navigation Drawer App", Icon = icon, Description = "An Android app that uses a panel on the left side to present navigation options. Use this as an alternative to tabs if you have lots of navigation targets and want to maximize screen space." },
-				new ItemViewModel { Id = "bottom-nav", Name = "Tabbed App", Icon = icon, Description = "An Android app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have few navigation targets that will be frequently switched between." },
-				new ItemViewModel { Id = "blank", Name = "Blank App", Icon = icon, Description = "An Android app with an Activity class and empty layout file." }
+				new ItemViewModel { Id = "single-view", Name = Resources.AndroidViewModel_SingleViewApp_Name, Icon = icon, Description = Resources.AndroidViewModel_SingleViewApp_Description },
+				new ItemViewModel { Id = "nav-drawer", Name = Resources.AndroidViewModel_NavigationDrawerApp_Name, Icon = icon, Description = Resources.AndroidViewModel_NavigationDrawerApp_Description },
+				new ItemViewModel { Id = "bottom-nav", Name = Resources.AndroidViewModel_TabbedApp_Name, Icon = icon, Description = Resources.AndroidViewModel_TabbedApp_Description },
+				new ItemViewModel { Id = "blank", Name = Resources.AndroidViewModel_BlankApp_Name, Icon = icon, Description = Resources.AndroidViewModel_BlankApp_Description }
 			};
 		}
 

@@ -70,6 +70,78 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An Android app with an Activity class and empty layout file..
+        /// </summary>
+        public static string AndroidViewModel_BlankApp_Description {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_BlankApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blank App.
+        /// </summary>
+        public static string AndroidViewModel_BlankApp_Name {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_BlankApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An Android app that uses a panel on the left side to present navigation options. Use this as an alternative to tabs if you have lots of navigation targets and want to maximize screen space..
+        /// </summary>
+        public static string AndroidViewModel_NavigationDrawerApp_Description {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_NavigationDrawerApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigation Drawer App.
+        /// </summary>
+        public static string AndroidViewModel_NavigationDrawerApp_Name {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_NavigationDrawerApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An Android app with a single Activity and simple AXML layout file. Use this basic template as a starting point for any Android app..
+        /// </summary>
+        public static string AndroidViewModel_SingleViewApp_Description {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_SingleViewApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Single View App.
+        /// </summary>
+        public static string AndroidViewModel_SingleViewApp_Name {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_SingleViewApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An Android app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have few navigation targets that will be frequently switched between..
+        /// </summary>
+        public static string AndroidViewModel_TabbedApp_Description {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_TabbedApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tabbed App.
+        /// </summary>
+        public static string AndroidViewModel_TabbedApp_Name {
+            get {
+                return ResourceManager.GetString("AndroidViewModel_TabbedApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blank App.
         /// </summary>
         public static string BlankApp {
@@ -79,9 +151,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A cross-platform template for building cross-platform, native mobile apps for iOS, Android, and Universal Windows Platform.
-        ///    
-        ///Use the native user interface approach to create UIs for each platform, or use Xamarin.Forms to create cross-platform, native UIs in XAML..
+        ///   Looks up a localized string similar to A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform..
         /// </summary>
         public static string BlankAppDescription {
             get {
@@ -117,7 +187,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Host in the cloud.
+        ///   Looks up a localized string similar to Include Azure Mobile Apps backend project.
         /// </summary>
         public static string HostInTheCloud {
             get {
@@ -135,6 +205,78 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An iOS app with an empty UIViewController and no Storyboard file..
+        /// </summary>
+        public static string IOSViewModel_BlankApp_Description {
+            get {
+                return ResourceManager.GetString("IOSViewModel_BlankApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blank App.
+        /// </summary>
+        public static string IOSViewModel_BlankApp_Name {
+            get {
+                return ResourceManager.GetString("IOSViewModel_BlankApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An iOS app that uses a split view and the master-detail navigation pattern. Use this if your app will display a list of data that will show more detail when an item is selected..
+        /// </summary>
+        public static string IOSViewModel_MasterDetailApp_Description {
+            get {
+                return ResourceManager.GetString("IOSViewModel_MasterDetailApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Master-Detail App.
+        /// </summary>
+        public static string IOSViewModel_MasterDetailApp_Name {
+            get {
+                return ResourceManager.GetString("IOSViewModel_MasterDetailApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An iOS app with a Storyboard file and single UIViewController. Use this basic template as a starting point for any iOS app..
+        /// </summary>
+        public static string IOSViewModel_SingleViewApp_Description {
+            get {
+                return ResourceManager.GetString("IOSViewModel_SingleViewApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Single View App.
+        /// </summary>
+        public static string IOSViewModel_SingleViewApp_Name {
+            get {
+                return ResourceManager.GetString("IOSViewModel_SingleViewApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An iOS app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have different content categories that will be frequently switched between..
+        /// </summary>
+        public static string IOSViewModel_TabbedApp_Description {
+            get {
+                return ResourceManager.GetString("IOSViewModel_TabbedApp_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tabbed App.
+        /// </summary>
+        public static string IOSViewModel_TabbedApp_Name {
+            get {
+                return ResourceManager.GetString("IOSViewModel_TabbedApp_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Master Detail.
         /// </summary>
         public static string MasterDetail {
@@ -144,9 +286,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A project template for creating cross-platform, native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with master-detail navigation pattern.
-        ///
-        ///Use the native user interface approach to create UIs for each platform, or use Xamarin.Forms to create cross-platform, native UIs in XAML..
+        ///   Looks up a localized string similar to A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with master-detail navigation pattern..
         /// </summary>
         public static string MasterDetailDescription {
             get {
@@ -155,7 +295,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Microsoft Azure.
+        ///   Looks up a localized string similar to Mobile Backend.
         /// </summary>
         public static string MicrosoftAzure {
             get {
@@ -173,7 +313,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .Net Standard.
+        ///   Looks up a localized string similar to .NET Standard.
         /// </summary>
         public static string PCL {
             get {

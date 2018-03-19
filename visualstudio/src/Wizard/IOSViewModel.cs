@@ -1,19 +1,15 @@
 ﻿using Merq;
-
-using System;
-using System.IO;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.ComponentModelHost;
-using Xamarin.VisualStudio.Contracts.Model.IOS;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using Xamarin.Templates.Properties;
 using Xamarin.VisualStudio.Contracts.Commands.IOS;
 
 namespace Xamarin.Templates.Wizard
 {
-	class IOSViewModel : IViewModel, INotifyPropertyChanged
+    class IOSViewModel : IViewModel, INotifyPropertyChanged
 	{
 		public List<ItemViewModel> Templates { get; private set; }
 
@@ -64,10 +60,10 @@ namespace Xamarin.Templates.Wizard
 			var icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg");
 			return new List<ItemViewModel>
 			{
-				new ItemViewModel { Id = "single-view", Name = "Single View App", Icon = icon, Description = "An iOS app with a Storyboard file and single UIViewController. Use this basic template as a starting point for any iOS app." },
-				new ItemViewModel { Id = "master-detail", Name = "Master-Detail App", Icon = icon, Description = "An iOS app that uses a split view and the master-detail navigation pattern. Use this if your app will display a list of data that will show more detail when an item is selected." },
-				new ItemViewModel { Id = "tabbed", Name = "Tabbed App", Icon = icon, Description = "An iOS app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have different content categories that will be frequently switched between." },
-				new ItemViewModel { Id = "blank", Name = "Blank App", Icon = icon, Description = "An iOS app with an empty UIViewController and no Storyboard file." }
+				new ItemViewModel { Id = "single-view", Name = Resources.IOSViewModel_SingleViewApp_Name, Icon = icon, Description = Resources.IOSViewModel_SingleViewApp_Description },
+				new ItemViewModel { Id = "master-detail", Name = Resources.IOSViewModel_MasterDetailApp_Name, Icon = icon, Description = Resources.IOSViewModel_MasterDetailApp_Description },
+				new ItemViewModel { Id = "tabbed", Name = Resources.IOSViewModel_TabbedApp_Name, Icon = icon, Description = Resources.IOSViewModel_TabbedApp_Description },
+				new ItemViewModel { Id = "blank", Name = Resources.IOSViewModel_BlankApp_Name, Icon = icon, Description = Resources.IOSViewModel_BlankApp_Description }
 			};
 		}
 

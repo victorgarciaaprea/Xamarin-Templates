@@ -1,9 +1,9 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>Adapter.cs</DefaultName>
-    <Name Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="6022" />
-    <Description Package="{2d510815-1c4e-4210-bd82-3d9d2c56c140}" ID="6023" />
-    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4535" />
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1102" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1103" />
+    <Icon>__TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <SortOrder>20</SortOrder>
     <PreviewImage>__PreviewImage.png</PreviewImage>
