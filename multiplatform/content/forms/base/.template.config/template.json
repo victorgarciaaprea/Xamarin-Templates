@@ -15,6 +15,22 @@
     "sourceName": "NewApp",
     "primaryOutputs": [
         {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "path": "NewApp\\MainPage.xaml"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "path": "NewApp\\MainPage.xaml.cs"
+        },
+        {
+            "condition": "CreateSharedProject",
+            "path": "NewApp\\NewApp.shproj"
+        },
+        {
+            "condition": "(!CreateSharedProject)",
+            "path": "NewApp\\NewApp.csproj"
+        },
+        {
             "condition": "CreateAndroidProject",
             "path": "NewApp.Android\\NewApp.Android.csproj"
         },
@@ -185,6 +201,28 @@
             "defaultValue": "false"
         }
     },
+    "postActions": [
+        {
+          "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"blank\"))",
+          "description": "Opens MainPage.xaml in the editor.",
+          "manualInstructions": [ ],
+          "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+          "args": {
+            "files": "0"
+          },
+          "continueOnError": true
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"blank\"))",
+            "description": "Opens MainPage.xaml.cs in the editor.",
+            "manualInstructions": [ ],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+              "files": "1"
+            },
+            "continueOnError": true
+          }
+    ],
     "sources": [
         {
             "modifiers": [
