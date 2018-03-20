@@ -76,17 +76,17 @@
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*" />
-            <RowDefinition Height="1.2*"/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.8*" />
             <ColumnDefinition Width="1" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <ListView Grid.Row="1" Grid.Column="0" Margin="10,10" SelectionMode="Single" ItemContainerStyle="{StaticResource ListViewStyleTemplates}" ItemTemplate="{StaticResource ItemTemplate}" SelectedItem="{Binding SelectedTemplate}" ItemsSource="{Binding Templates}" x:Name="lvTemplates">
+        <ListView Grid.Row="1" Grid.Column="0" Margin="10,10" SelectionMode="Single" ItemContainerStyle="{StaticResource ListViewStyleTemplates}" ItemTemplate="{StaticResource ItemTemplate}" SelectedItem="{Binding SelectedTemplate}" ItemsSource="{Binding Templates}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="lvTemplates">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" />
@@ -101,7 +101,9 @@
         </Separator>
         <StackPanel Grid.Column="2" Grid.Row="2">
 	<Label Content="{x:Static res:Resources.MicrosoftAzure}" Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" FontWeight="Bold" />
-	<CheckBox Content="{x:Static res:Resources.HostInTheCloud}" Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" Margin="5,5" IsChecked="{Binding IsAzureSelected}"/>
+            <CheckBox Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" Margin="5,5" IsChecked="{Binding IsAzureSelected}">
+                <TextBlock Text="{x:Static res:Resources.HostInTheCloud}" TextWrapping="Wrap"/>
+            </CheckBox>
         </StackPanel>
         <Grid Grid.Column="0" Grid.Row="2" >
             <Grid.ColumnDefinitions>
