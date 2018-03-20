@@ -77,6 +77,8 @@
       "replaces": "SupportLibVersion",
       "defaultValue": "27.*"
     },
+  },
+  "postActions": [
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && "(kind == \"blank\")",
       "description": "Opens content_main.axml in the editor.",
@@ -87,7 +89,7 @@
       },
       "continueOnError": true
     }
-  },
+  ],
   "sources": [
     {
       "source": "./NewApp"
