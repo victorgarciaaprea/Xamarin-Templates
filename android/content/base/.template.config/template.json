@@ -19,6 +19,10 @@
   "primaryOutputs": [
     {
         "path": "NewApp.csproj"
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "path": "Resources/layout/activity_main.axml.cs"
     }
   ],
   "preferNameDirectory": true,
@@ -72,6 +76,16 @@
       "datatype": "string",
       "replaces": "SupportLibVersion",
       "defaultValue": "27.*"
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && "(kind == \"blank\")",
+      "description": "Opens content_main.axml in the editor.",
+      "manualInstructions": [ ],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "1"
+      },
+      "continueOnError": true
     }
   },
   "sources": [
