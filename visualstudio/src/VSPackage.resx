@@ -558,4 +558,16 @@
   <data name="3021" xml:space="preserve">
     <value>A view for a ListView cell using XAML.</value>
   </data>
+  <data name="3022" xml:space="preserve">
+    <value>Android App (XAML)</value>
+  </data>
+  <data name="3023" xml:space="preserve">
+    <value>A project template for building Android apps in XAML with Xamarin.Forms.</value>
+  </data>
+  <data name="3024" xml:space="preserve">
+    <value>iOS App (XAML)</value>
+  </data>
+  <data name="3025" xml:space="preserve">
+    <value>A project template for building iOS apps in XAML with Xamarin.Forms.</value>
+  </data>
 </root>

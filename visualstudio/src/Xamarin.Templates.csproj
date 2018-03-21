@@ -112,6 +112,9 @@
     <None Include="T\P\CSharp\Android\XamarinAndroidApp\xamarinandroidapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
+    <None Include="T\P\CSharp\Android\XamarinCrossPlatformApp\xamarincrossplatformapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
     <None Include="T\P\CSharp\Android\XamarinAndroidWearApp\xamarinandroidwearapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
