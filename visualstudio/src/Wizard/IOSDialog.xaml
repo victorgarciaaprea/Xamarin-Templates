@@ -11,7 +11,7 @@
     <Window.DataContext>
         <local:IOSViewModel />
     </Window.DataContext>
-    <Grid>
+    <Grid Margin="5,5,5,3">
         <Grid.Resources>
             <DataTemplate x:Key="ItemTemplate" >
                 <StackPanel Orientation="Vertical" Margin="1">
@@ -82,14 +82,14 @@
             <ColumnDefinition Width="1.8*" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <ListView Grid.Row="1" Grid.Column="0" Margin="10,10" SelectionMode="Single" ItemContainerStyle="{StaticResource ListViewStyleTemplates}" ItemTemplate="{StaticResource ItemTemplate}" SelectedItem="{Binding SelectedTemplate}" ItemsSource="{Binding Templates}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="lvTemplates">
+        <ListView Grid.Row="1" Grid.Column="0" Margin="10,5" SelectionMode="Single" ItemContainerStyle="{StaticResource ListViewStyleTemplates}" ItemTemplate="{StaticResource ItemTemplate}" SelectedItem="{Binding SelectedTemplate}" ItemsSource="{Binding Templates}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="lvTemplates">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
-        <Label Grid.Column="0" Grid.Row="0" Content="{x:Static res:Resources.SelectATemplate}" Margin="10,10,0,0" />
+        <Label Grid.Column="0" Grid.Row="0" Content="{x:Static res:Resources.SelectATemplate}" Margin="5,0,0,0" />
         <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,0,10" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -106,11 +106,11 @@
                 <ComboBox Margin="10,2,12,0" SelectedIndex="0" ItemsSource="{Binding Frameworks}" SelectedValue="{Binding MinOSVersion}" />
             </StackPanel>
         </Grid>
-        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding SelectedItem.Description, ElementName=lvTemplates}"/>
-        <Separator Grid.Row="1" Grid.Column="1" Margin="5,0,5,10" VerticalAlignment="Bottom" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding SelectedItem.Description, ElementName=lvTemplates}"/>
+        <Separator Grid.Row="1" Grid.Column="1" Margin="0,0,0,5" VerticalAlignment="Bottom" />
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="OK" IsDefault="True" Margin="5,5" MinWidth="80" Click="button_Click" />
-            <Button Content="Cancel" IsCancel="True" Margin="5,5" MinWidth="80"/>
+            <Button Content="OK" IsDefault="True" Margin="5" MinWidth="80" Click="button_Click" />
+            <Button Content="Cancel" IsCancel="True" Margin="5" MinWidth="80"/>
         </StackPanel>
     </Grid>
 </ui:DialogBase>
