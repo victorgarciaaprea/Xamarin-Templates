@@ -22,7 +22,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IsProductComponent>true</IsProductComponent>
-    <ExtensionInstallationFolder>Xamarin.Templates</ExtensionInstallationFolder>
+    <ExtensionInstallationFolder>Xamarin\Templates</ExtensionInstallationFolder>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
     <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
     <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
