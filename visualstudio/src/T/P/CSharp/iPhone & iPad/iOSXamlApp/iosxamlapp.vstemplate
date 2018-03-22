@@ -20,6 +20,7 @@
       <CustomParameter Name="$passthrough:kind$" Value="blank" />
       <CustomParameter Name="$passthrough:CreateAndroidProject$" Value="false" />
       <CustomParameter Name="$passthrough:CreateUWPProject$" Value="false" />
+      <CustomParameter Name="$passthrough:iOSAppIdentifier$" Value="com.companyname.NewApp.iOS" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
