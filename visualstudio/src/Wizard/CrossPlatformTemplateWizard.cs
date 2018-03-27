@@ -20,6 +20,7 @@ using AndroidModel = Xamarin.VisualStudio.Contracts.Model.Android;
 using AndroidCommands = Xamarin.VisualStudio.Contracts.Commands.Android;
 using IOSModel = Xamarin.VisualStudio.Contracts.Model.IOS;
 using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
+using Xamarin.VisualStudio.Contracts.Model.Android;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -31,6 +32,9 @@ namespace Xamarin.Templates.Wizards
         const string AndroidPackage = "296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6";
         const string IOSPackage = "77875fa9-01e7-4fea-8e77-dfe942355ca1";
 
+        const int CurrentAndroidLevel = 27;
+        const int FallbackAndroidLevel = 25;
+        AndroidFramework AndroidTargetFramework;
 
         DTE2 dte;
         ServiceProvider serviceProvider;
@@ -40,7 +44,7 @@ namespace Xamarin.Templates.Wizards
 
         internal static Version MinWindowsVersion = new Version(10, 0, 16267, 0);
         string latestWindowSdk;
-
+        
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             replacements = replacementsDictionary;
@@ -116,7 +120,30 @@ namespace Xamarin.Templates.Wizards
             return $"{sdkInfo.LatestInstalledIOSSdk}"; //quotes are so the engine understands this as a string
         }
 
-        private CrossPlatformDialog CreateCrossPlatformDialog()
+		bool AndroidShouldFallback()
+		{
+            try
+            {
+                var componentModel = Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
+                var commandBus = componentModel?.GetService<ICommandBus>();
+                var versions = commandBus?.Execute(new AndroidCommands.GetSdkInfo());
+                var frameworks = versions?.Frameworks;
+
+                if (!frameworks.First(f => f.ApiLevel == CurrentAndroidLevel).IsInstalled)
+                {
+                    AndroidTargetFramework = frameworks.First(f => f.ApiLevel == FallbackAndroidLevel);
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (FileNotFoundException)//this is to avoid a known watson crash
+            {
+                return false;
+            }
+		}
+
+		private CrossPlatformDialog CreateCrossPlatformDialog()
         {
             var dialog = new CrossPlatformDialog();
             var dialogWindow = dialog as System.Windows.Window;
@@ -182,7 +209,16 @@ namespace Xamarin.Templates.Wizards
             if (!model.IsSharedSelected)
                 replacements.Add("$passthrough:CreateSharedProject$", "false");
 
-            if (!model.IsAndroidSelected)
+            if (model.IsAndroidSelected)
+            {
+                if (AndroidShouldFallback())
+                {
+                    replacements.Add("$passthrough:AndroidSDKVersion$", AndroidTargetFramework.Version);
+                    replacements.Add("$passthrough:TargetAndroidAPI$", AndroidTargetFramework.ApiLevel.ToString());
+                    replacements.Add("$passthrough:SupportLibVersion$", "25.4.0.2");
+                }
+            }
+            else
             {
                 replacements.Add("$passthrough:CreateAndroidProject$", "false");
             }

@@ -10,8 +10,11 @@ using Xamarin.VisualStudio.Contracts.Model.Android;
 
 namespace Xamarin.Templates.Wizard
 {
-    public class AndroidViewModel : IViewModel, INotifyPropertyChanged
+	public class AndroidViewModel : IViewModel, INotifyPropertyChanged
 	{
+		const int CurrentApiLevel = 27;
+		const int FallbackApiLevel = 25;
+
 		public List<ItemViewModel> Templates { get; private set; }
 
 		ItemViewModel selectedTemplate;
@@ -29,7 +32,13 @@ namespace Xamarin.Templates.Wizard
 		public AndroidViewModel()
 		{
 			AndroidFrameworks = GetFrameworks();
-			AndroidFramework = AndroidFrameworks.First(f => f.ApiLevel == 21);
+			AndroidMinFramework = AndroidFrameworks.First(f => f.ApiLevel == 21);
+
+			if (!AndroidFrameworks.First(f => f.ApiLevel == CurrentApiLevel).IsInstalled)
+			{
+				AndroidTargetFramework = AndroidFrameworks.First(f => f.ApiLevel == FallbackApiLevel);
+				ShouldFallback = true;
+			}
 
 			Templates = CreateTemplatesContext();
 		}
@@ -63,7 +72,11 @@ namespace Xamarin.Templates.Wizard
 
 		public IList<AndroidFramework> AndroidFrameworks { get; set; }
 
-		public AndroidFramework AndroidFramework { get; set; }
+		public AndroidFramework AndroidMinFramework { get; set; }
+
+		public AndroidFramework AndroidTargetFramework { get; set; }
+
+		public bool ShouldFallback { get; set; }
 
 		public event PropertyChangedEventHandler PropertyChanged = (s, e) => { };
 	}

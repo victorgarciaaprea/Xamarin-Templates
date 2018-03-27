@@ -22,7 +22,14 @@ namespace Xamarin.Templates.Wizard
 			replacements.Add("$groupid$", "Xamarin.Android.App");
 
 			replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
-			replacements.Add("$passthrough:MinAndroidAPI$", model.AndroidFramework.ApiLevel.ToString());
+			replacements.Add("$passthrough:MinAndroidAPI$", model.AndroidMinFramework.ApiLevel.ToString());
+
+			if (model.ShouldFallback)
+			{
+				replacements.Add("$passthrough:AndroidSDKVersion$", model.AndroidTargetFramework.Version);
+				replacements.Add("$passthrough:TargetAndroidAPI$", model.AndroidTargetFramework.ApiLevel.ToString());
+				replacements.Add("$passthrough:SupportLibVersion$", "25.4.0.2");
+			}
 
 			return replacements;
 		}
