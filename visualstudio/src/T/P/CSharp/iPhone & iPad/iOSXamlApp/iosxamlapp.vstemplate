@@ -2,13 +2,13 @@
   <TemplateData>
     <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3024" />
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3025" />
-    <Icon>FormsProject.ico</Icon>
+    <Icon>ios-app.png</Icon>
     <TemplateGroupID>Xamarin.iOSXamlApp</TemplateGroupID>
     <TemplateID>Xamarin.iOSXamlApp.CSharp.iOS</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>
-    <SortOrder>0001</SortOrder>
+    <SortOrder>101</SortOrder>
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
   <TemplateContent>

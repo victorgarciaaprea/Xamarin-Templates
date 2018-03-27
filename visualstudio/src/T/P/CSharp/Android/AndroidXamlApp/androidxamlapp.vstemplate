@@ -2,13 +2,13 @@
   <TemplateData>
     <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3022" />
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3023" />
-    <Icon>FormsProject.ico</Icon>
+    <Icon>android-app.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidXamlApp</TemplateGroupID>
     <TemplateID>Xamarin.AndroidXamlApp.CSharp.Android</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>
-    <SortOrder>0001</SortOrder>
+    <SortOrder>101</SortOrder>
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
   <TemplateContent>

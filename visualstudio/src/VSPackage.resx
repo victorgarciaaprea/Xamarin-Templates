@@ -562,12 +562,12 @@
     <value>Android App (Xamarin.Forms XAML)</value>
   </data>
   <data name="3023" xml:space="preserve">
-    <value>A project template for building Android apps in XAML with Xamarin.Forms.</value>
+    <value>A project for an Android app that uses Xamarin.Forms and XAML to build the UI.</value>
   </data>
   <data name="3024" xml:space="preserve">
     <value>iOS App (Xamarin.Forms XAML)</value>
   </data>
   <data name="3025" xml:space="preserve">
-    <value>A project template for building iOS apps in XAML with Xamarin.Forms.</value>
+    <value>A project for an iOS app that uses Xamarin.Forms and XAML to build the UI.</value>
   </data>
 </root>
