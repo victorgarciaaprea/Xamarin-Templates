@@ -11,7 +11,7 @@
 
 [assembly: global::Android.Runtime.ResourceDesignerAttribute("NewApp.Resource", IsApplication=true)]
 
-namespace NewApp
+namespace NewLib
 {
 	
 	
