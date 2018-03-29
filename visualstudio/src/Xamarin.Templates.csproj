@@ -112,6 +112,9 @@
     <None Include="T\P\CSharp\Android\XamarinAndroidApp\xamarinandroidapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
+    <None Include="T\P\CSharp\Android\AndroidXamlApp\androidxamlapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+    </None>
     <None Include="T\P\CSharp\Android\XamarinAndroidWearApp\xamarinandroidwearapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
@@ -123,6 +126,10 @@
     </None>
     <None Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSApp\xamariniosapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
+    </None>
+    <None Include="T\P\CSharp\iPhone &amp; iPad\iOSXamlApp\iosxamlapp.vstemplate">
+      <Include>..\..\FormsProject.ico</Include>
+      <SubType>Designer</SubType>
     </None>
     <None Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSLibrary\xamarinioslibrary.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
@@ -136,6 +143,9 @@
     <None Include="T\P\CSharp\Apple TV\XamarintvOSApp\xamarintvosapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
     </None>
+    <Content Include="T\P\CSharp\Android\AndroidXamlApp\android-app.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="T\P\CSharp\Android\XamarinAndroidApp\android-app.ico">
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -159,6 +169,9 @@
     <Content Include="T\P\CSharp\Apple Watch\XamarinwatchOSApp\watchos-app.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="T\P\CSharp\iPhone &amp; iPad\iOSXamlApp\ios-app.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="T\P\CSharp\iPhone &amp; iPad\XamariniOSApp\ios-app.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -226,6 +239,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="VSPackage.resx" />
   </ItemGroup>
