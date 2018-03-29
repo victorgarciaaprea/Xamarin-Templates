@@ -142,10 +142,10 @@
     <value>iOS</value>
   </data>
   <data name="MasterDetail" xml:space="preserve">
-    <value>Master Detail</value>
+    <value>Tabbed</value>
   </data>
   <data name="MasterDetailDescription" xml:space="preserve">
-    <value>A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with master-detail navigation pattern.</value>
+    <value>A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.</value>
   </data>
   <data name="MicrosoftAzure" xml:space="preserve">
     <value>Mobile Backend</value>
