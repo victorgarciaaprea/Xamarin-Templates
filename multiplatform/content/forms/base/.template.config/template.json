@@ -15,12 +15,20 @@
     "sourceName": "NewApp",
     "primaryOutputs": [
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"blank\"))",
             "path": "NewApp\\MainPage.xaml.cs"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"blank\"))",
             "path": "NewApp\\MainPage.xaml"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\"))",
+            "path": "NewApp\\Views\\MainPage.xaml.cs"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\"))",
+            "path": "NewApp\\Views\\MainPage.xaml"
         },
         {
             "condition": "CreateSharedProject",
@@ -203,7 +211,8 @@
     },
     "postActions": [
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"blank\"))",
+            //skip on .NET Standard because the file will be closed anyways when the Forms target nests the xaml.cs file
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && CreateSharedProject)", 
             "description": "Opens MainPage.xaml.cs in the editor.",
             "manualInstructions": [ ],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
@@ -213,7 +222,7 @@
             "continueOnError": true
         },
         {
-          "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"blank\"))",
+          "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
           "description": "Opens MainPage.xaml in the editor.",
           "manualInstructions": [ ],
           "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
