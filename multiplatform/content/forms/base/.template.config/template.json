@@ -221,7 +221,7 @@
             "files": "1"
           },
           "continueOnError": true
-        },
+        }
     ],
     "sources": [
         {
