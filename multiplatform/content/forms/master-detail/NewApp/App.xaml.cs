@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using NewApp.Services;
 #endif
 using NewApp.Views;
+using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace NewApp
