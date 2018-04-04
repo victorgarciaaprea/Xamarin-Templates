@@ -19,7 +19,7 @@ namespace NewApp
 		{
 			base.ViewDidLoad();
 
-			Title = NSBundle.MainBundle.LocalizedString("Master", "Master");
+			Title = NSBundle.MainBundle.GetLocalizedString("Master", "Master");
 
 			// Perform any additional setup after loading the view, typically from a nib.
 			NavigationItem.LeftBarButtonItem = EditButtonItem;
