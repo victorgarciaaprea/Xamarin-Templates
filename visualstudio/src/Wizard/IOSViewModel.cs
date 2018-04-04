@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using Xamarin.Templates.Properties;
 using Xamarin.VisualStudio.Contracts.Commands.IOS;
+using Xamarin.VisualStudio.Contracts.Model.IOS;
 
 namespace Xamarin.Templates.Wizard
 {
@@ -40,10 +41,15 @@ namespace Xamarin.Templates.Wizard
 				var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
 				var commandBus = componentModel?.GetService<ICommandBus>();
 				var versions = commandBus?.Execute(new GetSdkInfo());
-				var ret = versions?.Versions.Select(f => f.Version).ToList();
-				if (ret != null && ret.Count() > 0)
-					return ret;
-				else 
+				var deployVersions = versions?.DeploymentTargetVersions
+					.Where(f => f.SdkType == SdkType.iOS && f.Major >= 8)
+					.Select(f => f.Version)
+					.Reverse()
+					.ToList();
+
+				if (deployVersions?.Count() > 0)
+					return deployVersions;
+				else
 					return new List<string>
 						{ "11.2", "11.1", "11.0", "10.3", "10.2", "10.1", "10.0", "9.3", "9.2", "9.1", "9.0", "8.4", "8.3", "8.2", "8.1", "8.0" };
 			}
