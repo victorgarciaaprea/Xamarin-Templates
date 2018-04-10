@@ -2,7 +2,10 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+#if RELEASE
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+#endif
+
 namespace NewApp
 {
 	public partial class App : Application

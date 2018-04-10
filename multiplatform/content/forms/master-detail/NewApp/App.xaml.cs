@@ -1,12 +1,15 @@
 ﻿using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 #if (CreateBackendProject)
 using NewApp.Services;
 #endif
 using NewApp.Views;
-using Xamarin.Forms.Xaml;
 
+#if RELEASE
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+#endif
+
 namespace NewApp
 {
 	public partial class App : Application
