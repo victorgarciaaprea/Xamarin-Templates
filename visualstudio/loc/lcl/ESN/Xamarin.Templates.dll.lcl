@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LCX SchemaVersion="6.0" Name="E:\A\_work\51\s\visualstudio\src\bin\Release\Xamarin.Templates.dll" PsrId="211" FileType="1" SrcCul="en-US" TgtCul="es-ES" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <OwnedComments>
     <Cmt Name="Dev" />
@@ -61,6 +61,9 @@
       <Item ItemId=";Android" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Android]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -115,6 +118,9 @@
       <Item ItemId=";BlankApp" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Blank App]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación en blanco]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -127,18 +133,27 @@
       <Item ItemId=";BlankAppXaml" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Blank App (XAML)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación en blanco (XAML)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";BlankAppXamlDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A cross platform template for building apps with Xamarin.Forms entirely based on XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Una plantilla multiplataforma para compilar aplicaciones con Xamarin.Forms completamente basada en XAML.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";Forms" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Xamarin.Forms]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Xamarin.Forms]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -217,6 +232,9 @@
       <Item ItemId=";Native" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Native]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nativo]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -229,48 +247,72 @@
       <Item ItemId=";Platforms" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Plataforma]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";SelectATemplate" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a template:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Seleccione una plantilla:]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";SetWindowsUniversalPlatformVersion_FailedToDeterminePlatformVersion" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to determine Windows SDK platform version.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[No se pudo determinar la versión de la plataforma del SDK de Windows.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";SharedProjects" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Shared Project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Proyecto compartido]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";Sharing" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Code Sharing Strategy]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Estrategia de uso compartido de código]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UITechnology" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[UI Technology]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Tecnología de IU]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UWP" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Windows (UWP)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Windows (UWP)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";iOS" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[iOS]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[iOS]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -435,9 +477,6 @@
           <Val><![CDATA[Standard Android Menu with 1 Item for Support v7 AppCompat]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1118" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
@@ -456,9 +495,6 @@
           <Val><![CDATA[Search Menu]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1121" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
@@ -477,45 +513,30 @@
           <Val><![CDATA[Search Menu for Support V7 AppCompat]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1124" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Share Menu]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1125" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Standard Share Menu for Android API 15+]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1126" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Share Menu AppCompat]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1127" ItemType="0" PsrId="211" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Share Menu for Support V7 AppCompat]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";1128" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
@@ -618,9 +639,6 @@
           <Val><![CDATA[Entitlements.plist]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";2017" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
@@ -633,9 +651,6 @@
           <Val><![CDATA[Info.plist]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="RCCX"><![CDATA[{Locked}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";2019" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
