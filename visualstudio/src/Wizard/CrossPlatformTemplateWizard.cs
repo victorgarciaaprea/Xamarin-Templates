@@ -21,6 +21,7 @@ using AndroidCommands = Xamarin.VisualStudio.Contracts.Commands.Android;
 using IOSModel = Xamarin.VisualStudio.Contracts.Model.IOS;
 using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 using Xamarin.VisualStudio.Contracts.Model.Android;
+using Microsoft.VisualStudio.Telemetry;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -47,25 +48,44 @@ namespace Xamarin.Templates.Wizards
         
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-            replacements = replacementsDictionary;
-            dte = automationObject as DTE2;
-            this.automationObject = automationObject;
-            serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
-
-            TryLoadPackage(serviceProvider, NugetPackage); 
-
-            System.Threading.Tasks.Task.Run(() => InitializeTemplateEngine());
-
-            latestWindowSdk = GetLatestWindowsSDK();
-            
-            var dialog = CreateCrossPlatformDialog();
-            dialog.SetUWPEnabled(dte, latestWindowSdk);
-            dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
-            if (!dialog.ShowDialog().GetValueOrDefault())
+            try
             {
-                throw new WizardBackoutException();
+                replacements = replacementsDictionary;
+                dte = automationObject as DTE2;
+                this.automationObject = automationObject;
+                serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
+
+                TryLoadPackage(serviceProvider, NugetPackage);
+
+                System.Threading.Tasks.Task.Run(() => InitializeTemplateEngine());
+
+                latestWindowSdk = GetLatestWindowsSDK();
+
+                var dialog = CreateCrossPlatformDialog();
+                dialog.SetUWPEnabled(dte, latestWindowSdk);
+                dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
+
+                var dialogResult = dialog.ShowDialog().GetValueOrDefault();
+
+                TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name));
+
+                if (!dialogResult)
+                {
+                    throw new WizardBackoutException();
+                }
+                model = ((XPlatViewModel)dialog.DataContext);
             }
-            model = ((XPlatViewModel)dialog.DataContext);
+            catch (WizardBackoutException)
+            {
+                throw;
+            } 
+            catch
+            {
+                TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name, true));
+
+                throw;
+            }
+
         }
 
         private void InitializeTemplateEngine()

@@ -12,6 +12,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TemplateWizard;
 using Xamarin.Templates.Wizards;
 using EnvDTE80;
+using Microsoft.VisualStudio.Telemetry;
 
 namespace Xamarin.Templates.Wizard
 {
@@ -43,18 +44,34 @@ namespace Xamarin.Templates.Wizard
 
 		public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
 		{
-			this.automationObject = automationObject;
-			dte = automationObject as DTE2;
-
-			replacements = replacementsDictionary;
-
-			var dialog = CreateDialog();
-			dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
-			if (!dialog.ShowDialog().GetValueOrDefault())
+			try
 			{
-				throw new WizardBackoutException();
+				this.automationObject = automationObject;
+				dte = automationObject as DTE2;
+
+				replacements = replacementsDictionary;
+
+				var dialog = CreateDialog();
+				dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
+
+				var dialogResult = dialog.ShowDialog().GetValueOrDefault();
+
+				TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name));
+
+				if (!dialogResult)
+				{
+					throw new WizardBackoutException();
+				}
+				model = ((Model)dialog.DataContext);
 			}
-			model = ((Model)dialog.DataContext);
+			catch (WizardBackoutException)
+			{
+				throw;
+			}
+			catch
+			{
+				TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name, true));
+			}
 		}
 
 		private Dialog CreateDialog()
