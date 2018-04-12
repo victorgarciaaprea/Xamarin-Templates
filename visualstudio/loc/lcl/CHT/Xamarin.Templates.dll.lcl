@@ -76,18 +76,27 @@
       <Item ItemId=";AndroidViewModel_BlankApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app with an Activity class and empty layout file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[具備活動類別且版面配置檔案空白的 Android 應用程式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";AndroidViewModel_BlankApp_Name" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Blank App]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[空的應用程式]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";AndroidViewModel_NavigationDrawerApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app that uses a panel on the left side to present navigation options. Use this as an alternative to tabs if you have lots of navigation targets and want to maximize screen space.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用左側面板顯示瀏覽選項的 Android 應用程式。若您有大量的瀏覽目標且希望能用到最大的螢幕空間，請使用此應用程式替代索引標籤。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -103,6 +112,9 @@
       <Item ItemId=";AndroidViewModel_SingleViewApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app with a single Activity and simple AXML layout file. Use this basic template as a starting point for any Android app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 應用程式只有一個活動及簡單的 AXML 版面配置檔。您可利用此基本範本作為任何 Android 應用程式的起點。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -118,6 +130,9 @@
       <Item ItemId=";AndroidViewModel_TabbedApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have few navigation targets that will be frequently switched between.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用螢幕底部的索引標籤圖示進行瀏覽之 Android 應用程式。若您的應用程式瀏覽目標很少，但會頻繁地在目標之間切換時，請使用此應用程式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -142,6 +157,9 @@
       <Item ItemId=";BlankAppDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建置 Xamarin.Forms XAML 型跨平台原生行動應用程式 (iOS、Android 與通用 Windows 平台版) 的專案範本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -184,30 +202,45 @@
       <Item ItemId=";IOSViewModel_BlankApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app with an empty UIViewController and no Storyboard file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[UIViewController 空白且沒有任何分鏡腳本檔的 iOS 應用程式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";IOSViewModel_BlankApp_Name" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Blank App]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[空的應用程式]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";IOSViewModel_MasterDetailApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app that uses a split view and the master-detail navigation pattern. Use this if your app will display a list of data that will show more detail when an item is selected.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[iOS 應用程式使用分割檢視及主從階層瀏覽模式。若您的應用程式將會顯示選取項目時會出現詳細資料之資料清單，請使用此應用程式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";IOSViewModel_MasterDetailApp_Name" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Master-Detail App]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[主從階層應用程式]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";IOSViewModel_SingleViewApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app with a Storyboard file and single UIViewController. Use this basic template as a starting point for any iOS app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[具備分鏡腳本檔與單一 UIViewController 的 iOS 應用程式。請使用此基本範本作為任何 iOS 應用程式的起點。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -223,6 +256,9 @@
       <Item ItemId=";IOSViewModel_TabbedApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have different content categories that will be frequently switched between.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用螢幕底部的索引標籤圖示進行瀏覽的 iOS 應用程式。若您的應用程式會在不同的內容類別之間頻繁地切換，請使用此應用程式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -238,18 +274,27 @@
       <Item ItemId=";MasterDetail" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Tabbed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[索引標籤式]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";MasterDetailDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建置 Xamarin.Forms XAML 型跨平台原生行動應用程式 (iOS、Android 與具備索引標籤式瀏覽模式的通用 Windows 平台 (UWP) 版) 的專案範本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";MicrosoftAzure" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Mobile Backend]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[行動後端]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -265,6 +310,9 @@
       <Item ItemId=";PCL" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[.NET Standard]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[.NET Standard]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -358,18 +406,27 @@
       <Item ItemId=";1003" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Project templates for creating Android phone and tablet apps with Xamarin.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[利用 Xamarin 建立 Android 手機與平板應用程式的專案範本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";1004" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Android Bindings Library (Xamarin)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 繫結程式庫 (Xamarin)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";1005" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project for creating a Xamarin.Android class library that binds to a native Java library.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立繫結至原生 Java 程式庫的 Xamarin.Android 類別庫之專案。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -385,18 +442,27 @@
       <Item ItemId=";1007" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A Xamarin.Android class library project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Xamarin.Android 類別庫專案。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";1008" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Android Wear App (Xamarin)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 穿戴式應用程式 (Xamarin)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";1009" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project for creating an Android Wear app with Xamarin.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[利用 Xamarin 建立 Android 穿戴式應用程式的專案。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -412,6 +478,9 @@
       <Item ItemId=";1101" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty Android activity.  An activity is like a WinForms Form.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 活動空白。活動類似於 WinForms 表單。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -427,6 +496,9 @@
       <Item ItemId=";1103" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Base adapter with view re-use implemented]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已實作重複使用檢視的基底配接器]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -442,6 +514,9 @@
       <Item ItemId=";1105" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty Android broadcast receiver.  A broadcast receiver receives and reacts to announcements sent by Android processes.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 廣播接收器空白。廣播接收器可接收並回應由 Android 處理序所傳送的通知。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -457,6 +532,9 @@
       <Item ItemId=";1107" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty class definition]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[類別定義空白]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -472,6 +550,9 @@
       <Item ItemId=";1109" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty Android fragment.  Use fragments in Android 3.0+ to break your activities into smaller components.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 片段空白。請使用 Android 3.0+ 中的片段，將活動分割為較小的元件。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -487,6 +568,9 @@
       <Item ItemId=";1111" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty interface definition]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[介面定義空白]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -520,6 +604,9 @@
       <Item ItemId=";1115" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Standard Android Menu with 1 Item for API 15+]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[API 15+ 的標準 Android 功能表 (1 個項目)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -565,6 +652,9 @@
       <Item ItemId=";1121" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Standard Android Search Menu for API 15+]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[API 15+ 的標準 Android 搜尋功能表]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -619,6 +709,9 @@
       <Item ItemId=";1129" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty Android view.  A view can be like a WinForms Control, or a grouping of other Android views.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Android 檢視空白。檢視可以是 WinForms 控制項，或是像一組其他的 Android 檢視。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -670,6 +763,9 @@
       <Item ItemId=";2007" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Project templates for creating iOS apps for iPhone and iPad with Xamarin.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[利用 Xamarin 建立 iPhone 與 iPad 之 iOS 應用程式的專案範本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -685,6 +781,9 @@
       <Item ItemId=";2009" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project for creating a Xamarin.iOS class library that binds to a native iOS library.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立繫結至原生 iOS 程式庫的 Xamarin.iOS 類別庫之專案。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -736,6 +835,9 @@
       <Item ItemId=";2015" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty class definition]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[類別定義空白]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -763,6 +865,9 @@
       <Item ItemId=";2019" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty property list.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立空的屬性清單。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -778,12 +883,18 @@
       <Item ItemId=";2021" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A bundle for specifying an iOS Application's settings]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[指定 iOS 應用程式設定的組合]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2022" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Bokeh (Scene)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[散景 (場景)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -799,6 +910,9 @@
       <Item ItemId=";2024" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Confetti (Scene)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[碎紙 (場景)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1057,6 +1171,9 @@
       <Item ItemId=";2053" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A custom class and an Interface Builder document for creating a Collection View Cell]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立集合檢視儲存格的自訂類別與 Interface Builder 文件]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1090,6 +1207,9 @@
       <Item ItemId=";2057" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A MonoTouch.Dialog ViewController: simplified UITableViews with Xamarin.iOS.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[MonoTouch.Dialog ViewController: 已利用 Xamarin.iOS 簡化 UITableViews。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1105,6 +1225,9 @@
       <Item ItemId=";2059" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty Interface Builder Storyboard for an iOS interface.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[為 iOS 介面建立空的 Interface Builder 分鏡腳本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1120,6 +1243,9 @@
       <Item ItemId=";2061" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A custom class and an Interface Builder document for creating a Table View Cell]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立資料表檢視儲存格的自訂類別與 Interface Builder 文件]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1135,6 +1261,9 @@
       <Item ItemId=";2063" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty Interface Builder Storyboard for an tvOS interface.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[為 tvOS 介面建立空的 Interface Builder 分鏡腳本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1150,6 +1279,9 @@
       <Item ItemId=";2065" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A custom class and an Interface Builder document for creating a Table View Cell]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立資料表檢視儲存格的自訂類別與 Interface Builder 文件]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1165,6 +1297,9 @@
       <Item ItemId=";2067" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A custom class and an Interface Builder document for creating a View Controller using size classes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用大小類別建立檢視控制器的自訂類別與 Interface Builder 文件]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1180,6 +1315,9 @@
       <Item ItemId=";2069" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Interface Builder document for creating a view]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立檢視的 Interface Builder 文件]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1213,18 +1351,27 @@
       <Item ItemId=";2073" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates a new UIViewController class and sample UIView class.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立新的 UIViewController 類別與範例 UIView 類別。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2074" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[View Controller with Storyboard]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[具備分鏡腳本的檢視控制器]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2075" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates a view controller for Xamarin.iOS with storyboard support.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[為支援分鏡腳本的 Xamarin.iOS 建立檢視控制器。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1240,6 +1387,9 @@
       <Item ItemId=";2077" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Interface Builder document for creating an iOS view.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[建立 iOS 檢視的 Interface Builder 文件。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1255,6 +1405,9 @@
       <Item ItemId=";2079" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty Interface Builder Storyboard for an watchOS interface.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[為 watchOS 介面建立空的 Interface Builder 分鏡腳本。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1324,30 +1477,45 @@
       <Item ItemId=";2087" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Apple Push Notification Service payload in JSON format.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[JSON 格式的 Apple Push Notification Service 承載。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3002" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Mobile App (Xamarin.Forms)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[行動應用程式 (Xamarin.Forms)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3003" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[多重專案範本，其利用 Xamarin 與 Xamarin.Forms 建置適用於 iOS、Android 與 Windows 的應用程式。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3004" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Content Page]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[內容頁面]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3005" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A page for displaying content using XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 XAML 顯示內容的頁面。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1363,30 +1531,45 @@
       <Item ItemId=";3007" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A page for displaying content using C#.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 C# 顯示內容的頁面。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3008" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Content View]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[內容檢視]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3009" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A view for displaying content using XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 XAML 顯示內容的檢視。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3010" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Content View (C#)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[內容檢視 (C#)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3011" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A view for displaying content using C#.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 C# 顯示內容的檢視。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1402,6 +1585,9 @@
       <Item ItemId=";3013" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A page with a ListView for displaying data using XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 XAML 顯示資料的 ListView 頁面。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1426,36 +1612,54 @@
       <Item ItemId=";3016" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Master Detail Page]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[主從階層頁面]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3017" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A page that uses the master-detail navigation pattern using XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用主從階層瀏覽模式 (使用 XAML) 的頁面。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3018" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Tabbed Page]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[索引標籤式頁面]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3019" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A page that uses the tabbed navigation pattern and contains children pages using XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用索引標籤式瀏覽模式且使用 XAML 包含子頁面的頁面。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3020" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[View Cell]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[檢視儲存格]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";3021" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A view for a ListView cell using XAML.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 XAML 的 ListView 儲存格檢視。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1471,6 +1675,9 @@
       <Item ItemId=";3023" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project for an Android app that uses Xamarin.Forms and XAML to build the UI.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 Xamarin.Forms 與 XAML 建置 UI 的 Android 應用程式之專案。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1486,6 +1693,9 @@
       <Item ItemId=";3025" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project for an iOS app that uses Xamarin.Forms and XAML to build the UI.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用 Xamarin.Forms 與 XAML 建置 UI 的 iOS 應用程式之專案。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
