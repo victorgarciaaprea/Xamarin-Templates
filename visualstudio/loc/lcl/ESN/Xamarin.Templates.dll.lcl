@@ -76,6 +76,9 @@
       <Item ItemId=";AndroidViewModel_BlankApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app with an Activity class and empty layout file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de Android con una clase de actividad y un archivo de diseño vacío.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -91,6 +94,9 @@
       <Item ItemId=";AndroidViewModel_NavigationDrawerApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app that uses a panel on the left side to present navigation options. Use this as an alternative to tabs if you have lots of navigation targets and want to maximize screen space.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de Android que utiliza un panel en el lado izquierdo para presentar opciones de exploración. Úsela como alternativa a las pestañas si tiene un gran número de destinos de navegación y desea aumentar el espacio de la pantalla.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -106,6 +112,9 @@
       <Item ItemId=";AndroidViewModel_SingleViewApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app with a single Activity and simple AXML layout file. Use this basic template as a starting point for any Android app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de Android con una sola actividad y un archivo de diseño AXML simple. Use esta plantilla básica como punto de partida para cualquier aplicación de Android.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -121,6 +130,9 @@
       <Item ItemId=";AndroidViewModel_TabbedApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Android app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have few navigation targets that will be frequently switched between.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de Android que utiliza los iconos de pestaña de la parte inferior de la pantalla para la navegación. Úsela si su aplicación tendrá pocos destinos de navegación entre los que cambiará con frecuencia.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -145,6 +157,9 @@
       <Item ItemId=";BlankAppDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Plantilla de proyecto para compilar aplicaciones móviles nativas multiplataforma basadas en XAML de Xamarin.Forms para iOS, Android y Plataforma universal de Windows.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -187,6 +202,9 @@
       <Item ItemId=";IOSViewModel_BlankApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app with an empty UIViewController and no Storyboard file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de iOS con un UIViewController vacío y ningún archivo de guion gráfico.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -202,6 +220,9 @@
       <Item ItemId=";IOSViewModel_MasterDetailApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app that uses a split view and the master-detail navigation pattern. Use this if your app will display a list of data that will show more detail when an item is selected.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de iOS que usa una vista de división y el modelo de navegación de maestro y detalles. Úsela si su aplicación presentará una lista de datos que mostrarán más detalles cuando se seleccione un elemento.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -217,6 +238,9 @@
       <Item ItemId=";IOSViewModel_SingleViewApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app with a Storyboard file and single UIViewController. Use this basic template as a starting point for any iOS app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de iOS con un archivo de guion gráfico y UIViewController único. Use esta plantilla básica como punto de partida para cualquier aplicación de iOS.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -232,6 +256,9 @@
       <Item ItemId=";IOSViewModel_TabbedApp_Description" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An iOS app that uses tab icons at the bottom of the screen for navigation. Use this if your app will have different content categories that will be frequently switched between.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aplicación de iOS que utiliza los iconos de pestaña de la parte inferior de la pantalla para la navegación. Úsela si su aplicación tendrá pocos destinos de navegación entre los que cambiará con frecuencia.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -256,6 +283,9 @@
       <Item ItemId=";MasterDetailDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Plantilla de proyecto para crear aplicaciones móviles nativas multiplataforma basadas en XAML de Xamarin.Forms para iOS, Android y Plataforma universal de Windows.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -412,6 +442,9 @@
       <Item ItemId=";1007" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A Xamarin.Android class library project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Proyecto de biblioteca de clases de Xamarin.Android.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -427,6 +460,9 @@
       <Item ItemId=";1009" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project for creating an Android Wear app with Xamarin.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Proyecto para crear una aplicación Android Wear con Xamarin.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -442,6 +478,9 @@
       <Item ItemId=";1101" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An empty Android activity.  An activity is like a WinForms Form.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Actividad de Android vacía. Una actividad es como un formulario de WinForms.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -844,6 +883,9 @@
       <Item ItemId=";2021" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A bundle for specifying an iOS Application's settings]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Lote para especificar la configuración de una aplicación de iOS]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1174,12 +1216,18 @@
       <Item ItemId=";2058" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Empty Storyboard]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Guion gráfico vacío]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2059" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty Interface Builder Storyboard for an iOS interface.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Crea un guion gráfico vacío de Interface Builder para una interfaz iOS.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1204,12 +1252,18 @@
       <Item ItemId=";2062" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Empty Storyboard]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Guion gráfico vacío]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2063" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty Interface Builder Storyboard for an tvOS interface.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Crea un guion gráfico vacío de Interface Builder para una interfaz tvOS.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1306,6 +1360,9 @@
       <Item ItemId=";2074" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[View Controller with Storyboard]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Controlador de vista con guion gráfico]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1330,18 +1387,27 @@
       <Item ItemId=";2077" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[An Interface Builder document for creating an iOS view.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Documento de Interface Builder para la creación de una vista iOS.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2078" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Empty Storyboard]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Guion gráfico vacío]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";2079" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty Interface Builder Storyboard for an watchOS interface.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Crea un guion grafico vacío de Interface Builder para una interfaz watchOS.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1429,6 +1495,9 @@
       <Item ItemId=";3003" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Plantilla de varios proyectos para compilar aplicaciones para iOS, Android y Windows con Xamarin y Xamarin.Forms.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1543,6 +1612,9 @@
       <Item ItemId=";3016" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Master Detail Page]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Página de maestro y detalles]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
