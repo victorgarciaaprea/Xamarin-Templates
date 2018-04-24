@@ -31,6 +31,9 @@
 		<GitSha>$(BUILD_SOURCEVERSION)</GitSha>
 		<GitCommit Condition="'$(GitSha)' != ''">$(GitSha.Substring(0, 7))</GitCommit>
 
+		<GitVersionFile>GitInfo.txt</GitVersionFile>
+		<GitCommitsRelativeTo>$([MSBuild]::GetDirectoryNameOfFileAbove ('$(MSBuildThisFileDirectory)', '$(GitVersionFile)'))\</GitCommitsRelativeTo>
+
 		<IsExperimental>false</IsExperimental>
 		<IsExperimental Condition="'$(CI)' != 'true'">true</IsExperimental>
 		<IsSystemComponent>true</IsSystemComponent>
