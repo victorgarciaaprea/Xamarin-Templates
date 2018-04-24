@@ -196,8 +196,8 @@ namespace Xamarin.Templates.Wizards
 
             try
             {
-                if (model.IsAzureSelected)
-                    await ShowAzureDialog();
+                //if (model.IsAzureSelected)
+                //    await ShowAzureDialog();
 
                 CreateTemplate(model);
 

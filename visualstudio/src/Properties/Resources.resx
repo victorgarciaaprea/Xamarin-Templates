@@ -136,7 +136,7 @@
     <value>Xamarin.Forms</value>
   </data>
   <data name="HostInTheCloud" xml:space="preserve">
-    <value>Include Azure Mobile Apps backend project</value>
+    <value>Include ASP.NET Core Web API project</value>
   </data>
   <data name="iOS" xml:space="preserve">
     <value>iOS</value>
