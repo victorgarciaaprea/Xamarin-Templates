@@ -105,7 +105,8 @@
     {
       "scale": "1x",
       "size": "1024x1024",
-      "idiom": "ios-marketing"
+      "idiom": "ios-marketing",
+      "filename": "Icon1024.png"
     }
   ],
   "properties": {},
