@@ -24,3 +24,5 @@ The easiest way to get started is to use Visual Studio to create a new project o
 [Template Samples](https://github.com/dotnet/dotnet-template-samples)
 
 [How to create your own templates for dotnet new](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)
+
+
