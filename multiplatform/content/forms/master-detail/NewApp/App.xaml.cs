@@ -6,19 +6,16 @@ using NewApp.Services;
 #endif
 using NewApp.Views;
 
-#if RELEASE
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
-#endif
-
 namespace NewApp
 {
 	public partial class App : Application
 	{
 		#if (CreateBackendProject)
 		//TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
-        public static string AzureBackendUrl = "http://localhost:5000";
-        public static bool UseMockDataStore = true;
-		#endif
+                public static string AzureBackendUrl = "http://localhost:5000";
+                public static bool UseMockDataStore = true;
+	 	#endif
 		
 		public App ()
 		{
