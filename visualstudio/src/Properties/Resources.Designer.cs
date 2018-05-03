@@ -70,6 +70,15 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string AndroidDialog_Cancel {
+            get {
+                return ResourceManager.GetString("AndroidDialog_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An Android app with an Activity class and empty layout file..
         /// </summary>
         public static string AndroidViewModel_BlankApp_Description {
@@ -178,6 +187,15 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string CrossPlatformDialog_Cancel {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Xamarin.Forms.
         /// </summary>
         public static string Forms {
@@ -201,6 +219,15 @@ namespace Xamarin.Templates.Properties {
         public static string iOS {
             get {
                 return ResourceManager.GetString("iOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string IOSDialog_Cancel {
+            get {
+                return ResourceManager.GetString("IOSDialog_Cancel", resourceCulture);
             }
         }
         
@@ -277,7 +304,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Master Detail.
+        ///   Looks up a localized string similar to Tabbed.
         /// </summary>
         public static string MasterDetail {
             get {
@@ -286,7 +313,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with master-detail navigation pattern..
+        ///   Looks up a localized string similar to A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern..
         /// </summary>
         public static string MasterDetailDescription {
             get {

@@ -225,4 +225,13 @@
   <data name="IOSViewModel_TabbedApp_Name" xml:space="preserve">
     <value>Tabbed App</value>
   </data>
+  <data name="AndroidDialog_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CrossPlatformDialog_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="IOSDialog_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>
