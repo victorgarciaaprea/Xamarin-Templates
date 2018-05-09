@@ -53,9 +53,10 @@
     <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
-		<Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +65,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Wizard\SetiOSMinimumOSVersionWizard.cs" />
     <Compile Include="Wizard\OpenWizardTelemetryEvent.cs" />
     <Compile Include="XamarinTemplatesPackage.cs" />
     <Content Include="Properties\ICN_Xamarin.ico">
@@ -144,6 +146,7 @@
     </None>
     <None Include="T\P\CSharp\Apple TV\XamarintvOSApp\xamarintvosapp.vstemplate">
       <Include>..\..\FormsProject.ico</Include>
+      <SubType>Designer</SubType>
     </None>
     <Content Include="T\P\CSharp\Android\AndroidXamlApp\android-app.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

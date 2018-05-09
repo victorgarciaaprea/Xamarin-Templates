@@ -13,16 +13,11 @@
   </TemplateData>
   <TemplateContent>
     <ProjectCollection />
-    <CustomParameters>
-      <CustomParameter Name="$language$" Value="CSharp" />
-      <CustomParameter Name="$uistyle$" Value="none" />
-      <CustomParameter Name="$groupid$" Value="Xamarin.tvOS.App" />
-    </CustomParameters>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>Microsoft.VisualStudio.TemplateEngine.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-    <FullClassName>Microsoft.VisualStudio.TemplateEngine.Wizard.TemplateEngineWizard</FullClassName>
-  </WizardExtension>  
+    <Assembly>Xamarin.Templates</Assembly>
+    <FullClassName>Xamarin.Templates.Wizard.SetiOSMinimumOSVersionWizard</FullClassName>
+  </WizardExtension> 
 	<WizardExtension>
 		<Assembly>Xamarin.VisualStudio.TemplateWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756</Assembly>
 		<FullClassName>Xamarin.VisualStudio.TemplateWizards.SetConfigurationAndPlatformWizard</FullClassName>
@@ -31,4 +26,9 @@
     <Assembly>Xamarin.Templates</Assembly>
     <FullClassName>Xamarin.Templates.BuildAndDeployWizard</FullClassName>
   </WizardExtension>
+  <WizardData>
+    <MinimumOSVersion>
+      <SdkType>tvOS</SdkType>
+    </MinimumOSVersion>
+  </WizardData>
 </VSTemplate>

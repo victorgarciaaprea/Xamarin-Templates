@@ -22,6 +22,7 @@ using IOSModel = Xamarin.VisualStudio.Contracts.Model.IOS;
 using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 using Xamarin.VisualStudio.Contracts.Model.Android;
 using Microsoft.VisualStudio.Telemetry;
+using Xamarin.VisualStudio.Contracts.Model.IOS;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -135,9 +136,9 @@ namespace Xamarin.Templates.Wizards
             var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
 
             var commandBus = componentModel.GetService<ICommandBus>();
-            var sdkInfo = commandBus.Execute<IOSModel.SdkInfo>(new IOSCommands.GetSdkInfo());
+            var sdkInfo = commandBus.Execute(new IOSCommands.GetSdkInfo());
 
-            return $"{sdkInfo.LatestInstalledIOSSdk}"; //quotes are so the engine understands this as a string
+            return $"{sdkInfo.LatestInstalledSdks[SdkType.iOS]}"; //quotes are so the engine understands this as a string
         }
 
 		bool AndroidShouldFallback()

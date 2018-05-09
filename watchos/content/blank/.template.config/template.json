@@ -38,7 +38,7 @@
       "description": "Overrides the Info.plist's MinimumOSVersion",
       "replaces": "MinOSVersion",
       "datatype": "string",
-      "defaultValue": "11.2"
+      "defaultValue": "4.2"
     }
   }
 }
