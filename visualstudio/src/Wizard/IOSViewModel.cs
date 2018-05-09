@@ -1,5 +1,6 @@
 ﻿using Merq;
 using Microsoft.VisualStudio.ComponentModelHost;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -47,11 +48,20 @@ namespace Xamarin.Templates.Wizard
 					.Reverse()
 					.ToList();
 
-				if (deployVersions?.Count() > 0)
-					return deployVersions;
-				else
-					return new List<string>
-						{ "11.2", "11.1", "11.0", "10.3", "10.2", "10.1", "10.0", "9.3", "9.2", "9.1", "9.0", "8.4", "8.3", "8.2", "8.1", "8.0" };
+                if (deployVersions?.Count() > 0)
+                {
+                    return deployVersions;
+                }
+                else
+                {
+                    var defaultValues = new List<string> { "11.2", "11.1", "11.0", "10.3", "10.2", "10.1", "10.0", "9.3", "9.2", "9.1", "9.0", "8.4", "8.3", "8.2", "8.1", "8.0" };
+                    var latestInstalledSdk = versions?.LatestInstalledSdks[SdkType.iOS];
+
+                    if (!string.IsNullOrEmpty(latestInstalledSdk) && new Version(latestInstalledSdk).CompareTo(new Version("11.2")) > 0)
+                        defaultValues.Insert(0, latestInstalledSdk);
+
+                    return defaultValues;
+                }
 			}
 			catch (FileNotFoundException)//this is to avoid a known watson crash
 			{
