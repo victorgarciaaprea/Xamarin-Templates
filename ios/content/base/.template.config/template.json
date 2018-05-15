@@ -78,6 +78,12 @@
       "replaces": "MinOSVersion",
       "datatype": "string",
       "defaultValue": "11.2"
+    },
+    "XamarinEssentialsSdk": {
+      "type": "parameter",
+      "dataType": "string",
+      "replaces": "XamarinEssentialsSdk",
+      "defaultValue": "0.6.0-preview"
     }
   },
   "sources": [

@@ -110,6 +110,9 @@
         </ImageAsset>
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk"/>
+    </ItemGroup>
+    <ItemGroup>
         <Folder Include="Resources\" />
     </ItemGroup>
     <ItemGroup>
