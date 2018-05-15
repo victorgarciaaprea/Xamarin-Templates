@@ -136,10 +136,10 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <!--#if (CreateUITestProject)
-    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.4" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.5" />
     <#endif-->
     <!--#if (CreateBackendProject)
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     #endif-->
   </ItemGroup>
