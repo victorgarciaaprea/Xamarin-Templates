@@ -12,9 +12,17 @@ namespace NewApp
         {
             base.OnCreate(savedInstanceState);
 
+            Xamarin.Essentials.Platform.Init(this, bundle);
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
         }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 }
-
