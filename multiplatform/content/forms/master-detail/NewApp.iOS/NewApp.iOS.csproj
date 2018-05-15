@@ -134,6 +134,7 @@
     #endif-->
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <!--#if (CreateUITestProject)
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.5" />

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="SupportLibVersion" />
