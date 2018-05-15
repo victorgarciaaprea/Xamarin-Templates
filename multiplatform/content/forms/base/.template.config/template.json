@@ -152,7 +152,7 @@
             "type": "parameter",
             "dataType": "string",
             "replaces": "XamarinEssentialsSdk",
-            "defaultValue": "0.6.*"
+            "defaultValue": "0.6.0-preview"
         },
         "XamarinFormsSdk": {
             "type": "parameter",
