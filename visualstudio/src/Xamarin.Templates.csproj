@@ -20,7 +20,7 @@
     <RootNamespace>Xamarin.Templates</RootNamespace>
     <AssemblyName>Xamarin.Templates</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IsProductComponent>true</IsProductComponent>
     <ExtensionInstallationFolder>Xamarin\Templates</ExtensionInstallationFolder>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
@@ -203,13 +203,14 @@
     <PackageReference Include="EnvDTE80">
       <Version>8.0.1</Version>
     </PackageReference>
-    <PackageReference Include="GitInfo" version="2.0.0" />
+    <PackageReference Include="GitInfo" version="2.0.1" />
     <PackageReference Include="Merq">
       <Version>1.0.0-rc</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Build.Utilities.Core">
       <Version>15.3.409</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.0.26201" />
     <PackageReference Include="Microsoft.VisualStudio.Telemetry">
       <Version>14.1.680-update09A45013</Version>
     </PackageReference>

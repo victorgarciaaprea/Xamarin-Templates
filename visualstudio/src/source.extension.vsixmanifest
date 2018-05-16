@@ -20,6 +20,7 @@
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="T\P" />
     <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="T\I" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="Xamarin.Templates.Multiplatform.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" AssemblyName="Xamarin.Templates" />
   </Assets>
 </PackageManifest>

@@ -1,7 +1,2 @@
 [$RootKey$\TemplateEngine\Templates\XamarinTemplates]
 "InstalledPath"="$PackageFolder$\Templates"
-[$RootKey$\Packages\{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}]
-@="XamarinTemplatesPackage"
-"InprocServer32"="$WinDir$\SYSTEM32\MSCOREE.DLL"
-"Class"="Xamarin.Templates.XamarinTemplatesPackage"
-"CodeBase"="$PackageFolder$\Xamarin.Templates.dll"

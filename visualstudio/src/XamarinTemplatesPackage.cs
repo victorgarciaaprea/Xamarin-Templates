@@ -5,6 +5,11 @@ using System.Runtime.InteropServices;
 namespace Xamarin.Templates
 {
     [PackageRegistration(UseManagedResourcesOnly = true)]
+    [InstalledProductRegistration("Xamarin Templates", "Templates for building iOS, Android, and Windows apps with Xamarin and Xamarin.Forms.",
+        ThisAssembly.Git.SemVer.Major + "." +
+        ThisAssembly.Git.SemVer.Minor + "." +
+        ThisAssembly.Git.SemVer.Patch + ThisAssembly.Git.SemVer.DashLabel + " (" +
+        ThisAssembly.Git.Commit + ")")]
     [Guid(PackageGuidString)]
     public class XamarinTemplatesPackage : Package
     {
