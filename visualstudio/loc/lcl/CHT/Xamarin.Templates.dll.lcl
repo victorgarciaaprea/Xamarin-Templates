@@ -192,10 +192,13 @@
       </Item>
       <Item ItemId=";HostInTheCloud" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Include Azure Mobile Apps backend project]]></Val>
+          <Val><![CDATA[Include ASP.NET Core Web API project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[包含 Azure 行動應用程式後端專案]]></Val>
+            <Val><![CDATA[內含 ASP.NET Core Web API 專案]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Include Azure Mobile Apps backend project]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
