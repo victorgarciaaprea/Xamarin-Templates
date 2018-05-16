@@ -7,7 +7,7 @@
 		<SortOrder>500</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 		<TemplateGroupID>Xamarin.iOS</TemplateGroupID>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
     <ShowByDefault>false</ShowByDefault>
 	</TemplateData>
 	<TemplateContent>

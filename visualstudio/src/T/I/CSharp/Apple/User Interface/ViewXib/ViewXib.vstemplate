@@ -6,11 +6,11 @@
 		<ProjectType>CSharp</ProjectType>
 		<SortOrder>700</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
     <ShowByDefault>false</ShowByDefault>
     <TemplateGroupID>Xamarin.iOS</TemplateGroupID>
     <TemplateID>Xamarin.iOS.IT.View</TemplateID>
-	</TemplateData>
+  </TemplateData>
 	<TemplateContent>
 		<References />
 		<ProjectItem SubType="" TargetFileName="$fileinputname$.xib" ReplaceParameters="false">View.xib</ProjectItem>

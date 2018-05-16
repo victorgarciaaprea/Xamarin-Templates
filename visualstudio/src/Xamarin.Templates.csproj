@@ -148,6 +148,7 @@
       <Include>..\..\FormsProject.ico</Include>
       <SubType>Designer</SubType>
     </None>
+    <None Include="T\I\CSharp\Apple\General\AssemblyInfo\AssemblyInfo.vstemplate" />
     <Content Include="T\P\CSharp\Android\AndroidXamlApp\android-app.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -297,10 +298,6 @@
   <ItemGroup>
     <None Include="T\I\CSharp\Apple\Code\AssetCatalog\AssetCatalog.vstemplate" />
     <None Include="T\I\CSharp\Apple\Code\Class\Class.vstemplate" />
-    <None Include="T\I\CSharp\Apple\Code\XMLFile\XMLFile.vstemplate" />
-    <None Include="T\I\CSharp\Apple\General\AssemblyInfo\AssemblyInfo.vstemplate" />
-    <None Include="T\I\CSharp\Apple\General\Resource\Resource.vstemplate" />
-    <None Include="T\I\CSharp\Apple\General\TextFile\TextFile.vstemplate" />
     <None Include="T\I\CSharp\Apple\Property List\Entitlements\Entitlements.vstemplate" />
     <None Include="T\I\CSharp\Apple\Property List\PropertyList\PropertyList.vstemplate" />
     <None Include="T\I\CSharp\Apple\Property List\Settings\Settings.vstemplate" />

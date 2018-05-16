@@ -7,9 +7,9 @@
 		<SortOrder>100</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 		<TemplateGroupID>Xamarin.iOS.Shared</TemplateGroupID>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
     <ShowByDefault>false</ShowByDefault>
-	</TemplateData>
+  </TemplateData>
 	<TemplateContent>
 		<References />
 		<ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">UIViewController.cs</ProjectItem>

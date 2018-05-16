@@ -7,10 +7,10 @@
 		<SortOrder>400</SortOrder>
 		<Icon>__TemplateIcon.ico</Icon>
 		<TemplateGroupID>Xamarin.iOS</TemplateGroupID>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
     <ShowByDefault>false</ShowByDefault>
     <TemplateID>Xamarin.iOS.IT.ViewControllerStoryboard</TemplateID>
-	</TemplateData>
+  </TemplateData>
 	<TemplateContent>
 		<References />
 		<ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ViewControllerStoryboard.cs</ProjectItem>
