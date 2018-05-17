@@ -192,10 +192,13 @@
       </Item>
       <Item ItemId=";HostInTheCloud" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Include Azure Mobile Apps backend project]]></Val>
+          <Val><![CDATA[Include ASP.NET Core Web API project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Azure Mobile Apps arka uç projesini dahil et]]></Val>
+            <Val><![CDATA[ASP.NET Core Web API projesini ekle]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Include Azure Mobile Apps backend project]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
