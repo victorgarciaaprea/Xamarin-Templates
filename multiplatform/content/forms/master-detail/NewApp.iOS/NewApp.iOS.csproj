@@ -134,14 +134,13 @@
     #endif-->
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <!--#if (CreateUITestProject)
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.5" />
     <#endif-->
     <!--#if (CreateBackendProject)
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     #endif-->
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

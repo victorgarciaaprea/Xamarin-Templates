@@ -126,7 +126,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
 	<ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk"/>
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />

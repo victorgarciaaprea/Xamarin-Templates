@@ -51,16 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <!--#if (CreateBackendProject)
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     #endif-->
   </ItemGroup>
   <ItemGroup>

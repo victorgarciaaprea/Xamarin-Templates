@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Plugin.Connectivity;
+using Xamarin.Essentials;
 using NewApp.Models;
 
 namespace NewApp.Services
@@ -22,32 +22,34 @@ namespace NewApp.Services
             items = new List<Item>();
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
-        {
-            if (forceRefresh && CrossConnectivity.Current.IsConnected)
-            {
-                var json = await client.GetStringAsync($"api/item");
-                items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
-            }
+		bool IsConnected => Connectivity.NetworkAccess != NetworkAccess.Internet;
+
+		public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+		{
+			if (forceRefresh && IsConnected)
+			{
+				var json = await client.GetStringAsync($"api/item");
+				items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
+			}
 
             return items;
         }
 
-        public async Task<Item> GetItemAsync(string id)
-        {
-            if (id != null && CrossConnectivity.Current.IsConnected)
-            {
-                var json = await client.GetStringAsync($"api/item/{id}");
-                return await Task.Run(() => JsonConvert.DeserializeObject<Item>(json));
-            }
+		public async Task<Item> GetItemAsync(string id)
+		{
+			if (id != null && IsConnected)
+			{
+				var json = await client.GetStringAsync($"api/item/{id}");
+				return await Task.Run(() => JsonConvert.DeserializeObject<Item>(json));
+			}
 
             return null;
         }
 
-        public async Task<bool> AddItemAsync(Item item)
-        {
-            if (item == null || !CrossConnectivity.Current.IsConnected)
-                return false;
+		public async Task<bool> AddItemAsync(Item item)
+		{
+			if (item == null || !IsConnected)
+				return false;
 
             var serializedItem = JsonConvert.SerializeObject(item);
 
@@ -56,10 +58,10 @@ namespace NewApp.Services
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
-        {
-            if (item == null || item.Id == null || !CrossConnectivity.Current.IsConnected)
-                return false;
+		public async Task<bool> UpdateItemAsync(Item item)
+		{
+			if (item == null || item.Id == null || !IsConnected)
+				return false;
 
             var serializedItem = JsonConvert.SerializeObject(item);
             var buffer = Encoding.UTF8.GetBytes(serializedItem);
@@ -70,10 +72,10 @@ namespace NewApp.Services
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
-        {
-            if (string.IsNullOrEmpty(id) && !CrossConnectivity.Current.IsConnected)
-                return false;
+		public async Task<bool> DeleteItemAsync(string id)
+		{
+			if (string.IsNullOrEmpty(id) && !IsConnected)
+				return false;
 
             var response = await client.DeleteAsync($"api/item/{id}");
 

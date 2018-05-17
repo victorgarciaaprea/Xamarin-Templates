@@ -145,12 +145,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.4"/>
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <!--#if (CreateBackendProject)
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
     #endif-->
   </ItemGroup>
   <!--#if (!CreateSharedProject)

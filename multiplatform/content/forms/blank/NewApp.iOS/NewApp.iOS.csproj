@@ -146,9 +146,9 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+  <ItemGroup>]
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <!--#if (CreateUITestProject)
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.4"/>
     <#endif-->
