@@ -193,8 +193,8 @@
       <Item ItemId=";HostInTheCloud" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Include ASP.NET Core Web API project]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Zahrnout back-endový projekt pro Azure Mobile Apps]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zahrnout projekt rozhraní Web API pro ASP.NET Core]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Include Azure Mobile Apps backend project]]></Val>
