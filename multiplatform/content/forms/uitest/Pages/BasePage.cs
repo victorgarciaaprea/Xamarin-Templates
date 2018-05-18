@@ -4,7 +4,7 @@ namespace NewApp.UITests
 {
     public abstract class BasePage
     {
-        readonly string _pageTitle;
+        readonly string pageTitle;
 
         protected readonly IApp app;
         protected readonly bool OnAndroid;
@@ -17,14 +17,14 @@ namespace NewApp.UITests
             OnAndroid = platform == Platform.Android;
             OniOS = platform == Platform.iOS;
 
-            _pageTitle = pageTitle;
+            this.pageTitle = pageTitle;
 
         }
-        public bool IsPageVisible => app.Query(_pageTitle).Length > 0;
+        public bool IsPageVisible => app.Query(pageTitle).Length > 0;
 
         public void WaitForPageToLoad()
         {
-            app.WaitForElement(_pageTitle);
+            app.WaitForElement(pageTitle);
         }
     }
 }

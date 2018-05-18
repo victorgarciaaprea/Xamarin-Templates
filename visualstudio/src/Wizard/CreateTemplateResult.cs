@@ -86,8 +86,8 @@ namespace Xamarin.Templates.Wizards
 
     class BaseCreateTemplateResult
     {
-        private ItemViewModel model;
-        private string safeProjectName;
+        ItemViewModel model;
+        string safeProjectName;
 
         public string Platform { get; }
 

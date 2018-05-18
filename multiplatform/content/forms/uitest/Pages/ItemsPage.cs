@@ -6,19 +6,19 @@ namespace NewApp.UITests
 {
     public class ItemsPage : BasePage
     {
-        readonly Query _addToolbarButton;
+        readonly Query addToolbarButton;
 
         public ItemsPage(IApp app, Platform platform) : base(app, platform, "Browse")
         {
             if (OniOS)
-                _addToolbarButton = x => x.Class("UIButtonLabel").Index(0);
+                addToolbarButton = x => x.Class("UIButtonLabel").Index(0);
             else
-                _addToolbarButton = x => x.Class("android.support.v7.view.menu.ActionMenuItemView").Index(0);
+                addToolbarButton = x => x.Class("android.support.v7.view.menu.ActionMenuItemView").Index(0);
         }
 
         public void TapAddToolbarButton()
         {
-            app.Tap(_addToolbarButton);
+            app.Tap(addToolbarButton);
 
             app.Screenshot("Toolbar Item Tapped");
         }

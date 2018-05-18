@@ -42,8 +42,8 @@ namespace NewApp.Services
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(_item);
+            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            items.Remove(oldItem);
             items.Add(item);
 
             return await Task.FromResult(true);
@@ -51,8 +51,8 @@ namespace NewApp.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var _item = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(_item);
+            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }

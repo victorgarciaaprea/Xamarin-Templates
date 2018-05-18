@@ -23,9 +23,9 @@ namespace NewApp.ViewModels
 
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
-                var _item = item as Item;
-                Items.Add(_item);
-                await DataStore.AddItemAsync(_item);
+                var newItem = item as Item;
+                Items.Add(newItem);
+                await DataStore.AddItemAsync(newItem);
             });
         }
 

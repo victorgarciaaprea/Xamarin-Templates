@@ -44,7 +44,7 @@ namespace Xamarin.Templates.Wizards
             System.Diagnostics.Process.Start(e.Uri.ToString());
         }
 
-        private void button_Click (object sender, RoutedEventArgs e)
+        private void ButtonClick (object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }

@@ -25,7 +25,7 @@ namespace Xamarin.Templates.Wizard
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void ButtonClick(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }
