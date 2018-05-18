@@ -23,8 +23,8 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
@@ -80,16 +80,16 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json">
-		  <Visible>false</Visible>
+          <Visible>false</Visible>
     </ImageAsset>
-		<ImageAsset Include="Assets.xcassets\First.imageset\First.pdf">
-		  <Visible>false</Visible>
+        <ImageAsset Include="Assets.xcassets\First.imageset\First.pdf">
+          <Visible>false</Visible>
     </ImageAsset>
-		<ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json">
-		  <Visible>false</Visible>
-		</ImageAsset>
+        <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json">
+          <Visible>false</Visible>
+        </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Second.imageset\Second.pdf">
-		  <Visible>false</Visible>
+          <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
       <Visible>false</Visible>
@@ -137,7 +137,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-	<ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
   </ItemGroup>
   <ItemGroup>
