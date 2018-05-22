@@ -149,6 +149,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="T\I\CSharp\Apple\General\AssemblyInfo\AssemblyInfo.vstemplate" />
+    <None Include="T\P\CSharp\Test\XamarinCrossPlatformUITest\xamarincrossplatformuitest.vstemplate" />
+    <Content Include="T\P\CSharp\Test\XamarinCrossPlatformUITest\ui-test.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="T\P\CSharp\Android\AndroidXamlApp\android-app.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

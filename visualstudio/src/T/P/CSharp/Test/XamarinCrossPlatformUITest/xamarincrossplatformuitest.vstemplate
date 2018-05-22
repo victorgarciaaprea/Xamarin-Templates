@@ -1,0 +1,28 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="ProjectGroup">
+  <TemplateData>
+    <Name Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3030" />
+    <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3031" />
+    <Icon>ui-test.ico</Icon>
+    <TemplateGroupID>Xamarin.XPlatUITest</TemplateGroupID>
+    <TemplateID>Xamarin.XPlatUITest.CSharp</TemplateID>
+    <Hidden>false</Hidden>
+    <DefaultName>UITest</DefaultName>
+    <ProjectType>CSharp</ProjectType>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>100</SortOrder>
+    <CreateInPlace>true</CreateInPlace>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection />
+    <CustomParameters>
+      <CustomParameter Name="$language$" Value="CSharp" />
+      <CustomParameter Name="$uistyle$" Value="none" />
+      <CustomParameter Name="$groupid$" Value="Xamarin.UITest" />
+      <CustomParameter Name="$passthrough:isWindows$" Value="true" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.TemplateEngine.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.VisualStudio.TemplateEngine.Wizard.TemplateEngineWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

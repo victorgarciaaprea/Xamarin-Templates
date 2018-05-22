@@ -570,4 +570,22 @@
   <data name="3025" xml:space="preserve">
     <value>A project for an iOS app that uses Xamarin.Forms and XAML to build the UI.</value>
   </data>
+  <data name="3026" xml:space="preserve">
+    <value>Blank Cross-Platform Mobile App (Native)</value>
+  </data>
+  <data name="3027" xml:space="preserve">
+    <value>A project that uses the native UI approach for Xamarin and provides projects for iOS, Android, and UWP.</value>
+  </data>
+  <data name="3028" xml:space="preserve">
+    <value>Master Detail Cross-Platform Mobile App (Native)</value>
+  </data>
+  <data name="3029" xml:space="preserve">
+    <value>A project that uses the native UI approach for Xamarin and provides projects for iOS, Android, and UWP.</value>
+  </data>
+  <data name="3030" xml:space="preserve">
+    <value>Xamarin.UITest Cross-Platform Test Project</value>
+  </data>
+  <data name="3031" xml:space="preserve">
+    <value>A project for creating cross-platform automated UI tests for Android and iOS with Xamarin.UITest that can be run locally or uploaded to App Center.</value>
+  </data>
 </root>

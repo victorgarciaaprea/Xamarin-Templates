@@ -30,6 +30,9 @@
   <ItemGroup>
     <PackageReference Include="NUnit" Version="2.6.4" />
     <PackageReference Include="Xamarin.UITest" Version="2.2.4" />
+    <!--#if (isWindows)
+    <PackageReference Include="NUnitTestAdapter" Version="2.1.1" />
+    #endif-->
   </ItemGroup>
   <ItemGroup>
     <!--#if (CreateiOSProject)
