@@ -120,9 +120,9 @@
         },
         "WindowsSdk": {
             "type": "parameter",
-            "description": "Window SDK Version. Minimum Version is Fall Creator's Update (10.0.16278).",
+            "description": "Windows SDK Target Version. Minimum Version is Fall Creator's Update (10.0.16278).",
             "dataType": "string",
-            "replaces": "10.0.16267.0"
+            "replaces": "WindowsSdk"
         },
         "AndroidSDKVersion": {
             "type": "parameter",
