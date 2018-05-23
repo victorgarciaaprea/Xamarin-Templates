@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace TvApp
+namespace NewApp
 {
 	public class Application
 	{

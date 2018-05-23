@@ -20,6 +20,7 @@ namespace NewApp
 			base.ViewDidLoad();
 
 			Title = NSBundle.MainBundle.GetLocalizedString("Master", "Master");
+			SplitViewController.PreferredDisplayMode = UISplitViewControllerDisplayMode.AllVisible;
 
 			// Perform any additional setup after loading the view, typically from a nib.
 			NavigationItem.LeftBarButtonItem = EditButtonItem;
@@ -33,7 +34,6 @@ namespace NewApp
 
 		public override void ViewWillAppear(bool animated)
 		{
-			ClearsSelectionOnViewWillAppear = SplitViewController.Collapsed;
 			base.ViewWillAppear(animated);
 		}
 

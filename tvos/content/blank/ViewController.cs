@@ -2,7 +2,7 @@
 using Foundation;
 using UIKit;
 
-namespace TvApp
+namespace NewApp
 {
 	public partial class ViewController : UIViewController
 	{

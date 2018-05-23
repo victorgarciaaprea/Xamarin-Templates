@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Blank.WatchOSExtension</string>
+	<string>NewApp.WatchOSExtension</string>
 	<key>CFBundleDisplayName</key>
-	<string>Blank.WatchOSExtension</string>
+	<string>NewApp.WatchOSExtension</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.AppName.watchkitapp.watchkitextension</string>
+	<string>com.companyname.NewApp.watchkitapp.watchkitextension</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleShortVersionString</key>
@@ -21,7 +21,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.companyname.AppName.watchkitapp</string>
+			<string>com.companyname.NewApp.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>

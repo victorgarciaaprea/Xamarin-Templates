@@ -5,7 +5,7 @@
 //
 using Foundation;
 
-namespace TvApp
+namespace NewApp
 {
 	[Register("ViewController")]
 	partial class ViewController

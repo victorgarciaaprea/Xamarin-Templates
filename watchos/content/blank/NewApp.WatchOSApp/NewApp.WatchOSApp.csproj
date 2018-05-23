@@ -96,16 +96,36 @@
     <Reference Include="Xamarin.WatchOS" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon172.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon196.png"/>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon48.png"/>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon55.png"/>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon58.png"/>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon80.png"/>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon87.png"/>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon88.png"/>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon172.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon196.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon48.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon55.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon88.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
