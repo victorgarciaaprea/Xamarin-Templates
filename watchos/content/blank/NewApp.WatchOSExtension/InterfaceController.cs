@@ -3,7 +3,7 @@
 using Foundation;
 using WatchKit;
 
-namespace Blank.WatchOSExtension
+namespace NewApp.WatchOSExtension
 {
     public partial class InterfaceController : WKInterfaceController
     {

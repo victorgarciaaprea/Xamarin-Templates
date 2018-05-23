@@ -6,7 +6,7 @@
 
 using Foundation;
 
-namespace Blank.WatchOSExtension
+namespace NewApp.WatchOSExtension
 {
     [Register("InterfaceController")]
     partial class InterfaceController
