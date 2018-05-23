@@ -8,24 +8,24 @@ using Android.Views;
 
 namespace NewApp
 {
-	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
-	public class MainActivity : AppCompatActivity
-	{
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    public class MainActivity : AppCompatActivity
+    {
 
-		protected override void OnCreate(Bundle savedInstanceState)
-		{
-			base.OnCreate(savedInstanceState);
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
 
-			SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.activity_main);
 
-			Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-			FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
-		}
+        }
 
-		public override bool OnCreateOptionsMenu(IMenu menu)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
@@ -48,6 +48,6 @@ namespace NewApp
             Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
-	}
+    }
 }
 

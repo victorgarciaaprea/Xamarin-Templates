@@ -7,11 +7,11 @@ using Foundation;
 
 namespace NewApp
 {
-	[Register ("FirstViewController")]
-	partial class FirstViewController
-	{
-		void ReleaseDesignerOutlets ()
-		{
-		}
-	}
+    [Register ("FirstViewController")]
+    partial class FirstViewController
+    {
+        void ReleaseDesignerOutlets ()
+        {
+        }
+    }
 }

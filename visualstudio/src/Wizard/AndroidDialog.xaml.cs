@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 
 namespace Xamarin.Templates.Wizard
 {
-	/// <summary>
-	/// Interaction logic for AndroidDialog.xaml
-	/// </summary>
-	public partial class AndroidDialog : DialogBase
-	{
-		public AndroidDialog()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for AndroidDialog.xaml
+    /// </summary>
+    public partial class AndroidDialog : DialogBase
+    {
+        public AndroidDialog()
+        {
+            InitializeComponent();
+        }
 
-		private void button_Click(object sender, RoutedEventArgs e)
-		{
-			DialogResult = true;
-		}
-	}
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+    }
 }

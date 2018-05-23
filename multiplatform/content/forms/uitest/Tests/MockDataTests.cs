@@ -3,43 +3,43 @@ using Xamarin.UITest;
 
 namespace NewApp.UITests
 {
-	public class MockDataTests : BaseTest
-	{
-		public MockDataTests(Platform platform) : base(platform)
-		{
-		}
+    public class MockDataTests : BaseTest
+    {
+        public MockDataTests(Platform platform) : base(platform)
+        {
+        }
 
-		public override void BeforeEachTest()
-		{
-			base.BeforeEachTest();
+        public override void BeforeEachTest()
+        {
+            base.BeforeEachTest();
 
-			ItemsPage.WaitForPageToLoad();
-		}
+            ItemsPage.WaitForPageToLoad();
+        }
 
-		[Test]
-		public void AddNewItem()
-		{
-			//Arrange
-			const string itemName = "Item Name";
-			const string itemDescription = "Item Description";
+        [Test]
+        public void AddNewItem()
+        {
+            //Arrange
+            const string itemName = "Item Name";
+            const string itemDescription = "Item Description";
 
-			//Act
-			ItemsPage.TapAddToolbarButton();
+            //Act
+            ItemsPage.TapAddToolbarButton();
 
-			NewItemPage.EnterItemName(itemName);
-			NewItemPage.EnterItemDescription(itemDescription);
-			NewItemPage.TapSaveToolbarButton();
+            NewItemPage.EnterItemName(itemName);
+            NewItemPage.EnterItemDescription(itemDescription);
+            NewItemPage.TapSaveToolbarButton();
 
-			//Assert
-			Assert.IsTrue(ItemsPage.IsPageVisible);
-			Assert.IsTrue(app.Query(itemName).Length > 0);
-		}
+            //Assert
+            Assert.IsTrue(ItemsPage.IsPageVisible);
+            Assert.IsTrue(app.Query(itemName).Length > 0);
+        }
 
-		[Ignore]
-		[Test]
-		public void Repl()
-		{
-			app.Repl();
-		}
-	}
+        [Ignore]
+        [Test]
+        public void Repl()
+        {
+            app.Repl();
+        }
+    }
 }

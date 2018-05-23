@@ -46,7 +46,7 @@ namespace Xamarin.Templates.Wizards
 
         internal static Version MinWindowsVersion = new Version(10, 0, 16267, 0);
         string latestWindowSdk;
-        
+
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             try
@@ -79,7 +79,7 @@ namespace Xamarin.Templates.Wizards
             catch (WizardBackoutException)
             {
                 throw;
-            } 
+            }
             catch
             {
                 TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name, true));
@@ -127,7 +127,7 @@ namespace Xamarin.Templates.Wizards
         {
             var sdks = Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformsForSDK("Windows", new Version(10, 0))
                        .Where(s => s.StartsWith("UAP")).Select(s => new Version(s.Substring(13))).Where(v => v >= MinWindowsVersion); //the value is of the form "UAP, Version=x.x.x.x"
-            
+
             return sdks.Count() > 0 ? $"{sdks.First()}": string.Empty;
         }
 
@@ -141,8 +141,8 @@ namespace Xamarin.Templates.Wizards
             return $"{sdkInfo.LatestInstalledSdks[SdkType.iOS]}"; //quotes are so the engine understands this as a string
         }
 
-		bool AndroidShouldFallback()
-		{
+        bool AndroidShouldFallback()
+        {
             try
             {
                 var componentModel = Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
@@ -162,9 +162,9 @@ namespace Xamarin.Templates.Wizards
             {
                 return false;
             }
-		}
+        }
 
-		private CrossPlatformDialog CreateCrossPlatformDialog()
+        private CrossPlatformDialog CreateCrossPlatformDialog()
         {
             var dialog = new CrossPlatformDialog();
             var dialogWindow = dialog as System.Windows.Window;
@@ -202,7 +202,7 @@ namespace Xamarin.Templates.Wizards
                 CreateTemplate(model);
 
                 result.CheckIfSolutionWasSuccessfulyCreated(dte.Solution);
-                
+
                 CrossPlatformTelemetry.Events.NewProject.Create.Post(result);
             } catch (Exception ex) {
                 CrossPlatformTelemetry.Events.NewProject.Fault.Post(result, ex);
@@ -213,17 +213,17 @@ namespace Xamarin.Templates.Wizards
         private void CreateTemplate(XPlatViewModel model)
         {
             var wizard = CreateTemplatingWizard();
-			wizard.RunStarted(automationObject, AddReplacements(model, replacements), WizardRunKind.AsMultiProject, new object[]{ });
-			wizard.RunFinished();
+            wizard.RunStarted(automationObject, AddReplacements(model, replacements), WizardRunKind.AsMultiProject, new object[]{ });
+            wizard.RunFinished();
         }
 
-		private Dictionary<string, string> AddReplacements(XPlatViewModel model, Dictionary<string, string> replacements)
+        private Dictionary<string, string> AddReplacements(XPlatViewModel model, Dictionary<string, string> replacements)
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
             replacements.Add("$groupid$", "Xamarin.Forms.App");
 
-			replacements.Add("$passthrough:kind$", model.SelectedTemplatePath);
+            replacements.Add("$passthrough:kind$", model.SelectedTemplatePath);
 
             if (model.IsAzureSelected)
                 replacements.Add("$passthrough:CreateBackendProject$", "true");

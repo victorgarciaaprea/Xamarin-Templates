@@ -3,30 +3,30 @@ using Xamarin.UITest;
 
 namespace NewApp.UITests
 {
-	[TestFixture(Platform.Android)]
-	[TestFixture(Platform.iOS)]
+    [TestFixture(Platform.Android)]
+    [TestFixture(Platform.iOS)]
 
-	public abstract class BaseTest
-	{
-		protected IApp app;
-		protected Platform platform;
+    public abstract class BaseTest
+    {
+        protected IApp app;
+        protected Platform platform;
 
-		protected ItemsPage ItemsPage;
-		protected NewItemPage NewItemPage;
+        protected ItemsPage ItemsPage;
+        protected NewItemPage NewItemPage;
 
-		protected BaseTest(Platform platform)
-		{
-			this.platform = platform;
-		}
+        protected BaseTest(Platform platform)
+        {
+            this.platform = platform;
+        }
 
-		[SetUp]
-		virtual public void BeforeEachTest()
-		{
-			app = AppInitializer.StartApp(platform);
-			app.Screenshot("App Initialized");
+        [SetUp]
+        virtual public void BeforeEachTest()
+        {
+            app = AppInitializer.StartApp(platform);
+            app.Screenshot("App Initialized");
 
-			ItemsPage = new ItemsPage(app, platform);
-			NewItemPage = new NewItemPage(app, platform);
-		}
-	}
+            ItemsPage = new ItemsPage(app, platform);
+            NewItemPage = new NewItemPage(app, platform);
+        }
+    }
 }

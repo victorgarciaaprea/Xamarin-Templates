@@ -13,9 +13,9 @@ using NewApp.ViewModels;
 
 namespace NewApp.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ItemsPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ItemsPage : ContentPage
+    {
         ItemsViewModel viewModel;
 
         public ItemsPage()

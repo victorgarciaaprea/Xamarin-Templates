@@ -12,41 +12,41 @@ using Xamarin.VisualStudio.Contracts.Model.IOS;
 namespace Xamarin.Templates.Wizard
 {
     class IOSViewModel : IViewModel, INotifyPropertyChanged
-	{
-		public List<ItemViewModel> Templates { get; private set; }
+    {
+        public List<ItemViewModel> Templates { get; private set; }
 
-		ItemViewModel selectedTemplate;
-		public ItemViewModel SelectedTemplate
-		{
-			get { return selectedTemplate ?? Templates.First(); }
-			set
-			{
-				selectedTemplate = value;
+        ItemViewModel selectedTemplate;
+        public ItemViewModel SelectedTemplate
+        {
+            get { return selectedTemplate ?? Templates.First(); }
+            set
+            {
+                selectedTemplate = value;
 
-				PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedTemplate)));
-			}
-		}
+                PropertyChanged(this, new PropertyChangedEventArgs(nameof(SelectedTemplate)));
+            }
+        }
 
-		public IOSViewModel()
-		{
-			Templates = CreateTemplatesContext();
-			Frameworks = GetFrameworks();
+        public IOSViewModel()
+        {
+            Templates = CreateTemplatesContext();
+            Frameworks = GetFrameworks();
 
-			IsUniversal = true;
-		}
-		
-		static IList<string> GetFrameworks()
-		{
-			try
-			{
-				var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
-				var commandBus = componentModel?.GetService<ICommandBus>();
-				var versions = commandBus?.Execute(new GetSdkInfo());
-				var deployVersions = versions?.DeploymentTargetVersions
-					.Where(f => f.SdkType == SdkType.iOS && f.Major >= 8)
-					.Select(f => f.Version)
-					.Reverse()
-					.ToList();
+            IsUniversal = true;
+        }
+
+        static IList<string> GetFrameworks()
+        {
+            try
+            {
+                var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
+                var commandBus = componentModel?.GetService<ICommandBus>();
+                var versions = commandBus?.Execute(new GetSdkInfo());
+                var deployVersions = versions?.DeploymentTargetVersions
+                    .Where(f => f.SdkType == SdkType.iOS && f.Major >= 8)
+                    .Select(f => f.Version)
+                    .Reverse()
+                    .ToList();
 
                 if (deployVersions?.Count() > 0)
                 {
@@ -62,54 +62,54 @@ namespace Xamarin.Templates.Wizard
 
                     return defaultValues;
                 }
-			}
-			catch (FileNotFoundException)//this is to avoid a known watson crash
-			{
-				return new List<string>();
-			}
-		}
+            }
+            catch (FileNotFoundException)//this is to avoid a known watson crash
+            {
+                return new List<string>();
+            }
+        }
 
-		public IList<string> Frameworks { get; set; }
+        public IList<string> Frameworks { get; set; }
 
-		public List<ItemViewModel> CreateTemplatesContext()
-		{
-			var icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg");
-			return new List<ItemViewModel>
-			{
-				new ItemViewModel { Id = "single-view", Name = Resources.IOSViewModel_SingleViewApp_Name, Icon = icon, Description = Resources.IOSViewModel_SingleViewApp_Description },
-				new ItemViewModel { Id = "master-detail", Name = Resources.IOSViewModel_MasterDetailApp_Name, Icon = icon, Description = Resources.IOSViewModel_MasterDetailApp_Description },
-				new ItemViewModel { Id = "tabbed", Name = Resources.IOSViewModel_TabbedApp_Name, Icon = icon, Description = Resources.IOSViewModel_TabbedApp_Description },
-				new ItemViewModel { Id = "blank", Name = Resources.IOSViewModel_BlankApp_Name, Icon = icon, Description = Resources.IOSViewModel_BlankApp_Description }
-			};
-		}
+        public List<ItemViewModel> CreateTemplatesContext()
+        {
+            var icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg");
+            return new List<ItemViewModel>
+            {
+                new ItemViewModel { Id = "single-view", Name = Resources.IOSViewModel_SingleViewApp_Name, Icon = icon, Description = Resources.IOSViewModel_SingleViewApp_Description },
+                new ItemViewModel { Id = "master-detail", Name = Resources.IOSViewModel_MasterDetailApp_Name, Icon = icon, Description = Resources.IOSViewModel_MasterDetailApp_Description },
+                new ItemViewModel { Id = "tabbed", Name = Resources.IOSViewModel_TabbedApp_Name, Icon = icon, Description = Resources.IOSViewModel_TabbedApp_Description },
+                new ItemViewModel { Id = "blank", Name = Resources.IOSViewModel_BlankApp_Name, Icon = icon, Description = Resources.IOSViewModel_BlankApp_Description }
+            };
+        }
 
-		public event PropertyChangedEventHandler PropertyChanged = (s, e) => { };
-		
-		public string DeviceFamily
-		{
-			get
-			{
-				if (IsIPad)
-					return "ipad";
-				if (IsIPhone)
-					return "iphone";
-				return "universal";
-			}
-		}
+        public event PropertyChangedEventHandler PropertyChanged = (s, e) => { };
 
-		public string MinOSVersion { get; set; }
+        public string DeviceFamily
+        {
+            get
+            {
+                if (IsIPad)
+                    return "ipad";
+                if (IsIPhone)
+                    return "iphone";
+                return "universal";
+            }
+        }
 
-		public bool IsUniversal { get; set; }
-		public bool IsIPhone { get; set; }
-		public bool IsIPad { get; set; }
-	}
+        public string MinOSVersion { get; set; }
 
-	public class ItemViewModel
-	{
-		public string Id { get; set; }
-		public string Icon { get; set; }
-		public string Name { get; set; }
-		public string Description { get; set; }
-	}
+        public bool IsUniversal { get; set; }
+        public bool IsIPhone { get; set; }
+        public bool IsIPad { get; set; }
+    }
+
+    public class ItemViewModel
+    {
+        public string Id { get; set; }
+        public string Icon { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }
 }
 

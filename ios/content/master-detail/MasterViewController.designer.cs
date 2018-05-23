@@ -8,11 +8,11 @@ using Foundation;
 
 namespace NewApp
 {
-	[Register ("MasterViewController")]
-	partial class MasterViewController
-	{
-		void ReleaseDesignerOutlets ()
-		{
-		}
-	}
+    [Register ("MasterViewController")]
+    partial class MasterViewController
+    {
+        void ReleaseDesignerOutlets ()
+        {
+        }
+    }
 }

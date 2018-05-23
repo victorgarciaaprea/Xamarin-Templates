@@ -6,13 +6,13 @@ reset=false
 package=false
 
 reset_package() {
-	echo "===Reset Installed Template==="
+    echo "===Reset Installed Template==="
     echo ""
 
-	dotnet new --debug:reinit > /dev/null
-	
-	echo "Removed user-defined templates."
-	echo ""
+    dotnet new --debug:reinit > /dev/null
+
+    echo "Removed user-defined templates."
+    echo ""
 }
 
 make_package() {
@@ -82,7 +82,7 @@ echo "===Prerequisites==="
 if [ "$OSTYPE" = "OSX" ]; then
 
     if [ ! -d /usr/local/share/dotnet/sdk ]; then
-	    echo "Hold up..."
+        echo "Hold up..."
         echo "  dotnet isn't installed, you must install dotnet core to use dotnet new command."
         echo "  Go do that and try again."
         exit 0
@@ -95,7 +95,7 @@ if [ "$OSTYPE" = "OSX" ]; then
 elif [ "$OSTYPE" = "WINDOWS" ]; then
 
     if [ ! -d "C:\Program Files\dotnet\sdk" ]; then
-	    echo "Hold up..."
+        echo "Hold up..."
         echo "  dotnet isn't installed, you must install dotnet core to use dotnet new command."
         echo "  Go do that and try again."
         exit 0
@@ -118,7 +118,7 @@ fi
 # --package
 if [ "$package" = true ]; then
     make_package
-fi 
+fi
 
 # --install
 

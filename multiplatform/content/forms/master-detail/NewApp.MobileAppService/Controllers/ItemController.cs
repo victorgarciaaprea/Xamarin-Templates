@@ -7,70 +7,70 @@ namespace NewApp.Controllers
 {
     [Route("api/[controller]")]
     public class ItemController : Controller
-	{
+    {
 
-		private readonly IItemRepository ItemRepository;
+        private readonly IItemRepository ItemRepository;
 
-		public ItemController(IItemRepository itemRepository)
-		{
-			ItemRepository = itemRepository;
-		}
+        public ItemController(IItemRepository itemRepository)
+        {
+            ItemRepository = itemRepository;
+        }
 
-		[HttpGet]
-		public IActionResult List()
-		{
-			return Ok(ItemRepository.GetAll());
-		}
+        [HttpGet]
+        public IActionResult List()
+        {
+            return Ok(ItemRepository.GetAll());
+        }
 
-		[HttpGet("{Id}")]
-		public Item GetItem(string id)
-		{
-			Item item = ItemRepository.Get(id);
-			return item;
-		}
+        [HttpGet("{Id}")]
+        public Item GetItem(string id)
+        {
+            Item item = ItemRepository.Get(id);
+            return item;
+        }
 
-		[HttpPost]
-		public IActionResult Create([FromBody]Item item)
-		{
-			try
-			{
-				if (item == null || !ModelState.IsValid)
-				{
-					return BadRequest("Invalid State");
-				}
+        [HttpPost]
+        public IActionResult Create([FromBody]Item item)
+        {
+            try
+            {
+                if (item == null || !ModelState.IsValid)
+                {
+                    return BadRequest("Invalid State");
+                }
 
-				ItemRepository.Add(item);
+                ItemRepository.Add(item);
 
-			}
-			catch (Exception)
-			{
-				return BadRequest("Error while creating");
-			}
-			return Ok(item);
-		}
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error while creating");
+            }
+            return Ok(item);
+        }
 
-		[HttpPut]
-		public IActionResult Edit([FromBody] Item item)
-		{
-			try
-			{
-				if (item == null || !ModelState.IsValid)
-				{
-					return BadRequest("Invalid State");
-				}
-				ItemRepository.Update(item);
-			}
-			catch (Exception)
-			{
-				return BadRequest("Error while creating");
-			}
-			return NoContent();
-		}
+        [HttpPut]
+        public IActionResult Edit([FromBody] Item item)
+        {
+            try
+            {
+                if (item == null || !ModelState.IsValid)
+                {
+                    return BadRequest("Invalid State");
+                }
+                ItemRepository.Update(item);
+            }
+            catch (Exception)
+            {
+                return BadRequest("Error while creating");
+            }
+            return NoContent();
+        }
 
-		[HttpDelete("{Id}")]
-		public void Delete(string id)
-		{
-			ItemRepository.Remove(id);
-		}
-	}
+        [HttpDelete("{Id}")]
+        public void Delete(string id)
+        {
+            ItemRepository.Remove(id);
+        }
+    }
 }

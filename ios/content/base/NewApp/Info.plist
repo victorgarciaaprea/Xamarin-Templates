@@ -2,53 +2,53 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDisplayName</key>
-	<string>NewApp</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.companyname.NewApp</string>
-	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>MinimumOSVersion</key>
-  	<string>MinOSVersion</string>
-	<key>UIDeviceFamily</key>
-	<array>
-		<!--#if((DeviceFamily == "iphone") || (DeviceFamily == "universal"))
-		<integer>1</integer>
-		#endif-->
-		<!--#if((DeviceFamily == "ipad") || (DeviceFamily == "universal"))
-		<integer>2</integer>
-		#endif-->
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<!--#if((kind != "blank"))>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UIMainStoryboardFile~ipad</key>
-	<string>Main</string>
-	#endif-->
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>CFBundleDisplayName</key>
+    <string>NewApp</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.companyname.NewApp</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>MinimumOSVersion</key>
+        <string>MinOSVersion</string>
+    <key>UIDeviceFamily</key>
+    <array>
+        <!--#if((DeviceFamily == "iphone") || (DeviceFamily == "universal"))
+        <integer>1</integer>
+        #endif-->
+        <!--#if((DeviceFamily == "ipad") || (DeviceFamily == "universal"))
+        <integer>2</integer>
+        #endif-->
+    </array>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <!--#if((kind != "blank"))>
+    <key>UIMainStoryboardFile</key>
+    <string>Main</string>
+    <key>UIMainStoryboardFile~ipad</key>
+    <string>Main</string>
+    #endif-->
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>armv7</string>
+    </array>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>XSAppIconAssets</key>
+    <string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>

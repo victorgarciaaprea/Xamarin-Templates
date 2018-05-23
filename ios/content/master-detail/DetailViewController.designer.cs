@@ -8,28 +8,28 @@ using System.CodeDom.Compiler;
 
 namespace NewApp
 {
-	[Register ("DetailViewController")]
-	partial class DetailViewController
-	{
-		[Outlet]
-		[GeneratedCodeAttribute ("iOS Designer", "1.0")]
-		UIKit.UILabel detailDescriptionLabel { get; set; }
+    [Register ("DetailViewController")]
+    partial class DetailViewController
+    {
+        [Outlet]
+        [GeneratedCodeAttribute ("iOS Designer", "1.0")]
+        UIKit.UILabel detailDescriptionLabel { get; set; }
 
-		[Outlet]
-		[GeneratedCodeAttribute ("iOS Designer", "1.0")]
-		UIKit.UIToolbar toolbar { get; set; }
+        [Outlet]
+        [GeneratedCodeAttribute ("iOS Designer", "1.0")]
+        UIKit.UIToolbar toolbar { get; set; }
 
-		void ReleaseDesignerOutlets ()
-		{
-			if (detailDescriptionLabel != null) {
-				detailDescriptionLabel.Dispose ();
-				detailDescriptionLabel = null;
-			}
-			
-			if (toolbar != null) {
-				toolbar.Dispose ();
-				toolbar = null;
-			}
-		}
-	}
+        void ReleaseDesignerOutlets ()
+        {
+            if (detailDescriptionLabel != null) {
+                detailDescriptionLabel.Dispose ();
+                detailDescriptionLabel = null;
+            }
+
+            if (toolbar != null) {
+                toolbar.Dispose ();
+                toolbar = null;
+            }
+        }
+    }
 }

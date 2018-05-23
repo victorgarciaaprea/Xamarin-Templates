@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 
 namespace Xamarin.Templates.Wizards
 {
-	/// <summary>
-	/// Interaction logic for AzureDialog.xaml
-	/// </summary>
-	public partial class CrossPlatformDialog : DialogBase
-	{
-		public CrossPlatformDialog ()
-		{
-			InitializeComponent ();
+    /// <summary>
+    /// Interaction logic for AzureDialog.xaml
+    /// </summary>
+    public partial class CrossPlatformDialog : DialogBase
+    {
+        public CrossPlatformDialog ()
+        {
+            InitializeComponent ();
         }
 
         internal void SetUWPEnabled(DTE2 dte, string latestSdk)
@@ -33,7 +33,7 @@ namespace Xamarin.Templates.Wizards
             model.IsUWPSelected = model.IsUWPEnabled;
         }
 
-        internal string GetTemplatePath() 
+        internal string GetTemplatePath()
         {
             var model = DataContext as XPlatViewModel;
             return model.SelectedTemplatePath;
@@ -45,8 +45,8 @@ namespace Xamarin.Templates.Wizards
         }
 
         private void button_Click (object sender, RoutedEventArgs e)
-		{
-			DialogResult = true;
-		}
-	}
+        {
+            DialogResult = true;
+        }
+    }
 }

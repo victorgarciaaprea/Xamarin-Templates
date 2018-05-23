@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 
 namespace Xamarin.Templates.Wizard
 {
-	/// <summary>
-	/// Interaction logic for IOSDialog.xaml
-	/// </summary>
-	public partial class IOSDialog : DialogBase
-	{
-		public IOSDialog()
-		{
-			InitializeComponent();
-		}
+    /// <summary>
+    /// Interaction logic for IOSDialog.xaml
+    /// </summary>
+    public partial class IOSDialog : DialogBase
+    {
+        public IOSDialog()
+        {
+            InitializeComponent();
+        }
 
-		private void button_Click(object sender, RoutedEventArgs e)
-		{
-			DialogResult = true;
-		}
-	}
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+    }
 }

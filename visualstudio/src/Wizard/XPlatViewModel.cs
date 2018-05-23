@@ -345,18 +345,18 @@ namespace Xamarin.Templates.Wizards
                     Shared = new AzureTypeItem
                     {
                         NoAzure = "blank"
-					}
+                    }
                 },
                 Native = new ReferenceTypeItem
                 {
                     PCL = new AzureTypeItem
                     {
                         NoAzure = "blank"
-					},
+                    },
                     Shared = new AzureTypeItem
                     {
                         NoAzure = "blank"
-					}
+                    }
                 }
 
             });
@@ -372,12 +372,12 @@ namespace Xamarin.Templates.Wizards
                     {
                         Azure = "master-detail",
                         NoAzure = "master-detail"
-					},
+                    },
                     PCL = new AzureTypeItem
                     {
                         Azure = "master-detail",
                         NoAzure = "master-detail"
-					}
+                    }
                 },
                 Native = new ReferenceTypeItem
                 {
@@ -385,12 +385,12 @@ namespace Xamarin.Templates.Wizards
                     {
                         Azure = "master-detail",
                         NoAzure = "master-detail"
-					},
+                    },
                     PCL = new AzureTypeItem
                     {
                         Azure = "master-detail",
                         NoAzure = "master-detail"
-					}
+                    }
                 }
             }
             );

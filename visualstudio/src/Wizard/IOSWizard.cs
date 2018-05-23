@@ -13,22 +13,22 @@ using Microsoft.VisualStudio.TemplateWizard;
 
 namespace Xamarin.Templates.Wizard
 {
-	class IOSTemplateWizard : DialogWizardBase<IOSDialog, IOSViewModel>
-	{ 
-		//this one needs overriding
-		protected override Dictionary<string, string> AddReplacements()
-		{
-			replacements.Add("$uistyle$", "none");
-			replacements.Add("$language$", "CSharp");
-			replacements.Add("$groupid$", "Xamarin.iOS.App");
+    class IOSTemplateWizard : DialogWizardBase<IOSDialog, IOSViewModel>
+    {
+        //this one needs overriding
+        protected override Dictionary<string, string> AddReplacements()
+        {
+            replacements.Add("$uistyle$", "none");
+            replacements.Add("$language$", "CSharp");
+            replacements.Add("$groupid$", "Xamarin.iOS.App");
 
-			replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
-			replacements.Add("$passthrough:MinimumOSVersion", model.MinOSVersion);
-			replacements.Add("$passthrough:DeviceFamily$", model.DeviceFamily);
+            replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
+            replacements.Add("$passthrough:MinimumOSVersion", model.MinOSVersion);
+            replacements.Add("$passthrough:DeviceFamily$", model.DeviceFamily);
 
-			return replacements;
-		}
+            return replacements;
+        }
 
-		protected override string TelemetryPlatform => "iOS";
-	}
+        protected override string TelemetryPlatform => "iOS";
+    }
 }

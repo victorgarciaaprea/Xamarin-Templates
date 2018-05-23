@@ -9,41 +9,41 @@ using NewApp.Views;
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace NewApp
 {
-	public partial class App : Application
-	{
-		#if (CreateBackendProject)
-		//TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
+    public partial class App : Application
+    {
+        #if (CreateBackendProject)
+        //TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
                 public static string AzureBackendUrl = "http://localhost:5000";
                 public static bool UseMockDataStore = true;
-	 	#endif
-		
-		public App ()
-		{
-			InitializeComponent();
+         #endif
 
-			#if (CreateBackendProject)
-			if (UseMockDataStore)
-				DependencyService.Register<MockDataStore>();
-			else
-				DependencyService.Register<AzureDataStore>();
-			#endif
+        public App ()
+        {
+            InitializeComponent();
 
-			MainPage = new MainPage();
-		}
+            #if (CreateBackendProject)
+            if (UseMockDataStore)
+                DependencyService.Register<MockDataStore>();
+            else
+                DependencyService.Register<AzureDataStore>();
+            #endif
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+            MainPage = new MainPage();
+        }
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        protected override void OnStart ()
+        {
+            // Handle when your app starts
+        }
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnSleep ()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume ()
+        {
+            // Handle when your app resumes
+        }
+    }
 }

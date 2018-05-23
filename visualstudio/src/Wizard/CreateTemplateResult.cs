@@ -63,7 +63,7 @@ namespace Xamarin.Templates.Wizards
             if (model.IsIOSSelected)
                 expectedProjectNames.Add(string.Format("{0}.iOS", safeProjectName));
 
-            //expected projects 
+            //expected projects
             //if(model.IsAzureSelected)
             //if(model.IsFormsSelected)
             //if (model.IsNativeSelected)
@@ -84,27 +84,27 @@ namespace Xamarin.Templates.Wizards
         }
     }
 
-	class BaseCreateTemplateResult
-	{
-		private ItemViewModel model;
-		private string safeProjectName;
+    class BaseCreateTemplateResult
+    {
+        private ItemViewModel model;
+        private string safeProjectName;
 
-		public string Platform { get; }
+        public string Platform { get; }
 
-		public BaseCreateTemplateResult(string safeProjectName, ItemViewModel model, string platform)
-		{
-			this.model = model;
-			this.safeProjectName = safeProjectName;
-			this.Platform = platform;
-		}
+        public BaseCreateTemplateResult(string safeProjectName, ItemViewModel model, string platform)
+        {
+            this.model = model;
+            this.safeProjectName = safeProjectName;
+            this.Platform = platform;
+        }
 
-		public bool Success { get; private set; }
+        public bool Success { get; private set; }
 
-		public void CheckIfSolutionWasSuccessfulyCreated(Solution solution)
-		{
-			Success = solution.Projects.Count > 0;
-		}
+        public void CheckIfSolutionWasSuccessfulyCreated(Solution solution)
+        {
+            Success = solution.Projects.Count > 0;
+        }
 
-		public string SelectedTemplateId => model.Id;
-	}
+        public string SelectedTemplateId => model.Id;
+    }
 }
