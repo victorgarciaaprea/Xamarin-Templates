@@ -1711,6 +1711,60 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";3026" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Blank Cross-Platform Mobile App (Native)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[App per dispositivi mobili multipiattaforma vuota (nativa)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3027" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project that uses the native UI approach for Xamarin and provides projects for iOS, Android, and UWP.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Progetto che usa l'approccio basato sull'interfaccia utente nativa per Xamarin e fornisce progetti per iOS, Android e per la piattaforma UWP.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3028" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Master Detail Cross-Platform Mobile App (Native)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[App per dispositivi mobili multipiattaforma master-dettagli (nativa)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3029" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project that uses the native UI approach for Xamarin and provides projects for iOS, Android, and UWP.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Progetto che usa l'approccio basato sull'interfaccia utente nativa per Xamarin e fornisce progetti per iOS, Android e per la piattaforma UWP.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3030" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Xamarin.UITest Cross-Platform Test Project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Progetto di test multipiattaforma Xamarin.UITest]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3031" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project for creating cross-platform automated UI tests for Android and iOS with Xamarin.UITest that can be run locally or uploaded to App Center.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Progetto per la creazione di test dell'interfaccia utente automatizzati multipiattaforma per Android e iOS con Xamarin.UITest che può essere eseguito in locale o caricato in App Center.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
     </Item>
   </Item>
   <Item ItemId=";Xamarin.Templates.g.resources" ItemType="0" PsrId="211" Leaf="false">
