@@ -56,7 +56,7 @@
     <Exec Command="&quot;$(PowerShell)&quot; -NoProfile -Command &quot;&amp; { (New-Object System.Net.WebClient).DownloadFile('$(CurlUrl)', '$(TEMP)\curl.exe') }&quot;" />
   </Target>
 
-  <Target Name="PackageTemplates" DependsOnTargets="DownloadNuget;GetVsixVersion" BeforeTargets="CreateVsixContainer" >
+  <Target Name="PackageTemplates" DependsOnTargets="DownloadNuget;GetVsixVersion" AfterTargets="GetVsixSourceItems" >
     <ItemGroup>
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\multiplatform\xamarin-templates-multiplatform.nuspec" />
       <NuSpec Include="$(MSBuildThisFileDirectory)..\..\android\xamarin-templates-android.nuspec" />
