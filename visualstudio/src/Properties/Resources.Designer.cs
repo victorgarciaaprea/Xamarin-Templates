@@ -205,7 +205,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Include Azure Mobile Apps backend project.
+        ///   Looks up a localized string similar to Include ASP.NET Core Web API project.
         /// </summary>
         public static string HostInTheCloud {
             get {
@@ -342,9 +342,9 @@ namespace Xamarin.Templates.Properties {
         /// <summary>
         ///   Looks up a localized string similar to .NET Standard.
         /// </summary>
-        public static string PCL {
+        public static string NetStandard {
             get {
-                return ResourceManager.GetString("PCL", resourceCulture);
+                return ResourceManager.GetString("NetStandard", resourceCulture);
             }
         }
         

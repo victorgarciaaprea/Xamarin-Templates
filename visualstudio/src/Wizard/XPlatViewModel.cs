@@ -96,7 +96,7 @@ namespace Xamarin.Templates.Wizards
 
         private static readonly string UWPRegistryKey = @"_Config\Projects\{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A}";
 
-        bool isSharedSelected = true;
+        bool isSharedSelected = false;
         public bool IsSharedSelected
         {
             get { return isSharedSelected; }
@@ -200,7 +200,7 @@ namespace Xamarin.Templates.Wizards
             PropertyChanged(this, new PropertyChangedEventArgs("IsAzureEnabled"));
         }
 
-        public bool IsPCLSelected
+        public bool IsNetStandardSelected
         {
             get
             {
@@ -218,7 +218,6 @@ namespace Xamarin.Templates.Wizards
         {
             Templates = CreateTemplatesContext();
             IsAzureAvailable = CheckAzureAvailability();
-            isSharedSelected = IsSharedSupported;
         }
 
         private bool CheckAzureAvailability()

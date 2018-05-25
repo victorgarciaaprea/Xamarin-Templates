@@ -153,7 +153,7 @@
   <data name="Native" xml:space="preserve">
     <value>Native</value>
   </data>
-  <data name="PCL" xml:space="preserve">
+  <data name="NetStandard" xml:space="preserve">
     <value>.NET Standard</value>
   </data>
   <data name="Platforms" xml:space="preserve">

@@ -121,8 +121,8 @@
                         </Hyperlink>
                     </TextBlock>
                 </StackPanel>
-                <RadioButton Content="{x:Static res:Resources.SharedProjects}" Margin="7,2" IsChecked="{Binding IsSharedSelected}" IsEnabled="{Binding IsSharingEnabled}"/>
-                <RadioButton Content="{x:Static res:Resources.PCL}" Margin="7,2" IsChecked="{Binding IsPCLSelected}" IsEnabled="{Binding IsSharingEnabled}" />
+                <RadioButton Content="{x:Static res:Resources.NetStandard}" Margin="10,2" IsChecked="{Binding IsNetStandardSelected}" IsEnabled="{Binding IsSharingEnabled}" />
+                <RadioButton Content="{x:Static res:Resources.SharedProjects}" Margin="10,2" IsChecked="{Binding IsSharedSelected}" IsEnabled="{Binding IsSharingEnabled}"/>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1" Grid.Column="2" Margin="5" VerticalScrollBarVisibility="Auto">
