@@ -1711,6 +1711,60 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";3026" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Blank Cross-Platform Mobile App (Native)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[비어 있는 플랫폼 간 모바일 앱(네이티브)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3027" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project that uses the native UI approach for Xamarin and provides projects for iOS, Android, and UWP.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Xamarin에 대해 네이티브 UI 방식을 사용하고 iOS, Android 및 UWP용 프로젝트를 제공하는 프로젝트입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3028" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Master Detail Cross-Platform Mobile App (Native)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[마스터 세부 플랫폼 간 모바일 앱(네이티브)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3029" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project that uses the native UI approach for Xamarin and provides projects for iOS, Android, and UWP.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Xamarin에 대해 네이티브 UI 방식을 사용하고 iOS, Android 및 UWP용 프로젝트를 제공하는 프로젝트입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3030" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Xamarin.UITest Cross-Platform Test Project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Xamarin.UITest 플랫폼 간 테스트 프로젝트]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";3031" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project for creating cross-platform automated UI tests for Android and iOS with Xamarin.UITest that can be run locally or uploaded to App Center.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[로컬에서 실행할 수 있으며 App Center로 업로드할 수 있는 Xamarin.UITest를 사용하여 Android 및 iOS용 플랫폼 간 자동화된 UI 테스트를 만드는 프로젝트입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
     </Item>
   </Item>
   <Item ItemId=";Xamarin.Templates.g.resources" ItemType="0" PsrId="211" Leaf="false">
