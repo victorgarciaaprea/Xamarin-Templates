@@ -1715,7 +1715,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Blank Cross-Platform Mobile App (Native)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[空のクロス プラットフォーム モバイル アプリ (ネイティブ)]]></Val>
+            <Val><![CDATA[空のクロスプラットフォームのモバイル アプリ (ネイティブ)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1733,7 +1733,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Master Detail Cross-Platform Mobile App (Native)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[マスター詳細クロス プラットフォーム モバイル アプリ (ネイティブ)]]></Val>
+            <Val><![CDATA[マスター詳細クロスプラットフォームのモバイル アプリ (ネイティブ)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1751,7 +1751,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Xamarin.UITest Cross-Platform Test Project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Xamarin.UITest クロス プラットフォーム テスト プロジェクト]]></Val>
+            <Val><![CDATA[Xamarin.UITest クロスプラットフォームのテスト プロジェクト]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1760,7 +1760,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A project for creating cross-platform automated UI tests for Android and iOS with Xamarin.UITest that can be run locally or uploaded to App Center.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Xamarin.UITest を使用して、Android と iOS 用のクロス プラットフォーム自動 UI テストを作成するプロジェクトは、ローカルで実行したり、App Center にアップロードしたりできます。]]></Val>
+            <Val><![CDATA[Xamarin.UITest を使用して、Android と iOS 用のクロスプラットフォーム自動 UI テストを作成するプロジェクトは、ローカルで実行したり、App Center にアップロードしたりできます。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
