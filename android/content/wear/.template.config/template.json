@@ -1,54 +1,54 @@
 {
-  "author": "Microsoft",
-  "classifications": [
-    "android",
-    "wearable",
-    "xamarin"
-  ],
-  "description": "A project for creating an Android Wear based Xamarin.Android application.",
-  "name": "Xamarin.Android Wear App",
-  "defaultName": "WearApp",
-  "identity": "Xamarin.Android.Wear.CSharp",
-  "groupIdentity": "Xamarin.Android.Wear",
-  "tags": {
-    "language": "C#",
-    "type": "project"
-  },
-  "shortName": "android-wear",
-  "sourceName": "NewApp",
-  "primaryOutputs": [
-    {
-        "path": "NewApp\\NewApp.csproj"
+    "author": "Microsoft",
+    "classifications": [
+        "android",
+        "wearable",
+        "xamarin"
+    ],
+    "description": "A project for creating an Android Wear based Xamarin.Android application.",
+    "name": "Xamarin.Android Wear App",
+    "defaultName": "WearApp",
+    "identity": "Xamarin.Android.Wear.CSharp",
+    "groupIdentity": "Xamarin.Android.Wear",
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "shortName": "android-wear",
+    "sourceName": "NewApp",
+    "primaryOutputs": [
+        {
+            "path": "NewApp\\NewApp.csproj"
+        }
+    ],
+    "preferNameDirectory": true,
+    "guids": [
+        "{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}"
+    ],
+    "symbols": {
+        "AndroidSDKVersion": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "AndroidSDKVersion",
+            "defaultValue": "v8.1"
+        },
+        "TargetAndroidAPI": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "TargetAndroidAPI",
+            "defaultValue": "27"
+        },
+        "MinAndroidAPI": {
+            "type": "parameter",
+            "datatype": "int",
+            "replaces": "MinAndroidAPI",
+            "defaultValue": "21"
+        },
+        "SupportLibVersion": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "SupportLibVersion",
+            "defaultValue": "27.0.2"
+        }
     }
-  ],
-  "preferNameDirectory": true,  
-  "guids": [
-    "{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}"
-  ],
-  "symbols": {
-    "AndroidSDKVersion": {
-      "type": "parameter",
-      "datatype": "string",
-      "replaces": "AndroidSDKVersion",
-      "defaultValue": "v8.1"
-    },
-    "TargetAndroidAPI": {
-      "type": "parameter",
-      "datatype": "string",
-      "replaces": "TargetAndroidAPI",
-      "defaultValue": "27"
-    },
-    "MinAndroidAPI": {
-      "type": "parameter",
-      "datatype": "string",
-      "replaces": "MinAndroidAPI",
-      "defaultValue": "19"
-    },
-    "SupportLibVersion": {
-      "type": "parameter",
-      "datatype": "string",
-      "replaces": "SupportLibVersion",
-      "defaultValue": "27.0.2"
-    }
-  }
 }

@@ -67,9 +67,9 @@
     },
     "MinAndroidAPI": {
       "type": "parameter",
-      "datatype": "string",
+      "datatype": "int",
       "replaces": "MinAndroidAPI",
-      "defaultValue": "19"
+      "defaultValue": "21"
     },
     "SupportLibVersion": {
       "type": "parameter",

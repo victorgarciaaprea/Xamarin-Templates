@@ -138,9 +138,9 @@
         },
         "MinAndroidAPI": {
             "type": "parameter",
-            "datatype": "string",
+            "datatype": "int",
             "replaces": "MinAndroidAPI",
-            "defaultValue": "19"
+            "defaultValue": "21"
         },
         "SupportLibVersion": {
             "type": "parameter",
@@ -210,24 +210,24 @@
     "postActions": [
         {
             //skip on .NET Standard because the file will be closed anyways when the Forms target nests the xaml.cs file
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")", 
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
             "description": "Opens MainPage.xaml.cs in the editor.",
-            "manualInstructions": [ ],
+            "manualInstructions": [],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
             "args": {
-              "files": "0"
+                "files": "0"
             },
             "continueOnError": true
         },
         {
-          "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-          "description": "Opens MainPage.xaml in the editor.",
-          "manualInstructions": [ ],
-          "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
-          "args": {
-            "files": "1"
-          },
-          "continueOnError": true
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "description": "Opens MainPage.xaml in the editor.",
+            "manualInstructions": [],
+            "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+            "args": {
+                "files": "1"
+            },
+            "continueOnError": true
         }
     ],
     "sources": [
