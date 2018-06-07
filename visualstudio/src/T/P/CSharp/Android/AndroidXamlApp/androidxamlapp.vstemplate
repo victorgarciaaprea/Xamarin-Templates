@@ -18,6 +18,7 @@
       <CustomParameter Name="$uistyle$" Value="none" />
       <CustomParameter Name="$groupid$" Value="Xamarin.Forms.App" />
       <CustomParameter Name="$passthrough:kind$" Value="blank" />
+      <CustomParameter Name="$passthrough:CreateSharedProject$" Value="false" />
       <CustomParameter Name="$passthrough:CreateiOSProject$" Value="false" />
       <CustomParameter Name="$passthrough:CreateUWPProject$" Value="false" />
       <CustomParameter Name="$passthrough:AndroidAppIdentifier$" Value="com.companyname.NewApp.Android" />
