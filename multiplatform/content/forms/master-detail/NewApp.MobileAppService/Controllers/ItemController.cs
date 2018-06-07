@@ -22,7 +22,7 @@ namespace NewApp.Controllers
             return Ok(ItemRepository.GetAll());
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public Item GetItem(string id)
         {
             Item item = ItemRepository.Get(id);
@@ -67,7 +67,7 @@ namespace NewApp.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{Id}")]
+        [HttpDelete("{id}")]
         public void Delete(string id)
         {
             ItemRepository.Remove(id);
