@@ -319,7 +319,7 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";PCL" ItemType="0" PsrId="211" Leaf="true">
+      <Item ItemId=";NetStandard" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[.NET Standard]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
