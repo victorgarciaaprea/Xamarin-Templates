@@ -60,7 +60,7 @@
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="SupportLibVersion" />
-    <PackageReference Include="Xamarin.Android.Support.Core.Utils " Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
   </ItemGroup>
   <ItemGroup>
