@@ -16,22 +16,23 @@ namespace NewApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            #if(IncludeXamarinEssentials)
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            
+            #endif
             SetContentView(Resource.Layout.activity_main);
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
         }
-
+        #if(IncludeXamarinEssentials)
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-
+        #endif
         public bool OnNavigationItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
