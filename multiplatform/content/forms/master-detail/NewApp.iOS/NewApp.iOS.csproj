@@ -146,7 +146,6 @@
   <ItemGroup Condition=" '$(IncludeXamarinEssentials)' == 'True''">
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
-    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -79,6 +79,11 @@
       "datatype": "string",
       "defaultValue": "11.2"
     },
+    "IncludeXamarinEssentials": {
+        "type": "parameter",
+        "dataType": "bool",
+        "defaultValue": "false"
+    },
     "XamarinEssentialsSdk": {
       "type": "parameter",
       "dataType": "string",
