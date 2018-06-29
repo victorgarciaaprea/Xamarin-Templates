@@ -81,6 +81,10 @@
                 {
                     "choice": "master-detail",
                     "description": "A Xamarin.Forms app with master-detail navigation"
+                },
+                {
+                    "choice": "tabbed",
+                    "description": "A Xamarin.Forms app that uses tabs for navigation"
                 }
             ]
         },
@@ -313,6 +317,55 @@
         {
             "source": "../master-detail/",
             "condition": "(kind == \"master-detail\")",
+            "modifiers": [
+                {
+                    "condition": "CreateSharedProject",
+                    "exclude": [
+                        "NewApp/NewApp.csproj"
+                    ]
+                },
+                {
+                    "condition": "(!CreateSharedProject)",
+                    "exclude": [
+                        "NewApp/NewApp.projitems"
+                    ]
+                },
+                {
+                    "condition": "(!CreateBackendProject)",
+                    "exclude": [
+                        "NewApp.MobileAppService/**/*",
+                        "NewApp/Services/AzureDataStore.cs"
+                    ]
+                },
+                {
+                    "condition": "(!CreateiOSProject)",
+                    "exclude": [
+                        "NewApp.iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateAndroidProject)",
+                    "exclude": [
+                        "NewApp.Android/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateUWPProject)",
+                    "exclude": [
+                        "NewApp.UWP/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateMacProject)",
+                    "exclude": [
+                        "NewApp.macOS/**/*"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "../tabbed/",
+            "condition": "(kind == \"tabbed\")",
             "modifiers": [
                 {
                     "condition": "CreateSharedProject",
