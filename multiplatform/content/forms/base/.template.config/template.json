@@ -333,7 +333,6 @@
                 {
                     "condition": "(!CreateBackendProject)",
                     "exclude": [
-                        "NewApp.MobileAppService/**/*",
                         "NewApp/Services/AzureDataStore.cs"
                     ]
                 },
@@ -382,7 +381,6 @@
                 {
                     "condition": "(!CreateBackendProject)",
                     "exclude": [
-                        "NewApp.MobileAppService/**/*",
                         "NewApp/Services/AzureDataStore.cs"
                     ]
                 },
@@ -411,6 +409,11 @@
                     ]
                 }
             ]
+        },
+        {
+            "source": "../mobile-backend/",
+            "condition": "CreateBackendProject",
+            "target": "NewApp.MobileAppService/"
         },
         {
             "source": "../uitest/",
