@@ -145,7 +145,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5"/>
+    <!--#if (IncludeXamarinEssentials) -->
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+    <!--#endif -->
   </ItemGroup>
   <!--#if (!CreateSharedProject)
   <ItemGroup>

@@ -129,8 +129,6 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors" />
     <Reference Include="Xamarin.iOS" />
     <!--#if (CreateBackendProject)
     <Reference Include="System.Net.Http" />
@@ -138,13 +136,17 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
-    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
     <!--#if (CreateUITestProject)
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.5" />
     <#endif-->
     <!--#if (CreateBackendProject)
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     #endif-->
+  </ItemGroup>
+  <ItemGroup Condition=" '$(IncludeXamarinEssentials)' == 'True''">
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <!--#if (!CreateSharedProject)

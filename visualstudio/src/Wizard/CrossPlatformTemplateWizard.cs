@@ -226,7 +226,10 @@ namespace Xamarin.Templates.Wizards
             replacements.Add("$passthrough:kind$", model.SelectedTemplatePath);
 
             if (model.IsAzureSelected)
+            {
                 replacements.Add("$passthrough:CreateBackendProject$", "true");
+                replacements.Add("$passthrough:IncludeXamarinEssentials$", "true");
+            }
             if (!model.IsSharedSelected)
                 replacements.Add("$passthrough:CreateSharedProject$", "false");
 

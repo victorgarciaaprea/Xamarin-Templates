@@ -64,8 +64,6 @@
         <Reference Include="System" />
         <Reference Include="System.Xml" />
         <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors" />
         <Reference Include="Xamarin.iOS" />
     </ItemGroup>
     <ItemGroup>
@@ -112,9 +110,11 @@
             <Visible>false</Visible>
         </ImageAsset>
     </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk"/>
-    </ItemGroup>
+    <ItemGroup Condition=" '$(IncludeXamarinEssentials)' == 'True''">
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+  </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
     </ItemGroup>

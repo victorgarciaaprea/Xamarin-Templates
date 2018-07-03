@@ -17,9 +17,9 @@ namespace NewApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            #if(IncludeXamarinEssentials)
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-
+            #endif
             SetContentView(Resource.Layout.activity_main);
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -106,13 +106,14 @@ namespace NewApp
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
-
+        #if(IncludeXamarinEssentials)
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+        #nedif
     }
 }
 
