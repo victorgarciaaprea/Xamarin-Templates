@@ -50,7 +50,7 @@ namespace Xamarin.Templates.Wizards
         }
 
         public bool IsSharedSelected { get { return model.IsSharedSelected; } }
-        public object SelectedTemplateName { get { return model.SelectedTemplate.Name; } }
+        public object SelectedTemplateName { get { return model.SelectedTemplate.Id; } }
         public bool IsNativeSelected { get { return model.IsNativeSelected; } }
         public bool Success { get { return this.Platforms.Any() && !this.FailedPlatforms.Any(); } }
 
