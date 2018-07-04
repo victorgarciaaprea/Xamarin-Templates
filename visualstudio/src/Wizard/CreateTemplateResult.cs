@@ -21,8 +21,12 @@ namespace Xamarin.Templates.Wizards
         }
 
         public bool IsAndroidSelected { get { return model.IsAndroidSelected; } }
+
         public bool IsIOSSelected { get { return model.IsIOSSelected; } }
+
         public bool IsUWPSelected { get { return model.IsUWPSelected; } }
+
+        public bool IncludesMobileBackend => model.IsAzureSelected;
 
         public IEnumerable<string> FailedPlatforms { get; internal set; }
 
