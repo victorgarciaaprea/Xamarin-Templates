@@ -397,6 +397,27 @@ namespace Xamarin.Templates.Wizards
                 }
             }
             );
+
+            if (IsSharedSupported && IsMasterDetailSupportedVersion()) list.Add(new XPlatItemViewModel
+            {
+                Name = Resources.TabbedApp,
+                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
+                Description = Resources.TabbedAppDescription,
+                Forms = new ReferenceTypeItem
+                {
+                    Shared = new AzureTypeItem
+                    {
+                        Azure = "tabbed",
+                        NoAzure = "tabbed"
+                    },
+                    PCL = new AzureTypeItem
+                    {
+                        Azure = "tabbed",
+                        NoAzure = "tabbed"
+                    }
+                }
+            });
+
             return list;
         }
 

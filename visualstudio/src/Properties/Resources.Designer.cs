@@ -304,7 +304,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tabbed.
+        ///   Looks up a localized string similar to Master-detail.
         /// </summary>
         public static string MasterDetail {
             get {
@@ -390,6 +390,24 @@ namespace Xamarin.Templates.Properties {
         public static string Sharing {
             get {
                 return ResourceManager.GetString("Sharing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tabbed.
+        /// </summary>
+        public static string TabbedApp {
+            get {
+                return ResourceManager.GetString("TabbedApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your app will use tabs for navigation between root pages. This template provides two sample pages and sample data..
+        /// </summary>
+        public static string TabbedAppDescription {
+            get {
+                return ResourceManager.GetString("TabbedAppDescription", resourceCulture);
             }
         }
         

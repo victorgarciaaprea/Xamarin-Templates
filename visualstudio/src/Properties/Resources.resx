@@ -142,7 +142,7 @@
     <value>iOS</value>
   </data>
   <data name="MasterDetail" xml:space="preserve">
-    <value>Tabbed</value>
+    <value>Master-detail</value>
   </data>
   <data name="MasterDetailDescription" xml:space="preserve">
     <value>A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.</value>
@@ -233,5 +233,11 @@
   </data>
   <data name="IOSDialog_Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="TabbedApp" xml:space="preserve">
+    <value>Tabbed</value>
+  </data>
+  <data name="TabbedAppDescription" xml:space="preserve">
+    <value>Your app will use tabs for navigation between root pages. This template provides two sample pages and sample data.</value>
   </data>
 </root>
