@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{A0FE0FD8-D2A2-4A12-BBC2-5E76AC159314}</ProjectGuid>
+    <ProjectGuid>{3EA9E612-E717-4E55-9034-C415CD62AF9A}</ProjectGuid>
+    <TemplateGuid>{98C37F10-6541-44BE-B1E6-7EB3EB8C08F1}</TemplateGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NewApp.UWP</RootNamespace>
     <AssemblyName>NewApp.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformVersion>WindowsSdk</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
@@ -103,7 +104,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cancel.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -132,9 +132,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="save.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="add.png" />
+    <Content Include="save.png" />
+    <Content Include="cancel.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -147,9 +148,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5" />
-    <PackageReference Include="Xamarin.Essentials" Version="0.6.0-preview" />
+    <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5"/>
+    <!--#if (IncludeXamarinEssentials) -->
+    <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+    <!--#endif -->
+    <!--#if (CreateBackendProject)
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    #endif-->
   </ItemGroup>
   <!--#if (!CreateSharedProject)
   <ItemGroup>
