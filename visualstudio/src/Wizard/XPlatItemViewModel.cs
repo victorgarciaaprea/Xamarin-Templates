@@ -12,6 +12,7 @@ namespace Xamarin.Templates.Wizards
         public string Name { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
+        public string TargetPlatform { get; set; }
 
         public ReferenceTypeItem Forms { get; set; }
         public ReferenceTypeItem Native { get; set; }

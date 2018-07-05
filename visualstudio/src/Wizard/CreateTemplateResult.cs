@@ -49,6 +49,8 @@ namespace Xamarin.Templates.Wizards
             }
         }
 
+        public string TargetPlatform => model.SelectedTemplate.TargetPlatform;
+
         public bool IsSharedSelected { get { return model.IsSharedSelected; } }
         public object SelectedTemplateName { get { return model.SelectedTemplate.Id; } }
         public bool IsNativeSelected { get { return model.IsNativeSelected; } }

@@ -89,6 +89,7 @@ namespace Xamarin.Templates.Wizards
                 public const string CodeSharingStrategy = "CodeSharingStrategy"; // Name of the selected code sharing strategy.Example values include "SharedProject" or "NetStandard".
                 public const string ProjectTemplate = "ProjectTemplate"; // Name of the selected project template.Example values include "Blank" or "MasterDetail".
                 public const string Success = "Success"; // Was the wizard successful without any exceptions?
+                public const string TargetPlatform = "TargetPlatform"; // Forms
                 public const string TargetPlatforms = "TargetPlatforms"; // iOS, Android, and/or Windows. See "Piping Data with Multiple Values Per Property" section below.
                 public const string FailedTargetPlatforms = "FailedTargetPlatforms"; // iOS, Android, and/or Windows. See "Piping Data with Multiple Values Per Property" section below.
                 public const string UIStrategy = "UIStrategy"; // Name of the selected UI strategy. Example values include "native" or "xamarinforms".
@@ -104,6 +105,7 @@ namespace Xamarin.Templates.Wizards
                     telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, XamarinTemplatesVersion), ThisAssembly.InformationalVersion);
                     telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, CodeSharingStrategy), createTemplateResult.IsSharedSelected ? "SharedProject" : "NetStandard");
                     telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, ProjectTemplate), createTemplateResult.SelectedTemplateName);
+                    telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, TargetPlatform), createTemplateResult.TargetPlatform);
                     telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, TargetPlatforms), string.Join("|", createTemplateResult.Platforms));
                     telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, UIStrategy), createTemplateResult.IsNativeSelected ? "native" : "xamarinforms");
                     telemetryEvent.Properties.Add(string.Format("{0}.{1}", eventNamespace, IncludesMobileBackend), createTemplateResult.IncludesMobileBackend);
