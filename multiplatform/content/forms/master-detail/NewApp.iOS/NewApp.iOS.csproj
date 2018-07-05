@@ -136,10 +136,15 @@
     <PackageReference Include="Xamarin.Essentials" Version="0.6.0-preview" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <!--#if (!CreateSharedProject)
   <ItemGroup>
     <ProjectReference Include="..\NewApp\NewApp.csproj">
-      <Project>{23EE59EB-03A2-45ED-9831-0E5DE067CFBF}</Project>
+      <Project>{99E19497-29A6-4B77-B773-BEC55F9B55DC}</Project>
       <Name>NewApp</Name>
     </ProjectReference>
   </ItemGroup>
+  #endif-->
+  <!--#if (CreateSharedProject)
+  <Import Project="..\NewApp\NewApp.projitems" Label="Shared" />
+  #endif-->
 </Project>
