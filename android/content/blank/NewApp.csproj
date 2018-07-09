@@ -24,7 +24,7 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <!--#if (MinAndroidAPI >= 21)
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
-    <#endif-->
+    #endif-->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -56,6 +56,10 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <!--#if (IncludeXamarinEssentials)
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+    #endif-->
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -95,13 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="SupportLibVersion" />
-    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="SupportLibVersion" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(IncludeXamarinEssentials)' == 'True''">
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors" />
+    <!--#if (IncludeXamarinEssentials)
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="SupportLibVersion" />
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+    #endif-->
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
