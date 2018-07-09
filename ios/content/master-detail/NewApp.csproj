@@ -125,12 +125,16 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-  </ItemGroup>
-  <ItemGroup Condition=" '$(IncludeXamarinEssentials)' == 'True''">
+    <!--#if (IncludeXamarinEssentials)
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
+    #endif-->
+  </ItemGroup>
+  <!--#if (IncludeXamarinEssentials)
+  <ItemGroup>
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
   </ItemGroup>
+  #endif-->
   <ItemGroup>
     <Content Include="Entitlements.plist" />
   </ItemGroup>

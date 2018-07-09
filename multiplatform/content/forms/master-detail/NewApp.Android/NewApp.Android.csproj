@@ -50,6 +50,10 @@
     <!--#if (CreateSharedProject)
     <Reference Include="System.Net.Http" />
     #endif-->
+    <!--#if (IncludeXamarinEssentials)
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+    #endif-->
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -60,16 +64,14 @@
     <PackageReference Include="Xamarin.Android.Support.v4" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="SupportLibVersion" />
-    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="SupportLibVersion" />
     <!--#if (CreateBackendProject)
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     #endif-->
-  </ItemGroup>
-  <ItemGroup Condition=" '$(IncludeXamarinEssentials)' == 'True''">
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors" />
+    <!--#if (IncludeXamarinEssentials)
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.CustomTabs" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+    #endif-->
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
