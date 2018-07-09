@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using NewApp.Models;
 
-#if (!CreateBackendProject)
-[assembly: Xamarin.Forms.Dependency(typeof(NewApp.Services.MockDataStore))]
-#endif
 namespace NewApp.Services
 {
     public class MockDataStore : IDataStore<Item>
