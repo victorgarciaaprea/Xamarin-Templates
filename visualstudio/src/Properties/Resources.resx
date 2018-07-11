@@ -121,10 +121,10 @@
     <value>Android</value>
   </data>
   <data name="BlankApp" xml:space="preserve">
-    <value>Blank App</value>
+    <value>Blank</value>
   </data>
   <data name="BlankAppDescription" xml:space="preserve">
-    <value>A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.</value>
+    <value>A project template for a new Xamarin.Forms app that has no extra sample pages or sample data.</value>
   </data>
   <data name="BlankAppXaml" xml:space="preserve">
     <value>Blank App (XAML)</value>
@@ -142,10 +142,10 @@
     <value>iOS</value>
   </data>
   <data name="MasterDetail" xml:space="preserve">
-    <value>Tabbed</value>
+    <value>Master-Detail</value>
   </data>
   <data name="MasterDetailDescription" xml:space="preserve">
-    <value>A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.</value>
+    <value>A project template for creating a Xamarin.Forms app that uses a side menu to navigate between several child pages. This template comes with sample pages and sample data.</value>
   </data>
   <data name="MicrosoftAzure" xml:space="preserve">
     <value>Mobile Backend</value>
@@ -233,5 +233,11 @@
   </data>
   <data name="IOSDialog_Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="TabbedApp" xml:space="preserve">
+    <value>Tabbed</value>
+  </data>
+  <data name="TabbedAppDescription" xml:space="preserve">
+    <value>A project template for creating a Xamarin.Forms app that uses tabs to navigate between several child pages. This template comes with sample pages and sample data.</value>
   </data>
 </root>

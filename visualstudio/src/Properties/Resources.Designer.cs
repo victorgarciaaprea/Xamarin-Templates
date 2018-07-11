@@ -151,7 +151,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blank App.
+        ///   Looks up a localized string similar to Blank.
         /// </summary>
         public static string BlankApp {
             get {
@@ -160,7 +160,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform..
+        ///   Looks up a localized string similar to A project template for a new Xamarin.Forms app that has no extra sample pages or sample data..
         /// </summary>
         public static string BlankAppDescription {
             get {
@@ -304,7 +304,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tabbed.
+        ///   Looks up a localized string similar to Master-Detail.
         /// </summary>
         public static string MasterDetail {
             get {
@@ -313,7 +313,7 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern..
+        ///   Looks up a localized string similar to A project template for creating a Xamarin.Forms app that uses a side menu to navigate between several child pages. This template comes with sample pages and sample data..
         /// </summary>
         public static string MasterDetailDescription {
             get {
@@ -390,6 +390,24 @@ namespace Xamarin.Templates.Properties {
         public static string Sharing {
             get {
                 return ResourceManager.GetString("Sharing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tabbed.
+        /// </summary>
+        public static string TabbedApp {
+            get {
+                return ResourceManager.GetString("TabbedApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A project template for creating a Xamarin.Forms app that uses tabs to navigate between several child pages. This template comes with sample pages and sample data..
+        /// </summary>
+        public static string TabbedAppDescription {
+            get {
+                return ResourceManager.GetString("TabbedAppDescription", resourceCulture);
             }
         }
         

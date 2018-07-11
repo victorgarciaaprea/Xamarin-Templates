@@ -13,8 +13,8 @@ namespace NewApp
     {
         #if (CreateBackendProject)
         //TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
-            public static string AzureBackendUrl = "http://localhost:5000";
-            public static bool UseMockDataStore = true;
+                public static string AzureBackendUrl = "http://localhost:5000";
+                public static bool UseMockDataStore = true;
          #endif
 
         public App ()
