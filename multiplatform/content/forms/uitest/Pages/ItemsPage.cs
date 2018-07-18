@@ -10,10 +10,7 @@ namespace NewApp.UITests
 
         public ItemsPage(IApp app, Platform platform) : base(app, platform, "Browse")
         {
-            if (OniOS)
-                addToolbarButton = x => x.Class("UIButtonLabel").Index(0);
-            else
-                addToolbarButton = x => x.Class("android.support.v7.view.menu.ActionMenuItemView").Index(0);
+            addToolbarButton = x => x.Marked("Add");
         }
 
         public void TapAddToolbarButton()
