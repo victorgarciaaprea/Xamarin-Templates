@@ -23,11 +23,11 @@
             "path": "NewApp\\MainPage.xaml"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\"))",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind != \"blank\"))",
             "path": "NewApp\\Views\\MainPage.xaml.cs"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\"))",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind != \"blank\"))",
             "path": "NewApp\\Views\\MainPage.xaml"
         },
         {
