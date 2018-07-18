@@ -431,7 +431,7 @@
                     }
                 },
                 {
-                    "condition": "(kind == \"master-detail\")",
+                    "condition": "(kind == \"master-detail\") || (kind == \"tabbed\")",
                     "exclude": [
                         "BlankAppTests.cs"
                     ]
