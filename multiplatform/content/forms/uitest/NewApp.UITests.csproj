@@ -56,7 +56,7 @@
   <!--#if (kind == 'blank')
     <Compile Include="Tests.cs" />
   <#endif -->
-  <!--#if (kind == 'master-detail')
+  <!--#if (kind == 'master-detail' || kind == 'tabbed')
     <Compile Include="Tests/BaseTest.cs" />
     <Compile Include="Tests/MockDataTests.cs" />
     <Compile Include="Pages/BasePage.cs" />

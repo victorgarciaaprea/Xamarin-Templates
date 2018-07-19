@@ -25,7 +25,6 @@ namespace NewApp.UITests
 
             //Act
             ItemsPage.TapAddToolbarButton();
-
             NewItemPage.EnterItemName(itemName);
             NewItemPage.EnterItemDescription(itemDescription);
             NewItemPage.TapSaveToolbarButton();

@@ -14,14 +14,14 @@ namespace NewApp.UITests
             {
                 itemNameEntry = x => x.Class("UITextField").Index(0);
                 itemDescriptionEditor = x => x.Class("UITextView").Index(0);
-                saveToolbarItem = x => x.Class("UIButtonLabel").Index(0);
             }
             else
             {
                 itemNameEntry = x => x.Class("FormsEditText").Index(0);
                 itemDescriptionEditor = x => x.Class("FormsEditText").Index(1);
-                saveToolbarItem = x => x.Class("android.support.v7.view.menu.ActionMenuItemView").Index(0);
             }
+
+            saveToolbarItem = x => x.Marked("Save");
         }
 
         public void EnterItemName(string text)
