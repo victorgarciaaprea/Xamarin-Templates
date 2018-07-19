@@ -113,7 +113,7 @@ namespace NewApp
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-        #nedif
+        #endif
     }
 }
 
