@@ -138,19 +138,25 @@
       </Item>
       <Item ItemId=";BlankApp" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Blank App]]></Val>
+          <Val><![CDATA[Blank]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[空のアプリ]]></Val>
+            <Val><![CDATA[空白]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Blank App]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";BlankAppDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.]]></Val>
+          <Val><![CDATA[A project template for a new Xamarin.Forms app that has no extra sample pages or sample data.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[iOS、Android、ユニバーサル Windows プラットフォーム用の Xamarin.Forms XAML ベースのクロス プラットフォーム ネイティブ モバイル アプリを構築するためのプロジェクト テンプレート。]]></Val>
+            <Val><![CDATA[追加のサンプル ページまたはサンプル データがない新しい Xamarin.Forms アプリ用プロジェクト テンプレート。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -285,19 +291,25 @@
       </Item>
       <Item ItemId=";MasterDetail" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Tabbed]]></Val>
+          <Val><![CDATA[Master-Detail]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[タブ付き]]></Val>
+            <Val><![CDATA[マスター詳細]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Tabbed]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";MasterDetailDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.]]></Val>
+          <Val><![CDATA[A project template for creating a Xamarin.Forms app that uses a side menu to navigate between several child pages. This template comes with sample pages and sample data.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[タブ付きナビゲーション パターンを備えた、iOS、Android、ユニバーサル Windows プラットフォーム (UWP) 用の Xamarin.Forms XAML ベースのクロス プラットフォーム ネイティブ モバイル アプリを作成するためのプロジェクト テンプレート。]]></Val>
+            <Val><![CDATA[サイドメニューを使用して複数の子ページ間を移動する Xamarin.Forms アプリを作成するためのプロジェクト テンプレート。このテンプレートにはサンプル ページとサンプル データが含まれます。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -369,6 +381,24 @@
           <Val><![CDATA[Code Sharing Strategy]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[コード共有方法]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TabbedApp" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Tabbed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[タブ付き]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TabbedAppDescription" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project template for creating a Xamarin.Forms app that uses tabs to navigate between several child pages. This template comes with sample pages and sample data.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[タブを使用して複数の子ページ間を移動する Xamarin.Forms アプリを作成するためのプロジェクト テンプレート。このテンプレートにはサンプル ページとサンプル データが含まれます。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

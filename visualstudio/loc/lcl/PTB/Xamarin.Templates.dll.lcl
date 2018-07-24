@@ -138,19 +138,25 @@
       </Item>
       <Item ItemId=";BlankApp" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Blank App]]></Val>
+          <Val><![CDATA[Blank]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Aplicativo em Branco]]></Val>
+            <Val><![CDATA[Em branco]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Blank App]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";BlankAppDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.]]></Val>
+          <Val><![CDATA[A project template for a new Xamarin.Forms app that has no extra sample pages or sample data.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Um modelo de projeto para criar aplicativos móveis nativos de plataformas cruzadas baseados em XAML de Xamarin.Forms para iOS, Android e Plataforma Universal do Windows.]]></Val>
+            <Val><![CDATA[Um modelo de projeto para um novo aplicativo Xamarin.Forms que não tem páginas de amostra extras nem dados de exemplo.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A project template for building Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -285,19 +291,25 @@
       </Item>
       <Item ItemId=";MasterDetail" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Tabbed]]></Val>
+          <Val><![CDATA[Master-Detail]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Com Guias]]></Val>
+            <Val><![CDATA[Mestre/Detalhes]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Tabbed]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";MasterDetailDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.]]></Val>
+          <Val><![CDATA[A project template for creating a Xamarin.Forms app that uses a side menu to navigate between several child pages. This template comes with sample pages and sample data.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Um modelo de projeto para criar aplicativos móveis nativos de plataformas cruzadas baseados em XAML de Xamarin.Forms para iOS, Android e Plataforma Universal do Windows (UWP) com o padrão de navegação com guias.]]></Val>
+            <Val><![CDATA[Um modelo de projeto para criar um aplicativo Xamarin.Forms que usa um menu lateral para navegar entre várias páginas filho. Esse modelo é fornecido com páginas de amostra e dados de exemplo.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A project template for creating Xamarin.Forms XAML-based cross-platform native mobile apps for iOS, Android, and Universal Windows Platform (UWP) with tabbed navigation pattern.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -369,6 +381,24 @@
           <Val><![CDATA[Code Sharing Strategy]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Estratégia de Compartilhamento de Código]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TabbedApp" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Tabbed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Com guias]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TabbedAppDescription" ItemType="0" PsrId="211" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A project template for creating a Xamarin.Forms app that uses tabs to navigate between several child pages. This template comes with sample pages and sample data.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Um modelo de projeto para criar um aplicativo Xamarin.Forms que usa guias para navegar entre várias páginas filho. Esse modelo é fornecido com páginas de amostra e dados de exemplo.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
