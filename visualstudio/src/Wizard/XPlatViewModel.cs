@@ -364,7 +364,7 @@ namespace Xamarin.Templates.Wizards
 
             if (IsSharedSupported && IsMasterDetailSupportedVersion()) list.Add(new XPlatItemViewModel
             {
-                Id = "tabbed", // Using "tabbed" as Id since the value of Resources.MasterDetail is "Tabbed"
+                Id = "master-detail",
                 TargetPlatform = "Forms",
                 Name = Resources.MasterDetail,
                 Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
@@ -400,6 +400,8 @@ namespace Xamarin.Templates.Wizards
 
             if (IsSharedSupported && IsMasterDetailSupportedVersion()) list.Add(new XPlatItemViewModel
             {
+                Id = "tabbed", // Using "tabbed" as Id since the value of Resources.MasterDetail is "Tabbed"
+                TargetPlatform = "Forms",
                 Name = Resources.TabbedApp,
                 Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
                 Description = Resources.TabbedAppDescription,
