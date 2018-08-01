@@ -6,7 +6,7 @@
     <ProjectType>CSharp</ProjectType>
     <SortOrder>10</SortOrder>
     <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4515" />
-    <TemplateGroupID>Xamarin.iOS</TemplateGroupID>
+    <TemplateGroupID>Xamarin.iOS.Shared</TemplateGroupID>
     <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
     <ShowByDefault>false</ShowByDefault>
     <TemplateID>Xamarin.iOS.IT.Class</TemplateID>
