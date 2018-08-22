@@ -19,7 +19,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Xamarin.Templates</RootNamespace>
     <AssemblyName>Xamarin.Templates</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IsProductComponent>true</IsProductComponent>
     <ExtensionInstallationFolder>Xamarin\Templates</ExtensionInstallationFolder>
