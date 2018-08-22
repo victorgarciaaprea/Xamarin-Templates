@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LCX SchemaVersion="6.0" Name="E:\A\_work\51\s\visualstudio\src\bin\Release\Xamarin.Templates.dll" PsrId="211" FileType="1" SrcCul="en-US" TgtCul="cs-CZ" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <OwnedComments>
     <Cmt Name="Dev" />
@@ -293,7 +293,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Master-Detail]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Master-Detail]]></Val>
+            <Val><![CDATA[Hlavní-podrobnosti]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Tabbed]]></Val>
