@@ -187,11 +187,101 @@ namespace Xamarin.Templates.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AndroidCheckBox.
+        /// </summary>
+        public static string CrossPlatformDialog_AndroidCheckBox_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_AndroidCheckBox_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AzureCheckbox.
+        /// </summary>
+        public static string CrossPlatformDialog_AzureCheckBox_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_AzureCheckBox_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string CrossPlatformDialog_Cancel {
             get {
                 return ResourceManager.GetString("CrossPlatformDialog_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CancelButton.
+        /// </summary>
+        public static string CrossPlatformDialog_CancelButton_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_CancelButton_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LearnMoreLink.
+        /// </summary>
+        public static string CrossPlatformDialog_HelpLink_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_HelpLink_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learn more about Code Sharing Strategy.
+        /// </summary>
+        public static string CrossPlatformDialog_HelpLink_AutomationName {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_HelpLink_AutomationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to iOSCheckBox.
+        /// </summary>
+        public static string CrossPlatformDialog_iOSCheckBox_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_iOSCheckBox_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to NetStandartRadioButton.
+        /// </summary>
+        public static string CrossPlatformDialog_NetStandartRadioButton_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_NetStandartRadioButton_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OkButton.
+        /// </summary>
+        public static string CrossPlatformDialog_OkButton_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_OkButton_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SharingRadioButton.
+        /// </summary>
+        public static string CrossPlatformDialog_SharingRadioButton_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_SharingRadioButton_AutomationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UWPCheckBox.
+        /// </summary>
+        public static string CrossPlatformDialog_UWPCheckBox_AutomationId {
+            get {
+                return ResourceManager.GetString("CrossPlatformDialog_UWPCheckBox_AutomationId", resourceCulture);
             }
         }
         

@@ -240,4 +240,34 @@
   <data name="TabbedAppDescription" xml:space="preserve">
     <value>A project template for creating a Xamarin.Forms app that uses tabs to navigate between several child pages. This template comes with sample pages and sample data.</value>
   </data>
+  <data name="CrossPlatformDialog_AndroidCheckBox_AutomationId" xml:space="preserve">
+    <value>AndroidCheckBox</value>
+  </data>
+  <data name="CrossPlatformDialog_AzureCheckBox_AutomationId" xml:space="preserve">
+    <value>AzureCheckbox</value>
+  </data>
+  <data name="CrossPlatformDialog_CancelButton_AutomationId" xml:space="preserve">
+    <value>CancelButton</value>
+  </data>
+  <data name="CrossPlatformDialog_HelpLink_AutomationId" xml:space="preserve">
+    <value>LearnMoreLink</value>
+  </data>
+  <data name="CrossPlatformDialog_HelpLink_AutomationName" xml:space="preserve">
+    <value>Learn more about Code Sharing Strategy</value>
+  </data>
+  <data name="CrossPlatformDialog_iOSCheckBox_AutomationId" xml:space="preserve">
+    <value>iOSCheckBox</value>
+  </data>
+  <data name="CrossPlatformDialog_NetStandartRadioButton_AutomationId" xml:space="preserve">
+    <value>NetStandartRadioButton</value>
+  </data>
+  <data name="CrossPlatformDialog_OkButton_AutomationId" xml:space="preserve">
+    <value>OkButton</value>
+  </data>
+  <data name="CrossPlatformDialog_SharingRadioButton_AutomationId" xml:space="preserve">
+    <value>SharingRadioButton</value>
+  </data>
+  <data name="CrossPlatformDialog_UWPCheckBox_AutomationId" xml:space="preserve">
+    <value>UWPCheckBox</value>
+  </data>
 </root>
