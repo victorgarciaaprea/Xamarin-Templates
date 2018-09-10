@@ -150,7 +150,7 @@
             "type": "parameter",
             "datatype": "string",
             "replaces": "SupportLibVersion",
-            "defaultValue": "27.0.2"
+            "defaultValue": "27.0.2.1"
         },
         "IncludeXamarinEssentials": {
             "type": "parameter",
@@ -167,7 +167,7 @@
             "type": "parameter",
             "dataType": "string",
             "replaces": "XamarinFormsSdk",
-            "defaultValue": "3.0.0.482510"
+            "defaultValue": "3.1.0.697729"
         },
         "ProjectID": {
             "type": "generated",
