@@ -226,6 +226,9 @@
       <Item ItemId=";CrossPlatformDialog_HelpLink_AutomationName" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Learn more about Code Sharing Strategy]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[深入了解程式碼共用策略]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
