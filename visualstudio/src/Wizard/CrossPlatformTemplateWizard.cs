@@ -35,7 +35,8 @@ namespace Xamarin.Templates.Wizards
         const string IOSPackage = "77875fa9-01e7-4fea-8e77-dfe942355ca1";
 
         const int CurrentAndroidLevel = 27;
-        const int FallbackAndroidLevel = 25;
+        const int FallbackAndroidLevel = 26;
+        const string FallbackSupportLibVersion = "26.1.0.1";
         AndroidFramework AndroidTargetFramework;
 
         DTE2 dte;
@@ -239,7 +240,7 @@ namespace Xamarin.Templates.Wizards
                 {
                     replacements.Add("$passthrough:AndroidSDKVersion$", AndroidTargetFramework.Version);
                     replacements.Add("$passthrough:TargetAndroidAPI$", AndroidTargetFramework.ApiLevel.ToString());
-                    replacements.Add("$passthrough:SupportLibVersion$", "25.4.0.2");
+                    replacements.Add("$passthrough:SupportLibVersion$", FallbackSupportLibVersion);
                 }
             }
             else
