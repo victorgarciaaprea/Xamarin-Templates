@@ -14,6 +14,7 @@ namespace Xamarin.Templates.Wizard
     {
         const int CurrentApiLevel = 27;
         const int FallbackApiLevel = 26;
+        public string FallbackSupportLibVersion { get { return "26.1.0.1"; } }
 
         public List<ItemViewModel> Templates { get; private set; }
 

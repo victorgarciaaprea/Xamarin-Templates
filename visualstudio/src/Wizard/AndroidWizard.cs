@@ -28,7 +28,7 @@ namespace Xamarin.Templates.Wizard
             {
                 replacements.Add("$passthrough:AndroidSDKVersion$", model.AndroidTargetFramework.Version);
                 replacements.Add("$passthrough:TargetAndroidAPI$", model.AndroidTargetFramework.ApiLevel.ToString());
-                replacements.Add("$passthrough:SupportLibVersion$", "25.4.0.2");
+                replacements.Add("$passthrough:SupportLibVersion$", model.FallbackSupportLibVersion);
             }
 
             return replacements;
