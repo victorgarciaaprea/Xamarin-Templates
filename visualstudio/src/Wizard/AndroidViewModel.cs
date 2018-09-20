@@ -13,7 +13,7 @@ namespace Xamarin.Templates.Wizard
     public class AndroidViewModel : IViewModel, INotifyPropertyChanged
     {
         const int CurrentApiLevel = 27;
-        const int FallbackApiLevel = 25;
+        const int FallbackApiLevel = 26;
 
         public List<ItemViewModel> Templates { get; private set; }
 
