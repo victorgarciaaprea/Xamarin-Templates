@@ -31,16 +31,16 @@
             "path": "NewApp\\Views\\MainPage.xaml"
         },
         {
+            "condition": "CreateUWPProject",
+            "path": "NewApp.UWP\\NewApp.UWP.csproj"
+        },
+        {
             "condition": "CreateAndroidProject",
             "path": "NewApp.Android\\NewApp.Android.csproj"
         },
         {
             "condition": "CreateiOSProject",
             "path": "NewApp.iOS\\NewApp.iOS.csproj"
-        },
-        {
-            "condition": "CreateUWPProject",
-            "path": "NewApp.UWP\\NewApp.UWP.csproj"
         },
         {
             "condition": "CreateBackendProject",

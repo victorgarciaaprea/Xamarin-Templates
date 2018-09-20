@@ -12,7 +12,7 @@
     <SortOrder>0001</SortOrder>
     <CreateInPlace>true</CreateInPlace>
   </TemplateData>
-  <TemplateContent>
+  <TemplateContent PreferedSolutionConfiguration="Debug|x86">
     <ProjectCollection />
   </TemplateContent>
   <WizardExtension>
