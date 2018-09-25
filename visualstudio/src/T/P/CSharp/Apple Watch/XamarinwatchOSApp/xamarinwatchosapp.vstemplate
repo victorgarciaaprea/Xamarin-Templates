@@ -4,7 +4,7 @@
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2005" />
     <Icon>watchos-app.png</Icon>
     <TemplateGroupID>Xamarin.watchOSApp</TemplateGroupID>
-    <TemplateID>Xamarin.watchOSApp.CSharp</TemplateID>
+    <TemplateID>Microsoft.CSharp.Xamarin.WatchOS.App</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>

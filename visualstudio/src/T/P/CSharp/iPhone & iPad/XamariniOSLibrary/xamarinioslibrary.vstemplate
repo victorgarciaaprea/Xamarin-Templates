@@ -4,7 +4,7 @@
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="2011" />
     <Icon>ios-library.ico</Icon>
     <TemplateGroupID>Xamarin.iOSLibrary</TemplateGroupID>
-    <TemplateID>Xamarin.iOSLibrary.CSharp</TemplateID>
+    <TemplateID>Microsoft.CSharp.Xamarin.iOS.ClassLibrary</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>ClassLibrary</DefaultName>
     <ProjectType>CSharp</ProjectType>

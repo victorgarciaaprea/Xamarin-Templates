@@ -4,7 +4,7 @@
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3025" />
     <Icon>ios-app.png</Icon>
     <TemplateGroupID>Xamarin.iOSXamlApp</TemplateGroupID>
-    <TemplateID>Xamarin.iOSXamlApp.CSharp.iOS</TemplateID>
+    <TemplateID>Microsoft.CSharp.Xamarin.iOS.XamlApp</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>

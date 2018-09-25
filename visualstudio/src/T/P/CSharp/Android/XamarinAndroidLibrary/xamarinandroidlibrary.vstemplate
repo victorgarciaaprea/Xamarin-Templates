@@ -4,7 +4,7 @@
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="1007" />
     <Icon>android-library.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidLibrary</TemplateGroupID>
-    <TemplateID>Xamarin.AndroidLibrary.CSharp</TemplateID>
+    <TemplateID>Microsoft.CSharp.Xamarin.Android.ClassLibrary</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>ClassLibrary</DefaultName>
     <ProjectType>CSharp</ProjectType>

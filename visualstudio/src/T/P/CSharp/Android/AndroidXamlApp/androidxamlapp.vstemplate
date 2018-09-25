@@ -4,7 +4,7 @@
     <Description Package="{4661F042-BFB2-47D0-A4AD-7E1D3002B8F1}" ID="3023" />
     <Icon>android-app.ico</Icon>
     <TemplateGroupID>Xamarin.AndroidXamlApp</TemplateGroupID>
-    <TemplateID>Xamarin.AndroidXamlApp.CSharp.Android</TemplateID>
+    <TemplateID>Microsoft.CSharp.Xamarin.Android.XamlApp</TemplateID>
     <Hidden>false</Hidden>
     <DefaultName>App</DefaultName>
     <ProjectType>CSharp</ProjectType>
