@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+    <TargetFramework>net471</TargetFramework>
+    <RestoreOutputPath>obj\$(MSBuildProjectName)</RestoreOutputPath>
+    <BaseIntermediateOutputPath>$(RestoreOutputPath)</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(RestoreOutputPath)</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Remove="@(PackageReference)" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <Target Name="AfterRestore" AfterTargets="Restore">
+    <MSBuild Projects="$(MSBuildThisFileFullPath)" Targets="GenerateReferences" Properties="ForceReload=true" />
+  </Target>
+
+  <Target Name="GenerateReferences" DependsOnTargets="ResolvePackageAssets">
+    <WriteLinesToFile File="$(BaseIntermediateOutputPath)\imports.csx" 
+                      Lines="@(RuntimeCopyLocalItems -> '#r &quot;%(FullPath)&quot;')"
+                      Overwrite="true"/>
+  </Target>
+
+</Project>

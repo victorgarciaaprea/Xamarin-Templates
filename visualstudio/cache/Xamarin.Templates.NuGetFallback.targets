@@ -1,0 +1,58 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <NuGetCacheDir>$(BaseIntermediateOutputPath)\.nuget</NuGetCacheDir>
+    <TemplateDirs>$([System.IO.Directory]::GetDirectories("$(MSBuildProjectDirectory)\..\.."))</TemplateDirs>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TemplateDir Include="$(TemplateDirs)" Exclude="$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)\..').TrimEnd('\'))" />
+  </ItemGroup>
+
+  <Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
+    <PropertyGroup>
+      <VsixVersion Condition="'$(Configuration)' == 'Debug'">42.42.42</VsixVersion>
+      <VsixVersion Condition="'$(VsixVersion)' == ''">$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</VsixVersion>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="AppendVsixVersionToTargetVsixContainer" BeforeTargets="CreateVsixContainer" DependsOnTargets="GetVsixVersion">
+    <PropertyGroup>
+      <TargetVsixContainer>$([System.IO.Path]::ChangeExtension('$(TargetVsixContainer)', '$(VsixVersion).vsix'))</TargetVsixContainer>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="CopyArtifacts" AfterTargets="CreateVsixContainer" Condition="'$(Out)' != ''">
+    <MakeDir Directories="$(Out)" Condition="!Exists('$(Out)')" />
+    <Copy SourceFiles="@(_CreatedVsixContainer)" DestinationFolder="$(Out)" />
+  </Target>
+
+  <Target Name="AfterGetVsixDeploymentPath" AfterTargets="GetVsixDeploymentPath">
+    <PropertyGroup>
+      <VsixDeploymentPath>$(ExtensionsPath)\$(ExtensionInstallationFolder)</VsixDeploymentPath>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="IsExperimental" Returns="$(IsExperimental)" />
+  <Target Name="IsSystemComponent" Returns="$(IsSystemComponent)" />
+
+  <Target Name="BeforeBuild" DependsOnTargets="Restore;RestoreTemplatePackages" BeforeTargets="Build">
+    <ItemGroup>
+      <Content Include="$(NuGetCacheDir)\**\*.*" IncludeInVSIX="true" />
+      <Content>
+        <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+      </Content>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="AfterRestore" DependsOnTargets="Restore" AfterTargets="Restore">
+    <MakeDir Directories="$(NuGetCacheDir)" Condition="!Exists('$(NuGetCacheDir)')" />
+    <MSBuild Projects="analyzer.props" Targets="Restore" />
+  </Target>
+
+  <Target Name="RestoreTemplatePackages" Inputs="@(TemplateDir)" Outputs="%(Identity)-BATCH" Condition="'$(RestoreTemplatePackages)' != 'false'">
+    <Exec Command='"$(RoslynTargetsPath)\csi.exe" analyzer.csx "%(TemplateDir.Identity)"' />
+    <Exec Command='"$(MSBuildBinPath)\MSBuild.exe" packages.proj /t:Restore /v:m /noautoresponse /bl:$([System.IO.Path]::Combine($(PackageOutputPath), %(TemplateDir.Filename).binlog))' />
+  </Target>
+
+</Project>

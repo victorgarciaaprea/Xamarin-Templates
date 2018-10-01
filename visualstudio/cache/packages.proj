@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RestoreOutputPath>obj\$(MSBuildProjectName)</RestoreOutputPath>
+    <RestorePackagesPath>obj\.nuget</RestorePackagesPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Remove="*" />
+  </ItemGroup>
+
+  <Import Project="packages.targets" Condition="Exists('packages.targets')" />
+
+  <Target Name="EnsurePackages" BeforeTargets="Restore" Condition="!Exists('packages.targets')" >
+    <Error Text="Please run 'csi analyzer.csx [templates dir]' before performing a restore." />
+  </Target>
+
+  <Target Name="CleanupPackages" AfterTargets="Restore" Returns="@(DeletedNuGets)">
+    <ItemGroup>
+      <AllNuGets Include="$([System.IO.Directory]::GetDirectories($(RestorePackagesPath)))" />
+      <DeleteNuGets Include="@(AllNuGets)" 
+                    Condition="$([MSBuild]::ValueOrDefault('%(Filename)', '').StartsWith('microsoft'))" />
+      <DeleteNuGets Include="@(AllNuGets)" 
+                    Condition="$([MSBuild]::ValueOrDefault('%(Filename)', '').StartsWith('system'))" />
+    </ItemGroup>
+
+    <RemoveDir Directories="@(DeleteNuGets)" ContinueOnError="true">
+      <Output TaskParameter="RemovedDirectories" ItemName="DeletedNuGets"/>
+    </RemoveDir>
+
+    <!-- Retry deleting those that might have failed before -->
+    <RemoveDir Directories="@(DeleteNuGets)" Condition="Exists('%(DeleteNuGets.FullPath)')">
+      <Output TaskParameter="RemovedDirectories" ItemName="DeletedNuGets"/>
+    </RemoveDir>
+
+    <ItemGroup>
+      <AllNuPkgs Include="$(RestorePackagesPath)\**\*.nupkg" />
+    </ItemGroup>
+
+    <Delete Files="@(AllNuPkgs)" />
+  </Target>
+
+</Project>
