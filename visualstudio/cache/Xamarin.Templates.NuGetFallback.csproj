@@ -18,6 +18,7 @@
     <IsExperimental Condition="'$(CI)' != 'true'">true</IsExperimental>
     <IsSystemComponent>true</IsSystemComponent>
     <IsSystemComponent Condition="'$(CI)' != 'true'">false</IsSystemComponent>
+    <IsProductComponent>true</IsProductComponent>
     <ExtensionInstallationRoot>Extensions</ExtensionInstallationRoot>
     <ExtensionInstallationFolder>XamGet</ExtensionInstallationFolder>
     <ZipPackageCompressionLevel>Normal</ZipPackageCompressionLevel>
