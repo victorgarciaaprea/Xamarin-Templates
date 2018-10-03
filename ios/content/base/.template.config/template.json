@@ -88,7 +88,7 @@
       "type": "parameter",
       "dataType": "string",
       "replaces": "XamarinEssentialsSdk",
-      "defaultValue": "0.6.0-preview"
+      "defaultValue": "0.10.0-preview"
     }
   },
   "sources": [
