@@ -141,7 +141,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="XamarinFormsSdk" />
     <!--#if (CreateUITestProject)
-    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.5" />
+    <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
     <#endif-->
     <!--#if (CreateBackendProject)
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />

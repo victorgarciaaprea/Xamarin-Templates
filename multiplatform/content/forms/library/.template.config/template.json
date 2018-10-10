@@ -29,7 +29,7 @@
             "type": "parameter",
             "dataType": "string",
             "replaces": "XamarinFormsSdk",
-            "defaultValue": "3.2.0.839982"
+            "defaultValue": "3.2.0.871581"
         },
         "ProjectID": {
             "type": "generated",
