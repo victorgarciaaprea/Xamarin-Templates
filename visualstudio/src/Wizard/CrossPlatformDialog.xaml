@@ -94,12 +94,6 @@
             </ListView.ItemsPanel>
         </ListView>
         <Label Grid.Column="0" Grid.Row="0" Content="{x:Static res:Resources.SelectATemplate}" Margin="5,0,0,0" />
-        <StackPanel Grid.Column="2" Grid.Row="2">
-            <Label Content="{x:Static res:Resources.MicrosoftAzure}" Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" FontWeight="Bold" />
-            <CheckBox Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" Margin="5,5" IsChecked="{Binding IsAzureSelected}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_AzureCheckBox_AutomationId}">
-                <TextBlock Text="{x:Static res:Resources.HostInTheCloud}" TextWrapping="Wrap"/>
-            </CheckBox>
-        </StackPanel>
         <Grid Grid.Column="0" Grid.Row="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
@@ -112,19 +106,10 @@
                 <CheckBox Content="{x:Static res:Resources.UWP}" Margin="12,2" IsChecked="{Binding IsUWPSelected}" IsEnabled="{Binding IsUWPEnabled}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_UWPCheckBox_AutomationId}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <StackPanel Orientation="Horizontal" >
-                    <Label Content="{x:Static res:Resources.Sharing}" Margin="5,2" FontWeight="Bold" />
-                    <TextBlock FontWeight="Bold" Margin="-6,0" VerticalAlignment="Center">
-                        <Hyperlink NavigateUri="https://aka.ms/xamarin-code-sharing"
-                                   RequestNavigate="CodeSharingStrategy_Navigate"
-                                   AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_HelpLink_AutomationId}"
-                                   AutomationProperties.Name="{x:Static res:Resources.CrossPlatformDialog_HelpLink_AutomationName}">
-                            ?
-                        </Hyperlink>
-                    </TextBlock>
-                </StackPanel>
-                <RadioButton Content="{x:Static res:Resources.NetStandard}" Margin="10,2" IsChecked="{Binding IsNetStandardSelected}" IsEnabled="{Binding IsSharingEnabled}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_NetStandartRadioButton_AutomationId}"/>
-                <RadioButton Content="{x:Static res:Resources.SharedProjects}" Margin="10,2" IsChecked="{Binding IsSharedSelected}" IsEnabled="{Binding IsSharingEnabled}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_SharingRadioButton_AutomationId}"/>
+                <Label Content="{x:Static res:Resources.MicrosoftAzure}" Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" FontWeight="Bold" />
+                <CheckBox Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" Margin="5,5" IsChecked="{Binding IsAzureSelected}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_AzureCheckBox_AutomationId}">
+                    <TextBlock Text="{x:Static res:Resources.HostInTheCloud}" TextWrapping="Wrap"/>
+                </CheckBox>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1" Grid.Column="2" Margin="5" VerticalScrollBarVisibility="Auto">

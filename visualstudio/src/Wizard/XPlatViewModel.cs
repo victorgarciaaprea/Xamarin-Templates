@@ -330,37 +330,6 @@ namespace Xamarin.Templates.Wizards
         private List<XPlatItemViewModel> CreateTemplatesContext()
         {
             var list = new List<XPlatItemViewModel>();
-            list.Add(new XPlatItemViewModel
-            {
-                Id = "blank",
-                TargetPlatform = "Forms",
-                Name = Resources.BlankApp,
-                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
-                Description = Resources.BlankAppDescription,
-                Forms = new ReferenceTypeItem
-                {
-                    PCL = new AzureTypeItem
-                    {
-                        NoAzure = "blank"
-                    },
-                    Shared = new AzureTypeItem
-                    {
-                        NoAzure = "blank"
-                    }
-                },
-                Native = new ReferenceTypeItem
-                {
-                    PCL = new AzureTypeItem
-                    {
-                        NoAzure = "blank"
-                    },
-                    Shared = new AzureTypeItem
-                    {
-                        NoAzure = "blank"
-                    }
-                }
-
-            });
 
             if (IsSharedSupported && IsMasterDetailSupportedVersion()) list.Add(new XPlatItemViewModel
             {
@@ -418,6 +387,38 @@ namespace Xamarin.Templates.Wizards
                         NoAzure = "tabbed"
                     }
                 }
+            });
+
+            list.Add(new XPlatItemViewModel
+            {
+                Id = "blank",
+                TargetPlatform = "Forms",
+                Name = Resources.BlankApp,
+                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
+                Description = Resources.BlankAppDescription,
+                Forms = new ReferenceTypeItem
+                {
+                    PCL = new AzureTypeItem
+                    {
+                        NoAzure = "blank"
+                    },
+                    Shared = new AzureTypeItem
+                    {
+                        NoAzure = "blank"
+                    }
+                },
+                Native = new ReferenceTypeItem
+                {
+                    PCL = new AzureTypeItem
+                    {
+                        NoAzure = "blank"
+                    },
+                    Shared = new AzureTypeItem
+                    {
+                        NoAzure = "blank"
+                    }
+                }
+
             });
 
             return list;
