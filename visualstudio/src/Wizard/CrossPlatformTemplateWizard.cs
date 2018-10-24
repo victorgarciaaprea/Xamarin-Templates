@@ -99,10 +99,6 @@ namespace Xamarin.Templates.Wizards
                 var initializer = componentModel.DefaultExportProvider.GetExport<object>("Microsoft.VisualStudio.TemplateEngine.Contracts.IEngineInitializer").Value;
 
                 initializer.GetType().GetMethod("EnsureInitialized").Invoke(initializer, null);
-
-                //we need these two to get sdk information, so initialize them if possible to speed up the template
-                TryLoadPackage(serviceProvider, AndroidPackage);
-                TryLoadPackage(serviceProvider, IOSPackage);
             }
             catch //initialization may fail if the initializer doesn't exist... we don't really care in that case
             { }
