@@ -94,8 +94,6 @@ namespace Xamarin.Templates.Wizards
             }
         }
 
-        private static readonly string UWPRegistryKey = @"_Config\Projects\{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A}";
-
         bool isSharedSelected = false;
         public bool IsSharedSelected
         {
@@ -114,7 +112,7 @@ namespace Xamarin.Templates.Wizards
         {
             get
             {
-                return IsAndroidSelected || isUWPSelected || IsIOSSelected;
+                return IsAndroidSelected || IsIOSSelected;
             }
         }
 
@@ -148,45 +146,8 @@ namespace Xamarin.Templates.Wizards
             }
         }
 
-        private bool isUWPSelected;
-        public bool IsUWPSelected
-        {
-            get
-            {
-                return isUWPSelected;
-            }
-            set
-            {
-                isUWPSelected = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsUWPSelected)));
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsOkEnabled)));
-            }
-        }
-
-
         public bool IsAndroidEnabled { get; set; } = true;
         public bool IsIOSEnabled { get; set; } = true;
-
-        private bool isUWPEnabled;
-        public bool IsUWPEnabled
-        {
-            get
-            {
-                return isUWPEnabled;
-            }
-            set
-            {
-                isUWPEnabled = value;
-                PropertyChanged(this, new PropertyChangedEventArgs(nameof(IsUWPEnabled)));
-            }
-        }
-
-        public bool GetUWPEnabled(DTE2 dte)
-        {
-            return Registry.CurrentUser.OpenSubKey(dte.RegistryRoot + UWPRegistryKey) != null;
-        }
-
-
 
         private void UpdateFromSharing()
         {

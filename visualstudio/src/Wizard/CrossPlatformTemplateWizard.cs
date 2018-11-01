@@ -64,7 +64,6 @@ namespace Xamarin.Templates.Wizards
                 latestWindowSdk = GetLatestWindowsSDK();
 
                 var dialog = CreateCrossPlatformDialog();
-                dialog.SetUWPEnabled(dte, latestWindowSdk);
                 dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
 
                 var dialogResult = dialog.ShowDialog().GetValueOrDefault();
@@ -256,14 +255,7 @@ namespace Xamarin.Templates.Wizards
                 replacements.Add("$passthrough:CreateiOSProject$", "false");
             }
 
-            if (model.IsUWPSelected)
-            {
-                replacements.Add("$passthrough:WindowsSdk$", latestWindowSdk);
-            }
-            else
-            {
-                replacements.Add("$passthrough:CreateUWPProject$", "false");
-            }
+            replacements.Add("$passthrough:CreateUWPProject$", "false");
 
             return replacements;
         }

@@ -103,7 +103,6 @@
                 <Label Content="{x:Static res:Resources.Platforms}" Margin="5,2" FontWeight="Bold" />
                 <CheckBox Content="{x:Static res:Resources.Android}" Margin="12,2" IsChecked="{Binding IsAndroidSelected}" IsEnabled="{Binding IsAndroidEnabled}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_AndroidCheckBox_AutomationId}"/>
                 <CheckBox Content="{x:Static res:Resources.iOS}" Margin="12,2" IsChecked="{Binding IsIOSSelected}" IsEnabled="{Binding IsIOSEnabled}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_iOSCheckBox_AutomationId}"/>
-                <CheckBox Content="{x:Static res:Resources.UWP}" Margin="12,2" IsChecked="{Binding IsUWPSelected}" IsEnabled="{Binding IsUWPEnabled}" AutomationProperties.AutomationId="{x:Static res:Resources.CrossPlatformDialog_UWPCheckBox_AutomationId}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <Label Content="{x:Static res:Resources.MicrosoftAzure}" Visibility="{Binding IsAzureEnabled, Converter={StaticResource AzureConverter}}" FontWeight="Bold" />

@@ -24,8 +24,6 @@ namespace Xamarin.Templates.Wizards
 
         public bool IsIOSSelected { get { return model.IsIOSSelected; } }
 
-        public bool IsUWPSelected { get { return model.IsUWPSelected; } }
-
         public bool IncludesMobileBackend => model.IsAzureSelected;
 
         public IEnumerable<string> FailedPlatforms { get; internal set; }
@@ -41,9 +39,6 @@ namespace Xamarin.Templates.Wizards
 
                 if (IsIOSSelected)
                     platforms.Add("iOS");
-
-                if (IsUWPSelected)
-                    platforms.Add("UWP");
 
                 return platforms;
             }
@@ -62,9 +57,6 @@ namespace Xamarin.Templates.Wizards
 
             if (model.IsAndroidSelected)
                 expectedProjectNames.Add(string.Format("{0}.Android", safeProjectName));
-
-            if (model.IsUWPSelected)
-                expectedProjectNames.Add(string.Format("{0}.UWP", safeProjectName));
 
             if (model.IsIOSSelected)
                 expectedProjectNames.Add(string.Format("{0}.iOS", safeProjectName));

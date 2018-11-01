@@ -26,13 +26,6 @@ namespace Xamarin.Templates.Wizards
             InitializeComponent ();
         }
 
-        internal void SetUWPEnabled(DTE2 dte, string latestSdk)
-        {
-            var model = DataContext as XPlatViewModel;
-            model.IsUWPEnabled = !string.IsNullOrEmpty(latestSdk) && model.GetUWPEnabled(dte);
-            model.IsUWPSelected = model.IsUWPEnabled;
-        }
-
         internal string GetTemplatePath()
         {
             var model = DataContext as XPlatViewModel;
