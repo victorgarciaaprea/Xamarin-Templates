@@ -59,7 +59,7 @@ namespace Xamarin.Templates.Wizards
 
                 TryLoadPackage(serviceProvider, NugetPackage);
 
-                System.Threading.Tasks.Task.Run(() => InitializeTemplateEngine());
+                InitializeTemplateEngine();
 
                 latestWindowSdk = GetLatestWindowsSDK();
 
