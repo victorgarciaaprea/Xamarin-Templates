@@ -186,15 +186,12 @@ namespace Xamarin.Templates.Wizards
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem) { }
 
-        public async void RunFinished()
+        public void RunFinished()
         {
             var result = new CreateTemplateResult(SafeProjectName, model);
 
             try
             {
-                //if (model.IsAzureSelected)
-                //    await ShowAzureDialog();
-
                 CreateTemplate(model);
 
                 result.CheckIfSolutionWasSuccessfulyCreated(dte.Solution);
@@ -265,38 +262,6 @@ namespace Xamarin.Templates.Wizards
             var assembly = Assembly.Load("Microsoft.VisualStudio.TemplateEngine.Wizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
             var type = assembly.GetType("Microsoft.VisualStudio.TemplateEngine.Wizard.TemplateEngineWizard", true);
             return (IWizard)Activator.CreateInstance(type);
-        }
-
-        private async System.Threading.Tasks.Task ShowAzureDialog()
-        {
-            var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
-
-            var iAzureShoppingCartDeploymentDialogFactoryType = Type.GetType($"Microsoft.VisualStudio.Web.WindowsAzure.CommonContracts.IAzureShoppingCartDeploymentDialogFactory, Microsoft.VisualStudio.Web.WindowsAzure.CommonContracts, Version={dte.Version}.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false);
-            var iAzureShoppingCartDeploymentDialogType = Type.GetType($"Microsoft.VisualStudio.Web.WindowsAzure.CommonContracts.IAzureShoppingCartDeploymentDialog, Microsoft.VisualStudio.Web.WindowsAzure.CommonContracts, Version={dte.Version}.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false);
-            object provisioningFactory = typeof(IComponentModel).GetMethod("GetService").MakeGenericMethod(iAzureShoppingCartDeploymentDialogFactoryType).Invoke(componentModel, null);
-
-            var provisioningDialogTask = (System.Threading.Tasks.Task)iAzureShoppingCartDeploymentDialogFactoryType.GetMethod("CreateAsync")
-            .Invoke(provisioningFactory,
-            new object[] {
-                    "Microsoft.Web/sites",
-                    new Dictionary<string, object>
-                    {
-                        { "ProjectName" , SafeProjectName },
-                        {"AppServiceKind", "MobileApp"},
-                    }});
-            await provisioningDialogTask;
-            object provisioningDialog = typeof(Task<>).MakeGenericType(iAzureShoppingCartDeploymentDialogType)
-                .GetProperty("Result").GetValue(provisioningDialogTask);
-            var showModalMethod = iAzureShoppingCartDeploymentDialogType.GetMethod("ShowModal");
-            var primaryEntityProperty = iAzureShoppingCartDeploymentDialogType.GetProperty("PrimaryEntity");
-            bool? result = (bool?)showModalMethod.Invoke(provisioningDialog, null);
-
-            if (result.GetValueOrDefault())
-            {
-                var entity = primaryEntityProperty.GetValue(provisioningDialog);
-                var name = (entity != null) ? (string)entity.GetType().GetProperty("Name").GetValue(entity) : null;
-                //AzureMobileProjectWizard.AzureMobileAppName = name ?? "[CONFIGURE-THIS-URL]";
-            }
         }
 
         public bool ShouldAddProjectItem(string filePath) => true; //filter mobile app when no azure
