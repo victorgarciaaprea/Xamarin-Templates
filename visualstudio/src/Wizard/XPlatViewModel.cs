@@ -193,7 +193,7 @@ namespace Xamarin.Templates.Wizards
 
                 var dte = ServiceProvider.GlobalProvider.GetService(typeof(EnvDTE.DTE)) as EnvDTE.DTE;
 
-                return isInstalled == 1 && Type.GetType($"Microsoft.VisualStudio.Web.WindowsAzure.CommonContracts.IAzureShoppingCartDeploymentDialog, Microsoft.VisualStudio.Web.WindowsAzure.CommonContracts, Version={dte.Version}.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", false) != null;
+                return isInstalled == 1;
             }
             catch (Exception)
             {
