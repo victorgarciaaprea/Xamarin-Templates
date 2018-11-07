@@ -23,6 +23,7 @@ using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 using Xamarin.VisualStudio.Contracts.Model.Android;
 using Microsoft.VisualStudio.Telemetry;
 using Xamarin.VisualStudio.Contracts.Model.IOS;
+using System.ComponentModel;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -63,18 +64,25 @@ namespace Xamarin.Templates.Wizards
 
                 latestWindowSdk = GetLatestWindowsSDK();
 
-                var dialog = CreateCrossPlatformDialog();
-                dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
+                if (ShowDialog(replacementsDictionary))
+                { 
+                    var dialog = CreateCrossPlatformDialog();
+                    dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
 
-                var dialogResult = dialog.ShowDialog().GetValueOrDefault();
+                    var dialogResult = dialog.ShowDialog().GetValueOrDefault();
 
-                TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name));
+                    TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name));
 
-                if (!dialogResult)
-                {
-                    throw new WizardBackoutException();
+                    if (!dialogResult)
+                    {
+                        throw new WizardBackoutException();
+                    }
+                    model = ((XPlatViewModel)dialog.DataContext);
                 }
-                model = ((XPlatViewModel)dialog.DataContext);
+                else
+                {
+                    model = FillModel(replacements);
+                }
             }
             catch (WizardBackoutException)
             {
@@ -87,6 +95,36 @@ namespace Xamarin.Templates.Wizards
                 throw;
             }
 
+        }
+
+        private XPlatViewModel FillModel(Dictionary<string, string> replacements)
+        {
+            var model = new XPlatViewModel();
+            model.IsAzureSelected = GetValue(replacements, "IsAzureSelected", false);
+            model.IsSharedSelected = false;
+            model.IsAndroidSelected = GetValue(replacements, "IsAndroidSelected", false);
+            model.IsIOSSelected = GetValue(replacements, "IsIOSSelected", false);
+            return model;
+        }
+
+        private T GetValue<T>(Dictionary<string, string> replacements, string key, T def)
+        {
+            if (replacements.Any(r => r.Key == key))
+            {
+                var converter = TypeDescriptor.GetConverter(typeof(T));
+                return (T)converter.ConvertFrom(replacements.First(r => r.Key == key).Value);
+            };
+
+            return def;
+        }
+
+        private bool ShowDialog(Dictionary<string, string> replacementsDictionary)
+        {
+            var headless = replacements.FirstOrDefault(r => r.Key == "Headless").Value;
+            if (headless != null && bool.TryParse(headless, out var headlessbool) && headlessbool)
+                return false;
+
+            return true;
         }
 
         private void InitializeTemplateEngine()

@@ -16,7 +16,7 @@ using Microsoft.VisualStudio.Telemetry;
 
 namespace Xamarin.Templates.Wizard
 {
-    abstract class DialogWizardBase<Dialog, Model> : IWizard where Dialog : DialogBase, new() where Model : IViewModel
+    abstract class DialogWizardBase<Dialog, Model> : IWizard where Dialog : DialogBase, new() where Model : IViewModel, new()
     {
         protected Model model;
         protected Dictionary<string, string> replacements;
@@ -51,18 +51,22 @@ namespace Xamarin.Templates.Wizard
 
                 replacements = replacementsDictionary;
 
-                var dialog = CreateDialog();
-                dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
+                model = PrefillModel();
 
-                var dialogResult = dialog.ShowDialog().GetValueOrDefault();
+                if (ShowDialog(replacements))
+                { 
+                    var dialog = CreateDialog();
+                    dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
 
-                TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name));
+                    var dialogResult = dialog.ShowDialog().GetValueOrDefault();
 
-                if (!dialogResult)
-                {
-                    throw new WizardBackoutException();
+                    TelemetryService.DefaultSession.PostEvent(new OpenWizardTelemetryEvent(GetType().Name));
+
+                    if (!dialogResult)
+                    {
+                        throw new WizardBackoutException();
+                    }
                 }
-                model = ((Model)dialog.DataContext);
             }
             catch (WizardBackoutException)
             {
@@ -74,9 +78,24 @@ namespace Xamarin.Templates.Wizard
             }
         }
 
+        private bool ShowDialog(Dictionary<string, string> replacementsDictionary)
+        {
+            var headless = replacements.FirstOrDefault(r => string.Equals(r.Key, "Headless", StringComparison.InvariantCultureIgnoreCase)).Value;
+            if (headless != null && bool.TryParse(headless, out var headlessbool) && headlessbool)
+                return false;
+
+            return true;
+        }
+
+        internal virtual Model PrefillModel()
+        {
+            return new Model();
+        }
+
         private Dialog CreateDialog()
         {
             var dialog = new Dialog();
+            dialog.DataContext = model;
             var dialogWindow = dialog as System.Windows.Window;
             if (dialogWindow != null)
             {

@@ -286,7 +286,7 @@ namespace Xamarin.Templates.Wizards
 
         public bool IsAzureAvailable { get; private set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged = (s, e) => {};
 
         private List<XPlatItemViewModel> CreateTemplatesContext()
         {
