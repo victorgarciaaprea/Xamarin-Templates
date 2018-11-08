@@ -983,7 +983,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty entitlements file.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Tworzy pusty plik uprawnień.]]></Val>
+            <Val><![CDATA[Tworzy pusty plik upoważnień.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
