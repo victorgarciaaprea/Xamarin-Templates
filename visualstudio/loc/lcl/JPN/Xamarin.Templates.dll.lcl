@@ -983,7 +983,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Creates an empty entitlements file.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[空の権利ファイルを作成します。]]></Val>
+            <Val><![CDATA[空のエンタイトルメント ファイルを作成します。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
