@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Xamarin.Forms.Templates" Version="|Xamarin.Templates;GetVsixVersion|" Language="en-US" Publisher="Xamarin" />
+    <Identity Id="Xamarin.Templates" Version="|Xamarin.Templates;GetVsixVersion|" Language="en-US" Publisher="Xamarin" />
     <DisplayName>Xamarin Templates</DisplayName>
     <Description>Templates for building iOS, Android, and Windows apps with Xamarin and Xamarin.Forms.</Description>
     <PackageId>Microsoft.VisualStudio.Xamarin.Forms</PackageId>
