@@ -14,6 +14,8 @@ namespace Xamarin.Templates.Wizard
     {
         const int CurrentApiLevel = 27;
         const int FallbackApiLevel = 26;
+        const int CurrentMinimumApiLevel = 21;
+
         public string FallbackSupportLibVersion { get { return "26.1.0.1"; } }
 
         public List<ItemViewModel> Templates { get; private set; }
@@ -33,7 +35,7 @@ namespace Xamarin.Templates.Wizard
         public AndroidViewModel()
         {
             AndroidFrameworks = GetFrameworks();
-            AndroidMinFramework = AndroidFrameworks.First(f => f.ApiLevel == 21);
+            AndroidMinFramework = AndroidFrameworks.First(f => f.ApiLevel == CurrentMinimumApiLevel);
 
             if (!AndroidFrameworks.First(f => f.ApiLevel == CurrentApiLevel).IsInstalled)
             {
@@ -63,7 +65,7 @@ namespace Xamarin.Templates.Wizard
                 var componentModel = Microsoft.VisualStudio.Shell.Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
                 var commandBus = componentModel?.GetService<ICommandBus>();
                 var versions = commandBus?.Execute(new GetSdkInfo());
-                return versions?.Frameworks.OrderByDescending(f => f.ApiLevel).ToList();
+                return versions?.Frameworks.OrderByDescending(f => f.ApiLevel).Where(f => f.ApiLevel <= CurrentApiLevel).ToList();
             }
             catch (FileNotFoundException)//this is to avoid a known watson crash
             {
