@@ -29,6 +29,30 @@ namespace Xamarin.Templates.Wizard
             return replacements;
         }
 
+        internal override IOSViewModel PrefillModel()
+        {
+            model = new IOSViewModel();
+
+            if (replacements.ContainsKey("MinimumOSVersion"))
+            {
+                model.MinOSVersion = replacements["MinimumOSVersion"];
+            }
+            if (replacements.ContainsKey("IsIPhone"))
+            {
+                model.IsIPhone = bool.Parse(replacements["IsIPhone"]);
+            }
+            if (replacements.ContainsKey("IsIPad"))
+            {
+                model.IsIPad = bool.Parse(replacements["IsIPad"]);
+            }
+            if (replacements.ContainsKey("kind"))
+            {
+                model.SelectedTemplate = model.Templates.FirstOrDefault(t => t.Id == replacements["kind"]);
+            }
+
+            return model;
+        }
+
         protected override string TelemetryPlatform => "iOS";
     }
 }

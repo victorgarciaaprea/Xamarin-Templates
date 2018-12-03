@@ -34,6 +34,23 @@ namespace Xamarin.Templates.Wizard
             return replacements;
         }
 
+        internal override AndroidViewModel PrefillModel()
+        {
+            model = new AndroidViewModel();
+
+            if (replacements.ContainsKey("ApiLevel"))
+            {
+                model.AndroidMinFramework = model.AndroidFrameworks.FirstOrDefault(f => f.ApiLevel == int.Parse(replacements["ApiLevel"]));
+            }
+            if (replacements.ContainsKey("kind"))
+            { 
+                model.SelectedTemplate = model.Templates.FirstOrDefault(t => t.Id == replacements["kind"]);
+            }
+
+            return model;
+        }
+
+
         protected override string TelemetryPlatform => "Android";
     }
 }
