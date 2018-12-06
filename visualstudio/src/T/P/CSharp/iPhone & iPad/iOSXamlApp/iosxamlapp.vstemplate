@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="IsIOSSelected" Value="True" />
       <CustomParameter Name="Headless" Value="True" />
+      <CustomParameter Name="kind" Value="blank" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
