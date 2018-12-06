@@ -111,6 +111,12 @@ namespace Xamarin.Templates.Wizards
             model.IsSharedSelected = false;
             model.IsAndroidSelected = GetValue(replacements, "IsAndroidSelected", false);
             model.IsIOSSelected = GetValue(replacements, "IsIOSSelected", false);
+
+            if (replacements.ContainsKey("kind"))
+            {
+                model.SelectedTemplate = model.Templates.FirstOrDefault(t => t.Id == replacements["kind"]);
+            }
+
             return model;
         }
 
