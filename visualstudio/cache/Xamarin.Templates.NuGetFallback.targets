@@ -8,6 +8,19 @@
   <ItemGroup>
     <TemplateDir Include="$(TemplateDirs)" Exclude="$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)\..').TrimEnd('\'))" />
   </ItemGroup>
+  
+	<PropertyGroup>
+		<!-- We use the fourth digit as the base number to add commits on top, which allows us to 
+			 to increment between previews before RTW -->
+		<_GitBaseVersionExpr>^v?(?&lt;MAJOR&gt;\d+)\.(?&lt;MINOR&gt;\d+)\.(?&lt;PATCH&gt;\d+)(\.(?&lt;COMMITS&gt;\d+))?(?:\-(?&lt;LABEL&gt;[\dA-Za-z\-\.]+))?$|^(?&lt;LABEL&gt;[\dA-Za-z\-\.]+)\-v?(?&lt;MAJOR&gt;\d+)\.(?&lt;MINOR&gt;\d+)\.(?&lt;PATCH&gt;\d+)(\.(?&lt;COMMITS&gt;\d+))?$</_GitBaseVersionExpr>	
+	</PropertyGroup>
+
+	<Target Name="AddBaseCommits" BeforeTargets="_GitPopulateVersionInfo" AfterTargets="_GitValidateBaseVersion">
+		<PropertyGroup>
+			<GitBaseCommits>$([System.Text.RegularExpressions.Regex]::Match($(GitBaseVersion), $(_GitBaseVersionExpr)).Groups['COMMITS'].Value)</GitBaseCommits>
+			<GitCommits Condition="'$(GitBaseCommits)' != ''">$([MSBuild]::Add('$(GitBaseCommits)', '$(GitCommits)'))</GitCommits>
+		</PropertyGroup>
+	</Target>
 
   <Target Name="GetVsixVersion" DependsOnTargets="GitVersion" Returns="$(VsixVersion)">
     <PropertyGroup>
