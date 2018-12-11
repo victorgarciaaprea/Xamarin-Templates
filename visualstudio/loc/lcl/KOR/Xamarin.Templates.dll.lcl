@@ -1016,7 +1016,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A bundle for specifying an iOS Application's settings]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[iOS 응용 프로그램의 설정을 지정하기 위한 번들]]></Val>
+            <Val><![CDATA[iOS 애플리케이션의 설정을 지정하기 위한 번들]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
