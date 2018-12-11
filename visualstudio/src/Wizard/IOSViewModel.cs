@@ -31,7 +31,7 @@ namespace Xamarin.Templates.Wizard
         {
             Templates = CreateTemplatesContext();
             Frameworks = GetFrameworks();
-
+			MinOSVersion = Frameworks[0];
             IsUniversal = true;
         }
 

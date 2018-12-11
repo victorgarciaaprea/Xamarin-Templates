@@ -103,7 +103,7 @@
             </StackPanel>
             <StackPanel Grid.Column="1" >
                 <Label Content="Minimum iOS Version" Margin="5,2" FontWeight="Bold" />
-                <ComboBox Margin="10,2,12,0" SelectedIndex="0" ItemsSource="{Binding Frameworks}" SelectedValue="{Binding MinOSVersion}" />
+                <ComboBox Margin="10,2,12,0" ItemsSource="{Binding Frameworks}" SelectedValue="{Binding MinOSVersion}" />
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="5" VerticalScrollBarVisibility="Auto">
