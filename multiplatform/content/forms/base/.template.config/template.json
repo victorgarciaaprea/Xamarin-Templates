@@ -161,7 +161,7 @@
             "type": "parameter",
             "dataType": "string",
             "replaces": "XamarinEssentialsSdk",
-            "defaultValue": "0.10.0-preview"
+            "defaultValue": "1.0.0"
         },
         "XamarinFormsSdk": {
             "type": "parameter",
