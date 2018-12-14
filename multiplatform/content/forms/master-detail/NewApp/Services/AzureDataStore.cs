@@ -25,7 +25,7 @@ namespace NewApp.Services
         }
 
 #if (IncludeXamarinEssentials)
-		bool IsConnected => Connectivity.NetworkAccess != NetworkAccess.Internet;
+		bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
 #endif
 		public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
 		{
