@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TemplateWizard;
+using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +34,7 @@ namespace Xamarin.Templates.Wizards
         const string NugetPackage = "5fcc8577-4feb-4d04-ad72-d6c629b083cc";
         const string AndroidPackage = "296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6";
         const string IOSPackage = "77875fa9-01e7-4fea-8e77-dfe942355ca1";
+        const string ShellPackage = "2d510815-1c4e-4210-bd82-3d9d2c56c140";
 
         const int CurrentAndroidLevel = 27;
         const int FallbackAndroidLevel = 26;
@@ -59,6 +60,7 @@ namespace Xamarin.Templates.Wizards
                 serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
 
                 TryLoadPackage(serviceProvider, NugetPackage);
+                TryLoadPackage(serviceProvider, ShellPackage);
 
                 InitializeTemplateEngine();
 
@@ -78,6 +80,11 @@ namespace Xamarin.Templates.Wizards
                         throw new WizardBackoutException();
                     }
                     model = ((XPlatViewModel)dialog.DataContext);
+
+                    if (model.IsAndroidSelected)
+                        TryLoadPackage(serviceProvider, AndroidPackage);
+                    if (model.IsIOSSelected)
+                        TryLoadPackage(serviceProvider, IOSPackage);
                 }
                 else
                 {
