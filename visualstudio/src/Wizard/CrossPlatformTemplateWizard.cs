@@ -48,7 +48,6 @@ namespace Xamarin.Templates.Wizards
         object automationObject;
 
         internal static Version MinWindowsVersion = new Version(10, 0, 16267, 0);
-        string latestWindowSdk;
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
@@ -64,9 +63,7 @@ namespace Xamarin.Templates.Wizards
 
                 InitializeTemplateEngine();
 
-                latestWindowSdk = GetLatestWindowsSDK();
-
-                if (ShowDialog(replacementsDictionary))
+                if (ShowDialog())
                 { 
                     var dialog = CreateCrossPlatformDialog();
                     dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
@@ -131,7 +128,7 @@ namespace Xamarin.Templates.Wizards
             return def;
         }
 
-        private bool ShowDialog(Dictionary<string, string> replacementsDictionary)
+        private bool ShowDialog()
         {
             var headless = replacements.FirstOrDefault(r => r.Key == "Headless").Value;
             if (headless != null && bool.TryParse(headless, out var headlessbool) && headlessbool)
@@ -168,14 +165,6 @@ namespace Xamarin.Templates.Wizards
                     vsShell.LoadPackage(ref packageId, out vsPackage);
             }
             catch { }
-        }
-
-        string GetLatestWindowsSDK()
-        {
-            var sdks = Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformsForSDK("Windows", new Version(10, 0))
-                       .Where(s => s.StartsWith("UAP")).Select(s => new Version(s.Substring(13))).Where(v => v >= MinWindowsVersion); //the value is of the form "UAP, Version=x.x.x.x"
-
-            return sdks.Count() > 0 ? $"{sdks.First()}": string.Empty;
         }
 
         string GetLatestiOSSDK()
@@ -317,21 +306,13 @@ namespace Xamarin.Templates.Wizards
 
         public bool ShouldAddProjectItem(string filePath) => true; //filter mobile app when no azure
 
-        string SafeProjectName
-        {
-            get { return GetReplacementValue("$safeprojectname$"); }
-        }
+        string SafeProjectName => GetReplacementValue("$safeprojectname$");
 
         string GetReplacementValue(string key)
         {
             string value;
             replacements.TryGetValue(key, out value);
             return value;
-        }
-
-        string SolutionPath
-        {
-            get { return GetReplacementValue("$destinationdirectory$"); }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
@@ -219,9 +219,6 @@
       <Version>15.3.409</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.0.26201" />
-    <PackageReference Include="Microsoft.VisualStudio.Telemetry">
-      <Version>14.1.680-update09A45013</Version>
-    </PackageReference>
     <PackageReference Include="VSSDK.ComponentModelHost">
       <Version>12.0.4</Version>
     </PackageReference>
