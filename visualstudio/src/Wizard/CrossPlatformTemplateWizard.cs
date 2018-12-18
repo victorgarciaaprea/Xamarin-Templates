@@ -62,9 +62,9 @@ namespace Xamarin.Templates.Wizards
 
                 // Always set remote setting value for whether to open the XAML or not.
                 if (!replacements.ContainsKey("$passthrough:OpenXaml$"))
-                    replacements["$passthrough:OpenXaml$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXaml", true).ToString().ToLowerInvariant();
+                    replacements["$passthrough:OpenXaml$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXaml", false).ToString().ToLowerInvariant();
                 if (!replacements.ContainsKey("$passthrough:OpenXamlCs$"))
-                    replacements["$passthrough:OpenXamlCs$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXamlCs", true).ToString().ToLowerInvariant();
+                    replacements["$passthrough:OpenXamlCs$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXamlCs", false).ToString().ToLowerInvariant();
 
                 if (ShowDialog())
                 { 
