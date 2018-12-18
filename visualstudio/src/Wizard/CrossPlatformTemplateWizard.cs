@@ -2,8 +2,6 @@ using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.ComponentModelHost;
@@ -12,13 +10,9 @@ using EnvDTE80;
 using Microsoft.VisualStudio.Shell.Interop;
 using System.Windows;
 using System.Windows.Interop;
-using Microsoft.VisualStudio;
 using System.Reflection;
 using Merq;
-
-using AndroidModel = Xamarin.VisualStudio.Contracts.Model.Android;
 using AndroidCommands = Xamarin.VisualStudio.Contracts.Commands.Android;
-using IOSModel = Xamarin.VisualStudio.Contracts.Model.IOS;
 using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 using Xamarin.VisualStudio.Contracts.Model.Android;
 using Microsoft.VisualStudio.Telemetry;
@@ -43,6 +37,7 @@ namespace Xamarin.Templates.Wizards
 
         DTE2 dte;
         ServiceProvider serviceProvider;
+        IComponentModel componentModel;
         Dictionary<string, string> replacements;
         XPlatViewModel model;
         object automationObject;
@@ -57,6 +52,7 @@ namespace Xamarin.Templates.Wizards
                 dte = automationObject as DTE2;
                 this.automationObject = automationObject;
                 serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
+                componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
 
                 TryLoadPackage(serviceProvider, NugetPackage);
                 TryLoadPackage(serviceProvider, ShellPackage);
@@ -117,32 +113,25 @@ namespace Xamarin.Templates.Wizards
             return model;
         }
 
-        private T GetValue<T>(Dictionary<string, string> replacements, string key, T def)
+        private T GetValue<T>(Dictionary<string, string> replacements, string key, T defaultValue)
         {
-            if (replacements.Any(r => r.Key == key))
+            if (replacements.TryGetValue(key, out var value))
             {
                 var converter = TypeDescriptor.GetConverter(typeof(T));
-                return (T)converter.ConvertFrom(replacements.First(r => r.Key == key).Value);
+                return (T)converter.ConvertFrom(value);
             };
 
-            return def;
+            return defaultValue;
         }
 
-        private bool ShowDialog()
-        {
-            var headless = replacements.FirstOrDefault(r => r.Key == "Headless").Value;
-            if (headless != null && bool.TryParse(headless, out var headlessbool) && headlessbool)
-                return false;
-
-            return true;
-        }
+        private bool ShowDialog() => !( // Only show if we didn't get an explicit argument Headless=true
+            replacements.TryGetValue("Headless", out var value) && 
+            bool.TryParse(value, out var isHeadless) && isHeadless);
 
         private void InitializeTemplateEngine()
         {
             try
             {
-                var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
-
                 var initializer = componentModel.DefaultExportProvider.GetExport<object>("Microsoft.VisualStudio.TemplateEngine.Contracts.IEngineInitializer").Value;
 
                 initializer.GetType().GetMethod("EnsureInitialized").Invoke(initializer, null);
@@ -169,24 +158,21 @@ namespace Xamarin.Templates.Wizards
 
         string GetLatestiOSSDK()
         {
-            var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
+            var commandBus = componentModel?.GetService<ICommandBus>();
+            var sdkInfo = commandBus?.Execute(new IOSCommands.GetSdkInfo());
 
-            var commandBus = componentModel.GetService<ICommandBus>();
-            var sdkInfo = commandBus.Execute(new IOSCommands.GetSdkInfo());
-
-            return $"{sdkInfo.LatestInstalledSdks[SdkType.iOS]}"; //quotes are so the engine understands this as a string
+            return sdkInfo == null ? null : $"{sdkInfo.LatestInstalledSdks[SdkType.iOS]}"; //quotes are so the engine understands this as a string
         }
 
         bool AndroidShouldFallback()
         {
             try
             {
-                var componentModel = Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
                 var commandBus = componentModel?.GetService<ICommandBus>();
                 var versions = commandBus?.Execute(new AndroidCommands.GetSdkInfo());
                 var frameworks = versions?.Frameworks;
 
-                if (!frameworks.First(f => f.ApiLevel == CurrentAndroidLevel).IsInstalled)
+                if (frameworks != null && !frameworks.First(f => f.ApiLevel == CurrentAndroidLevel).IsInstalled)
                 {
                     AndroidTargetFramework = frameworks.First(f => f.ApiLevel == FallbackAndroidLevel);
                     return true;
@@ -206,7 +192,7 @@ namespace Xamarin.Templates.Wizards
             var dialogWindow = dialog as System.Windows.Window;
             if (dialogWindow != null)
             {
-                var uiShell = ServiceProvider.GlobalProvider.GetService(typeof(SVsUIShell)) as IVsUIShell;
+                var uiShell = serviceProvider.GetService(typeof(SVsUIShell)) as IVsUIShell;
 
                 IntPtr owner;
                 uiShell.GetDialogOwnerHwnd(out owner);
