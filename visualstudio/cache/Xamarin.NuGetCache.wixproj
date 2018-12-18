@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <TargetFrameworkVersion>v3.11</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>WiX</TargetFrameworkIdentifier>
+    <TargetFrameworkMoniker>$(TargetFrameworkIdentifier),Version=$(TargetFrameworkVersion)</TargetFrameworkMoniker>
+    <ProjectGuid>4FEE922C-F181-48E0-8A8D-62F2F97A2270</ProjectGuid>
+    <OutputName>Xamarin.NuGetCache</OutputName>
+    <IntermediateOutputPath>obj</IntermediateOutputPath>
+    <OutputPath>$(PackageOutputPath)</OutputPath>
+    <OutputPath Condition="'$(OutputPath)' == ''">bin</OutputPath>
+  </PropertyGroup>
+  <Import Project="Xamarin.NuGetCache.props" />
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+    <Compile Include="UI.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WiX" Version="3.11.1" />
+    <PackageReference Include="GitInfo" Version="2.0.17" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SetDefaults.xslt" />
+    <Content Include="SetNuGetDiskId.xslt" />
+    <Content Include="Xamarin.NuGetCache.props" />
+    <Content Include="Xamarin.NuGetCache.targets" />
+    <Content Include="img\Banner.bmp" />
+    <Content Include="img\Dialog.bmp" />
+    <Content Include="img\Xamarin.VisualStudio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <Import Project="Xamarin.NuGetCache.targets" />
+</Project>

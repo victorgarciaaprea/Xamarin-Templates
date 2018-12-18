@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:vs="http://schemas.microsoft.com/wix/VSExtension" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <Product Id="*" UpgradeCode="765E1B80-F70C-4FC8-876D-10C6B32A150A" Language="1033"
+           Name="$(var.ProductName)" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)">
+
+    <Package InstallerVersion="405"
+             Compressed="yes"
+             InstallScope="perMachine"
+             Manufacturer="$(var.Manufacturer)"
+             Description="$(var.ProductName) ($(var.ProductVersion))" />
+
+    <Icon Id="Xamarin.VisualStudio.ico" SourceFile="img\Xamarin.VisualStudio.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="Xamarin.VisualStudio.ico" />
+
+    <WixVariable Id="WixUIBannerBmp" Value="img\Banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="img\Dialog.bmp" />
+
+    <Property Id="REINSTALLMODE" Value="amus" />
+
+    <Condition Message="An administrator must approve or install [ProductName].">Privileged</Condition>
+
+    <MajorUpgrade AllowDowngrades="yes" MigrateFeatures="no"/>
+    <Media Cabinet="NuGet.cab" EmbedCab="yes" Id="1" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="NuGet" Name="NuGet">
+          <Directory Id="Config" Name="Config" />
+        </Directory>
+        <Directory Id="Xamarin" Name="Xamarin">
+          <Directory Id="NuGetCache" Name="NuGet" />
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Xamarin"
+             Title="$(var.ProductName)"
+             Level="1"
+             Absent="disallow"
+             Description="$(var.ProductDescription)"
+             InstallDefault="local">
+      <ComponentGroupRef Id="NuGets" />
+      <Component Id="OfflineConfig" Guid="*" Directory="Config">
+        <File Id="ConfigFile" KeyPath="yes" Source="Xamarin.Offline.config" DefaultVersion="$(var.ProductVersion)" DefaultLanguage="1033" Vital="yes" DiskId="1" />
+      </Component>
+    </Feature>
+
+    <UIRef Id="FeatureTree" />
+
+  </Product>
+
+</Wix>

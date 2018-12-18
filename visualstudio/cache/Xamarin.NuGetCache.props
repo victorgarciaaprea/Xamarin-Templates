@@ -1,0 +1,55 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <Authors>Xamarin</Authors>
+    <Title>Xamarin Offline Packages</Title>
+    <Description>Provides an offline cache of nuget packages used by Xamarin so that creating projects is fast and works offline.</Description>
+		<OutputType Condition="'$(OutputType)' == ''">Package</OutputType>
+    <NuGetCacheDir>$(BaseIntermediateOutputPath)\.nuget</NuGetCacheDir>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'" />
+
+	<PropertyGroup>
+    <DefineSolutionProperties>false</DefineSolutionProperties>
+
+		<SupressIces>ICE61;ICE30</SupressIces>
+		<HarvestDirectorySuppressSpecificWarnings>5151</HarvestDirectorySuppressSpecificWarnings>
+		<LinkerSuppressSpecificWarnings>1076;1102;1103;1101</LinkerSuppressSpecificWarnings>
+		<NoLogo>true</NoLogo>
+
+		<!-- Harvest defaults -->
+    <HarvestDirectorySuppressSpecificWarnings>5151</HarvestDirectorySuppressSpecificWarnings>
+    <HarvestDirectorySuppressCom>true</HarvestDirectorySuppressCom>
+		<HarvestDirectorySuppressRegistry>true</HarvestDirectorySuppressRegistry>
+    <HarvestDirectorySuppressRootDirectory>true</HarvestDirectorySuppressRootDirectory>
+
+    <!-- Cab/Zip defaults -->
+		<DefaultCompressionLevel>high</DefaultCompressionLevel>
+		<CabinetCachePath Condition="'$(CabinetCachePath)' == ''">obj</CabinetCachePath>
+		<ReuseCabinetCache>true</ReuseCabinetCache>
+		<CabinetCreationThreadCount>4</CabinetCreationThreadCount>
+
+		<DefineConstants>
+      CabinetCachePath=$(CabinetCachePath);
+      IntermediateOutputPath=$(IntermediateOutputPath);
+      BuildConfiguration=$(Configuration);
+      Manufacturer=$(Authors);
+      ProductName=$(Title);
+      ProductDescription=$(Description);
+      NuGetCacheDir=$(NuGetCacheDir);
+      $(DefineConstants)
+    </DefineConstants>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <HarvestDirectory Include="$(NuGetCacheDir)">
+      <ComponentGroupName>NuGets</ComponentGroupName>
+      <DirectoryRefId>NuGetCache</DirectoryRefId>
+      <PreprocessorVariable>var.NuGetCacheDir</PreprocessorVariable>
+      <Transforms>$(MSBuildThisFileDirectory)SetDefaults.xslt;$(MSBuildThisFileDirectory)SetNuGetDiskId.xslt</Transforms>
+    </HarvestDirectory>
+  </ItemGroup>
+
+</Project>
