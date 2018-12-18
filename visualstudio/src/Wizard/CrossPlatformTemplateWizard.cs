@@ -18,6 +18,7 @@ using Xamarin.VisualStudio.Contracts.Model.Android;
 using Microsoft.VisualStudio.Telemetry;
 using Xamarin.VisualStudio.Contracts.Model.IOS;
 using System.ComponentModel;
+using Microsoft.VisualStudio.RemoteSettings;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -58,6 +59,12 @@ namespace Xamarin.Templates.Wizards
                 TryLoadPackage(serviceProvider, ShellPackage);
 
                 InitializeTemplateEngine();
+
+                // Always set remote setting value for whether to open the XAML or not.
+                if (!replacements.ContainsKey("$passthrough:OpenXaml$"))
+                    replacements["$passthrough:OpenXaml$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXaml", true).ToString().ToLowerInvariant();
+                if (!replacements.ContainsKey("$passthrough:OpenXamlCs$"))
+                    replacements["$passthrough:OpenXamlCs$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXamlCs", true).ToString().ToLowerInvariant();
 
                 if (ShowDialog())
                 { 
