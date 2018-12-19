@@ -17,6 +17,9 @@
   },
   "sourceName": "NewLib",
   "preferNameDirectory": true,
+  "guids": [
+    "E71F3053-056C-4381-9638-048ED73BDFF6"
+  ],
   "primaryOutputs": [
     {
       "path": "NewLib.csproj"

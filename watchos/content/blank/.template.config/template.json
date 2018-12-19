@@ -25,6 +25,10 @@
     }
   ],
   "preferNameDirectory": "true",
+  "guids": [
+    "A0E9284B-B8EE-4A26-A98D-33C26D29CAAD",
+    "651BBA40-27EF-4218-B520-819459E6830C"
+  ],
   "symbols": {
     "AppIdentifier": {
       "type": "parameter",
