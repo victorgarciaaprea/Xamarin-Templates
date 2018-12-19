@@ -26,10 +26,10 @@ namespace Xamarin.Templates.Wizards
     {
         enum TemplateLanguage { CSharp, FSharp };
 
-        const string NugetPackage = "5fcc8577-4feb-4d04-ad72-d6c629b083cc";
-        const string AndroidPackage = "296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6";
-        const string IOSPackage = "77875fa9-01e7-4fea-8e77-dfe942355ca1";
-        const string ShellPackage = "2d510815-1c4e-4210-bd82-3d9d2c56c140";
+        Guid NuGetPackage = new Guid("5fcc8577-4feb-4d04-ad72-d6c629b083cc");
+        Guid AndroidPackage = new Guid("296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6");
+        Guid IOSPackage = new Guid("77875fa9-01e7-4fea-8e77-dfe942355ca1");
+        Guid ShellPackage = new Guid("2d510815-1c4e-4210-bd82-3d9d2c56c140");
 
         const int CurrentAndroidLevel = 27;
         const int FallbackAndroidLevel = 26;
@@ -52,11 +52,11 @@ namespace Xamarin.Templates.Wizards
                 replacements = replacementsDictionary;
                 dte = automationObject as DTE2;
                 this.automationObject = automationObject;
+
+                ThreadHelper.ThrowIfNotOnUIThread();
                 serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
                 componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
-
-                TryLoadPackage(serviceProvider, NugetPackage);
-                TryLoadPackage(serviceProvider, ShellPackage);
+                var shell = serviceProvider.GetService(typeof(SVsShell)) as IVsShell7;
 
                 InitializeTemplateEngine();
 
@@ -70,6 +70,14 @@ namespace Xamarin.Templates.Wizards
                 { 
                     var dialog = CreateCrossPlatformDialog();
                     dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
+                    // Let the dialog load and render fast, and schedule the package loading right after
+                    dialog.Loaded += (sender, args) =>
+                    {
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref NuGetPackage));
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref ShellPackage));
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref AndroidPackage));
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref IOSPackage));
+                    };
 
                     var dialogResult = dialog.ShowDialog().GetValueOrDefault();
 
@@ -80,11 +88,6 @@ namespace Xamarin.Templates.Wizards
                         throw new WizardBackoutException();
                     }
                     model = ((XPlatViewModel)dialog.DataContext);
-
-                    if (model.IsAndroidSelected)
-                        TryLoadPackage(serviceProvider, AndroidPackage);
-                    if (model.IsIOSSelected)
-                        TryLoadPackage(serviceProvider, IOSPackage);
                 }
                 else
                 {
@@ -147,22 +150,6 @@ namespace Xamarin.Templates.Wizards
             { }
         }
 
-        void TryLoadPackage(IServiceProvider serviceProvider, string packageGuid)
-        {
-            try
-            {
-                var packageId = new Guid(packageGuid);
-                var vsShell = (IVsShell)serviceProvider.GetService(typeof(SVsShell));
-                var vsPackage = default(IVsPackage);
-
-                vsShell.IsPackageLoaded(ref packageId, out vsPackage);
-
-                if (vsPackage == null)
-                    vsShell.LoadPackage(ref packageId, out vsPackage);
-            }
-            catch { }
-        }
-
         string GetLatestiOSSDK()
         {
             var commandBus = componentModel?.GetService<ICommandBus>();
@@ -195,6 +182,8 @@ namespace Xamarin.Templates.Wizards
 
         private CrossPlatformDialog CreateCrossPlatformDialog()
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
             var dialog = new CrossPlatformDialog();
             var dialogWindow = dialog as System.Windows.Window;
             if (dialogWindow != null)
@@ -299,13 +288,6 @@ namespace Xamarin.Templates.Wizards
 
         public bool ShouldAddProjectItem(string filePath) => true; //filter mobile app when no azure
 
-        string SafeProjectName => GetReplacementValue("$safeprojectname$");
-
-        string GetReplacementValue(string key)
-        {
-            string value;
-            replacements.TryGetValue(key, out value);
-            return value;
-        }
+        string SafeProjectName => replacements.TryGetValue("$safeprojectname$", out var value) ? value : "";
     }
 }
