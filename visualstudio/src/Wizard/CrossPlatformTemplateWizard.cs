@@ -66,13 +66,17 @@ namespace Xamarin.Templates.Wizards
                 if (!replacements.ContainsKey("$passthrough:OpenXamlCs$"))
                     replacements["$passthrough:OpenXamlCs$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXamlCs", false).ToString().ToLowerInvariant();
 
-                if (ShowDialog())
+                var headless = replacements.TryGetValue("Headless", out var value) && bool.TryParse(value, out var parsed) && parsed;
+
+                if (!headless)
                 { 
                     var dialog = CreateCrossPlatformDialog();
                     dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
                     // Let the dialog load and render fast, and schedule the package loading right after
                     dialog.Loaded += (sender, args) =>
                     {
+                        // In this case we can't know ahead of time if users will select one or the other, so 
+                        // we preload all packages.
                         ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref NuGetPackage));
                         ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref ShellPackage));
                         ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref AndroidPackage));
@@ -92,6 +96,12 @@ namespace Xamarin.Templates.Wizards
                 else
                 {
                     model = FillModel(replacements);
+                    ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref NuGetPackage));
+                    ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref ShellPackage));
+                    if (model.IsAndroidSelected)
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref AndroidPackage));
+                    if (model.IsIOSSelected)
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref IOSPackage));
                 }
             }
             catch (WizardBackoutException)
@@ -133,10 +143,6 @@ namespace Xamarin.Templates.Wizards
 
             return defaultValue;
         }
-
-        private bool ShowDialog() => !( // Only show if we didn't get an explicit argument Headless=true
-            replacements.TryGetValue("Headless", out var value) && 
-            bool.TryParse(value, out var isHeadless) && isHeadless);
 
         private void InitializeTemplateEngine()
         {
