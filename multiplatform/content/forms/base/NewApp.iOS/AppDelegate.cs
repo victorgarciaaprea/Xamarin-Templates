@@ -25,6 +25,9 @@ namespace NewApp.iOS
             #if(CreateUITestProject)
             Xamarin.Calabash.Start();
             #endif
+            #if (kind == "shell")
+            global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
+            #endif
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

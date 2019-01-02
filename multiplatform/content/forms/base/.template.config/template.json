@@ -23,12 +23,20 @@
             "path": "NewApp\\MainPage.xaml"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind != \"blank\"))",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\" || kind == \"tabbed\"))",
             "path": "NewApp\\Views\\MainPage.xaml.cs"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind != \"blank\"))",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\" || kind == \"tabbed\"))",
             "path": "NewApp\\Views\\MainPage.xaml"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"shell\"))",
+            "path": "NewApp\\AppShell.xaml.cs"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"shell\"))",
+            "path": "NewApp\\AppShell.xaml"
         },
         {
             "condition": "CreateUWPProject",
@@ -86,6 +94,10 @@
                 {
                     "choice": "tabbed",
                     "description": "A Xamarin.Forms app that uses tabs for navigation"
+                },
+                {
+                    "choice": "shell",
+                    "description": "A Xamarin.Forms app that uses the Xamarin.Forms Shell container"
                 }
             ]
         },
@@ -225,7 +237,7 @@
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "true"
-        },
+        }
     },
     "postActions": [
         {
@@ -416,6 +428,42 @@
                     "condition": "(!CreateMacProject)",
                     "exclude": [
                         "NewApp.macOS/**/*"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "../shell/",
+            "condition": "(kind == \"shell\")",
+            "modifiers": [
+                {
+                    "condition": "CreateSharedProject",
+                    "exclude": [
+                        "NewApp/NewApp.csproj"
+                    ]
+                },
+                {
+                    "condition": "(!CreateSharedProject)",
+                    "exclude": [
+                        "NewApp/NewApp.projitems"
+                    ]
+                },
+                {
+                    "condition": "(!CreateBackendProject)",
+                    "exclude": [
+                        "NewApp/Services/AzureDataStore.cs"
+                    ]
+                },
+                {
+                    "condition": "(!CreateiOSProject)",
+                    "exclude": [
+                        "NewApp.iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateAndroidProject)",
+                    "exclude": [
+                        "NewApp.Android/**/*"
                     ]
                 }
             ]

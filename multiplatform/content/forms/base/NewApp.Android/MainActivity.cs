@@ -18,6 +18,10 @@ namespace NewApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            #if (kind == "shell")
+            global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
+            #endif
             #if (IncludeXamarinEssentials)
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             #endif
