@@ -151,7 +151,7 @@
             "type": "parameter",
             "datatype": "string",
             "replaces": "SupportLibVersion",
-            "defaultValue": "27.0.2.1"
+            "defaultValue": "28.0.0"
         },
         "IncludeXamarinEssentials": {
             "type": "parameter",
