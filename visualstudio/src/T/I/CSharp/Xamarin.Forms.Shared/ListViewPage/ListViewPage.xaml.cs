@@ -10,11 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace $rootnamespace$
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class $fileinputname$ : ContentPage
+    public partial class $safeitemname$ : ContentPage
     {
         public ObservableCollection<string> Items { get; set; }
 
-        public $fileinputname$()
+        public $safeitemname$()
         {
             InitializeComponent();
 

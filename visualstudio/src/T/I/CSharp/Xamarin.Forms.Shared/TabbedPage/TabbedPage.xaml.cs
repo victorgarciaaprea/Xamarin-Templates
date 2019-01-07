@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace $rootnamespace$
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class $fileinputname$ : TabbedPage
+    public partial class $safeitemname$ : TabbedPage
     {
-        public $fileinputname$ ()
+        public $safeitemname$ ()
         {
             InitializeComponent();
         }

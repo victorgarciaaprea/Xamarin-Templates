@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace $rootnamespace$
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class $fileinputname$ : MasterDetailPage
+    public partial class $safeitemname$ : MasterDetailPage
     {
-        public $fileinputname$()
+        public $safeitemname$()
         {
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
@@ -20,7 +20,7 @@ namespace $rootnamespace$
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as $fileinputname$MenuItem;
+            var item = e.SelectedItem as $safeitemname$MenuItem;
             if (item == null)
                 return;
 

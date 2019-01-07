@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace $rootnamespace$
 {
-	public class $fileinputname$ : ContentView
+	public class $safeitemname$ : ContentView
 	{
-		public $fileinputname$ ()
+		public $safeitemname$ ()
 		{
 			Content = new StackLayout {
 				Children = {
