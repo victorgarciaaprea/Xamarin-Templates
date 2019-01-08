@@ -20,7 +20,7 @@ namespace Xamarin.Templates.Wizard
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
-            replacements.Add("$groupid$", "Xamarin.iOS.App");
+            replacements.Add("$templateid$", "Xamarin.iOS.App.CSharp");
 
             replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
             replacements.Add("$passthrough:MinimumOSVersion", model.MinOSVersion);

@@ -236,7 +236,7 @@ namespace Xamarin.Templates.Wizards
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
-            replacements.Add("$groupid$", "Xamarin.Forms.App");
+            replacements.Add("$templateid$", "Xamarin.Forms.App.CSharp");
 
             replacements.Add("$passthrough:kind$", model.SelectedTemplatePath);
 

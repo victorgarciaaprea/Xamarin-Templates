@@ -19,7 +19,7 @@ namespace Xamarin.Templates.Wizard
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
-            replacements.Add("$groupid$", "Xamarin.Android.App");
+            replacements.Add("$templateid$", "Xamarin.Android.App.CSharp");
 
             replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
             replacements.Add("$passthrough:MinAndroidAPI$", model.AndroidMinFramework.ApiLevel.ToString());

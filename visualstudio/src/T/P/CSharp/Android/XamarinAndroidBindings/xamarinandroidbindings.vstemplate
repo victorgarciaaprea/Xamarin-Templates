@@ -16,7 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$language$" Value="CSharp" />
       <CustomParameter Name="$uistyle$" Value="none" />
-      <CustomParameter Name="$groupid$" Value="Xamarin.Android.BindingsLibrary" />
+      <CustomParameter Name="$templateid$" Value="Xamarin.Android.BindingsLibrary.CSharp" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
