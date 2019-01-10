@@ -218,8 +218,8 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.9.3032" />
     <PackageReference Include="VSSDK.ComponentModelHost" Version="12.0.4" />
     <PackageReference Include="VSSDK.DTE" Version="7.0.4" />
-    <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="7.10.6070" />
-    <PackageReference Include="Microsoft.VisualStudio.Shell.Interop.10.0" Version="10.0.30319" />
+    <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="7.10.6071" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.Interop.10.0" Version="10.0.30320" />
     <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="15.9.28307 " />
     <PackageReference Include="Microsoft.VisualStudio.Threading" Version="15.8.192" />
   </ItemGroup>
