@@ -19,6 +19,10 @@
   "primaryOutputs": [
     {
         "path": "NewApp.csproj"
+    },
+    {
+      "condition": "CreateUITestProject",
+      "path": "../NewApp.UITests/NewApp.UITests.csproj"
     }
   ],
   "guids": [
@@ -92,6 +96,11 @@
       "dataType": "string",
       "replaces": "XamarinEssentialsSdk",
       "defaultValue": "1.0.0"
+    },
+    "CreateUITestProject": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
     }
   },
   "sources": [
@@ -113,6 +122,11 @@
     {
       "source": "../tabbed/",
       "condition": "(kind == \"tabbed\")"
+    },
+    {
+      "source": "../uitest",
+      "target": "../NewApp.UITests/",
+      "condition": "CreateUITestProject"
     }
   ]
 }
