@@ -487,6 +487,9 @@
       <Item ItemId=";ShellAppDescription" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A project template for creating a Xamarin.Forms app that uses the Xamarin.Forms Shell container to hold child pages. This template comes with sample pages and sample data.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[자식 페이지를 유지하도록 Xamarin.Forms Shell 컨테이너를 사용하는 Xamarin.Forms 앱을 만들기 위한 프로젝트 템플릿입니다. 이 템플릿은 샘플 페이지 및 샘플 데이터와 함께 제공됩니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
