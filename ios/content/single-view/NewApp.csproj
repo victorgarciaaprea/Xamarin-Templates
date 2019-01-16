@@ -10,6 +10,7 @@
         <RootNamespace>NewApp</RootNamespace>
         <AssemblyName>NewApp</AssemblyName>
         <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
         <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
