@@ -23,7 +23,8 @@
     ],
     "preferNameDirectory": true,
     "guids": [
-        "{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}"
+        "{7E89ABBF-1E2C-4FE7-AA1B-6599EB4856A2}",
+        "3BC97AEA-CE2A-4B7A-A1B0-7E49B61539EC"
     ],
     "symbols": {
         "AndroidSDKVersion": {
