@@ -51,6 +51,14 @@
         {
           "choice": "master-detail",
           "description": "A Xamarin.iOS app with master-detail navigation"
+        },
+        {
+          "choice": "web-view",
+          "description": "A Xamarin.iOS app with a web view"
+        },
+        {
+          "choice": "page-based",
+          "description": "A Xamarin.iOS app with a page view"
         }
       ]
     },
@@ -123,6 +131,14 @@
     {
       "source": "../tabbed/",
       "condition": "(kind == \"tabbed\")"
+    },
+    {
+      "source": "../page-based/",
+      "condition": "(kind == \"page-based\")"
+    },
+    {
+      "source": "../web-view/",
+      "condition": "(kind == \"web-view\")"
     },
     {
       "source": "../uitest",
