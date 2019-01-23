@@ -270,4 +270,10 @@
   <data name="CrossPlatformDialog_UWPCheckBox_AutomationId" xml:space="preserve">
     <value>UWPCheckBox</value>
   </data>
+  <data name="ShellApp" xml:space="preserve">
+    <value>Shell</value>
+  </data>
+  <data name="ShellAppDescription" xml:space="preserve">
+    <value>A project template for creating a Xamarin.Forms app that uses the Xamarin.Forms Shell container to hold child pages. This template comes with sample pages and sample data.</value>
+  </data>
 </root>

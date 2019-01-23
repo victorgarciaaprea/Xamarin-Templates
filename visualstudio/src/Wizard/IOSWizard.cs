@@ -20,13 +20,37 @@ namespace Xamarin.Templates.Wizard
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
-            replacements.Add("$groupid$", "Xamarin.iOS.App");
+            replacements.Add("$templateid$", "Xamarin.iOS.App.CSharp");
 
             replacements.Add("$passthrough:kind$", model.SelectedTemplate.Id);
             replacements.Add("$passthrough:MinimumOSVersion", model.MinOSVersion);
             replacements.Add("$passthrough:DeviceFamily$", model.DeviceFamily);
 
             return replacements;
+        }
+
+        internal override IOSViewModel PrefillModel()
+        {
+            model = new IOSViewModel();
+
+            if (replacements.ContainsKey("MinimumOSVersion"))
+            {
+                model.MinOSVersion = replacements["MinimumOSVersion"];
+            }
+            if (replacements.ContainsKey("IsIPhone"))
+            {
+                model.IsIPhone = bool.Parse(replacements["IsIPhone"]);
+            }
+            if (replacements.ContainsKey("IsIPad"))
+            {
+                model.IsIPad = bool.Parse(replacements["IsIPad"]);
+            }
+            if (replacements.ContainsKey("kind"))
+            {
+                model.SelectedTemplate = model.Templates.FirstOrDefault(t => t.Id == replacements["kind"]);
+            }
+
+            return model;
         }
 
         protected override string TelemetryPlatform => "iOS";

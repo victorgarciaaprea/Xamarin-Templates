@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace $rootnamespace$
 {
 
-    public class $fileinputname$MenuItem
+    public class $safeitemname$MenuItem
     {
-        public $fileinputname$MenuItem()
+        public $safeitemname$MenuItem()
         {
-            TargetType = typeof($fileinputname$Detail);
+            TargetType = typeof($safeitemname$Detail);
         }
         public int Id { get; set; }
         public string Title { get; set; }

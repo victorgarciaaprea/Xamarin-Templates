@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace $rootnamespace$
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class $fileinputname$ : ViewCell
+	public partial class $safeitemname$ : ViewCell
 	{
-		public $fileinputname$ ()
+		public $safeitemname$ ()
 		{
 			InitializeComponent ();
 		}

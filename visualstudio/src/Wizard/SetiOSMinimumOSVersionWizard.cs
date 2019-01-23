@@ -108,7 +108,7 @@ namespace Xamarin.Templates.Wizard
 
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
-            replacements.Add("$groupid$", $"Xamarin.{sdkType.ToString()}.App");
+            replacements.Add("$templateid$", $"Xamarin.{sdkType.ToString()}.App.CSharp");
             replacements.Add("$passthrough:MinimumOSVersion", minimumOSVersion.ToString());
 
             return replacements;

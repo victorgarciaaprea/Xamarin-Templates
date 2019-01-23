@@ -1,9 +1,7 @@
-﻿using Microsoft.VisualStudio.TemplateWizard;
+using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EnvDTE;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.ComponentModelHost;
@@ -12,18 +10,15 @@ using EnvDTE80;
 using Microsoft.VisualStudio.Shell.Interop;
 using System.Windows;
 using System.Windows.Interop;
-using Microsoft.VisualStudio;
 using System.Reflection;
 using Merq;
-
-using AndroidModel = Xamarin.VisualStudio.Contracts.Model.Android;
 using AndroidCommands = Xamarin.VisualStudio.Contracts.Commands.Android;
-using IOSModel = Xamarin.VisualStudio.Contracts.Model.IOS;
 using IOSCommands = Xamarin.VisualStudio.Contracts.Commands.IOS;
 using Xamarin.VisualStudio.Contracts.Model.Android;
 using Microsoft.VisualStudio.Telemetry;
 using Xamarin.VisualStudio.Contracts.Model.IOS;
 using System.ComponentModel;
+using Microsoft.VisualStudio.RemoteSettings;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -31,9 +26,10 @@ namespace Xamarin.Templates.Wizards
     {
         enum TemplateLanguage { CSharp, FSharp };
 
-        const string NugetPackage = "5fcc8577-4feb-4d04-ad72-d6c629b083cc";
-        const string AndroidPackage = "296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6";
-        const string IOSPackage = "77875fa9-01e7-4fea-8e77-dfe942355ca1";
+        Guid NuGetPackage = new Guid("5fcc8577-4feb-4d04-ad72-d6c629b083cc");
+        Guid AndroidPackage = new Guid("296e6a4e-2bd5-44b7-a96d-8ee3d9cda2f6");
+        Guid IOSPackage = new Guid("77875fa9-01e7-4fea-8e77-dfe942355ca1");
+        Guid ShellPackage = new Guid("2d510815-1c4e-4210-bd82-3d9d2c56c140");
 
         const int CurrentAndroidLevel = 27;
         const int FallbackAndroidLevel = 26;
@@ -42,12 +38,12 @@ namespace Xamarin.Templates.Wizards
 
         DTE2 dte;
         ServiceProvider serviceProvider;
+        IComponentModel componentModel;
         Dictionary<string, string> replacements;
         XPlatViewModel model;
         object automationObject;
 
         internal static Version MinWindowsVersion = new Version(10, 0, 16267, 0);
-        string latestWindowSdk;
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
@@ -56,18 +52,36 @@ namespace Xamarin.Templates.Wizards
                 replacements = replacementsDictionary;
                 dte = automationObject as DTE2;
                 this.automationObject = automationObject;
-                serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
 
-                TryLoadPackage(serviceProvider, NugetPackage);
+                ThreadHelper.ThrowIfNotOnUIThread();
+                serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
+                componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
+                var shell = serviceProvider.GetService(typeof(SVsShell)) as IVsShell7;
 
                 InitializeTemplateEngine();
 
-                latestWindowSdk = GetLatestWindowsSDK();
+                // Always set remote setting value for whether to open the XAML or not.
+                if (!replacements.ContainsKey("$passthrough:OpenXaml$"))
+                    replacements["$passthrough:OpenXaml$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXaml", false).ToString().ToLowerInvariant();
+                if (!replacements.ContainsKey("$passthrough:OpenXamlCs$"))
+                    replacements["$passthrough:OpenXamlCs$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXamlCs", false).ToString().ToLowerInvariant();
 
-                if (ShowDialog(replacementsDictionary))
+                var headless = replacements.TryGetValue("Headless", out var value) && bool.TryParse(value, out var parsed) && parsed;
+
+                if (!headless)
                 { 
                     var dialog = CreateCrossPlatformDialog();
                     dialog.Title = String.Format("{0} - {1}", dialog.Title, SafeProjectName);
+                    // Let the dialog load and render fast, and schedule the package loading right after
+                    dialog.Loaded += (sender, args) =>
+                    {
+                        // In this case we can't know ahead of time if users will select one or the other, so 
+                        // we preload all packages.
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref NuGetPackage));
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref ShellPackage));
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref AndroidPackage));
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref IOSPackage));
+                    };
 
                     var dialogResult = dialog.ShowDialog().GetValueOrDefault();
 
@@ -82,6 +96,12 @@ namespace Xamarin.Templates.Wizards
                 else
                 {
                     model = FillModel(replacements);
+                    ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref NuGetPackage));
+                    ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref ShellPackage));
+                    if (model.IsAndroidSelected)
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref AndroidPackage));
+                    if (model.IsIOSSelected)
+                        ThreadHelper.JoinableTaskFactory.StartOnIdle(async () => await shell.LoadPackageAsync(ref IOSPackage));
                 }
             }
             catch (WizardBackoutException)
@@ -104,35 +124,30 @@ namespace Xamarin.Templates.Wizards
             model.IsSharedSelected = false;
             model.IsAndroidSelected = GetValue(replacements, "IsAndroidSelected", false);
             model.IsIOSSelected = GetValue(replacements, "IsIOSSelected", false);
+
+            if (replacements.ContainsKey("kind"))
+            {
+                model.SelectedTemplate = model.Templates.FirstOrDefault(t => t.Id == replacements["kind"]);
+            }
+
             return model;
         }
 
-        private T GetValue<T>(Dictionary<string, string> replacements, string key, T def)
+        private T GetValue<T>(Dictionary<string, string> replacements, string key, T defaultValue)
         {
-            if (replacements.Any(r => r.Key == key))
+            if (replacements.TryGetValue(key, out var value))
             {
                 var converter = TypeDescriptor.GetConverter(typeof(T));
-                return (T)converter.ConvertFrom(replacements.First(r => r.Key == key).Value);
+                return (T)converter.ConvertFrom(value);
             };
 
-            return def;
-        }
-
-        private bool ShowDialog(Dictionary<string, string> replacementsDictionary)
-        {
-            var headless = replacements.FirstOrDefault(r => r.Key == "Headless").Value;
-            if (headless != null && bool.TryParse(headless, out var headlessbool) && headlessbool)
-                return false;
-
-            return true;
+            return defaultValue;
         }
 
         private void InitializeTemplateEngine()
         {
             try
             {
-                var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
-
                 var initializer = componentModel.DefaultExportProvider.GetExport<object>("Microsoft.VisualStudio.TemplateEngine.Contracts.IEngineInitializer").Value;
 
                 initializer.GetType().GetMethod("EnsureInitialized").Invoke(initializer, null);
@@ -141,50 +156,23 @@ namespace Xamarin.Templates.Wizards
             { }
         }
 
-        void TryLoadPackage(IServiceProvider serviceProvider, string packageGuid)
-        {
-            try
-            {
-                var packageId = new Guid(packageGuid);
-                var vsShell = (IVsShell)serviceProvider.GetService(typeof(SVsShell));
-                var vsPackage = default(IVsPackage);
-
-                vsShell.IsPackageLoaded(ref packageId, out vsPackage);
-
-                if (vsPackage == null)
-                    vsShell.LoadPackage(ref packageId, out vsPackage);
-            }
-            catch { }
-        }
-
-        string GetLatestWindowsSDK()
-        {
-            var sdks = Microsoft.Build.Utilities.ToolLocationHelper.GetPlatformsForSDK("Windows", new Version(10, 0))
-                       .Where(s => s.StartsWith("UAP")).Select(s => new Version(s.Substring(13))).Where(v => v >= MinWindowsVersion); //the value is of the form "UAP, Version=x.x.x.x"
-
-            return sdks.Count() > 0 ? $"{sdks.First()}": string.Empty;
-        }
-
         string GetLatestiOSSDK()
         {
-            var componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
+            var commandBus = componentModel?.GetService<ICommandBus>();
+            var sdkInfo = commandBus?.Execute(new IOSCommands.GetSdkInfo());
 
-            var commandBus = componentModel.GetService<ICommandBus>();
-            var sdkInfo = commandBus.Execute(new IOSCommands.GetSdkInfo());
-
-            return $"{sdkInfo.LatestInstalledSdks[SdkType.iOS]}"; //quotes are so the engine understands this as a string
+            return sdkInfo == null ? null : $"{sdkInfo.LatestInstalledSdks[SdkType.iOS]}"; //quotes are so the engine understands this as a string
         }
 
         bool AndroidShouldFallback()
         {
             try
             {
-                var componentModel = Package.GetGlobalService(typeof(SComponentModel)) as IComponentModel;
                 var commandBus = componentModel?.GetService<ICommandBus>();
                 var versions = commandBus?.Execute(new AndroidCommands.GetSdkInfo());
                 var frameworks = versions?.Frameworks;
 
-                if (!frameworks.First(f => f.ApiLevel == CurrentAndroidLevel).IsInstalled)
+                if (frameworks != null && !frameworks.First(f => f.ApiLevel == CurrentAndroidLevel).IsInstalled)
                 {
                     AndroidTargetFramework = frameworks.First(f => f.ApiLevel == FallbackAndroidLevel);
                     return true;
@@ -200,11 +188,13 @@ namespace Xamarin.Templates.Wizards
 
         private CrossPlatformDialog CreateCrossPlatformDialog()
         {
+            ThreadHelper.ThrowIfNotOnUIThread();
+
             var dialog = new CrossPlatformDialog();
             var dialogWindow = dialog as System.Windows.Window;
             if (dialogWindow != null)
             {
-                var uiShell = ServiceProvider.GlobalProvider.GetService(typeof(SVsUIShell)) as IVsUIShell;
+                var uiShell = serviceProvider.GetService(typeof(SVsUIShell)) as IVsUIShell;
 
                 IntPtr owner;
                 uiShell.GetDialogOwnerHwnd(out owner);
@@ -252,7 +242,7 @@ namespace Xamarin.Templates.Wizards
         {
             replacements.Add("$uistyle$", "none");
             replacements.Add("$language$", "CSharp");
-            replacements.Add("$groupid$", "Xamarin.Forms.App");
+            replacements.Add("$templateid$", "Xamarin.Forms.App.CSharp");
 
             replacements.Add("$passthrough:kind$", model.SelectedTemplatePath);
 
@@ -304,21 +294,6 @@ namespace Xamarin.Templates.Wizards
 
         public bool ShouldAddProjectItem(string filePath) => true; //filter mobile app when no azure
 
-        string SafeProjectName
-        {
-            get { return GetReplacementValue("$safeprojectname$"); }
-        }
-
-        string GetReplacementValue(string key)
-        {
-            string value;
-            replacements.TryGetValue(key, out value);
-            return value;
-        }
-
-        string SolutionPath
-        {
-            get { return GetReplacementValue("$destinationdirectory$"); }
-        }
+        string SafeProjectName => replacements.TryGetValue("$safeprojectname$", out var value) ? value : "";
     }
 }

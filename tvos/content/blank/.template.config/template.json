@@ -21,6 +21,9 @@
         "path": "NewApp.csproj"
     }
   ],
+  "guids": [
+    "8F1AEAD1-CD2E-4EB2-836D-AE756FD7710A"
+  ],
   "preferNameDirectory": true,
   "symbols": {
     "AppIdentifier": {

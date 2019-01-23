@@ -22,6 +22,8 @@
                     Condition="$([MSBuild]::ValueOrDefault('%(Filename)', '').StartsWith('microsoft'))" />
       <DeleteNuGets Include="@(AllNuGets)" 
                     Condition="$([MSBuild]::ValueOrDefault('%(Filename)', '').StartsWith('system'))" />
+      <DeleteNuGets Include="@(AllNuGets)" 
+                    Condition="$([MSBuild]::ValueOrDefault('%(Filename)', '').StartsWith('netstandard'))" />
     </ItemGroup>
 
     <RemoveDir Directories="@(DeleteNuGets)" ContinueOnError="true">

@@ -23,12 +23,20 @@
             "path": "NewApp\\MainPage.xaml"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind != \"blank\"))",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\" || kind == \"tabbed\"))",
             "path": "NewApp\\Views\\MainPage.xaml.cs"
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind != \"blank\"))",
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\" || kind == \"tabbed\"))",
             "path": "NewApp\\Views\\MainPage.xaml"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"shell\"))",
+            "path": "NewApp\\AppShell.xaml.cs"
+        },
+        {
+            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"shell\"))",
+            "path": "NewApp\\AppShell.xaml"
         },
         {
             "condition": "CreateUWPProject",
@@ -66,7 +74,8 @@
         "17013668-F025-46F7-AD60-72795F485D78", // Shared Project
         "8D9F8CF0-E178-402D-8D40-A88B7B5F3D42", // Android
         "91D74A40-E440-42AD-B51F-C2D641C49384", // iOS
-        "3EA9E612-E717-4E55-9034-C415CD62AF9A" // UWP
+        "3EA9E612-E717-4E55-9034-C415CD62AF9A", // UWP
+        "B19C892E-2628-4CA7-AD27-08D406A3B14B"  // UITest
     ],
     "symbols": {
         "kind": {
@@ -85,6 +94,10 @@
                 {
                     "choice": "tabbed",
                     "description": "A Xamarin.Forms app that uses tabs for navigation"
+                },
+                {
+                    "choice": "shell",
+                    "description": "A Xamarin.Forms app that uses the Xamarin.Forms Shell container"
                 }
             ]
         },
@@ -150,7 +163,7 @@
             "type": "parameter",
             "datatype": "string",
             "replaces": "SupportLibVersion",
-            "defaultValue": "27.0.2.1"
+            "defaultValue": "28.0.0"
         },
         "IncludeXamarinEssentials": {
             "type": "parameter",
@@ -161,13 +174,13 @@
             "type": "parameter",
             "dataType": "string",
             "replaces": "XamarinEssentialsSdk",
-            "defaultValue": "0.10.0-preview"
+            "defaultValue": "1.0.0"
         },
         "XamarinFormsSdk": {
             "type": "parameter",
             "dataType": "string",
             "replaces": "XamarinFormsSdk",
-            "defaultValue": "3.2.0.871581"
+            "defaultValue": "3.4.0.1008975"
         },
         "ProjectID": {
             "type": "generated",
@@ -214,12 +227,21 @@
             "type": "parameter",
             "dataType": "bool",
             "defaultValue": "false"
+        },
+        "OpenXaml": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
+        },
+        "OpenXamlCs": {
+            "type": "parameter",
+            "dataType": "bool",
+            "defaultValue": "true"
         }
     },
     "postActions": [
         {
-            //skip on .NET Standard because the file will be closed anyways when the Forms target nests the xaml.cs file
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "condition": "OpenXamlCs",
             "description": "Opens MainPage.xaml.cs in the editor.",
             "manualInstructions": [],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
@@ -229,7 +251,7 @@
             "continueOnError": true
         },
         {
-            "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+            "condition": "OpenXaml",
             "description": "Opens MainPage.xaml in the editor.",
             "manualInstructions": [],
             "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
@@ -406,6 +428,42 @@
                     "condition": "(!CreateMacProject)",
                     "exclude": [
                         "NewApp.macOS/**/*"
+                    ]
+                }
+            ]
+        },
+        {
+            "source": "../shell/",
+            "condition": "(kind == \"shell\")",
+            "modifiers": [
+                {
+                    "condition": "CreateSharedProject",
+                    "exclude": [
+                        "NewApp/NewApp.csproj"
+                    ]
+                },
+                {
+                    "condition": "(!CreateSharedProject)",
+                    "exclude": [
+                        "NewApp/NewApp.projitems"
+                    ]
+                },
+                {
+                    "condition": "(!CreateBackendProject)",
+                    "exclude": [
+                        "NewApp/Services/AzureDataStore.cs"
+                    ]
+                },
+                {
+                    "condition": "(!CreateiOSProject)",
+                    "exclude": [
+                        "NewApp.iOS/**/*"
+                    ]
+                },
+                {
+                    "condition": "(!CreateAndroidProject)",
+                    "exclude": [
+                        "NewApp.Android/**/*"
                     ]
                 }
             ]

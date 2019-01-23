@@ -21,11 +21,7 @@
         }
     ],
     "guids": [
-        "99E19497-29A6-4B77-B773-BEC55F9B55DC", // .NET Standard Library
-        "17013668-F025-46F7-AD60-72795F485D78", // Shared Project
-        "8D9F8CF0-E178-402D-8D40-A88B7B5F3D42", // Android
-        "91D74A40-E440-42AD-B51F-C2D641C49384", // iOS
-        "3EA9E612-E717-4E55-9034-C415CD62AF9A" // UWP
+        "B19C892E-2628-4CA7-AD27-08D406A3B14B"
     ],
     "symbols": {
         "kind": {

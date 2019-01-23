@@ -13,31 +13,31 @@ using Xamarin.Forms.Xaml;
 namespace $rootnamespace$
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class $fileinputname$Master : ContentPage
+    public partial class $safeitemname$Master : ContentPage
     {
         public ListView ListView;
 
-        public $fileinputname$Master()
+        public $safeitemname$Master()
         {
             InitializeComponent();
 
-            BindingContext = new $fileinputname$MasterViewModel();
+            BindingContext = new $safeitemname$MasterViewModel();
             ListView = MenuItemsListView;
         }
 
-        class $fileinputname$MasterViewModel : INotifyPropertyChanged
+        class $safeitemname$MasterViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<$fileinputname$MenuItem> MenuItems { get; set; }
+            public ObservableCollection<$safeitemname$MenuItem> MenuItems { get; set; }
             
-            public $fileinputname$MasterViewModel()
+            public $safeitemname$MasterViewModel()
             {
-                MenuItems = new ObservableCollection<$fileinputname$MenuItem>(new[]
+                MenuItems = new ObservableCollection<$safeitemname$MenuItem>(new[]
                 {
-                    new $fileinputname$MenuItem { Id = 0, Title = "Page 1" },
-                    new $fileinputname$MenuItem { Id = 1, Title = "Page 2" },
-                    new $fileinputname$MenuItem { Id = 2, Title = "Page 3" },
-                    new $fileinputname$MenuItem { Id = 3, Title = "Page 4" },
-                    new $fileinputname$MenuItem { Id = 4, Title = "Page 5" },
+                    new $safeitemname$MenuItem { Id = 0, Title = "Page 1" },
+                    new $safeitemname$MenuItem { Id = 1, Title = "Page 2" },
+                    new $safeitemname$MenuItem { Id = 2, Title = "Page 3" },
+                    new $safeitemname$MenuItem { Id = 3, Title = "Page 4" },
+                    new $safeitemname$MenuItem { Id = 4, Title = "Page 5" },
                 });
             }
             

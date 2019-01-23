@@ -37,7 +37,7 @@
   <ItemGroup>
     <!--#if (CreateiOSProject)
     <ProjectReference Include="..\NewApp.iOS\NewApp.iOS.csproj">
-      <Project>{D6D5ED00-6AAF-4230-AD5D-A751CD527517}</Project>
+      <Project>{91D74A40-E440-42AD-B51F-C2D641C49384}</Project>
       <Name>NewApp.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
@@ -45,7 +45,7 @@
     #endif-->
     <!--#if (CreateAndroidProject)
     <ProjectReference Include="..\NewApp.Android\NewApp.Android.csproj">
-      <Project>{F2383E29-0C4D-485C-AF8F-347463578E1D}</Project>
+      <Project>{8D9F8CF0-E178-402D-8D40-A88B7B5F3D42}</Project>
       <Name>NewApp.Android</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>

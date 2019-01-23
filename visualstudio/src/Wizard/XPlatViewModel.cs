@@ -350,6 +350,28 @@ namespace Xamarin.Templates.Wizards
                 }
             });
 
+            if (IsSharedSupported && IsMasterDetailSupportedVersion()) list.Add(new XPlatItemViewModel
+            {
+                Id = "shell",
+                TargetPlatform = "Forms",
+                Name = Resources.ShellApp,
+                Icon = Path.Combine(Path.GetDirectoryName(GetType().Assembly.Location), @"FormsProject.jpg"),
+                Description = Resources.ShellAppDescription,
+                Forms = new ReferenceTypeItem
+                {
+                    Shared = new AzureTypeItem
+                    {
+                        Azure = "shell",
+                        NoAzure = "shell"
+                    },
+                    PCL = new AzureTypeItem
+                    {
+                        Azure = "shell",
+                        NoAzure = "shell"
+                    }
+                }
+            });
+
             list.Add(new XPlatItemViewModel
             {
                 Id = "blank",

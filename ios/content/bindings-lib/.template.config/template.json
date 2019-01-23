@@ -16,10 +16,13 @@
     "type": "project"
   },
   "sourceName": "NewLib",
+  "preferNameDirectory": true,
+  "guids": [
+    "0DBD983F-BD8F-4BD6-B08A-AD28457D35EF"
+  ],
   "primaryOutputs": [
     {
         "path": "NewLib.csproj"
     }
-  ],
-  "preferNameDirectory": true
+  ]
 }

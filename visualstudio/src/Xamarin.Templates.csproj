@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
@@ -19,7 +19,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Xamarin.Templates</RootNamespace>
     <AssemblyName>Xamarin.Templates</AssemblyName>
+    <!-- Fixes missing imports in wpftmp double compilation. See https://github.com/NuGet/NuGet.Client/pull/1786 -->
+    <OriginalProjectName>$(AssemblyName)</OriginalProjectName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <LangVersion>Latest</LangVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IsProductComponent>true</IsProductComponent>
     <ExtensionInstallationFolder>Xamarin\Templates</ExtensionInstallationFolder>
@@ -208,28 +211,17 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Clarius.VisualStudio" Version="2.0.7" />
-    <PackageReference Include="EnvDTE80">
-      <Version>8.0.1</Version>
-    </PackageReference>
+    <PackageReference Include="EnvDTE80" Version="8.0.1" />
     <PackageReference Include="GitInfo" version="2.0.1" />
-    <PackageReference Include="Merq">
-      <Version>1.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build.Utilities.Core">
-      <Version>15.3.409</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.0.26201" />
-    <PackageReference Include="Microsoft.VisualStudio.Telemetry">
-      <Version>14.1.680-update09A45013</Version>
-    </PackageReference>
-    <PackageReference Include="VSSDK.ComponentModelHost">
-      <Version>12.0.4</Version>
-    </PackageReference>
+    <PackageReference Include="Merq" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.3.409" />
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="15.9.3032" />
+    <PackageReference Include="VSSDK.ComponentModelHost" Version="12.0.4" />
     <PackageReference Include="VSSDK.DTE" Version="7.0.4" />
-    <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="7.10.6070" />
-    <PackageReference Include="Microsoft.VisualStudio.Shell.Interop.10.0" Version="10.0.30319" />
-    <PackageReference Include="Microsoft.VisualStudio.Shell.Framework" Version="15.0.26606" />
-    <PackageReference Include="Microsoft.VisualStudio.Shell.14.0" Version="14.3.25407" />
+    <PackageReference Include="Microsoft.VisualStudio.OLE.Interop" Version="7.10.6071" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.Interop.10.0" Version="10.0.30320" />
+    <PackageReference Include="Microsoft.VisualStudio.Shell.15.0" Version="15.9.28307 " />
+    <PackageReference Include="Microsoft.VisualStudio.Threading" Version="15.8.192" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
@@ -398,5 +390,4 @@
     <None Include="T\I\CSharp\Apple\User Interface\tvOS\tvOSViewControllerXib\ViewControllerXib.vstemplate" />
     <None Include="T\I\CSharp\Apple\User Interface\tvOS\tvOSViewXib\ViewXib.vstemplate" />
   </ItemGroup>
-  <ItemGroup />
 </Project>

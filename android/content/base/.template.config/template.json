@@ -31,7 +31,7 @@
   ],
   "preferNameDirectory": true,
   "guids": [
-    "{710A5ED9-2512-4560-98F3-64957C8C58F3}"
+    "710A5ED9-2512-4560-98F3-64957C8C58F3"
   ],
   "symbols": {
     "kind": {
@@ -79,7 +79,7 @@
       "type": "parameter",
       "datatype": "string",
       "replaces": "SupportLibVersion",
-      "defaultValue": "27.0.2.1"
+      "defaultValue": "28.0.0"
     },
     "IncludeXamarinEssentials": {
         "type": "parameter",
@@ -90,7 +90,7 @@
       "type": "parameter",
       "dataType": "string",
       "replaces": "XamarinEssentialsSdk",
-      "defaultValue": "0.10.0-preview"
+      "defaultValue": "1.0.0"
     },
     "CreateUITestProject": {
       "type": "parameter",
