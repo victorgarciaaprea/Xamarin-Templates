@@ -145,13 +145,13 @@
             "type": "parameter",
             "datatype": "string",
             "replaces": "AndroidSDKVersion",
-            "defaultValue": "v8.1"
+            "defaultValue": "v9.0"
         },
         "TargetAndroidAPI": {
             "type": "parameter",
             "datatype": "string",
             "replaces": "TargetAndroidAPI",
-            "defaultValue": "27"
+            "defaultValue": "28"
         },
         "MinAndroidAPI": {
             "type": "parameter",
@@ -163,7 +163,7 @@
             "type": "parameter",
             "datatype": "string",
             "replaces": "SupportLibVersion",
-            "defaultValue": "28.0.0"
+            "defaultValue": "28.0.0.1"
         },
         "IncludeXamarinEssentials": {
             "type": "parameter",

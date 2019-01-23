@@ -30,25 +30,25 @@
       "type": "parameter",
       "datatype": "string",
       "replaces": "AndroidSDKVersion",
-      "defaultValue": "v8.1"
+      "defaultValue": "v9.0"
     },
     "TargetAndroidAPI": {
       "type": "parameter",
       "datatype": "string",
       "replaces": "TargetAndroidAPI",
-      "defaultValue": "27"
+      "defaultValue": "28"
     },
     "MinAndroidAPI": {
       "type": "parameter",
       "datatype": "string",
       "replaces": "MinAndroidAPI",
-      "defaultValue": "19"
+      "defaultValue": "21"
     },
     "SupportLibVersion": {
       "type": "parameter",
       "datatype": "string",
       "replaces": "SupportLibVersion",
-      "defaultValue": "28.0.0"
+      "defaultValue": "28.0.0.1"
     }
   }
 }
