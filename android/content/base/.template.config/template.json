@@ -23,6 +23,10 @@
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "path": "MainActivity.cs"
+    },
+    {
+      "condition": "CreateUITestProject",
+      "path": "../NewApp.UITests/NewApp.UITests.csproj"
     }
   ],
   "preferNameDirectory": true,
@@ -87,6 +91,11 @@
       "dataType": "string",
       "replaces": "XamarinEssentialsSdk",
       "defaultValue": "1.0.0"
+    },
+    "CreateUITestProject": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
     }
   },
   "postActions": [
@@ -120,6 +129,11 @@
     {
       "source": "../nav-drawer",
       "condition": "(kind == \"nav-drawer\")"
+    },
+    {
+      "source": "../uitest",
+      "target": "../NewApp.UITests/",
+      "condition": "CreateUITestProject"
     }
   ]
 }
