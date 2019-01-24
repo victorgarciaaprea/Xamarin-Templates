@@ -502,7 +502,7 @@
     <value>Mobile App (Xamarin.Forms)</value>
   </data>
   <data name="3003" xml:space="preserve">
-    <value>A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.</value>
+    <value>A multiproject template for building apps for iOS and Android with Xamarin and Xamarin.Forms.</value>
   </data>
   <data name="3004" xml:space="preserve">
     <value>Content Page</value>
