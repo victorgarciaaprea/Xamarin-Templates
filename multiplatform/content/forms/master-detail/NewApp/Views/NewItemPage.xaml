@@ -17,4 +17,5 @@
             <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>

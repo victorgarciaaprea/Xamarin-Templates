@@ -16,7 +16,7 @@
             <Color x:Key="LightTextColor">#999999</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -74,4 +74,5 @@
             </StackLayout>
         </ScrollView>
     </Grid>
+    
 </ContentPage>
