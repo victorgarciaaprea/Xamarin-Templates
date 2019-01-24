@@ -216,7 +216,7 @@
         "CreateUWPProject": {
             "type": "parameter",
             "dataType": "bool",
-            "defaultValue": "true"
+            "defaultValue": "false"
         },
         "CreateBackendProject": {
             "type": "parameter",
