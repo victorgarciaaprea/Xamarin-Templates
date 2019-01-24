@@ -7,7 +7,6 @@ using Xamarin.Forms.Xaml;
 
 namespace NewApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();

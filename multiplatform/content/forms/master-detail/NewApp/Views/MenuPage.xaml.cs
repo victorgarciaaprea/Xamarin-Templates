@@ -7,7 +7,6 @@ using Xamarin.Forms.Xaml;
 
 namespace NewApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }

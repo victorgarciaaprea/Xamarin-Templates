@@ -6,7 +6,6 @@ using NewApp.Services;
 #endif
 using NewApp.Views;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace NewApp
 {
     public partial class App : Application
