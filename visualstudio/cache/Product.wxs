@@ -43,6 +43,11 @@
       <ComponentGroupRef Id="NuGets" />
       <Component Id="OfflineConfig" Guid="*" Directory="Config">
         <File Id="ConfigFile" KeyPath="yes" Source="Xamarin.Offline.config" DefaultVersion="$(var.ProductVersion)" DefaultLanguage="1033" Vital="yes" DiskId="1" />
+        <util:XmlFile File="[ProgramFilesFolder]NuGet\Config\Xamarin.Offline.config"
+                      Id="config"
+                      Action="setValue"
+                      Value="[ProgramFilesFolder]Xamarin\NuGet\"
+                      ElementPath="/configuration/fallbackPackageFolders/add/@value" />
       </Component>
     </Feature>
 
