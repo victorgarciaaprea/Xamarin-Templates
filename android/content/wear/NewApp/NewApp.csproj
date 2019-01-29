@@ -90,6 +90,7 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.Android.Support.Percent" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.Wear" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="SupportLibVersion" />
     <PackageReference Include="Xamarin.Android.Support.Fragment" Version="SupportLibVersion" />
