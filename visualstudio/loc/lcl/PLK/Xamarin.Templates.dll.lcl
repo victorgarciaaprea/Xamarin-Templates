@@ -1644,10 +1644,13 @@
       </Item>
       <Item ItemId=";3003" ItemType="0" PsrId="211" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.]]></Val>
+          <Val><![CDATA[A multiproject template for building apps for iOS and Android with Xamarin and Xamarin.Forms.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Szablon wieloprojektowy służący do tworzenia aplikacji dla systemu iOS, Android i Windows przy użyciu platformy Xamarin i Xamarin.Forms.]]></Val>
+            <Val><![CDATA[Szablon wieloprojektowy służący do tworzenia aplikacji dla systemu iOS i Android przy użyciu platformy Xamarin i Xamarin.Forms.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A multiproject template for building apps for iOS, Android, and Windows with Xamarin and Xamarin.Forms.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
