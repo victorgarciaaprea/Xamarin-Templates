@@ -55,6 +55,10 @@
         {
           "choice": "bottom-nav",
           "description": "A Xamarin.Android app with master-detail navigation"
+        },
+        {
+          "choice": "web-view",
+          "description": "Creates an Android WebView App that uses Razor templating engine."
         }
       ]
     },
@@ -85,13 +89,15 @@
     "IncludeXamarinEssentials": {
         "type": "parameter",
         "dataType": "bool",
-        "defaultValue": "false"
+        "defaultValue": "false",
+        "condition": "(kind != \"web-view\")"
     },
     "XamarinEssentialsSdk": {
       "type": "parameter",
       "dataType": "string",
       "replaces": "XamarinEssentialsSdk",
-      "defaultValue": "1.0.0"
+      "defaultValue": "1.0.0",
+      "condition": "(kind != \"web-view\")"
     },
     "CreateUITestProject": {
       "type": "parameter",
@@ -130,6 +136,10 @@
     {
       "source": "../nav-drawer",
       "condition": "(kind == \"nav-drawer\")"
+    },
+    {
+      "source": "../web-view",
+      "condition": "(kind == \"web-view\")"
     },
     {
       "source": "../uitest",
