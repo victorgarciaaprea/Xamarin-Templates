@@ -18,7 +18,7 @@ using Xamarin.VisualStudio.Contracts.Model.Android;
 using Microsoft.VisualStudio.Telemetry;
 using Xamarin.VisualStudio.Contracts.Model.IOS;
 using System.ComponentModel;
-using Microsoft.VisualStudio.RemoteSettings;
+using Microsoft.VisualStudio.Services.RemoteSettings;
 
 namespace Xamarin.Templates.Wizards
 {
@@ -39,6 +39,7 @@ namespace Xamarin.Templates.Wizards
         DTE2 dte;
         ServiceProvider serviceProvider;
         IComponentModel componentModel;
+        IVsRemoteSettingsProvider vsRemoteSettingsProvider;
         Dictionary<string, string> replacements;
         XPlatViewModel model;
         object automationObject;
@@ -55,6 +56,7 @@ namespace Xamarin.Templates.Wizards
 
                 ThreadHelper.ThrowIfNotOnUIThread();
                 serviceProvider = new ServiceProvider(automationObject as Microsoft.VisualStudio.OLE.Interop.IServiceProvider);
+                vsRemoteSettingsProvider = (IVsRemoteSettingsProvider)serviceProvider.GetService(typeof(SVsRemoteSettingsProvider));
                 componentModel = (IComponentModel)serviceProvider.GetService(typeof(SComponentModel));
                 var shell = serviceProvider.GetService(typeof(SVsShell)) as IVsShell7;
 
@@ -62,9 +64,9 @@ namespace Xamarin.Templates.Wizards
 
                 // Always set remote setting value for whether to open the XAML or not.
                 if (!replacements.ContainsKey("$passthrough:OpenXaml$"))
-                    replacements["$passthrough:OpenXaml$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXaml", false).ToString().ToLowerInvariant();
+                    replacements["$passthrough:OpenXaml$"] = vsRemoteSettingsProvider?.GetValue(nameof(Xamarin), "OpenXaml", false).ToString().ToLowerInvariant();
                 if (!replacements.ContainsKey("$passthrough:OpenXamlCs$"))
-                    replacements["$passthrough:OpenXamlCs$"] = RemoteSettings.Default.GetValue(nameof(Xamarin), "OpenXamlCs", false).ToString().ToLowerInvariant();
+                    replacements["$passthrough:OpenXamlCs$"] = vsRemoteSettingsProvider?.GetValue(nameof(Xamarin), "OpenXamlCs", false).ToString().ToLowerInvariant();
 
                 var headless = replacements.TryGetValue("Headless", out var value) && bool.TryParse(value, out var parsed) && parsed;
 
