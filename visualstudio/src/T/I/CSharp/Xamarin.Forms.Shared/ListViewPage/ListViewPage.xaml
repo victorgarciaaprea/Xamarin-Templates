@@ -1,16 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              x:Class="$rootnamespace$.$safeitemname$">
   <ListView x:Name="MyListView"
             ItemsSource="{Binding Items}"
             ItemTapped="Handle_ItemTapped"
             CachingStrategy="RecycleElement">
-            
+    <d:ItemsSource>
+        <x:Array Type="{x:Type x:String}">
+            <x:String>Item</x:String>
+            <x:String>Item</x:String>
+        </x:Array>
+    </d:ItemsSource>
     <!--Built in Cells-->
     <ListView.ItemTemplate>
         <DataTemplate>
-            <TextCell Text="{Binding .}" />
+            <TextCell Text="{Binding .}" d:Text="Text" />
         </DataTemplate>
     </ListView.ItemTemplate>
     
@@ -21,8 +29,10 @@
         <ViewCell>
           <StackLayout>
             <Label Text="{Binding Text}" 
+                   d:Text="Text"
                    Style="{DynamicResource ListItemTextStyle}" />
             <Label Text="{Binding Detail}" 
+                   d:Text="Detail"
                    Style="{DynamicResource ListItemDetailTextStyle}"/>
           </StackLayout>
         </ViewCell>

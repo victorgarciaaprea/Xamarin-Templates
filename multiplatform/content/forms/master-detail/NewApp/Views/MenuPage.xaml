@@ -10,11 +10,17 @@
     <StackLayout VerticalOptions="FillAndExpand">
         <ListView x:Name="ListViewMenu"
                     HasUnevenRows="True">
+            <d:ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item</x:String>
+                    <x:String>Item</x:String>
+                </x:Array>
+            </d:ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Label Text="{Binding Title}" FontSize="20"/>
+                            <Label Text="{Binding Title}" d:Text="Menu Item" FontSize="20"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

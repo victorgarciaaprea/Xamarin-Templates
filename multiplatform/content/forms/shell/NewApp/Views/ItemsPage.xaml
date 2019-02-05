@@ -22,15 +22,23 @@
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
+            <d:ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Item</x:String>
+                    <x:String>Item</x:String>
+                </x:Array>
+            </d:ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
                             <Label Text="{Binding Text}" 
+                                d:Text="Item name"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />
                             <Label Text="{Binding Description}" 
+                                d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
