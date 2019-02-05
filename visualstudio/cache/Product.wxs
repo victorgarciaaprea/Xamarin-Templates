@@ -28,6 +28,8 @@
         <Directory Id="NuGet" Name="NuGet">
           <Directory Id="Config" Name="Config" />
         </Directory>
+      </Directory>
+      <Directory Id="CommonAppDataFolder">
         <Directory Id="Xamarin" Name="Xamarin">
           <Directory Id="NuGetCache" Name="NuGet" />
         </Directory>
@@ -46,7 +48,7 @@
         <util:XmlFile File="[ProgramFilesFolder]NuGet\Config\Xamarin.Offline.config"
                       Id="config"
                       Action="setValue"
-                      Value="[ProgramFilesFolder]Xamarin\NuGet\"
+                      Value="[CommonAppDataFolder]Xamarin\NuGet\"
                       ElementPath="/configuration/fallbackPackageFolders/add/@value" />
       </Component>
     </Feature>
