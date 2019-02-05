@@ -98,13 +98,13 @@
     "IncludeXamarinEssentials": {
         "type": "parameter",
         "dataType": "bool",
-        "defaultValue": "false"
+        "defaultValue": "true"
     },
     "XamarinEssentialsSdk": {
       "type": "parameter",
       "dataType": "string",
       "replaces": "XamarinEssentialsSdk",
-      "defaultValue": "1.0.0"
+      "defaultValue": "1.0.1"
     },
     "CreateUITestProject": {
       "type": "parameter",
