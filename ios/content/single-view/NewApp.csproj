@@ -72,11 +72,12 @@
         <Reference Include="System.Numerics.Vectors" />
         #endif-->
     </ItemGroup>
-    <!--#if (IncludeXamarinEssentials)
     <ItemGroup>
+      <PackageReference Condition="'$(CreateUITestProject)' == true" Include="Xamarin.TestCloud.Agent" Version="0.21.7" />
+      <!--#if (IncludeXamarinEssentials)
       <PackageReference Include="Xamarin.Essentials" Version="XamarinEssentialsSdk" />
+      #endif-->
     </ItemGroup>
-    #endif-->
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
             <Visible>false</Visible>
