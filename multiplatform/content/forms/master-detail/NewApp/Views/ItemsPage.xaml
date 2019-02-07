@@ -24,8 +24,8 @@
                 ItemSelected="OnItemSelected">
             <d:ItemsSource>
                 <x:Array Type="{x:Type x:String}">
-                    <x:String>Item</x:String>
-                    <x:String>Item</x:String>
+                    <x:String>Item 1</x:String>
+                    <x:String>Item 2</x:String>
                 </x:Array>
             </d:ItemsSource>
             <ListView.ItemTemplate>
@@ -33,7 +33,7 @@
                     <ViewCell>
                         <StackLayout Padding="10">
                             <Label Text="{Binding Text}" 
-                                d:Text="Item name"
+                                d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16" />

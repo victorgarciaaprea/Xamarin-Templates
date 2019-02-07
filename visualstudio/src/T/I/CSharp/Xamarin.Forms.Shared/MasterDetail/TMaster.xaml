@@ -13,8 +13,8 @@
               ItemsSource="{Binding MenuItems}">
       <d:ItemsSource>
           <x:Array Type="{x:Type x:String}">
-              <x:String>Item</x:String>
-              <x:String>Item</x:String>
+              <x:String>Item 1</x:String>
+              <x:String>Item 2</x:String>
           </x:Array>
       </d:ItemsSource>
       <ListView.Header>
@@ -44,7 +44,7 @@
               <Label VerticalOptions="FillAndExpand" 
                     VerticalTextAlignment="Center" 
                     Text="{Binding Title}" 
-                    d:Text="Menu Item Title"
+                    d:Text="{Binding .}"
                     FontSize="24"/>
             </StackLayout>
           </ViewCell>

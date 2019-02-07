@@ -11,14 +11,14 @@
             CachingStrategy="RecycleElement">
     <d:ItemsSource>
         <x:Array Type="{x:Type x:String}">
-            <x:String>Item</x:String>
-            <x:String>Item</x:String>
+            <x:String>Item 1</x:String>
+            <x:String>Item 2</x:String>
         </x:Array>
     </d:ItemsSource>
     <!--Built in Cells-->
     <ListView.ItemTemplate>
         <DataTemplate>
-            <TextCell Text="{Binding .}" d:Text="Text" />
+            <TextCell Text="{Binding .}" d:Text="{Binding .}" />
         </DataTemplate>
     </ListView.ItemTemplate>
     
