@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +13,6 @@ using NewApp.ViewModels;
 
 namespace NewApp.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting http://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible (true)]
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
