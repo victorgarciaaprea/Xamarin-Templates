@@ -105,11 +105,6 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
     <AndroidResource Include="Resources\drawable\tab_about.png" />
     <AndroidResource Include="Resources\drawable\tab_feed.png" />
-    <AndroidResource Include="Resources\drawable\launch_screen.axml" />
-    <AndroidResource Include="Resources\drawable-hdpi\xamagon_preview.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\xamagon_preview.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\xamagon_preview.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\xamagon_preview.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
