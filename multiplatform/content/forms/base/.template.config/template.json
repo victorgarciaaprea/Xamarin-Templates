@@ -24,19 +24,19 @@
         },
         {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\" || kind == \"tabbed\"))",
-            "path": "NewApp\\Views\\MainPage.xaml.cs"
+            "path": "NewApp\\Views\\AboutPage.xaml.cs"
         },
         {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"master-detail\" || kind == \"tabbed\"))",
-            "path": "NewApp\\Views\\MainPage.xaml"
+            "path": "NewApp\\Views\\AboutPage.xaml"
         },
         {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"shell\"))",
-            "path": "NewApp\\AppShell.xaml.cs"
+            "path": "NewApp\\Views\\AboutPage.xaml.cs"
         },
         {
             "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\" && (kind == \"shell\"))",
-            "path": "NewApp\\AppShell.xaml"
+            "path": "NewApp\\Views\\AboutPage.xaml"
         },
         {
             "condition": "CreateUWPProject",
