@@ -62,6 +62,12 @@
         }
       ]
     },
+    "AppIdentifier": {
+        "type": "parameter",
+        "description": "Overrides the package name in the AndroidManifest.xml",
+        "datatype": "string",
+        "replaces": "com.companyname.NewApp"
+    },
     "AndroidSDKVersion": {
       "type": "parameter",
       "datatype": "string",
