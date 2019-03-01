@@ -31,6 +31,8 @@ namespace Xamarin.Templates.Wizard
                 replacements.Add("$passthrough:SupportLibVersion$", model.FallbackSupportLibVersion);
             }
 
+            replacements.Add("$passthrough:AppIdentifier$", $"com.companyname.{replacements["$safeprojectname$"].ToLowerInvariant()}");
+
             return replacements;
         }
 

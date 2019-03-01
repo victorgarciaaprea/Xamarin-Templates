@@ -264,6 +264,8 @@ namespace Xamarin.Templates.Wizards
                     replacements.Add("$passthrough:TargetAndroidAPI$", AndroidTargetFramework.ApiLevel.ToString());
                     replacements.Add("$passthrough:SupportLibVersion$", FallbackSupportLibVersion);
                 }
+
+                replacements.Add("$passthrough:AndroidAppIdentifier", $"com.companyname.{replacements["$safeprojectname$"].ToLowerInvariant()}");
             }
             else
             {
