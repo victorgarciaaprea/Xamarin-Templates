@@ -82,11 +82,11 @@
     // These may be provided inline as below or as separate classes.
 
     // This header appears at the top of the Flyout.
-    <Shell.FlyoutHeader>
-		<DataTemplate>
+    <Shell.FlyoutHeaderTemplate>
+	<DataTemplate>
             <Grid>ContentHere</Grid>
         </DataTemplate>
-	</Shell.FlyoutHeader>
+    </Shell.FlyoutHeaderTemplate>
 
     // ItemTemplate is for ShellItems as displayed in a Flyout
     <Shell.ItemTemplate>
