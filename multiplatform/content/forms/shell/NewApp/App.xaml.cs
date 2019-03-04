@@ -1,9 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-#if (CreateBackendProject)
 using NewApp.Services;
-#endif
 using NewApp.Views;
 
 namespace NewApp
@@ -12,9 +10,9 @@ namespace NewApp
     {
         #if (CreateBackendProject)
         //TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
-                public static string AzureBackendUrl = "http://localhost:5000";
-                public static bool UseMockDataStore = true;
-         #endif
+        public static string AzureBackendUrl = "http://localhost:5000";
+        public static bool UseMockDataStore = true;
+        #endif
 
         public App ()
         {
@@ -25,8 +23,9 @@ namespace NewApp
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
+            #else
+            DependencyService.Register<MockDataStore>();
             #endif
-
             MainPage = new AppShell();
         }
 
