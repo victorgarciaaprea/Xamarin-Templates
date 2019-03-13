@@ -21,7 +21,7 @@
     <AssemblyName>Xamarin.Templates</AssemblyName>
     <!-- Fixes missing imports in wpftmp double compilation. See https://github.com/NuGet/NuGet.Client/pull/1786 -->
     <OriginalProjectName>$(AssemblyName)</OriginalProjectName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <LangVersion>Latest</LangVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IsProductComponent>true</IsProductComponent>
