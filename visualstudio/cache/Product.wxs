@@ -29,9 +29,11 @@
           <Directory Id="Config" Name="Config" />
         </Directory>
       </Directory>
-      <Directory Id="CommonAppDataFolder">
-        <Directory Id="Xamarin" Name="Xamarin">
-          <Directory Id="NuGetCache" Name="NuGet" />
+      <Directory Id="CACHEDRIVE" Name="CacheDrive" ComponentGuidGenerationSeed="B81B5266-0B3A-41CD-BDE6-4BCB8C7D0FA0">
+        <Directory Id="Microsoft" Name="Microsoft">
+          <Directory Id="Xamarin" Name="Xamarin">
+            <Directory Id="NuGetCache" Name="NuGet" />
+          </Directory>
         </Directory>
       </Directory>
     </Directory>
@@ -48,7 +50,7 @@
         <util:XmlFile File="[ProgramFilesFolder]NuGet\Config\Xamarin.Offline.config"
                       Id="config"
                       Action="setValue"
-                      Value="[CommonAppDataFolder]Xamarin\NuGet\"
+                      Value="[CACHEDRIVE]Microsoft\Xamarin\NuGet\"
                       ElementPath="/configuration/fallbackPackageFolders/add/@value" />
       </Component>
     </Feature>
